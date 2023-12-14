@@ -1,23 +1,37 @@
-import { Box, HStack, Heading, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  HStack,
+  Heading,
+  SimpleGrid,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
 import Icon from "../components/Icon";
 import contacts from "../constants/contacts";
 import Helmet from "../components/Helmet";
+import useResponsive from "../hooks/useResponsive";
 
 const Home = () => {
+  const { sm } = useResponsive();
   return (
     <Helmet title="Home">
       <Stack spacing={50}>
         <Box>
-          <Heading fontSize="100px" as="h3">
+          <Heading fontSize={sm ? "50px" : "100px"} as="h3">
             Restu Averian Putra
           </Heading>
         </Box>
         <Box>
-          <Text fontSize="32px">
+          <Text fontSize={sm ? "24px" : "32px"}>
             Aspiring to become a proficient Front-End Developer
           </Text>
         </Box>
-        <HStack justifyContent="center" spacing={100}>
+        <SimpleGrid
+          columns={sm ? 2 : 4}
+          justifyContent="center"
+          margin="auto"
+          spacing={sm ? 50 : 100}
+        >
           {contacts?.map((c, idx) => (
             <Box
               key={idx}
@@ -27,7 +41,7 @@ const Home = () => {
               <Icon name={c?.iconName} />
             </Box>
           ))}
-        </HStack>
+        </SimpleGrid>
       </Stack>
     </Helmet>
   );

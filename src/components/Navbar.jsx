@@ -1,14 +1,10 @@
 import { Box, Button, Flex, HStack } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import navbar from "../constants/navbar";
-import { useCallback } from "react";
+import isActive from "../helpers/isActive";
 
 const Navbar = () => {
   const navigate = useNavigate();
-
-  const isActive = useCallback((nActive = "") => {
-    return nActive?.toLowerCase() === window.location.pathname?.toLowerCase();
-  }, []);
 
   return (
     <Flex justifyContent="space-between" py="30px">
