@@ -13,14 +13,15 @@ const NavbarMobile = () => {
         pos="fixed"
         zIndex={99}
         bg="#3f3f3f"
-        p={"20px 5px"}
+        p={"10px 20px"}
+        w={320}
         spacing={4}
         borderRadius={10}
         bottom={10}
       >
         {sortArrObj({ arr: navbar, key: "orderMobile" })?.map((n, idx) => (
           <Box key={idx} onClick={() => navigate(n?.path)}>
-            <Icon name={n?.name} width={100} />
+            <Icon name={n?.name} width={30} />
           </Box>
         ))}
       </HStack>
