@@ -1,11 +1,4 @@
-import {
-  Box,
-  HStack,
-  Heading,
-  SimpleGrid,
-  Stack,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Stack, Text } from "@chakra-ui/react";
 import Icon from "../components/Icon";
 import contacts from "../constants/contacts";
 import Helmet from "../components/Helmet";

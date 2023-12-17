@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HStack } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Image } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import navbar from "../constants/navbar";
 import isActive from "../helpers/isActive";
@@ -8,7 +8,9 @@ const Navbar = () => {
 
   return (
     <Flex justifyContent="space-between" py="30px">
-      <Box>R</Box>
+      <Box onClick={() => navigate("/")} cursor="pointer">
+        <Image src="logo.png" width={12} />
+      </Box>
       <Box>
         <HStack spacing="50px">
           {navbar?.map((n, idx) => (
