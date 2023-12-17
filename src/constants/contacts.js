@@ -13,7 +13,7 @@ const contacts = [
   },
   {
     iconName: "cv",
-    path: "https://drive.google.com/file/d/1gzVPr_LLebv4xJuT5t796oRdK0Teujin/view?usp=sharing",
+    path: "https://drive.google.com/file/d/12lZDBFoW_-V8C1sa4g8w0cok465ppi-2/view?usp=sharing",
   },
 ];
 export default contacts;
