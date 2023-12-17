@@ -1,0 +1,6 @@
+.active_navbar {
+  background: #ffff;
+  padding: 14px;
+  border-radius: 10px;
+  transition: all 150ms;
+}

@@ -3,9 +3,11 @@ import navbar from "../constants/navbar";
 import { useNavigate } from "react-router-dom";
 import sortArrObj from "../helpers/sortArrObj";
 import Icon from "./Icon";
+import "../style/navbar_mobile.css";
 
 const NavbarMobile = () => {
   const navigate = useNavigate();
+
   return (
     <Container centerContent>
       <HStack
@@ -20,8 +22,20 @@ const NavbarMobile = () => {
         bottom={10}
       >
         {sortArrObj({ arr: navbar, key: "orderMobile" })?.map((n, idx) => (
-          <Box key={idx} onClick={() => navigate(n?.path)}>
-            <Icon name={n?.name} width={30} />
+          <Box
+            key={idx}
+            onClick={() => navigate(n?.path)}
+            {...(window.location.pathname === n?.path && {
+              className: "active_navbar",
+            })}
+          >
+            <Icon
+              name={n?.name}
+              width={30}
+              {...(window.location.pathname === n?.path && {
+                color: "#3f3f3f",
+              })}
+            />
           </Box>
         ))}
       </HStack>

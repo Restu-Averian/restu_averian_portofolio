@@ -13,7 +13,7 @@ const projects = [
   },
   {
     srcImg:
-      "https://res.cloudinary.com/dcvolkyfb/image/upload/v1702570564/Project-Screenshot/React/dlaisycr7q9xcnrdsilm.png",
+      "https://res.cloudinary.com/dcvolkyfb/image/upload/v1702825574/Project-Screenshot/React/fxxg1k0xydljdeq9xsza.png",
     title: "Winnowing Tools",
     path: "https://simple-winnowing-tools.vercel.app/",
   },

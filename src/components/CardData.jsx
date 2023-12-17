@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from "@chakra-ui/react";
 import Image from "./Image";
+import "../style/button.css";
 
 const CardData = ({ srcImg, title, path }) => {
   return (
@@ -35,7 +36,10 @@ const CardData = ({ srcImg, title, path }) => {
         </Stack>
       </CardBody>
       <CardFooter display="flex" justifyContent="flex-end">
-        <Button colorScheme="gray" onClick={() => window.open(path, "_blank")}>
+        <Button
+          className="button-pj"
+          onClick={() => window.open(path, "_blank")}
+        >
           Open
         </Button>
       </CardFooter>
