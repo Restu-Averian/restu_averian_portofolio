@@ -1,7 +1,7 @@
 .button-pj {
-  background: rgba(85, 219, 255, 0.8);
+  background: rgba(85, 219, 255, 0.8) !important;
   color: white;
 }
 .button-pj:hover {
-  background: rgba(85, 219, 255, 1);
+  background: rgba(85, 219, 255, 1) !important;
 }

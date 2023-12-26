@@ -2,6 +2,7 @@ import { Box, Button, Flex, HStack, Image } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import navbar from "../constants/navbar";
 import isActive from "../helpers/isActive";
+import "../style/button.css";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -16,9 +17,13 @@ const Navbar = () => {
           {navbar?.map((n, idx) => (
             <Button
               key={idx}
-              {...(!isActive(n?.path) && {
-                color: "white",
-              })}
+              {...(!isActive(n?.path)
+                ? {
+                    color: "white",
+                  }
+                : {
+                    className: "button-pj",
+                  })}
               onClick={() => navigate(n?.path)}
               variant={isActive(n?.path) ? "solid" : "ghost"}
             >
