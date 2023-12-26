@@ -17,5 +17,11 @@ const projects = [
     title: "Winnowing Tools",
     path: "https://simple-winnowing-tools.vercel.app/",
   },
+  {
+    srcImg:
+      "https://res.cloudinary.com/dcvolkyfb/image/upload/v1703611590/Project-Screenshot/React/lhh7ck7oikc9iw1zjowm.png",
+    title: "Resnime",
+    path: "https://resnime.my.id/",
+  },
 ];
 export default projects;
