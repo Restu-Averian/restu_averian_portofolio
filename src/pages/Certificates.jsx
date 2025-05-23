@@ -1,20 +1,31 @@
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import CardData from "../components/CardData";
 import Content from "../components/Content";
 import certificates from "../constants/certificates";
 import useResponsive from "../hooks/useResponsive";
 
 const Certificates = () => {
-  const { sm } = useResponsive();
+  const { xs } = useResponsive();
+
   return (
     <Content title="Certificates">
-      <SimpleGrid columns={sm ? 1 : 3} spacing={10}>
+      <Flex
+        flexDirection={xs ? "column" : "row"}
+        gap={10}
+        flexWrap="wrap"
+        justifyContent="center"
+      >
         {certificates?.map((c, idx) => (
-          <Box key={idx}>
+          <Box
+            key={idx}
+            {...(xs && {
+              margin: "auto",
+            })}
+          >
             <CardData {...c} />
           </Box>
         ))}
-      </SimpleGrid>
+      </Flex>
     </Content>
   );
 };

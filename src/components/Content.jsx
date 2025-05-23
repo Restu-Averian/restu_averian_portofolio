@@ -5,7 +5,9 @@ const Content = ({ title, children }) => {
   return (
     <Helmet title={title}>
       <Stack direction="column" spacing={10}>
-        <Heading as="h2">{title}</Heading>
+        <Heading as="h2" textAlign="center">
+          {title}
+        </Heading>
         <Box>{children}</Box>
       </Stack>
     </Helmet>

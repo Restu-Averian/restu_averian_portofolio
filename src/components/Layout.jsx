@@ -4,11 +4,11 @@ import useResponsive from "../hooks/useResponsive";
 import NavbarMobile from "./NavbarMobile";
 
 const Layout = ({ children }) => {
-  const { sm } = useResponsive();
+  const { xs } = useResponsive();
   return (
     <Stack className="container">
       <Container maxW="1200px" height="100%">
-        {!sm && (
+        {!xs && (
           <GridItem
             p="0px 2px"
             position="sticky"
@@ -20,8 +20,8 @@ const Layout = ({ children }) => {
           </GridItem>
         )}
 
-        <GridItem p={sm ? "50px 2px 150px" : "14px 2px"}>{children}</GridItem>
-        {sm && <NavbarMobile />}
+        <GridItem p={xs ? "50px 2px 150px" : "14px 2px"}>{children}</GridItem>
+        {xs && <NavbarMobile />}
       </Container>
     </Stack>
   );

@@ -20,6 +20,7 @@ const CardData = ({ srcImg, title, path }) => {
       color="#F9F9F9"
       borderRadius="2xl"
       p={2}
+      maxWidth={360}
     >
       <CardBody>
         <Stack spacing={5}>
@@ -28,14 +29,14 @@ const CardData = ({ srcImg, title, path }) => {
           </Box>
           <Box>
             <Tooltip {...(title?.length > 35 && { label: title })}>
-              <Heading as="h3" size="lg" noOfLines={2}>
+              <Heading as="h3" size="lg" noOfLines={2} textAlign="center">
                 {title}
               </Heading>
             </Tooltip>
           </Box>
         </Stack>
       </CardBody>
-      <CardFooter display="flex" justifyContent="flex-end">
+      <CardFooter display="flex" justifyContent="center">
         <Button
           className="button-pj"
           onClick={() => window.open(path, "_blank")}

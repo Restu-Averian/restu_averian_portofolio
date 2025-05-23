@@ -2,13 +2,13 @@ import useResponsive from "../hooks/useResponsive";
 import "../style/loading.css";
 
 const Loading = () => {
-  const { sm } = useResponsive();
+  const { xs } = useResponsive();
   return (
     <div
       style={{
         display: "flex",
         justifyContent: "center",
-        height: sm ? "65vh" : "50vh",
+        height: xs ? "65vh" : "50vh",
         alignItems: "center",
       }}
     >
