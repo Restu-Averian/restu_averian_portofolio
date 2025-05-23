@@ -20,7 +20,7 @@ const Navbar = () => {
         transition="all 300ms"
         {...(isHome
           ? {
-              top: "7rem",
+              top: "7.5rem",
               left: "50%",
               transform: "translateX(-50%)",
             }

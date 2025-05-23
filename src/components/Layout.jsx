@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
           </GridItem>
         )}
 
-        <GridItem p={xs ? "50px 2px 150px" : "14px 2px"}>{children}</GridItem>
+        <GridItem p={xs ? "0px 2px 150px" : "14px 2px"}>{children}</GridItem>
         {xs && <NavbarMobile />}
       </Container>
     </Stack>
