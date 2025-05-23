@@ -1,7 +1,17 @@
 .button-pj {
-  background: rgba(85, 219, 255, 0.8) !important;
+  background: var(--primary-color-own) !important;
   color: white;
 }
 .button-pj:hover {
-  background: rgba(85, 219, 255, 1) !important;
+  background: var(--primary-color-own-hover) !important;
+}
+
+.button-pj-inactive {
+  border: 1px solid var(--primary-color-own-inactive);
+  color: var(--primary-color-own-inactive) !important;
+}
+
+.button-pj-inactive:hover {
+  background: transparent !important;
+  color: var(--primary-color-own-hover) !important;
 }

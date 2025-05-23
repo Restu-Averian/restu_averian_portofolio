@@ -47,7 +47,7 @@ const Navbar = () => {
               key={idx}
               {...(!isActive(n?.path)
                 ? {
-                    color: "white",
+                    className: "button-pj-inactive",
                   }
                 : {
                     className: "button-pj",
