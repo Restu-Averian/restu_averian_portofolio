@@ -4,7 +4,7 @@ import Helmet from "./Helmet";
 const Content = ({ title, children }) => {
   return (
     <Helmet title={title}>
-      <Stack direction="column" spacing={10}>
+      <Stack direction="column" spacing={10} className="fade-in-animate">
         <Heading as="h2" textAlign="center">
           {title}
         </Heading>
