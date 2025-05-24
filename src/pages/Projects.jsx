@@ -10,7 +10,7 @@ const Projects = () => {
     <Content title="Projects">
       <Flex
         flexDirection={xs ? "column" : "row"}
-        gap={10}
+        gap={5}
         flexWrap="wrap"
         justifyContent="center"
       >

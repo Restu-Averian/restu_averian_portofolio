@@ -11,7 +11,7 @@ const Certificates = () => {
     <Content title="Certificates">
       <Flex
         flexDirection={xs ? "column" : "row"}
-        gap={10}
+        gap={5}
         flexWrap="wrap"
         justifyContent="center"
       >
