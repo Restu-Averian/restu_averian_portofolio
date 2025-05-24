@@ -4,7 +4,6 @@ import {
   Flex,
   Heading,
   HStack,
-  Image,
   Stack,
   Text,
   Tooltip,
@@ -15,6 +14,7 @@ import Helmet from "../components/Helmet";
 import useResponsive from "../hooks/useResponsive";
 import navbar from "../constants/navbar";
 import isActive from "../helpers/isActive";
+import Image from "../components/Image";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {

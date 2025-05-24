@@ -1,7 +1,8 @@
-import { Box, Button, Flex, HStack, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack } from "@chakra-ui/react";
 import { useLocation, useNavigate } from "react-router-dom";
 import navbar from "../constants/navbar";
 import isActive from "../helpers/isActive";
+import Image from "./Image";
 import "../style/button.css";
 
 const Navbar = () => {
