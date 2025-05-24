@@ -1,4 +1,12 @@
-import { Box, Heading, Image, SimpleGrid, Stack, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
+  Tooltip,
+} from "@chakra-ui/react";
 import Icon from "../components/Icon";
 import contacts from "../constants/contacts";
 import Helmet from "../components/Helmet";
@@ -38,28 +46,25 @@ const Home = () => {
             </Heading>
           </Box>
           <Box>
-            <Text fontSize={xs ? "1rem" : "1.6rem"} textAlign="center">
+            <Text fontSize={xs ? "1rem" : "1.6rem"} textAlign="center" as="h2">
               Aspiring to become a proficient Front-End Developer
             </Text>
           </Box>
         </Stack>
 
-        <SimpleGrid
-          columns={xs ? 2 : 4}
-          justifyContent="center"
-          margin="auto"
-          spacing={xs ? 50 : 100}
-        >
+        <Flex justifyContent="center" gap={xs ? 50 : 75} flexWrap="wrap">
           {contacts?.map((c, idx) => (
-            <Box
-              key={idx}
-              onClick={() => window.open(c?.path, "_blank")}
-              cursor="pointer"
-            >
-              <Icon name={c?.iconName} />
-            </Box>
+            <Tooltip key={idx} label={c?.label}>
+              <Box
+                key={idx}
+                onClick={() => window.open(c?.path, "_blank")}
+                cursor="pointer"
+              >
+                <Icon name={c?.iconName} />
+              </Box>
+            </Tooltip>
           ))}
-        </SimpleGrid>
+        </Flex>
       </Stack>
     </Helmet>
   );
