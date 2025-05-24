@@ -38,7 +38,7 @@ const Navbar = () => {
 
       <Box
         position="relative"
-        right={isHome ? "35%" : 0}
+        right={isHome ? "34%" : 0}
         transition="all 300ms"
       >
         <HStack spacing="50px">

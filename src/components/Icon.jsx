@@ -71,6 +71,7 @@ const Icon = ({ name, width, height, color }) => {
         viewBox="0 0 43 43"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        style={{ margin: "auto" }}
       >
         <g clipPath="url(#clip0_90_562)">
           <path
@@ -95,7 +96,7 @@ const Icon = ({ name, width, height, color }) => {
     ),
     home: (
       <svg
-        style={{ width: width || 40, height: height || 40 }}
+        style={{ width: width || 40, height: height || 40, margin: "auto" }}
         xmlns="http://www.w3.org/2000/svg"
         height="16"
         width="18"
@@ -109,7 +110,7 @@ const Icon = ({ name, width, height, color }) => {
     ),
     project: (
       <svg
-        style={{ width: width || 40, height: height || 40 }}
+        style={{ width: width || 40, height: height || 40, margin: "auto" }}
         xmlns="http://www.w3.org/2000/svg"
         height="16"
         width="20"

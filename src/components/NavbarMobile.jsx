@@ -16,7 +16,6 @@ const NavbarMobile = () => {
   return (
     <Container centerContent>
       <HStack
-        justifyContent="space-between"
         pos="fixed"
         zIndex={99}
         bg="#3f3f3f"
@@ -24,7 +23,7 @@ const NavbarMobile = () => {
         w={320}
         spacing={4}
         borderRadius={10}
-        bottom={10}
+        bottom={5}
       >
         {sortArrObj({ arr: navbar, key: "orderMobile" })?.map((n, idx) => (
           <Box
@@ -33,6 +32,8 @@ const NavbarMobile = () => {
             {...(isActive(n) && {
               className: "active_navbar",
             })}
+            width={120}
+            py={"0.5rem"}
           >
             <Icon name={n?.name} width={30} />
           </Box>
