@@ -19,7 +19,7 @@ const NavbarMobile = () => {
         pos="fixed"
         zIndex={99}
         bg="#3f3f3f"
-        p={"10px 20px"}
+        p={"0.5rem"}
         w={320}
         spacing={4}
         borderRadius={10}
