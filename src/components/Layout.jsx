@@ -1,14 +1,19 @@
 import { Container, GridItem, Stack } from "@chakra-ui/react";
+import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import useResponsive from "../hooks/useResponsive";
 import NavbarMobile from "./NavbarMobile";
 
 const Layout = ({ children }) => {
   const { xs } = useResponsive();
+
+  const { pathname } = useLocation();
+
+  const isHome = pathname === "/";
   return (
     <Stack className="container">
       <Container maxW="1200px" height="100%">
-        {!xs && (
+        {!xs && !isHome && (
           <GridItem
             p="0px 2px"
             position="sticky"
