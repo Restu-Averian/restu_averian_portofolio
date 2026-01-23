@@ -5,8 +5,8 @@ const CardStyled = styled.div`
   background-color: #ffffff;
   cursor: pointer;
   transition: all 150ms;
-  border: 1.5px solid #1e1b4b;
-  height: 100%;
+  border: 1px solid #1e1b4b;
+  height: ${({ $level }) => ($level === 2 ? "380px" : "100%")};
 
   ${({ $type }) => {
     if ($type !== "side") {
@@ -28,6 +28,10 @@ const CardStyled = styled.div`
       position: relative;
       padding: 18px;
 
+      &.side-by-side {
+        height: ${({ $level }) => ($level === 2 ? "340px" : "240px")};
+      }
+
       .img-thumbnail-project-item {
         width: 100%;
         height: 100%;
@@ -39,7 +43,7 @@ const CardStyled = styled.div`
   }
 
   .btn-view-project {
-    border: 1px solid #1e1b4b;
+    border-top: 1px solid #1e1b4b;
     padding: 21px;
     text-align: center;
     display: block;
@@ -71,7 +75,6 @@ export const TechStackStyled = styled.ul`
   font-family: "JetBrains Mono", monospace;
   display: flex;
   gap: 8px;
-  padding-inline-start: 0;
   padding: 0px 18px;
 
   li {

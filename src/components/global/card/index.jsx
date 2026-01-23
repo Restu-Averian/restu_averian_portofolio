@@ -9,11 +9,12 @@ import CardStyled from "../../../styled/global/Card.styled";
  * @param {import("../../../context/CardCtx").TCardProps & {type?: "side" | "regular"}} props
  * @returns
  */
-const Card_ = ({ type, ...props }) => {
+const Card_ = ({ type, level = 3, ...props }) => {
   return (
     <CardCtxProvider {...props}>
       <CardStyled
         $type={type}
+        $level={level}
         onClick={(e) => {
           if (typeof props?.onClickCard === "function") {
             props?.onClickCard(e);

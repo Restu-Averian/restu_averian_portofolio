@@ -15,7 +15,7 @@ export const SBGCol = ({ ...props }) => {
 
 /**
  *
- * @param {import('styled-bootstrap-grid').ColProps & {
+ * @param {import('styled-bootstrap-grid').RowProps & {
  * gap?:import("react").CSSProperties['gap']
  * } } props
  * @returns

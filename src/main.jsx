@@ -7,6 +7,9 @@ const gridTheme = {
   row: {
     padding: 0,
   },
+  col: {
+    padding: 0,
+  },
   container: {
     padding: 0,
     maxWidth: {

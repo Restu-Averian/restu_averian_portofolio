@@ -5,7 +5,7 @@ import { DUMMY_PROJECTS } from "./constants";
 function App() {
   return (
     <SBGContainer fluid>
-      <SBGRow>
+      <SBGRow gap={24} justifyContent="center">
         <SBGCol col lg={5}>
           {DUMMY_PROJECTS?.filter((item) => item?.level === 1)?.map((item) => {
             return (

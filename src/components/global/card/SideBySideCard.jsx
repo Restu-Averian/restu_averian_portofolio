@@ -39,7 +39,7 @@ const SideBySideCard_ = () => {
         <DescriptionStyled>{projectConfig?.description}</DescriptionStyled>
       </SBGCol>
       <SBGCol col lg={6}>
-        <figure className="bg-img">
+        <figure className="bg-img side-by-side">
           <img
             className="img-thumbnail-project-item"
             src={thumbnailConfig?.src}
