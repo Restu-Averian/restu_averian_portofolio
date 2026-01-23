@@ -1,26 +1,55 @@
-import { Suspense, lazy } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
-import Loading from "./components/Loading";
-
-const Home = lazy(() => import("./pages/Home"));
-const Certificates = lazy(() => import("./pages/Certificates"));
-const Projects = lazy(() => import("./pages/Projects"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const Tes = lazy(() => import("./pages/Tes"));
+import Card from "./components/global/card";
+import { SBGCol, SBGContainer, SBGRow } from "./components/global/Layout";
+import { DUMMY_PROJECTS } from "./constants";
 
 function App() {
-  const location = useLocation();
-
   return (
-    <Suspense fallback={<Loading />}>
-      <Routes location={location}>
-        <Route path="/" Component={Home} />
-        <Route path="/certificates" Component={Certificates} />
-        <Route path="/projects" Component={Projects} />
-        <Route path="/tes" Component={Tes} />
-        <Route path="*" Component={NotFound} />
-      </Routes>
-    </Suspense>
+    <SBGContainer fluid>
+      <SBGRow>
+        <SBGCol col lg={5}>
+          {DUMMY_PROJECTS?.filter((item) => item?.level === 1)?.map((item) => {
+            return (
+              <Card
+                thumbnailConfig={{
+                  src: item?.thumbnail,
+                  alt: item?.title,
+                }}
+                projectConfig={{
+                  title: item?.title,
+                  description: item?.description,
+                }}
+                level={item?.level}
+              />
+            );
+          })}
+        </SBGCol>
+
+        <SBGCol col lg={6}>
+          <SBGRow gap={24}>
+            {DUMMY_PROJECTS?.filter((item) => item?.level !== 1)?.map(
+              (item) => {
+                return (
+                  <SBGCol col lg={12}>
+                    <Card
+                      thumbnailConfig={{
+                        src: item?.thumbnail,
+                        alt: item?.title,
+                      }}
+                      projectConfig={{
+                        title: item?.title,
+                        description: item?.description,
+                      }}
+                      type="side"
+                      level={item?.level}
+                    />
+                  </SBGCol>
+                );
+              },
+            )}
+          </SBGRow>
+        </SBGCol>
+      </SBGRow>
+    </SBGContainer>
   );
 }
 

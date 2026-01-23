@@ -1,19 +1,28 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import { ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter } from "react-router-dom";
-import Layout from "./components/Layout.jsx";
-import "./style/App.css";
+import { GridThemeProvider } from "styled-bootstrap-grid";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ChakraProvider>
-      <BrowserRouter>
-        <Layout>
-          <App />
-        </Layout>
-      </BrowserRouter>
-    </ChakraProvider>
-  </React.StrictMode>
+const gridTheme = {
+  row: {
+    padding: 0,
+  },
+  container: {
+    padding: 0,
+    maxWidth: {
+      xl: 1200,
+      lg: 960,
+      md: 720,
+      sm: 540,
+      xs: 540,
+    },
+  },
+};
+
+createRoot(document.getElementById("root")).render(
+  <StrictMode>
+    <GridThemeProvider gridTheme={gridTheme}>
+      <App />
+    </GridThemeProvider>
+  </StrictMode>,
 );
