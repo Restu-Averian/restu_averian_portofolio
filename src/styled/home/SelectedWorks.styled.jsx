@@ -8,7 +8,7 @@ const SelectedWorksStyled = styled.section`
   }
 
   .description-section {
-    font-size: 14px;
+    font-size: 16px;
     margin: 0;
     border-bottom: 1.5px solid rgba(30, 27, 75, 0.6);
     padding-bottom: 24px;

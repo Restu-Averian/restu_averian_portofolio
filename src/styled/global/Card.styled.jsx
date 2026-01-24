@@ -91,6 +91,7 @@ export const DescriptionStyled = styled.p`
   overflow: hidden;
   word-break: break-word;
   padding: 0 18px;
+  margin-top: 24px;
 `;
 
 export default CardStyled;

@@ -1,15 +1,10 @@
 import { memo, useContext } from "react";
-import { Flex, SBGCol, SBGRow } from "../Layout";
-import {
-  DescriptionStyled,
-  TechStackStyled,
-  TitleProject,
-} from "../../../styled/global/Card.styled";
-import Button from "../Button";
+import { Flex } from "../Layout";
 import CardCtx from "../../../context/CardCtx";
+import CardInfo from "./CardInfo";
 
 const SideBySideCard_ = () => {
-  const { projectConfig, thumbnailConfig, level } = useContext(CardCtx);
+  const { thumbnailConfig } = useContext(CardCtx);
   return (
     <Flex justifyContent="space-between" alignItems="flex-start">
       <Flex
@@ -19,32 +14,7 @@ const SideBySideCard_ = () => {
           width: "calc(100% - 360px)",
         }}
       >
-        <Flex
-          alignItems="center"
-          style={{
-            marginTop: 24,
-            padding: "0px 18px",
-          }}
-        >
-          <TitleProject $level={level}>{projectConfig?.title}</TitleProject>
-
-          <Button
-            variant="text"
-            renderAs="button"
-            icon="external-link"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-            size="small"
-          />
-        </Flex>
-
-        <TechStackStyled aria-label="Technologies used">
-          <li>React</li>
-          <li>Ant Design</li>
-        </TechStackStyled>
-
-        <DescriptionStyled>{projectConfig?.description}</DescriptionStyled>
+        <CardInfo />
       </Flex>
 
       <figure className="bg-img side-by-side">

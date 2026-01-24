@@ -10,6 +10,7 @@ const ButtonStyled = styled.div`
   font-family: "Inter", sans-serif;
   border-radius: 50px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   button {
     all: unset;

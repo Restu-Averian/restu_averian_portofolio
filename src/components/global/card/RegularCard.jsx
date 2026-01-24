@@ -1,15 +1,9 @@
 import { memo, useContext } from "react";
-import CardStyled, {
-  DescriptionStyled,
-  TechStackStyled,
-  TitleProject,
-} from "../../../styled/global/Card.styled";
-import { Flex } from "../Layout";
-import Button from "../Button";
 import CardCtx from "../../../context/CardCtx";
+import CardInfo from "./CardInfo";
 
 const RegularCard_ = () => {
-  const { thumbnailConfig, level, projectConfig } = useContext(CardCtx);
+  const { thumbnailConfig } = useContext(CardCtx);
 
   return (
     <>
@@ -22,32 +16,7 @@ const RegularCard_ = () => {
           />
         </figure>
 
-        <Flex
-          alignItems="center"
-          style={{
-            marginTop: 24,
-            padding: "0px 18px",
-          }}
-        >
-          <TitleProject $level={level}>{projectConfig?.title}</TitleProject>
-
-          <Button
-            variant="text"
-            renderAs="button"
-            icon="external-link"
-            onClick={(e) => {
-              e.stopPropagation();
-            }}
-            size="small"
-          />
-        </Flex>
-
-        <TechStackStyled aria-label="Technologies used">
-          <li>React</li>
-          <li>Ant Design</li>
-        </TechStackStyled>
-
-        <DescriptionStyled>{projectConfig?.description}</DescriptionStyled>
+        <CardInfo />
       </div>
 
       {/* <Button
