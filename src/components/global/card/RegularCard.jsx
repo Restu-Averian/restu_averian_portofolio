@@ -38,6 +38,7 @@ const RegularCard_ = () => {
             onClick={(e) => {
               e.stopPropagation();
             }}
+            size="small"
           />
         </Flex>
 

@@ -35,6 +35,7 @@ const SideBySideCard_ = () => {
             onClick={(e) => {
               e.stopPropagation();
             }}
+            size="small"
           />
         </Flex>
 

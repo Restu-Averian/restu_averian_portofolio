@@ -19,6 +19,8 @@ const SelectedWorks_ = () => {
           margin: "48px auto 0",
         }}
         icon="arrow-right"
+        renderAs="button"
+        size="small"
       >
         VIEW ALL PROJECTS
       </Button>
