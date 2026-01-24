@@ -1,11 +1,11 @@
-import { memo } from "react";
+import { forwardRef, memo } from "react";
 import SelectedWorksStyled from "../../styled/home/SelectedWorks.styled";
 import ListProjects from "../../components/home/selected-works/ListProjects";
 import Button from "../../components/global/Button";
 
-const SelectedWorks_ = () => {
+const SelectedWorks_ = (_, ref) => {
   return (
-    <SelectedWorksStyled aria-labelledby="selected-works">
+    <SelectedWorksStyled aria-labelledby="selected-works" ref={ref}>
       <h2 className="title-section">Selected Works</h2>
       <p className="description-section">
         Lorem ipsum dolor sir amet something word should put in here
@@ -28,5 +28,5 @@ const SelectedWorks_ = () => {
   );
 };
 
-const SelectedWorks = memo(SelectedWorks_);
+const SelectedWorks = memo(forwardRef(SelectedWorks_));
 export default SelectedWorks;

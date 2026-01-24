@@ -1,7 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
 import { GridThemeProvider } from "styled-bootstrap-grid";
+import ReactLenis from "lenis/react";
+import App from "./App.jsx";
 import GlobalStyled from "./styled/global/Global.styled.jsx";
 
 const gridTheme = {
@@ -23,9 +24,16 @@ const gridTheme = {
   },
 };
 
+const lenisOptions = {
+  lerp: 0.3,
+  smoothWheel: true,
+  wheelMultiplier: 1.5,
+  touchMultiplier: 2,
+};
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GridThemeProvider gridTheme={gridTheme}>
+      <ReactLenis root options={lenisOptions} />
       <GlobalStyled />
       <App />
     </GridThemeProvider>

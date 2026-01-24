@@ -2,7 +2,7 @@ import { memo } from "react";
 import Button from "../../components/global/Button";
 import { Flex } from "../../components/global/Layout";
 
-const Hero_ = () => {
+const Hero_ = ({ selectedWorksRef }) => {
   return (
     <Flex flexDirection="column" justifyContent="center" gap={42}>
       <Flex flexDirection="column" justifyContent="center" gap={8}>
@@ -71,6 +71,15 @@ const Hero_ = () => {
           fontWeight: "normal",
         }}
         icon="arrow-down"
+        onClick={() => {
+          const element = selectedWorksRef?.current;
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        }}
       >
         EXPLORE WORK
       </Button>
