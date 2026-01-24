@@ -1,6 +1,7 @@
 import { memo } from "react";
 import SelectedWorksStyled from "../../styled/home/SelectedWorks.styled";
 import ListProjects from "../../components/home/selected-works/ListProjects";
+import Button from "../../components/global/Button";
 
 const SelectedWorks_ = () => {
   return (
@@ -11,6 +12,16 @@ const SelectedWorks_ = () => {
       </p>
 
       <ListProjects />
+
+      <Button
+        variant="outline"
+        style={{
+          margin: "48px auto 0",
+        }}
+        icon="arrow-right"
+      >
+        VIEW ALL PROJECTS
+      </Button>
     </SelectedWorksStyled>
   );
 };

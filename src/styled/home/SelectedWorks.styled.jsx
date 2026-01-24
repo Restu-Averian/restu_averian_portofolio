@@ -12,7 +12,7 @@ const SelectedWorksStyled = styled.section`
     margin: 0;
     border-bottom: 1.5px solid rgba(30, 27, 75, 0.6);
     padding-bottom: 24px;
-    margin-bottom: 64px;
+    margin-bottom: 52px;
   }
 `;
 

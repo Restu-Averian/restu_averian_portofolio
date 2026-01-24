@@ -5,7 +5,7 @@ const CardStyled = styled.div`
   background-color: #ffffff;
   cursor: pointer;
   transition: all 150ms;
-  border: 1px solid #1e1b4b;
+  border: 1px solid rgba(var(--primary-color-code));
   height: 100%;
 
   ${({ $type }) => {
@@ -44,7 +44,7 @@ const CardStyled = styled.div`
   }
 
   .btn-view-project {
-    border-top: 1px solid #1e1b4b;
+    border-top: 1px solid rgba(var(--primary-color-code));
     padding: 21px;
     text-align: center;
     display: block;
@@ -53,7 +53,7 @@ const CardStyled = styled.div`
   &:hover {
     transform: translate(-2px, -2px);
     box-sizing: border-box;
-    box-shadow: 8px 8px 0px 0px #1e1b4b;
+    box-shadow: var(--neo-brutalism-hover-solid);
   }
 `;
 

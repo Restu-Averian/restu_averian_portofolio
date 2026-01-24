@@ -29,6 +29,7 @@ const SideBySideCard_ = () => {
           <TitleProject $level={level}>{projectConfig?.title}</TitleProject>
 
           <Button
+            variant="text"
             renderAs="button"
             icon="external-link"
             onClick={(e) => {

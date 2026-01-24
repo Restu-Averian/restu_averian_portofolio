@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import { GridThemeProvider } from "styled-bootstrap-grid";
+import GlobalStyled from "./styled/global/Global.styled.jsx";
 
 const gridTheme = {
   row: {
@@ -25,6 +26,7 @@ const gridTheme = {
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <GridThemeProvider gridTheme={gridTheme}>
+      <GlobalStyled />
       <App />
     </GridThemeProvider>
   </StrictMode>,
