@@ -48,7 +48,7 @@ const RegularCard_ = () => {
         <DescriptionStyled>{projectConfig?.description}</DescriptionStyled>
       </div>
 
-      <Button
+      {/* <Button
         className="btn-view-project"
         aria-label="View case study for SaaS Dashboard"
         style={{
@@ -56,7 +56,7 @@ const RegularCard_ = () => {
         }}
       >
         Try It
-      </Button>
+      </Button> */}
     </>
   );
 };

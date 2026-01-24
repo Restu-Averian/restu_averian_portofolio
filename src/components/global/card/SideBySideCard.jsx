@@ -11,8 +11,14 @@ import CardCtx from "../../../context/CardCtx";
 const SideBySideCard_ = () => {
   const { projectConfig, thumbnailConfig, level } = useContext(CardCtx);
   return (
-    <SBGRow>
-      <SBGCol col lg={5}>
+    <Flex justifyContent="space-between" alignItems="flex-start">
+      <Flex
+        gap={4}
+        flexDirection="column"
+        style={{
+          width: "calc(100% - 360px)",
+        }}
+      >
         <Flex
           alignItems="center"
           style={{
@@ -37,17 +43,16 @@ const SideBySideCard_ = () => {
         </TechStackStyled>
 
         <DescriptionStyled>{projectConfig?.description}</DescriptionStyled>
-      </SBGCol>
-      <SBGCol col lg={6}>
-        <figure className="bg-img side-by-side">
-          <img
-            className="img-thumbnail-project-item"
-            src={thumbnailConfig?.src}
-            alt={thumbnailConfig?.alt}
-          />
-        </figure>
-      </SBGCol>
-    </SBGRow>
+      </Flex>
+
+      <figure className="bg-img side-by-side">
+        <img
+          className="img-thumbnail-project-item"
+          src={thumbnailConfig?.src}
+          alt={thumbnailConfig?.alt}
+        />
+      </figure>
+    </Flex>
   );
 };
 

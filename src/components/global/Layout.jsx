@@ -3,6 +3,7 @@ import {
   Container as ContainerGrid,
 } from "styled-bootstrap-grid";
 import { FlexStyled, RowStyled } from "../../styled/global/Layout.styled";
+import { useMemo } from "react";
 
 /**
  *
@@ -38,23 +39,33 @@ export const SBGContainer = ({ ...props }) => {
  * @param {object} props
  * @param {import("react").CSSProperties['justifyContent']} props.justifyContent
  * @param {import("react").CSSProperties['alignItems']} props.alignItems
+ * @param {import("react").CSSProperties['flexDirection']} props.flexDirection
  * @param {import("react").CSSProperties['gap']} [props.gap]
+ * @param {string} [props.className]
  * @param {import("react").CSSProperties} [props.style]
  * @returns
  */
 export const Flex = ({
   justifyContent,
   alignItems,
+  flexDirection,
   gap = 8,
   style,
+  className,
   children,
 }) => {
+  const fmtGap = useMemo(
+    () => (typeof gap === "number" ? `${gap}px` : gap),
+    [gap],
+  );
   return (
     <FlexStyled
       $justifyContent={justifyContent}
       $alignItems={alignItems}
-      $gap={gap}
+      $flexDirection={flexDirection}
+      $gap={fmtGap}
       style={style}
+      className={className}
     >
       {children}
     </FlexStyled>

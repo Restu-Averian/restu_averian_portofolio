@@ -8,7 +8,7 @@ const gridTheme = {
     padding: 0,
   },
   col: {
-    padding: 0,
+    padding: 12,
   },
   container: {
     padding: 0,

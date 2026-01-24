@@ -11,7 +11,7 @@ import CardStyled from "../../../styled/global/Card.styled";
  */
 const Card_ = ({ type, level = 3, ...props }) => {
   return (
-    <CardCtxProvider {...props}>
+    <CardCtxProvider level={level} {...props}>
       <CardStyled
         $type={type}
         $level={level}

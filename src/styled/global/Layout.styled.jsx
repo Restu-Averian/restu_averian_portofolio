@@ -5,9 +5,10 @@ export const FlexStyled = styled.div`
   display: flex;
   ${(props) => {
     return css`
-      justify-content: ${props.justifyContent};
-      align-items: ${props.alignItems};
-      gap: ${props.gap};
+      justify-content: ${props.$justifyContent};
+      align-items: ${props.$alignItems};
+      flex-direction: ${props.$flexDirection};
+      gap: ${props.$gap};
     `;
   }}
 `;

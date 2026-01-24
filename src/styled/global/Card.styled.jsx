@@ -6,7 +6,7 @@ const CardStyled = styled.div`
   cursor: pointer;
   transition: all 150ms;
   border: 1px solid #1e1b4b;
-  height: ${({ $level }) => ($level === 2 ? "380px" : "100%")};
+  height: 100%;
 
   ${({ $type }) => {
     if ($type !== "side") {
@@ -23,13 +23,14 @@ const CardStyled = styled.div`
     margin: 0;
 
     &.bg-img {
-      height: 360px;
+      height: 420px;
       overflow: hidden;
       position: relative;
       padding: 18px;
 
       &.side-by-side {
-        height: ${({ $level }) => ($level === 2 ? "340px" : "240px")};
+        width: 260px;
+        height: ${({ $level }) => ($level === 2 ? "320px" : "240px")};
       }
 
       .img-thumbnail-project-item {
@@ -60,6 +61,7 @@ export const TitleProject = styled.h3`
   font-family: "Playfair Display", serif;
   margin: 0;
   font-size: ${({ $level }) => {
+    console.log("$;e", $level);
     switch ($level) {
       case 1:
         return "28px";
