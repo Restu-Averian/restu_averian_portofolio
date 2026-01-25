@@ -6,15 +6,19 @@ import CardStyled from "../../../styled/global/Card.styled";
 
 /**
  *
- * @param {import("../../../context/CardCtx").TCardProps & {type?: "side" | "regular"}} props
+ * @param {import("../../../context/CardCtx").TCardProps & {
+ * type?: "side" | "regular",
+ * style?:import("react").CSSProperties
+ * }} props
  * @returns
  */
-const Card_ = ({ type, level = 3, ...props }) => {
+const Card_ = ({ type, level = 3, style, ...props }) => {
   return (
     <CardCtxProvider level={level} {...props}>
       <CardStyled
         $type={type}
         $level={level}
+        $style={style}
         onClick={(e) => {
           if (typeof props?.onClickCard === "function") {
             props?.onClickCard(e);

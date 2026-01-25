@@ -23,10 +23,10 @@ const CardStyled = styled.div`
     margin: 0;
 
     &.bg-img {
-      height: 420px;
+      height: ${({ $level }) => ($level === 3 ? "180px" : "420px")};
       overflow: hidden;
       position: relative;
-      padding: 18px;
+      padding: 0px 18px;
 
       &.side-by-side {
         width: 260px;
@@ -43,6 +43,10 @@ const CardStyled = styled.div`
     }
   }
 
+  .content {
+    padding: 18px 0px;
+  }
+
   .btn-view-project {
     border-top: 1px solid rgba(var(--primary-color-code));
     padding: 21px;
@@ -55,13 +59,20 @@ const CardStyled = styled.div`
     box-sizing: border-box;
     box-shadow: var(--neo-brutalism-hover-solid);
   }
+
+  ${({ $style }) => {
+    if ($style) {
+      return $style;
+    }
+
+    return null;
+  }}
 `;
 
 export const TitleProject = styled.h3`
   font-family: "Playfair Display", serif;
   margin: 0;
   font-size: ${({ $level }) => {
-    console.log("$;e", $level);
     switch ($level) {
       case 1:
         return "28px";

@@ -1,11 +1,11 @@
 import { memo, useMemo } from "react";
 import { Flex, SBGContainer } from "../../global/Layout";
-import { DUMMY_PROJECTS } from "../../../constants";
 import Card from "../../global/card";
+import { DUMMY_PROJECTS_SELECTED_WORKS } from "../../../constants";
 
 const ListProjects_ = () => {
   const highlightProjects = useMemo(
-    () => DUMMY_PROJECTS?.find((item) => item?.level === 1),
+    () => DUMMY_PROJECTS_SELECTED_WORKS?.find((item) => item?.level === 1),
     [],
   );
 
@@ -36,24 +36,24 @@ const ListProjects_ = () => {
           }}
         >
           <Flex gap={24} alignItems="center" flexDirection="column">
-            {DUMMY_PROJECTS?.filter((item) => item?.level !== 1)?.map(
-              (item) => {
-                return (
-                  <Card
-                    thumbnailConfig={{
-                      src: item?.thumbnail,
-                      alt: item?.title,
-                    }}
-                    projectConfig={{
-                      title: item?.title,
-                      description: item?.description,
-                    }}
-                    type="side"
-                    level={item?.level}
-                  />
-                );
-              },
-            )}
+            {DUMMY_PROJECTS_SELECTED_WORKS?.filter(
+              (item) => item?.level !== 1,
+            )?.map((item) => {
+              return (
+                <Card
+                  thumbnailConfig={{
+                    src: item?.thumbnail,
+                    alt: item?.title,
+                  }}
+                  projectConfig={{
+                    title: item?.title,
+                    description: item?.description,
+                  }}
+                  type="side"
+                  level={item?.level}
+                />
+              );
+            })}
           </Flex>
         </div>
       </Flex>
