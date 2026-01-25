@@ -65,7 +65,7 @@ const Hero_ = ({ selectedWorksRef }) => {
 
       <Button
         variant="outline"
-        size="medium"
+        size="large"
         style={{
           margin: "auto",
           fontWeight: "normal",

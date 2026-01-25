@@ -7,7 +7,7 @@ const FilterTechStacks = styled.ul`
   li {
     list-style: none;
     border: 1px solid rgba(var(--primary-color-code));
-    border-radius: 12px;
+    border-radius: 50px;
     cursor: pointer;
     padding: 8px 20px;
 

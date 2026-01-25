@@ -41,6 +41,7 @@ export const SBGContainer = ({ ...props }) => {
  * @param {import("react").CSSProperties['alignItems']} props.alignItems
  * @param {import("react").CSSProperties['flexDirection']} props.flexDirection
  * @param {import("react").CSSProperties['gap']} [props.gap]
+ * @param {import("react").CSSProperties['flex']} [props.flex]
  * @param {string} [props.className]
  * @param {import("react").CSSProperties} [props.style]
  * @returns
@@ -50,6 +51,7 @@ export const Flex = ({
   alignItems,
   flexDirection,
   gap = 8,
+  flex,
   style,
   className,
   children,
@@ -65,6 +67,7 @@ export const Flex = ({
       $flexDirection={flexDirection}
       $gap={fmtGap}
       style={style}
+      $flex={flex}
       className={className}
     >
       {children}

@@ -9,6 +9,7 @@ export const FlexStyled = styled.div`
       align-items: ${props.$alignItems};
       flex-direction: ${props.$flexDirection};
       gap: ${props.$gap};
+      flex: ${props?.$flex};
       flex-wrap: wrap;
     `;
   }}

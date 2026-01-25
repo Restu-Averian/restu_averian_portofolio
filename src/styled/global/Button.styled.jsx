@@ -4,11 +4,9 @@ const ButtonStyled = styled.div`
   display: flex;
   gap: 12px;
   align-items: center;
-  padding: 20px 24px;
   text-align: center;
   width: max-content;
   font-family: "Inter", sans-serif;
-  border-radius: 50px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
@@ -37,15 +35,18 @@ const ButtonStyled = styled.div`
       switch ($size) {
         case "small":
           return css`
-            font-size: 12px;
+            font-size: 14px;
+            padding: 10px 20px;
           `;
         case "medium":
           return css`
             font-size: 18px;
+            padding: 14px 24px;
           `;
         case "large":
           return css`
-            font-size: 24px;
+            font-size: 22px;
+            padding: 18px 28px;
           `;
         default:
           return null;
@@ -84,6 +85,21 @@ const ButtonStyled = styled.div`
         `;
       case "text":
         return css``;
+      default:
+        return null;
+    }
+  }}
+
+  ${({ $shape }) => {
+    switch ($shape) {
+      case "round":
+        return css`
+          border-radius: 12px;
+        `;
+      case "circle":
+        return css`
+          border-radius: 50px;
+        `;
       default:
         return null;
     }

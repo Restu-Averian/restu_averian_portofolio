@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/home";
 import NotFound from "./pages/ErrorPage";
-import AllProjects from "./pages/all-projects";
+import ProjectDetail from "./pages/ProjectDetail";
+import AllProjects from "./pages/AllProjects";
 
 const router = createBrowserRouter([
   {
@@ -13,8 +14,17 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "all-projects",
-        element: <AllProjects />,
+        path: "project",
+        children: [
+          {
+            index: true,
+            element: <AllProjects />,
+          },
+          {
+            path: ":id",
+            element: <ProjectDetail />,
+          },
+        ],
       },
     ],
   },

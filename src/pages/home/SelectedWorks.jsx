@@ -13,6 +13,9 @@ const SelectedWorks_ = (_, ref) => {
       <TitleSection
         title="Selected Works"
         description="Lorem ipsum dolor sir amet something word should put in here"
+        style={{
+          marginBottom: 52,
+        }}
       />
 
       <ListProjects />
@@ -24,9 +27,9 @@ const SelectedWorks_ = (_, ref) => {
         }}
         icon="arrow-right"
         renderAs="button"
-        size="small"
+        size="medium"
         onClick={() => {
-          navigate("/all-projects");
+          navigate("/project");
         }}
       >
         VIEW ALL PROJECTS
