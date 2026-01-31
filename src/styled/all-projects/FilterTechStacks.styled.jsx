@@ -3,6 +3,7 @@ import styled from "styled-components";
 const FilterTechStacks = styled.ul`
   display: flex;
   gap: 8px;
+  margin-bottom: 24px;
 
   li {
     list-style: none;

@@ -1,10 +1,5 @@
 import { memo } from "react";
 
-/**
- * @typedef TIcons
- * @property {"external-link" | "arrow-right" | "arrow-down"} type
- */
-
 const ExternalLink = () => {
   return (
     <svg
@@ -61,6 +56,47 @@ const ArrowDown = () => {
   );
 };
 
+const Home = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M19.5 10a.5.5 0 0 0-1 0zm-14 0a.5.5 0 0 0-1 0zm15.146 2.354a.5.5 0 0 0 .708-.708zM12 3l.354-.354a.5.5 0 0 0-.708 0zm-9.354 8.646a.5.5 0 0 0 .708.708zM7 21.5h10v-1H7zM19.5 19v-9h-1v9zm-14 0v-9h-1v9zm15.854-7.354l-9-9l-.708.708l9 9zm-9.708-9l-9 9l.708.708l9-9zM17 21.5a2.5 2.5 0 0 0 2.5-2.5h-1a1.5 1.5 0 0 1-1.5 1.5zm-10-1A1.5 1.5 0 0 1 5.5 19h-1A2.5 2.5 0 0 0 7 21.5z"
+      />
+    </svg>
+  );
+};
+
+const Folder = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M5 5h4l3 3h6a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3m0 1a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-6.41l-3-3z"
+      />
+    </svg>
+  );
+};
+
+/**
+ * @typedef TIcons
+ * @property {"external-link"
+ * | "arrow-right"
+ * | "arrow-down"
+ * | "home"
+ * | "folder"} type
+ */
+
 /**
  *
  * @param {TIcons} props
@@ -71,6 +107,8 @@ const Icons_ = ({ type, ...props }) => {
     "external-link": <ExternalLink {...props} />,
     "arrow-right": <ArrowRight {...props} />,
     "arrow-down": <ArrowDown {...props} />,
+    home: <Home />,
+    folder: <Folder />,
   };
 
   if (typeof icon[type] !== "undefined") {

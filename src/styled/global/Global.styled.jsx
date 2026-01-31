@@ -20,8 +20,25 @@ const GlobalStyled = createGlobalStyle`
         padding-inline: 0;
     }
 
-    button{
+    
+
+    button {
         -webkit-tap-highlight-color: transparent;
+        all: unset;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-sizing: border-box;
+        font-family: inherit;
+        color: inherit;
+        outline: revert;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
     }
 `;
 

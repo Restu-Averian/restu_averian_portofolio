@@ -20,7 +20,7 @@ const AllProjects_ = () => {
           title="All Projects"
           description="Lorem ipsum dolor sir amet something word should put in here"
           style={{
-            marginBottom: 52,
+            marginBottom: 36,
           }}
         />
 

@@ -10,24 +10,6 @@ const ButtonStyled = styled.div`
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 
-  button {
-    all: unset;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-sizing: border-box;
-    font-family: inherit;
-    color: inherit;
-    outline: revert;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-  }
-
   ${({ $size }) => {
     const sizeButtons = ["small", "medium", "large"];
 
