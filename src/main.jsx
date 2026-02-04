@@ -16,11 +16,11 @@ const gridTheme = {
   container: {
     padding: 0,
     maxWidth: {
-      xl: 1200,
-      lg: 960,
-      md: 720,
-      sm: 540,
-      xs: 540,
+      xl: 1440,
+      lg: 1200,
+      md: 960,
+      sm: 600,
+      xs: "100%",
     },
   },
 };

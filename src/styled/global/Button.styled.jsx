@@ -1,91 +1,44 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-const ButtonStyled = styled.div`
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  text-align: center;
-  width: max-content;
-  font-family: "Inter", sans-serif;
+const ButtonStyled = styled.button`
+  position: relative;
+  background: transparent;
+  color: #0f2c36;
+  font-family: "Quicksand", sans-serif;
+  font-size: 24px;
+  padding: 12px 24px;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  border: 3px solid #0f2c36;
+  border-radius: 2px 4px 2px 3px;
+  transform: rotate(3.14deg);
+  transition: all 0.2s ease;
+  z-index: 1;
+  font-weight: bold;
 
-  ${({ $size }) => {
-    const sizeButtons = ["small", "medium", "large"];
+  ${({ $style }) => $style}
 
-    if (sizeButtons?.includes($size)) {
-      switch ($size) {
-        case "small":
-          return css`
-            font-size: 14px;
-            padding: 10px 20px;
-          `;
-        case "medium":
-          return css`
-            font-size: 18px;
-            padding: 14px 24px;
-          `;
-        case "large":
-          return css`
-            font-size: 22px;
-            padding: 18px 28px;
-          `;
-        default:
-          return null;
-      }
-    } else if (typeof $size === "number") {
-      return css`
-        font-size: ${$size}px;
-      `;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid rgba(7, 54, 66, 0.5);
+    border-radius: 3px 2px 4px 2px;
+    transform: rotate(5deg) scale(1.02);
+    z-index: -1;
+    transition: transform 0.2s ease;
+    transition-delay: 0.1s;
+  }
+
+  &:hover {
+    transform: rotate(0deg) scale(1.05);
+
+    &::before {
+      transform: rotate(0) scale(1.05);
     }
-    return null;
-  }}
-
-  ${({ $variant }) => {
-    switch ($variant) {
-      case "primary":
-        return css`
-          background-color: rgba(var(--primary-color-code));
-          color: #ffff;
-        `;
-      case "outline":
-        return css`
-          border: 2px solid rgba(var(--primary-color-code));
-          transition: all 150ms;
-          color: rgba(var(--primary-color-code));
-          font-weight: 600;
-
-          &:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: var(--btn-outline-hover);
-          }
-
-          &:active {
-            box-shadow: none;
-            transform: unset;
-          }
-        `;
-      case "text":
-        return css``;
-      default:
-        return null;
-    }
-  }}
-
-  ${({ $shape }) => {
-    switch ($shape) {
-      case "round":
-        return css`
-          border-radius: 12px;
-        `;
-      case "circle":
-        return css`
-          border-radius: 50px;
-        `;
-      default:
-        return null;
-    }
-  }}
+  }
 `;
 
 export default ButtonStyled;

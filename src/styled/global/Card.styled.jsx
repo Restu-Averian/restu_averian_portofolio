@@ -1,72 +1,75 @@
 import styled, { css } from "styled-components";
 
 const CardStyled = styled.div`
-  border-radius: 12px;
-  background-color: #ffffff;
+  width: 480px;
+  background-color: #fff8e1;
+  border: 3px solid #3e2723;
+  border-radius: 4px 12px 8px 18px;
+  ${({ $rotate, $translateX = 0, $translateY = 0 }) => {
+    const rotate = $rotate;
+    const translateX = $translateX;
+    const translateY = $translateY;
+
+    return css`
+      transform: rotate(${rotate}deg)
+        translate(${translateX}px, ${translateY}px);
+
+      &:hover {
+        transform: rotate(0deg) scale(1.05)
+          translate(${translateX}px, ${translateY}px);
+      }
+    `;
+  }}
+
+  transition: all 300ms;
   cursor: pointer;
-  transition: all 150ms;
-  border: 1px solid rgba(var(--primary-color-code));
-  height: 100%;
 
-  ${({ $type }) => {
-    if ($type !== "side") {
-      return css`
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      `;
-    }
-    return css``;
-  }}
-
-  figure {
-    margin: 0;
-
-    &.bg-img {
-      height: ${({ $level }) => ($level === 3 ? "180px" : "420px")};
-      overflow: hidden;
-      position: relative;
-      padding: 0px 18px;
-
-      &.side-by-side {
-        width: 260px;
-        height: ${({ $level }) => ($level === 2 ? "320px" : "240px")};
-      }
-
-      .img-thumbnail-project-item {
-        width: 100%;
-        height: 100%;
-        transition: all 150ms;
-        object-fit: cover;
-        border-radius: 8px;
-      }
-    }
-  }
-
-  .content {
-    padding: 18px 0px;
-  }
-
-  .btn-view-project {
-    border-top: 1px solid rgba(var(--primary-color-code));
-    padding: 21px;
+  figure.thumbnail {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
     text-align: center;
-    display: block;
-  }
 
-  &:hover {
-    transform: translate(-2px, -2px);
-    box-sizing: border-box;
-    box-shadow: var(--neo-brutalism-hover-solid);
-  }
-
-  ${({ $style }) => {
-    if ($style) {
-      return $style;
+    img {
+      object-fit: cover;
+      width: 100%;
+      border-radius: 4px 12px 6px 14px;
     }
+  }
 
-    return null;
-  }}
+  .info-project {
+    padding: 12px 63px 12px 18px;
+
+    h3.title-project {
+      font-size: 28px;
+      font-family: "Patrick Hand", sans-serif;
+      font-weight: normal;
+    }
+    p.subtitle {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      font-family: "Patrick Hand", sans-serif;
+      font-weight: normal;
+      line-height: 22px;
+    }
+  }
+
+  .wrapper-btn-demo {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+
+    .btn-demo {
+      button {
+        font-size: 16px;
+        margin: 12px 24px 38px;
+        margin-left: 0;
+      }
+    }
+  }
 `;
 
 export const TitleProject = styled.h3`

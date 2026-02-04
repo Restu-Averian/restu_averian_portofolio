@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import baseTexture from "../../assets/base-texture.webp";
 
 const GlobalStyled = createGlobalStyle`
     :root{
@@ -8,7 +9,11 @@ const GlobalStyled = createGlobalStyle`
     }
 
     body{
-        background-color: #FAF5FF;
+        background-color: #FDF6E3;
+        -webkit-font-smoothing: antialiased; 
+        -moz-osx-font-smoothing: grayscale;
+        background-image: url(${baseTexture});
+        background-repeat: repeat;
     }
     
     body,p,h1,h2,h3,h4,h5,h6,ul,ol {
@@ -18,6 +23,10 @@ const GlobalStyled = createGlobalStyle`
     ul,ol{
         margin-block:0;
         padding-inline: 0;
+    }
+
+    figure{
+        margin: unset;
     }
 
     

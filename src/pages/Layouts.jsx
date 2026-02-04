@@ -1,11 +1,10 @@
 import { memo } from "react";
-import { Link, Outlet } from "react-router-dom";
-import Navbar from "../components/global/Navbar";
+import { Outlet } from "react-router-dom";
+import Footer from "../components/home/Footer";
 
 const Layouts_ = () => {
   return (
     <>
-      <Navbar />
       <main
         style={{
           padding: "1rem",
@@ -13,6 +12,8 @@ const Layouts_ = () => {
       >
         <Outlet />
       </main>
+
+      <Footer />
     </>
   );
 };

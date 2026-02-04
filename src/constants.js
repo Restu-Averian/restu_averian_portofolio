@@ -1,3 +1,5 @@
+import githubIcon from "./assets/home/icon-github.webp";
+
 export const DUMMY_PROJECTS_SELECTED_WORKS = [
   {
     id: 1,
@@ -49,3 +51,24 @@ export const DUMMY_PROJECTS_ALL_PROJECTS = Array?.from({
     level: 3,
   };
 });
+
+export const LIST_SOCIAL_CONNECTIONS = [
+  {
+    text: "Restu-Averin",
+    link: "https://github.com/Restu-Averian",
+    rotate: -6,
+    icon: githubIcon,
+  },
+  {
+    text: "Restu-Averin",
+    link: "https://github.com/Restu-Averian",
+    rotate: 6,
+    icon: githubIcon,
+  },
+  {
+    text: "Restu-Averin",
+    link: "https://github.com/Restu-Averian",
+    rotate: 0,
+    icon: githubIcon,
+  },
+];
