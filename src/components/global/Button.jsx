@@ -4,21 +4,20 @@ import ButtonStyled from "../../styled/global/Button.styled";
 /**
  *
  * @param {import("react").ButtonHTMLAttributes<HTMLButtonElement> & {
- * rotate?:number;
  * className?:string;
+ * styleContainer?:import("react").CSSProperties;
  * }} props
  * @returns
  */
-const Button_ = ({ children, style, rotate, className, ...props }) => {
+const Button_ = ({
+  children,
+  style,
+  styleContainer = {},
+  className,
+  ...props
+}) => {
   return (
-    <div
-      {...(rotate && {
-        style: {
-          transform: `rotate(${rotate}deg)`,
-        },
-      })}
-      className={className}
-    >
+    <div style={styleContainer} className={className}>
       <ButtonStyled {...props} $style={style}>
         {children}
       </ButtonStyled>

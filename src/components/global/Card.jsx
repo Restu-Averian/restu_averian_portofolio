@@ -13,9 +13,13 @@ const Card_ = ({
     translateY: 0,
   },
   rotateBtn = 0,
+  width,
+  onClick,
 }) => {
   return (
     <CardStyled
+      onClick={onClick}
+      $width={width}
       $rotate={configCard?.rotate}
       $translateX={configCard?.translateX}
       $translateY={configCard?.translateY}
@@ -30,7 +34,12 @@ const Card_ = ({
       </div>
 
       <div className="wrapper-btn-demo">
-        <Button rotate={rotateBtn} className="btn-demo">
+        <Button
+          className="btn-demo"
+          styleContainer={{
+            transform: `rotate(${rotateBtn}deg)`,
+          }}
+        >
           Try Demo
         </Button>
       </div>

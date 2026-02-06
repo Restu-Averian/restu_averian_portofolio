@@ -80,7 +80,14 @@ const Footer_ = () => {
           }}
         />
 
-        <div>
+        <div
+          onClick={() => {
+            window.open(
+              "https://slidesgo.com/theme/cat-illustrator-portfolio-infographics",
+              "_blank",
+            );
+          }}
+        >
           <span
             style={{
               fontFamily: "'Quicksand', sans-serif",

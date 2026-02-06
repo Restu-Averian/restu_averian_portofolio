@@ -1,18 +1,19 @@
 import styled, { css } from "styled-components";
 
 const CardStyled = styled.div`
-  width: 480px;
   background-color: #fff8e1;
   border: 3px solid #3e2723;
   border-radius: 4px 12px 8px 18px;
-  ${({ $rotate, $translateX = 0, $translateY = 0 }) => {
+  ${({ $rotate, $translateX = 0, $translateY = 0, $width }) => {
     const rotate = $rotate;
     const translateX = $translateX;
     const translateY = $translateY;
+    const width = $width;
 
     return css`
       transform: rotate(${rotate}deg)
         translate(${translateX}px, ${translateY}px);
+      width: ${width}px;
 
       &:hover {
         transform: rotate(0deg) scale(1.05)

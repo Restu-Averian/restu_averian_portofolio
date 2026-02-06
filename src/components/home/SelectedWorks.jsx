@@ -62,6 +62,7 @@ const SelectedWorks_ = (_, ref) => {
         {Array.from({ length: 3 })?.map((_, idx) => {
           return (
             <Card
+              width={480}
               key={idx}
               title="Project 1 - Destroyer The World"
               subtitle="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
