@@ -44,7 +44,7 @@ const AllProjects_ = () => {
       accusantium soluta adipisci tenetur. Repellendus tempore delectus eum
       consectetur laborum, ducimus aperiam quisquam animi modi exercitationem
       itaque velit deleniti numquam deserunt?"
-              rotateBtn={getRandNum(3, -6)}
+              rotateBtn={getRandNum(-6, -3)}
               configCard={{
                 rotate: getRandNum(6, -6),
                 translateY: arrAtas?.includes(idx + 1) ? -52 : 0,

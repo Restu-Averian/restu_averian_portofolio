@@ -41,7 +41,10 @@ const CardStyled = styled.div`
   }
 
   .info-project {
-    padding: 12px 63px 63px 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    padding-bottom: 12px;
 
     h3.title-project {
       font-size: 24px;
@@ -56,13 +59,12 @@ const CardStyled = styled.div`
       font-family: "Patrick Hand", sans-serif;
       font-weight: normal;
       line-height: 22px;
+      margin-bottom: 32px;
     }
   }
 
   .wrapper-btn-demo {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+    text-align: right;
   }
 
   .btn-demo {

@@ -1,15 +1,17 @@
 import { memo } from "react";
 import { Icon } from "@iconify/react";
 import Button from "../components/global/Button";
-import { Flex, SBGContainer } from "../components/global/Layout";
+import { Flex } from "../components/global/Layout";
 import fallbackProjectThumbnail from "../assets/fallback-project-thumbnail.webp";
 import Icons from "../components/global/Icons";
 import { useNavigate } from "react-router-dom";
+import ProjectDetailStyled from "../styled/project-detail/ProjectDetail.styled";
 
 const ProjectDetail_ = () => {
   const navigate = useNavigate();
+
   return (
-    <SBGContainer>
+    <ProjectDetailStyled>
       <Flex
         alignItems="center"
         gap={36}
@@ -37,74 +39,33 @@ const ProjectDetail_ = () => {
         </Flex>
       </Flex>
 
-      <img src={fallbackProjectThumbnail} width="100%" />
+      <figure className="fgr-thumbnail">
+        <img src={fallbackProjectThumbnail} />
+      </figure>
 
       <div
         style={{
           marginTop: 32,
         }}
       >
-        <h1
-          style={{
-            fontFamily: "'Patrick Hand', sans-serif",
-            fontSize: 63,
-          }}
-        >
-          Project 1 - Destroyer of the World
-        </h1>
+        <h1 className="title-project">Project 1 - Destroyer of the World</h1>
 
-        <ul
-          style={{
-            display: "flex",
-            gap: 24,
-            flexWrap: "wrap",
-            margin: "24px 0px",
-          }}
-        >
-          <li
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
+        <ul className="wrapper-list-tech-stack">
+          <li className="tech-stack-item">
             <Icon icon="mdi:react" style={{ fontSize: "36px" }} />
-            <span
-              style={{
-                fontSize: 32,
-                fontFamily: "'Caveat', cursive",
-              }}
-            >
-              React
-            </span>
+            <span className="lbl-tech-stack">React</span>
           </li>
-          <li
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
+
+          <li className="tech-stack-item">
             <Icon
               icon="ant-design:ant-design-outlined"
               style={{ fontSize: "36px" }}
             />
-
-            <span
-              style={{
-                fontSize: 32,
-                fontFamily: "'Caveat', cursive",
-              }}
-            >
-              Ant Design
-            </span>
+            <span className="lbl-tech-stack">Ant Design</span>
           </li>
         </ul>
 
-        <p
-          style={{
-            fontFamily: "'Patrick Hand', sans-serif",
-            fontSize: 22,
-          }}
-        >
+        <p className="desc">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis
           consectetur architecto iste, labore quibusdam inventore doloribus
           quas! Quidem cum possimus ratione mollitia enim. Iusto fugit nemo
@@ -112,21 +73,18 @@ const ProjectDetail_ = () => {
         </p>
 
         <Button
+          type="secondary"
           containerAttrs={{
-            style: {
-              width: "max-content",
-              textAlign: "right",
-              marginTop: 48,
-              marginLeft: "auto",
-              marginRight: 160,
-              transform: "rotate(5deg)",
-            },
+            className: "wrapper-btn-try-demo",
+          }}
+          style={{
+            transform: "rotate(5deg)",
           }}
         >
           Try Demo
         </Button>
       </div>
-    </SBGContainer>
+    </ProjectDetailStyled>
   );
 };
 
