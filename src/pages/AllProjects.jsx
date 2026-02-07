@@ -3,6 +3,8 @@ import { SBGContainer } from "../components/global/Layout";
 import { getRandNum } from "../helpers";
 import Card from "../components/global/Card";
 import { useNavigate } from "react-router-dom";
+import AllProjectsStyled from "../styled/all-projects/AllProjects.styled";
+import Icons from "../components/global/Icons";
 
 const AllProjects_ = () => {
   const navigate = useNavigate();
@@ -14,18 +16,13 @@ const AllProjects_ = () => {
     }, []);
 
   return (
-    <SBGContainer>
-      <h2>All Projects</h2>
+    <AllProjectsStyled>
+      <h2 className="title-section">
+        All Projects
+        <Icons type="cat-foot-print" />
+      </h2>
 
-      <div
-        style={{
-          display: "flex",
-          gap: 128,
-          justifyContent: "center",
-          flexWrap: "wrap",
-          marginTop: "5em",
-        }}
-      >
+      <div className="wrapper-all-projects">
         {Array.from({ length: 6 })?.map((_, idx) => {
           return (
             <Card
@@ -48,7 +45,7 @@ const AllProjects_ = () => {
           );
         })}
       </div>
-    </SBGContainer>
+    </AllProjectsStyled>
   );
 };
 

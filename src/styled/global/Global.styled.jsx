@@ -23,6 +23,10 @@ const GlobalStyled = createGlobalStyle`
     ul,ol{
         margin-block:0;
         padding-inline: 0;
+
+        li{
+            list-style: none;
+        }
     }
 
     figure{

@@ -1,25 +1,41 @@
 import { memo } from "react";
+import { Icon } from "@iconify/react";
 import Button from "../components/global/Button";
 import { Flex, SBGContainer } from "../components/global/Layout";
 import fallbackProjectThumbnail from "../assets/fallback-project-thumbnail.webp";
 import Icons from "../components/global/Icons";
-import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
 
 const ProjectDetail_ = () => {
+  const navigate = useNavigate();
   return (
     <SBGContainer>
-      <div
+      <Flex
+        alignItems="center"
+        gap={36}
         style={{
-          display: "flex",
-          gap: 12,
-          alignItems: "center",
+          marginBottom: 36,
         }}
       >
-        <Icons type="back-icon" />
-        <p>Home</p>
-        <p>Projects</p>
-        <p>Detail Projects</p>
-      </div>
+        <Icons
+          type="back-icon-cat"
+          style={{
+            color: "#8D6E63",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            navigate("/project");
+          }}
+        />
+
+        <Flex alignItems="center" gap={8}>
+          <p>Home</p>
+          <Icons type="cat-foot-print" />
+          <p>Projects</p>
+          <Icons type="cat-foot-print" />
+          <p>Detail Projects</p>
+        </Flex>
+      </Flex>
 
       <img src={fallbackProjectThumbnail} width="100%" />
 

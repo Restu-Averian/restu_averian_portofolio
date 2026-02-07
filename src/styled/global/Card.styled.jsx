@@ -4,6 +4,7 @@ const CardStyled = styled.div`
   background-color: #fff8e1;
   border: 3px solid #3e2723;
   border-radius: 4px 12px 8px 18px;
+
   ${({ $rotate, $translateX = 0, $translateY = 0, $width }) => {
     const rotate = $rotate;
     const translateX = $translateX;
@@ -27,7 +28,6 @@ const CardStyled = styled.div`
 
   figure.thumbnail {
     width: 100%;
-    height: 240px;
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -43,7 +43,7 @@ const CardStyled = styled.div`
     padding: 12px 63px 12px 18px;
 
     h3.title-project {
-      font-size: 28px;
+      font-size: 24px;
       font-family: "Patrick Hand", sans-serif;
       font-weight: normal;
     }
@@ -65,8 +65,8 @@ const CardStyled = styled.div`
 
     .btn-demo {
       button {
-        font-size: 16px;
-        margin: 12px 24px 38px;
+        font-size: 14px;
+        /* margin: 12px 24px 38px; */
         margin-left: 0;
       }
     }

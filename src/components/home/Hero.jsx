@@ -93,7 +93,6 @@ const Hero_ = ({ selectedWorksRef }) => {
             style={{
               position: "absolute",
               right: 72,
-              top: 240,
             }}
           >
             Explore
