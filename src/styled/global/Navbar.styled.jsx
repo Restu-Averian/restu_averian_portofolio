@@ -1,17 +1,15 @@
 import styled, { keyframes } from "styled-components";
 
 const initSelectedNavItem = keyframes`
-    0%{
-        transform: scale(0);
-
-    }
-80%{
-    transform: scale(1.05);
-
-}
-    100%{
-        transform: scale(1);
-    }
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
 
 `;
 
@@ -34,14 +32,14 @@ const NavbarStyled = styled.nav`
     align-items: center;
 
     .nav-item {
-      color: #8d6e63;
+      color: #93a1a1;
       width: 52px;
       height: 53px;
+      padding: 12px 18px;
 
       &.active {
-        background-color: #8d6e63;
-        color: #fdf6e3;
-        padding: 12px 18px;
+        /* background-color: #8d6e63; */
+        color: #8d6e63;
         border-radius: 20px;
         animation: ${initSelectedNavItem} 150ms ease-in-out;
       }
