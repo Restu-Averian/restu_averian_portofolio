@@ -2,6 +2,7 @@ import { memo } from "react";
 import FallbackProjectThumbnail from "../../assets/fallback-project-thumbnail.webp";
 import Button from "./Button";
 import CardStyled from "../../styled/global/Card.styled";
+import { Flex } from "./Layout";
 
 const Card_ = ({
   title,
@@ -30,12 +31,12 @@ const Card_ = ({
       <div className="info-project">
         <h3 className="title-project">{title}</h3>
         <p className="subtitle">{subtitle}</p>
-      </div>
 
-      <div className="wrapper-btn-demo">
         <Button
+          type="secondary"
+          className="btn-demo"
           containerAttrs={{
-            className: "btn-demo",
+            className: "wrapper-btn-demo",
             style: {
               transform: `rotate(${rotateBtn}deg)`,
             },

@@ -1,49 +1,20 @@
 import { forwardRef, memo } from "react";
 import { useNavigate } from "react-router-dom";
-// import SelectedWorksStyled from "../../styled/home/SelectedWorks.styled";
-// import ListProjects from "../../components/home/selected-works/ListProjects";
-// import Button from "../../components/global/Button";
-// import TitleSection from "../../components/global/TitleSection";
 import bgSelectedProjects from "../../assets/home/bg-selected-projects.webp";
 import SelectedProjectsCatIcon from "../../assets/home/SelectedProjectsCatIcon";
-import FallbackProjectThumbnail from "../../assets/fallback-project-thumbnail.webp";
-import Button from "../global/Button";
 import Card from "../global/Card";
 import { getRandNum } from "../../helpers";
+import Icons from "../global/Icons";
+import { Flex } from "../global/Layout";
+import SelectedWorksStyled from "../../styled/home/SelectedWorks.styled";
 
 const SelectedWorks_ = (_, ref) => {
   const navigate = useNavigate();
 
   return (
-    <section
-      style={{
-        backgroundImage: `url("${bgSelectedProjects}")`,
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        marginTop: 256,
-        backgroundSize: "100% 100%",
-        minHeight: 400,
-        padding: "160px 112px 192px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          gap: 48,
-          alignItems: "center",
-          marginBottom: 160,
-        }}
-      >
-        <h2
-          style={{
-            fontFamily: "'Caveat', cursive",
-            color: "rgba(253, 246, 227)",
-            fontSize: 96,
-            fontWeight: "normal",
-          }}
-        >
-          Selected Project
-        </h2>
+    <SelectedWorksStyled>
+      <div className="wrapper-title-section">
+        <h2 className="title-section">Selected Project</h2>
 
         <SelectedProjectsCatIcon
           style={{
@@ -52,14 +23,13 @@ const SelectedWorks_ = (_, ref) => {
         />
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          gap: 8,
-          justifyContent: "space-between",
-        }}
-      >
+      <Flex gap={36} justifyContent="space-between">
         {Array.from({ length: 3 })?.map((_, idx) => {
+          const translateData = {
+            1: 63,
+            2: -52,
+            3: 0,
+          };
           return (
             <Card
               width={480}
@@ -72,13 +42,79 @@ const SelectedWorks_ = (_, ref) => {
               rotateBtn={getRandNum(3, -6)}
               configCard={{
                 rotate: getRandNum(6, -6),
-                translateY: (idx + 1) % 2 === 0 ? -52 : 0,
+                translateY: translateData[idx + 1],
+              }}
+              onClick={() => {
+                navigate(`/project/${idx + 1}`);
               }}
             />
           );
         })}
-      </div>
-    </section>
+      </Flex>
+
+      <Flex
+        style={{
+          position: "absolute",
+          top: 210,
+          left: 48,
+        }}
+      >
+        <Icons
+          type="cat-foot-print-v2"
+          style={{
+            transform: "rotate(90deg)",
+            color: "#E8DCC4",
+          }}
+        />
+        <Icons
+          type="cat-foot-print-v2"
+          style={{
+            transform: "rotate(-12deg)",
+            marginTop: 36,
+            color: "#E8DCC4",
+          }}
+        />
+      </Flex>
+
+      <Flex
+        style={{
+          position: "absolute",
+          top: 82,
+          right: 120,
+        }}
+        gap={24}
+      >
+        <Icons
+          type="cat-foot-print-v2"
+          style={{
+            transform: "rotate(10deg)",
+            marginTop: 24,
+            color: "#E8DCC4",
+          }}
+        />
+        <Icons
+          type="cat-foot-print-v2"
+          style={{
+            transform: "rotate(-90deg)",
+            color: "#E8DCC4",
+          }}
+        />
+      </Flex>
+
+      <p className="ask-txt-persuasive">Tech that i ever used?</p>
+
+      <Flex alignItems="center" className="wrapper-explore-more">
+        <button className="btn-explore-more">Explore More</button>
+
+        <Icons
+          type="back-icon-cat"
+          style={{
+            transform: "scale(-1,1)",
+            color: "#FDF6E3",
+          }}
+        />
+      </Flex>
+    </SelectedWorksStyled>
   );
 };
 

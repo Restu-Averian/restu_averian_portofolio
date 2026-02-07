@@ -4,6 +4,7 @@ const CardStyled = styled.div`
   background-color: #fff8e1;
   border: 3px solid #3e2723;
   border-radius: 4px 12px 8px 18px;
+  position: relative;
 
   ${({ $rotate, $translateX = 0, $translateY = 0, $width }) => {
     const rotate = $rotate;
@@ -40,7 +41,7 @@ const CardStyled = styled.div`
   }
 
   .info-project {
-    padding: 12px 63px 12px 18px;
+    padding: 12px 63px 63px 18px;
 
     h3.title-project {
       font-size: 24px;
@@ -59,17 +60,13 @@ const CardStyled = styled.div`
   }
 
   .wrapper-btn-demo {
-    width: 100%;
-    display: flex;
-    justify-content: right;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
 
-    .btn-demo {
-      button {
-        font-size: 14px;
-        /* margin: 12px 24px 38px; */
-        margin-left: 0;
-      }
-    }
+  .btn-demo {
+    font-size: 14px;
   }
 `;
 

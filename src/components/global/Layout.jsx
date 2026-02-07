@@ -42,8 +42,10 @@ export const SBGContainer = ({ ...props }) => {
  * @param {import("react").CSSProperties['flexDirection']} props.flexDirection
  * @param {import("react").CSSProperties['gap']} [props.gap]
  * @param {import("react").CSSProperties['flex']} [props.flex]
+ * @param {import("react").CSSProperties['flexWrap']} [props.flexWrap]
  * @param {string} [props.className]
  * @param {import("react").CSSProperties} [props.style]
+ * @param {import("react").HTMLAttributes<HTMLDivElement>['onClick']} [props.onClick]
  * @returns
  */
 export const Flex = ({
@@ -52,14 +54,17 @@ export const Flex = ({
   flexDirection,
   gap = 8,
   flex,
+  flexWrap = "wrap",
   style,
   className,
+  onClick,
   children,
 }) => {
   const fmtGap = useMemo(
     () => (typeof gap === "number" ? `${gap}px` : gap),
     [gap],
   );
+
   return (
     <FlexStyled
       $justifyContent={justifyContent}
@@ -68,7 +73,9 @@ export const Flex = ({
       $gap={fmtGap}
       style={style}
       $flex={flex}
+      $flexWrap={flexWrap}
       className={className}
+      onClick={onClick}
     >
       {children}
     </FlexStyled>
