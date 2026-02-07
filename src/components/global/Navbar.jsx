@@ -1,0 +1,43 @@
+import { memo } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Icons from "./Icons";
+import NavbarStyled from "../../styled/global/Navbar.styled";
+
+const Navbar_ = () => {
+  const location = useLocation();
+
+  const checkActive = (pathnameKey) => {
+    const currPathname = location?.pathname;
+
+    if (currPathname === "/") {
+      return pathnameKey === "home";
+    }
+
+    return currPathname?.includes(pathnameKey);
+  };
+  return (
+    <NavbarStyled>
+      <ul className="wrapper-list-nav">
+        <li>
+          <Link to="/">
+            <Icons
+              type="cat-home"
+              className={`nav-item${checkActive("home") ? " active" : ""}`}
+            />
+          </Link>
+        </li>
+        <li>
+          <Link to="/project">
+            <Icons
+              type="cat-projects"
+              className={`nav-item${checkActive("project") ? " active" : ""}`}
+            />
+          </Link>
+        </li>
+      </ul>
+    </NavbarStyled>
+  );
+};
+
+const Navbar = memo(Navbar_);
+export default Navbar;

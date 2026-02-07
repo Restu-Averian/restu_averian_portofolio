@@ -1,11 +1,11 @@
 import { memo } from "react";
-import { Flex, SBGContainer } from "../global/Layout";
-import Icons from "../global/Icons";
+import { Flex } from "../global/Layout";
+import { Icon } from "@iconify/react";
 import FooterStyled, {
   CardConectionStyled,
 } from "../../styled/layout/Footer.styled";
-import inspiredByCat from "../../assets/home/inspired-by-cat.webp";
 import { LIST_SOCIAL_CONNECTIONS } from "../../constants";
+import Icons from "../global/Icons";
 
 const Footer_ = () => {
   return (
@@ -23,12 +23,13 @@ const Footer_ = () => {
                   window.open(item?.link, "_blank");
                 }}
               >
-                <img
-                  src={item?.icon}
+                <div
                   style={{
-                    width: 240,
+                    textAlign: "center",
                   }}
-                />
+                >
+                  <Icon icon={item?.icon} width={210} color="#839496" />
+                </div>
 
                 <p>{item?.text}</p>
               </CardConectionStyled>
@@ -36,7 +37,23 @@ const Footer_ = () => {
           })}
         </div>
 
-        <p className="connect-with-me">Connect With Me!</p>
+        <Flex
+          alignItems="center"
+          justifyContent="center"
+          gap={48}
+          style={{
+            marginTop: 67,
+          }}
+        >
+          <p className="connect-with-me">Connect With Me!</p>
+
+          <Icon
+            icon="streamline-ultimate:business-lucky-cat-bold"
+            width={84}
+            transform="rotate(-12deg)"
+            color="#839496"
+          />
+        </Flex>
       </section>
 
       <section
@@ -78,14 +95,40 @@ const Footer_ = () => {
           >
             Denis Sazhin
           </p>
+
+          <p
+            style={{
+              fontFamily: "'Patrick Hand', sans-serif",
+              fontSize: 60,
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              window.open(
+                "https://thenounproject.com/creator/inmyheart/",
+                "_blank",
+              );
+            }}
+          >
+            inmyheart
+          </p>
+          <p
+            style={{
+              fontFamily: "'Patrick Hand', sans-serif",
+              fontSize: 60,
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              window.open(
+                "https://thenounproject.com/creator/Puckung/",
+                "_blank",
+              );
+            }}
+          >
+            Teewara soontorn
+          </p>
         </div>
 
-        <img
-          src={inspiredByCat}
-          style={{
-            width: 608,
-          }}
-        />
+        <Icons type="cat-lay-one-back" />
 
         <div
           onClick={() => {

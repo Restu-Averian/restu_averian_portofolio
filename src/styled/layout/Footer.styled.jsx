@@ -31,7 +31,7 @@ const FooterStyled = styled(SBGContainer)`
     text-align: center;
     font-family: "Caveat", cursive;
     font-size: 96px;
-    margin-top: 67px;
+    color: #073642;
   }
 `;
 

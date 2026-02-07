@@ -54,21 +54,21 @@ export const DUMMY_PROJECTS_ALL_PROJECTS = Array?.from({
 
 export const LIST_SOCIAL_CONNECTIONS = [
   {
-    text: "Restu-Averin",
+    text: "Restu-Averian",
     link: "https://github.com/Restu-Averian",
     rotate: -6,
-    icon: githubIcon,
+    icon: "mdi:github",
   },
   {
-    text: "Restu-Averin",
-    link: "https://github.com/Restu-Averian",
+    text: "restu-averian-putra",
+    link: "https://www.linkedin.com/in/restu-averian-putra/",
     rotate: 6,
-    icon: githubIcon,
+    icon: "mingcute:linkedin-fill",
   },
   {
-    text: "Restu-Averin",
-    link: "https://github.com/Restu-Averian",
+    text: "restu_averian_putra",
+    link: "https://www.npmjs.com/~restu_averian_putra",
     rotate: 0,
-    icon: githubIcon,
+    icon: "ri:npmjs-fill",
   },
 ];

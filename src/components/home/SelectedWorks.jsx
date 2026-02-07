@@ -1,7 +1,5 @@
 import { forwardRef, memo } from "react";
 import { useNavigate } from "react-router-dom";
-import bgSelectedProjects from "../../assets/home/bg-selected-projects.webp";
-import SelectedProjectsCatIcon from "../../assets/home/SelectedProjectsCatIcon";
 import Card from "../global/Card";
 import { getRandNum } from "../../helpers";
 import Icons from "../global/Icons";
@@ -16,9 +14,11 @@ const SelectedWorks_ = (_, ref) => {
       <div className="wrapper-title-section">
         <h2 className="title-section">Selected Project</h2>
 
-        <SelectedProjectsCatIcon
+        <Icons
+          type="selected-projects-cat"
           style={{
             transform: "rotate(3deg)",
+            color: "#FDF6E3",
           }}
         />
       </div>
