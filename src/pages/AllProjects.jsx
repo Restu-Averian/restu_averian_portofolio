@@ -19,7 +19,15 @@ const AllProjects_ = () => {
     <AllProjectsStyled>
       <h2 className="title-section">
         All Projects
-        <Icons type="cat-foot-print" />
+        <Icons
+          type="cat-foot-print"
+          style={{
+            width: 48,
+            height: 47,
+            position: "absolute",
+            bottom: 0,
+          }}
+        />
       </h2>
 
       <div className="wrapper-all-projects">

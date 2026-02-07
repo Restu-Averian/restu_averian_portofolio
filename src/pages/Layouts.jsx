@@ -18,7 +18,7 @@ const Layouts_ = () => {
           position: "fixed",
           bottom: 24,
           left: "50%",
-          transform: "translateY(-50%)",
+          transform: "translateX(-50%)",
           padding: "12px 24px",
           borderRadius: 50,
           backgroundColor: "#fff8e1",

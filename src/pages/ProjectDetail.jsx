@@ -30,9 +30,9 @@ const ProjectDetail_ = () => {
 
         <Flex alignItems="center" gap={8}>
           <p>Home</p>
-          <Icons type="cat-foot-print" />
+          <Icons type="cat-double-foot-print" />
           <p>Projects</p>
-          <Icons type="cat-foot-print" />
+          <Icons type="cat-double-foot-print" />
           <p>Detail Projects</p>
         </Flex>
       </Flex>
@@ -112,13 +112,15 @@ const ProjectDetail_ = () => {
         </p>
 
         <Button
-          styleContainer={{
-            width: "max-content",
-            textAlign: "right",
-            marginTop: 48,
-            marginLeft: "auto",
-            marginRight: 160,
-            transform: "rotate(5deg)",
+          containerAttrs={{
+            style: {
+              width: "max-content",
+              textAlign: "right",
+              marginTop: 48,
+              marginLeft: "auto",
+              marginRight: 160,
+              transform: "rotate(5deg)",
+            },
           }}
         >
           Try Demo

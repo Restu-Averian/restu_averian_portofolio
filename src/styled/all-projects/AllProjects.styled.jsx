@@ -4,11 +4,12 @@ import { SBGContainer } from "../../components/global/Layout";
 const AllProjectsStyled = styled(SBGContainer)`
   .title-section {
     font-family: "Caveat", cursive;
-    font-size: 48px;
+    font-size: 72px;
     font-weight: normal;
     color: #073642;
     transform: rotate(-8deg);
     width: max-content;
+    position: relative;
   }
 
   .wrapper-all-projects {

@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import maskBtn from "../../assets/mask-btn.svg";
 
-const ButtonStyled = styled.button`
+export const ButtonSecondaryStyled = styled.button`
   position: relative;
   background: transparent;
   color: #8d6e63;
@@ -41,4 +42,34 @@ const ButtonStyled = styled.button`
   }
 `;
 
-export default ButtonStyled;
+export const ButtonPrimaryStyled = styled.button`
+  --fill: #8d6e63;
+  --text: #fdf6e3;
+
+  border: 0;
+  padding: 14px 34px;
+  background: var(--fill);
+  color: var(--text);
+  font-family: "Caveat", cursive;
+  font-size: 40px;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-mask-image: url("${maskBtn}");
+  mask-image: url("${maskBtn}");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  transition: all 0.15s ease-in-out;
+  font-weight: bold;
+
+  ${({ $style }) => $style}
+
+  &:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+  }
+
+  &:active {
+    transform: scale(1.08) !important;
+  }
+`;

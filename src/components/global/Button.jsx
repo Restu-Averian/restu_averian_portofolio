@@ -1,26 +1,34 @@
 import { memo } from "react";
-import ButtonStyled from "../../styled/global/Button.styled";
+import {
+  ButtonPrimaryStyled,
+  ButtonSecondaryStyled,
+} from "../../styled/global/Button.styled";
 
 /**
  *
- * @param {import("react").ButtonHTMLAttributes<HTMLButtonElement> & {
+ * @param {Omit<import("react").ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & {
  * className?:string;
  * styleContainer?:import("react").CSSProperties;
+ * type?:'primary'|'secondary';
+ * containerAttrs?: import("react").HTMLAttributes<HTMLDivElement>
  * }} props
  * @returns
  */
 const Button_ = ({
   children,
   style,
-  styleContainer = {},
-  className,
+  containerAttrs = {},
+  type = "primary",
   ...props
 }) => {
+  const WrapperStyled =
+    type === "primary" ? ButtonPrimaryStyled : ButtonSecondaryStyled;
+
   return (
-    <div style={styleContainer} className={className}>
-      <ButtonStyled {...props} $style={style}>
+    <div {...(containerAttrs || {})}>
+      <WrapperStyled {...props} $style={style}>
         {children}
-      </ButtonStyled>
+      </WrapperStyled>
     </div>
   );
 };

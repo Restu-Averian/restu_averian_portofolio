@@ -1,5 +1,4 @@
 import { memo } from "react";
-// import FallbackProjectThumbnail from "../../assets/fallback-project-thumbnail.webp";
 import FallbackProjectThumbnail from "../../assets/fallback-project-thumbnail.webp";
 import Button from "./Button";
 import CardStyled from "../../styled/global/Card.styled";
@@ -35,9 +34,11 @@ const Card_ = ({
 
       <div className="wrapper-btn-demo">
         <Button
-          className="btn-demo"
-          styleContainer={{
-            transform: `rotate(${rotateBtn}deg)`,
+          containerAttrs={{
+            className: "btn-demo",
+            style: {
+              transform: `rotate(${rotateBtn}deg)`,
+            },
           }}
         >
           Try Demo
