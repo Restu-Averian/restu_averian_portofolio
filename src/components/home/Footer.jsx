@@ -67,6 +67,13 @@ const Footer_ = () => {
             style={{
               fontFamily: "'Patrick Hand', sans-serif",
               fontSize: 60,
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              window.open(
+                "https://thenounproject.com/creator/iconka/",
+                "_blank",
+              );
             }}
           >
             Denis Sazhin

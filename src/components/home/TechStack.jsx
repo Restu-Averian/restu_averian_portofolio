@@ -1,22 +1,20 @@
 import { memo } from "react";
-import CatTechStack from "../../assets/home/cat-tech-stack.webp";
 import TechStackStyled from "../../styled/home/TechStack.styled";
-import CatFootPrint from "../../assets/CatFootPrint";
+import { Icon } from "@iconify/react";
+import Icons from "../global/Icons";
+import { Flex } from "../global/Layout";
 
 const TechStack_ = () => {
   return (
-    <TechStackStyled
-      style={{
-        paddingTop: 384,
-      }}
-    >
+    <TechStackStyled>
       <section
         style={{
           position: "relative",
         }}
       >
         <h2 className="title-section">
-          <CatFootPrint
+          <Icons
+            type="cat-foot-print"
             style={{
               transform: "rotate(-32deg)",
               position: "relative",
@@ -24,23 +22,34 @@ const TechStack_ = () => {
             }}
           />
           Tech Stack!
-          <CatFootPrint
+          <Icons
+            type="cat-foot-print"
             style={{
-              transform: "rotate(90deg)",
+              transform: "rotate(0deg)",
               position: "relative",
               top: 42,
             }}
           />
         </h2>
 
-        <figure
+        <Flex justifyContent="center">
+          <Icons
+            type="cat-tech-stack"
+            style={{
+              color: "#839496",
+            }}
+          />
+        </Flex>
+
+        <div
+          className="wrapper-tech-stack-item"
           style={{
-            width: "100%",
-            textAlign: "center",
+            bottom: 288,
+            left: "calc(50% - 480px)",
           }}
         >
-          <img src={CatTechStack} width={576} />
-        </figure>
+          <Icon icon="mdi:react" width={150} color="#839496" />
+        </div>
       </section>
     </TechStackStyled>
   );
