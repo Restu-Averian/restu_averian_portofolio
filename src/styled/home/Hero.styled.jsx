@@ -65,6 +65,7 @@ const HeroStyled = styled(SBGContainer)`
       position: absolute;
       right: 72px;
       transform: rotate(-5deg);
+      -webkit-tap-highlight-color: transparent;
 
       ${MEDIA_QUERY_CSS?.xs(css`
         font-size: 32px;

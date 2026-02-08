@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import borderTechStack from "../../assets/border-tech-stack.svg";
 import { SBGContainer } from "../../components/global/Layout";
+import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const TechStackStyled = styled(SBGContainer)`
   padding-top: 384px;
@@ -19,14 +20,28 @@ const TechStackStyled = styled(SBGContainer)`
       position: absolute;
       right: 192px;
       bottom: 576px;
-    }
 
-    .wrapper-tech-stack-item {
-      border: 45px solid transparent;
-      border-image: url("${borderTechStack}") 45 round;
-      position: absolute;
+      ${MEDIA_QUERY_CSS?.xs(css`
+        font-size: 58px;
+        right: 0;
+        bottom: unset;
+        top: 0;
+      `)}
     }
   }
+`;
+
+export const TechStackItemStyled = styled.div`
+  position: absolute;
+
+  ${({ $style }) => $style}
+
+  ${({ $borderSlice, $borderSize }) => {
+    return css`
+      border: ${$borderSize}px solid transparent;
+      border-image: url("${borderTechStack}") ${$borderSlice} round;
+    `;
+  }}
 `;
 
 export default TechStackStyled;

@@ -12,8 +12,6 @@ const SelectedWorks_ = (_, ref) => {
 
   const { xs } = useBreakpoint();
 
-  const screen = useBreakpoint();
-
   return (
     <SelectedWorksStyled>
       <div className="wrapper-title-section">

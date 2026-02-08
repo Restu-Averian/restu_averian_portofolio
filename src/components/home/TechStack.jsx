@@ -1,10 +1,15 @@
 import { memo } from "react";
-import TechStackStyled from "../../styled/home/TechStack.styled";
+import TechStackStyled, {
+  TechStackItemStyled,
+} from "../../styled/home/TechStack.styled";
 import { Icon } from "@iconify/react";
 import Icons from "../global/Icons";
 import { Flex } from "../global/Layout";
+import useBreakpoint from "../../hooks/useBreakpoint";
 
 const TechStack_ = () => {
+  const { xs } = useBreakpoint();
+
   return (
     <TechStackStyled>
       <section
@@ -19,6 +24,10 @@ const TechStack_ = () => {
               transform: "rotate(-32deg)",
               position: "relative",
               top: 24,
+              ...(xs && {
+                width: 48,
+                transform: "rotate(-110deg)",
+              }),
             }}
           />
           Tech Stack!
@@ -28,6 +37,9 @@ const TechStack_ = () => {
               transform: "rotate(0deg)",
               position: "relative",
               top: 42,
+              ...(xs && {
+                width: 48,
+              }),
             }}
           />
         </h2>
@@ -37,19 +49,22 @@ const TechStack_ = () => {
             type="cat-tech-stack"
             style={{
               color: "#839496",
+              ...(xs && {
+                width: 300,
+              }),
             }}
           />
         </Flex>
 
-        <div
-          className="wrapper-tech-stack-item"
-          style={{
-            bottom: 288,
-            left: "calc(50% - 480px)",
+        <TechStackItemStyled
+          $borderSlice={xs ? 46 : 45}
+          $borderSize={xs ? 18 : 45}
+          $style={{
+            top: 96,
           }}
         >
-          <Icon icon="mdi:react" width={150} color="#839496" />
-        </div>
+          <Icon icon="mdi:react" width={xs ? 64 : 150} color="#839496" />
+        </TechStackItemStyled>
       </section>
     </TechStackStyled>
   );
