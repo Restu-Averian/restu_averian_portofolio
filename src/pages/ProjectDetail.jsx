@@ -6,18 +6,22 @@ import fallbackProjectThumbnail from "../assets/fallback-project-thumbnail.webp"
 import Icons from "../components/global/Icons";
 import { useNavigate } from "react-router-dom";
 import ProjectDetailStyled from "../styled/project-detail/ProjectDetail.styled";
+import useBreakpoint from "../hooks/useBreakpoint";
 
 const ProjectDetail_ = () => {
   const navigate = useNavigate();
+
+  const { xs } = useBreakpoint();
 
   return (
     <ProjectDetailStyled>
       <Flex
         alignItems="center"
-        gap={36}
+        gap={xs ? 18 : 36}
         style={{
           marginBottom: 36,
         }}
+        flexWrap="nowrap"
       >
         <Icons
           type="back-icon-cat"
@@ -30,7 +34,7 @@ const ProjectDetail_ = () => {
           }}
         />
 
-        <Flex alignItems="center" gap={8}>
+        <Flex alignItems="center" gap={8} flexWrap={xs ? "nowrap" : "wrap"}>
           <p>Home</p>
           <Icons type="cat-double-foot-print" />
           <p>Projects</p>
@@ -52,14 +56,14 @@ const ProjectDetail_ = () => {
 
         <ul className="wrapper-list-tech-stack">
           <li className="tech-stack-item">
-            <Icon icon="mdi:react" style={{ fontSize: "36px" }} />
+            <Icon icon="mdi:react" style={{ fontSize: xs ? 24 : 36 }} />
             <span className="lbl-tech-stack">React</span>
           </li>
 
           <li className="tech-stack-item">
             <Icon
               icon="ant-design:ant-design-outlined"
-              style={{ fontSize: "36px" }}
+              style={{ fontSize: xs ? 24 : 36 }}
             />
             <span className="lbl-tech-stack">Ant Design</span>
           </li>
@@ -79,6 +83,7 @@ const ProjectDetail_ = () => {
           }}
           style={{
             transform: "rotate(5deg)",
+            fontSize: xs ? 16 : 24,
           }}
         >
           Try Demo
