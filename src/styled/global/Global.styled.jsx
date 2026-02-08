@@ -47,6 +47,7 @@ const GlobalStyled = createGlobalStyle`
     }
 
     a {
+        -webkit-tap-highlight-color: transparent;
         text-decoration: none;
         color: inherit;
         cursor: pointer;

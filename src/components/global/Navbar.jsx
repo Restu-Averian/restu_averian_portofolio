@@ -1,7 +1,11 @@
-import { memo } from "react";
+import { memo, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Icons from "./Icons";
-import NavbarStyled from "../../styled/global/Navbar.styled";
+import useBreakpoint from "../../hooks/useBreakpoint";
+import {
+  NavbarMobileStyled,
+  NavbarRegularStyled,
+} from "../../styled/global/Navbar.styled";
 
 const Navbar_ = () => {
   const location = useLocation();
@@ -15,8 +19,18 @@ const Navbar_ = () => {
 
     return currPathname?.includes(pathnameKey);
   };
+
+  const screen = useBreakpoint();
+
+  const WrapperNavbar = useMemo(() => {
+    if (screen?.xs) {
+      return NavbarMobileStyled;
+    }
+    return NavbarRegularStyled;
+  }, [screen]);
+
   return (
-    <NavbarStyled>
+    <WrapperNavbar id="cause">
       <ul className="wrapper-list-nav">
         <li>
           <Link to="/">
@@ -35,7 +49,7 @@ const Navbar_ = () => {
           </Link>
         </li>
       </ul>
-    </NavbarStyled>
+    </WrapperNavbar>
   );
 };
 

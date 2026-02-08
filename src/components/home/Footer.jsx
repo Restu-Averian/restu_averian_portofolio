@@ -50,7 +50,9 @@ const Footer_ = () => {
           <Icon
             icon="streamline-ultimate:business-lucky-cat-bold"
             width={84}
-            transform="rotate(-12deg)"
+            style={{
+              transform: "rotate(-12deg)",
+            }}
             color="#839496"
           />
         </Flex>

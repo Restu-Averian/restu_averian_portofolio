@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const CardStyled = styled.div`
   background-color: #fff8e1;
@@ -50,6 +51,10 @@ const CardStyled = styled.div`
       font-size: 24px;
       font-family: "Patrick Hand", sans-serif;
       font-weight: normal;
+
+      ${MEDIA_QUERY_CSS?.xs(css`
+        font-size: 18px;
+      `)}
     }
     p.subtitle {
       display: -webkit-box;
@@ -60,6 +65,10 @@ const CardStyled = styled.div`
       font-weight: normal;
       line-height: 22px;
       margin-bottom: 32px;
+
+      ${MEDIA_QUERY_CSS?.xs(css`
+        font-size: 12px;
+      `)}
     }
   }
 
@@ -69,6 +78,10 @@ const CardStyled = styled.div`
 
   .btn-demo {
     font-size: 14px;
+
+    ${MEDIA_QUERY_CSS?.xs(css`
+      font-size: 12px;
+    `)}
   }
 `;
 

@@ -13,7 +13,7 @@ const initSelectedNavItem = keyframes`
 
 `;
 
-const NavbarStyled = styled.nav`
+export const NavbarRegularStyled = styled.nav`
   position: fixed;
   bottom: 24px;
   left: 50%;
@@ -47,4 +47,28 @@ const NavbarStyled = styled.nav`
   }
 `;
 
-export default NavbarStyled;
+export const NavbarMobileStyled = styled.nav`
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background-color: #fff8e1;
+  z-index: 99999;
+
+  .wrapper-list-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 80px;
+
+    .nav-item {
+      color: #93a1a1;
+      width: 36px;
+      height: 37px;
+
+      &.active {
+        color: #8d6e63;
+        animation: ${initSelectedNavItem} 150ms ease-in-out;
+      }
+    }
+  }
+`;

@@ -5,9 +5,14 @@ import { getRandNum } from "../../helpers";
 import Icons from "../global/Icons";
 import { Flex } from "../global/Layout";
 import SelectedWorksStyled from "../../styled/home/SelectedWorks.styled";
+import useBreakpoint from "../../hooks/useBreakpoint";
 
 const SelectedWorks_ = (_, ref) => {
   const navigate = useNavigate();
+
+  const { xs } = useBreakpoint();
+
+  const screen = useBreakpoint();
 
   return (
     <SelectedWorksStyled>
@@ -23,7 +28,11 @@ const SelectedWorks_ = (_, ref) => {
         />
       </div>
 
-      <Flex gap={36} justifyContent="space-between">
+      <Flex
+        gap={36}
+        justifyContent="space-between"
+        flexWrap={xs ? "wrap" : "no-wrap"}
+      >
         {Array.from({ length: 3 })?.map((_, idx) => {
           const translateData = {
             1: 63,
@@ -42,7 +51,9 @@ const SelectedWorks_ = (_, ref) => {
               rotateBtn={getRandNum(-6, -3)}
               configCard={{
                 rotate: getRandNum(6, -6),
-                translateY: translateData[idx + 1],
+                ...(xs === false && {
+                  translateY: translateData[idx + 1],
+                }),
               }}
               onClick={() => {
                 navigate(`/project/${idx + 1}`);
@@ -52,54 +63,58 @@ const SelectedWorks_ = (_, ref) => {
         })}
       </Flex>
 
-      <Flex
-        style={{
-          position: "absolute",
-          top: 210,
-          left: 48,
-        }}
-      >
-        <Icons
-          type="cat-foot-print-v2"
+      {xs ? null : (
+        <Flex
           style={{
-            transform: "rotate(90deg)",
-            color: "#E8DCC4",
+            position: "absolute",
+            top: 210,
+            left: 48,
           }}
-        />
-        <Icons
-          type="cat-foot-print-v2"
-          style={{
-            transform: "rotate(-12deg)",
-            marginTop: 36,
-            color: "#E8DCC4",
-          }}
-        />
-      </Flex>
+        >
+          <Icons
+            type="cat-foot-print-v2"
+            style={{
+              transform: "rotate(90deg)",
+              color: "#E8DCC4",
+            }}
+          />
+          <Icons
+            type="cat-foot-print-v2"
+            style={{
+              transform: "rotate(-12deg)",
+              marginTop: 36,
+              color: "#E8DCC4",
+            }}
+          />
+        </Flex>
+      )}
 
-      <Flex
-        style={{
-          position: "absolute",
-          top: 82,
-          right: 120,
-        }}
-        gap={24}
-      >
-        <Icons
-          type="cat-foot-print-v2"
+      {xs ? null : (
+        <Flex
           style={{
-            transform: "rotate(10deg)",
-            marginTop: 24,
-            color: "#E8DCC4",
+            position: "absolute",
+            top: 82,
+            right: 120,
           }}
-        />
-        <Icons
-          type="cat-foot-print-v2"
-          style={{
-            transform: "rotate(-90deg)",
-            color: "#E8DCC4",
-          }}
-        />
-      </Flex>
+          gap={24}
+        >
+          <Icons
+            type="cat-foot-print-v2"
+            style={{
+              transform: "rotate(10deg)",
+              marginTop: 24,
+              color: "#E8DCC4",
+            }}
+          />
+          <Icons
+            type="cat-foot-print-v2"
+            style={{
+              transform: "rotate(-90deg)",
+              color: "#E8DCC4",
+            }}
+          />
+        </Flex>
+      )}
 
       <p className="ask-txt-persuasive">Tech that i ever used?</p>
 

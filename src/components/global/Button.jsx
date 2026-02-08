@@ -8,7 +8,6 @@ import {
  *
  * @param {Omit<import("react").ButtonHTMLAttributes<HTMLButtonElement>, 'type'> & {
  * className?:string;
- * styleContainer?:import("react").CSSProperties;
  * type?:'primary'|'secondary';
  * containerAttrs?: import("react").HTMLAttributes<HTMLDivElement>
  * }} props

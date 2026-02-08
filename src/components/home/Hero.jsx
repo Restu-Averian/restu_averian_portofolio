@@ -3,35 +3,33 @@ import VectorHero from "../../assets/home/VectorHero";
 import Button from "../global/Button";
 import Icons from "../global/Icons";
 import HeroStyled from "../../styled/home/Hero.styled";
+import useBreakpoint from "../../hooks/useBreakpoint";
 
 const Hero_ = ({ selectedWorksRef }) => {
+  const { xs } = useBreakpoint();
   return (
     <HeroStyled>
       <section className="wrapper-hero">
-        <Icons
-          type="cat-lay-down"
-          style={{
-            marginTop: 176,
-            color: "#839496",
-          }}
-        />
+        {!xs && (
+          <>
+            <Icons
+              type="cat-lay-down"
+              style={{
+                marginTop: 176,
+                color: "#839496",
+              }}
+            />
 
-        <Icons
-          type="yarn-ball"
-          style={{
-            position: "absolute",
-            bottom: 24,
-            left: "50%",
-          }}
-        />
-        {/* 
-        <VectorHero
-          style={{
-            position: "absolute",
-            top: 512,
-            right: "6%",
-          }}
-        /> */}
+            <Icons
+              type="yarn-ball"
+              style={{
+                position: "absolute",
+                bottom: 24,
+                left: "50%",
+              }}
+            />
+          </>
+        )}
 
         <div className="wrapper-intro">
           <h3 className="hello-text">Hello,</h3>
@@ -41,10 +39,38 @@ const Hero_ = ({ selectedWorksRef }) => {
             Building high performance frontend interfaces
           </p>
 
-          <Button type="primary" className="btn-hero-explore">
-            Explore
-          </Button>
+          {!xs && (
+            <Button type="primary" className="btn-hero-explore">
+              Explore
+            </Button>
+          )}
         </div>
+
+        {xs && (
+          <>
+            <Icons
+              type="cat-lay-down"
+              style={{
+                color: "#839496",
+                width: 200,
+                height: 213,
+                transform: "rotate(-10deg)",
+                marginTop: -32,
+              }}
+            />
+
+            <Icons
+              type="yarn-ball"
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: "calc(50% + 32px)",
+                width: 84,
+                height: 84,
+              }}
+            />
+          </>
+        )}
 
         <div
           style={{
@@ -52,6 +78,12 @@ const Hero_ = ({ selectedWorksRef }) => {
             bottom: 0,
             left: 0,
             display: "flex",
+            ...(xs && {
+              top: "calc(50% + 3em)",
+              left: "calc(50% + 3em)",
+              bottom: "unset",
+              transform: "rotate(180deg)",
+            }),
           }}
         >
           <Icons
@@ -59,6 +91,10 @@ const Hero_ = ({ selectedWorksRef }) => {
             style={{
               color: "#839496",
               transform: "rotate(-36deg)",
+              ...(xs && {
+                width: 48,
+                height: 47,
+              }),
             }}
           />
           <Icons
@@ -66,9 +102,27 @@ const Hero_ = ({ selectedWorksRef }) => {
             style={{
               color: "#839496",
               transform: "rotate(-36deg)",
+              ...(xs && {
+                width: 48,
+                height: 47,
+              }),
             }}
           />
         </div>
+
+        {xs && (
+          <Button
+            type="primary"
+            className="btn-hero-explore"
+            containerAttrs={{
+              style: {
+                textAlign: "center",
+              },
+            }}
+          >
+            Explore
+          </Button>
+        )}
       </section>
     </HeroStyled>
   );

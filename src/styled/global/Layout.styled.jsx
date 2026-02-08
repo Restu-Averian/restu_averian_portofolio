@@ -10,7 +10,7 @@ export const FlexStyled = styled.div`
       flex-direction: ${props.$flexDirection};
       gap: ${props.$gap};
       flex: ${props?.$flex};
-      flex-wrap: ${props?.flexWrap};
+      flex-wrap: ${props?.$flexWrap};
     `;
   }}
 `;
