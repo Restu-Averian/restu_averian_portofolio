@@ -7,6 +7,10 @@ const TechStackStyled = styled(SBGContainer)`
   padding-top: 384px;
   position: relative;
 
+  ${MEDIA_QUERY_CSS?.xs(css`
+    padding-top: 80px;
+  `)}
+
   section {
     position: relative;
 

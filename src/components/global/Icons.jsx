@@ -246,7 +246,7 @@ const CatTechStack = (props) => {
   );
 };
 
-const CatLayOneBack = () => {
+const CatLayOneBack = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -254,6 +254,7 @@ const CatLayOneBack = () => {
       height="460"
       viewBox="0 0 591 460"
       fill="none"
+      {...props}
     >
       <mask
         id="mask0_212_1065"

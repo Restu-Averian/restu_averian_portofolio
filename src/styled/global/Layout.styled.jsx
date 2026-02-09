@@ -11,6 +11,7 @@ export const FlexStyled = styled.div`
       gap: ${props.$gap};
       flex: ${props?.$flex};
       flex-wrap: ${props?.$flexWrap};
+      align-self: ${props?.$alignSelf};
     `;
   }}
 `;

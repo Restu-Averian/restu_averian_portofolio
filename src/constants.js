@@ -72,3 +72,25 @@ export const LIST_SOCIAL_CONNECTIONS = [
     icon: "ri:npmjs-fill",
   },
 ];
+
+export const CREDITS = [
+  {
+    author: "Denis Sazhin",
+    link: "https://thenounproject.com/creator/iconka/",
+  },
+  {
+    author: "inmyheart",
+    link: "https://thenounproject.com/creator/inmyheart/",
+  },
+  {
+    author: "Teewara soontorn",
+    link: "https://thenounproject.com/creator/Puckung/",
+  },
+];
+
+export const INSPIRED_BY = [
+  {
+    author: "Slides Go",
+    link: "https://slidesgo.com/theme/cat-illustrator-portfolio-infographics",
+  },
+];

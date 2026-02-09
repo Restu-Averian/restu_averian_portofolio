@@ -1,14 +1,23 @@
 import styled, { css } from "styled-components";
 import { SBGContainer } from "../../components/global/Layout";
+import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const FooterStyled = styled(SBGContainer)`
   padding: 384px 240px 240px;
+
+  ${MEDIA_QUERY_CSS?.xs(css`
+    padding-top: 0px;
+  `)}
 
   .copyright {
     font-size: 40px;
     text-align: center;
     font-family: "Patrick Hand", sans-serif;
     margin-bottom: 80px;
+
+    ${MEDIA_QUERY_CSS?.xs(css`
+      font-size: 24px;
+    `)}
   }
 
   .wrapper-list-connection {
@@ -16,15 +25,12 @@ const FooterStyled = styled(SBGContainer)`
     justify-content: center;
     gap: 128px;
     flex-wrap: wrap;
+    position: relative;
 
-    img {
-      width: 240px;
-    }
-
-    p {
-      font-size: 32px;
-      text-align: center;
-    }
+    ${MEDIA_QUERY_CSS?.xs(css`
+      gap: 32px;
+      padding-bottom: 48px;
+    `)}
   }
 
   .connect-with-me {
@@ -32,6 +38,10 @@ const FooterStyled = styled(SBGContainer)`
     font-family: "Caveat", cursive;
     font-size: 96px;
     color: #073642;
+
+    ${MEDIA_QUERY_CSS?.xs(css`
+      font-size: 38px;
+    `)}
   }
 `;
 
@@ -71,6 +81,60 @@ export const CardConectionStyled = styled.div`
 
   img {
     width: 240;
+  }
+
+  .lbl-connection {
+    font-size: 32px;
+    text-align: center;
+    font-family: "Mali", cursive;
+    width: 128px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    ${MEDIA_QUERY_CSS?.xs(css`
+      font-size: 18px;
+    `)}
+  }
+
+  ${({ $style }) => $style}
+`;
+
+export const InspiredCreditsStyled = styled.section`
+  margin-top: 24px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 0px 24px;
+
+  ${MEDIA_QUERY_CSS?.xs(css`
+    flex-direction: column;
+    margin-top: 128px;
+
+    .illustrate-inspired-credits {
+      width: 360px;
+      height: 229px;
+      margin: auto;
+    }
+  `)}
+
+  .title-group {
+    font-family: "Quicksand", sans-serif;
+    font-size: 40px;
+
+    ${MEDIA_QUERY_CSS?.xs(css`
+      font-size: 24px;
+    `)}
+  }
+
+  .lbl-item-inspired-credits {
+    font-family: "Patrick Hand", sans-serif;
+    font-size: 60px;
+    cursor: pointer;
+
+    ${MEDIA_QUERY_CSS?.xs(css`
+      font-size: 32px;
+    `)}
   }
 `;
 

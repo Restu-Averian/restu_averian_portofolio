@@ -43,6 +43,7 @@ export const SBGContainer = ({ ...props }) => {
  * @param {import("react").CSSProperties['gap']} [props.gap]
  * @param {import("react").CSSProperties['flex']} [props.flex]
  * @param {import("react").CSSProperties['flexWrap']} [props.flexWrap]
+ * @param {import("react").CSSProperties['alignSelf']} [props.alignSelf]
  * @param {string} [props.className]
  * @param {import("react").CSSProperties} [props.style]
  * @param {import("react").HTMLAttributes<HTMLDivElement>['onClick']} [props.onClick]
@@ -55,6 +56,7 @@ export const Flex = ({
   gap = 8,
   flex,
   flexWrap = "wrap",
+  alignSelf = "flex-start",
   style,
   className,
   onClick,
@@ -74,6 +76,7 @@ export const Flex = ({
       style={style}
       $flex={flex}
       $flexWrap={flexWrap}
+      $alignSelf={alignSelf}
       className={className}
       onClick={onClick}
     >
