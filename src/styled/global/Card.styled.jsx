@@ -38,6 +38,10 @@ const CardStyled = styled.div`
       object-fit: cover;
       width: 100%;
       border-radius: 4px 12px 6px 14px;
+
+      ${MEDIA_QUERY_CSS?.xs(css`
+        height: 100px;
+      `)}
     }
   }
 
@@ -47,15 +51,25 @@ const CardStyled = styled.div`
     padding: 18px;
     padding-bottom: 12px;
 
+    ${MEDIA_QUERY_CSS?.xs(css`
+      padding: 8px;
+      padding-bottom: 12px;
+    `)}
+
     h3.title-project {
       font-size: 24px;
       font-family: "Patrick Hand", sans-serif;
       font-weight: normal;
 
       ${MEDIA_QUERY_CSS?.xs(css`
-        font-size: 18px;
+        font-size: 14px;
+        overflow: hidden;
+        width: 128px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       `)}
     }
+
     p.subtitle {
       display: -webkit-box;
       -webkit-line-clamp: 3;
@@ -67,7 +81,9 @@ const CardStyled = styled.div`
       margin-bottom: 32px;
 
       ${MEDIA_QUERY_CSS?.xs(css`
-        font-size: 12px;
+        font-size: 10px;
+        line-height: unset;
+        margin-bottom: 12px;
       `)}
     }
   }
@@ -80,7 +96,8 @@ const CardStyled = styled.div`
     font-size: 14px;
 
     ${MEDIA_QUERY_CSS?.xs(css`
-      font-size: 12px;
+      font-size: 8px;
+      padding: 8px;
     `)}
   }
 `;

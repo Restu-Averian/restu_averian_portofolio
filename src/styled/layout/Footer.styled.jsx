@@ -93,7 +93,7 @@ export const CardConectionStyled = styled.div`
     text-overflow: ellipsis;
 
     ${MEDIA_QUERY_CSS?.xs(css`
-      font-size: 18px;
+      font-size: 14px;
     `)}
   }
 

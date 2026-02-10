@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import maskBtn from "../../assets/mask-btn.svg";
+import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 export const ButtonSecondaryStyled = styled.button`
   position: relative;
@@ -18,6 +19,12 @@ export const ButtonSecondaryStyled = styled.button`
 
   ${({ $style }) => $style}
 
+  ${MEDIA_QUERY_CSS.xs(css`
+    border: 1px solid #8d6e63;
+    width: 100%;
+    transform: rotate(0deg);
+  `)}
+
   &::before {
     content: "";
     position: absolute;
@@ -31,6 +38,11 @@ export const ButtonSecondaryStyled = styled.button`
     z-index: -1;
     transition: transform 0.2s ease;
     transition-delay: 0.1s;
+
+    ${MEDIA_QUERY_CSS.xs(css`
+      border: 1px solid rgb(141, 110, 99, 0.5);
+      transform: rotate(0deg) scale(1.02);
+    `)}
   }
 
   &:hover {

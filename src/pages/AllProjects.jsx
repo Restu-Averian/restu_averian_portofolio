@@ -5,9 +5,12 @@ import Card from "../components/global/Card";
 import { useNavigate } from "react-router-dom";
 import AllProjectsStyled from "../styled/all-projects/AllProjects.styled";
 import Icons from "../components/global/Icons";
+import useBreakpoint from "../hooks/useBreakpoint";
 
 const AllProjects_ = () => {
   const navigate = useNavigate();
+
+  const { xs } = useBreakpoint();
 
   const arrAtas = Array.from({ length: 6 })
     .map((_, idx) => idx + 1)
@@ -37,18 +40,25 @@ const AllProjects_ = () => {
               onClick={() => {
                 navigate(`/project/${1}`);
               }}
-              width={360}
+              width={xs ? 150 : 360}
               key={idx}
               title={`Project ${arrAtas?.includes(idx + 1) ? "genap" : "1"} - Destroyer The World`}
               subtitle="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
       accusantium soluta adipisci tenetur. Repellendus tempore delectus eum
       consectetur laborum, ducimus aperiam quisquam animi modi exercitationem
       itaque velit deleniti numquam deserunt?"
-              rotateBtn={getRandNum(-6, -3)}
+              rotateBtn={xs ? 0 : getRandNum(-6, -3)}
               configCard={{
-                rotate: getRandNum(6, -6),
-                translateY: arrAtas?.includes(idx + 1) ? -52 : 0,
+                rotate: xs ? getRandNum(2, -2) : getRandNum(6, -6),
+                ...(xs
+                  ? {
+                      translateY: getRandNum(5, -5),
+                    }
+                  : {
+                      translateY: arrAtas?.includes(idx + 1) ? -52 : 0,
+                    }),
               }}
+              className="project-item"
             />
           );
         })}

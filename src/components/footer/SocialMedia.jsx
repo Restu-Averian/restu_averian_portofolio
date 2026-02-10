@@ -46,11 +46,7 @@ const SocialMedia_ = () => {
                   textAlign: "center",
                 }}
               >
-                <Icon
-                  icon={item?.icon}
-                  width={xs ? 120 : 210}
-                  color="#839496"
-                />
+                <Icon icon={item?.icon} width={xs ? 80 : 210} color="#839496" />
               </div>
 
               <p className="lbl-connection">{item?.text}</p>

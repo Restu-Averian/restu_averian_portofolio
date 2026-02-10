@@ -2,7 +2,8 @@ import { memo } from "react";
 import FallbackProjectThumbnail from "../../assets/fallback-project-thumbnail.webp";
 import Button from "./Button";
 import CardStyled from "../../styled/global/Card.styled";
-import { Flex } from "./Layout";
+import useBreakpoint from "../../hooks/useBreakpoint";
+import Icons from "./Icons";
 
 const Card_ = ({
   title,
@@ -15,9 +16,12 @@ const Card_ = ({
   rotateBtn = 0,
   width,
   onClick,
+  className,
 }) => {
+  const { xs } = useBreakpoint();
   return (
     <CardStyled
+      className={className}
       onClick={onClick}
       $width={width}
       $rotate={configCard?.rotate}
@@ -39,6 +43,9 @@ const Card_ = ({
             className: "wrapper-btn-demo",
             style: {
               transform: `rotate(${rotateBtn}deg)`,
+              ...(xs && {
+                padding: 8,
+              }),
             },
           }}
         >
