@@ -7,11 +7,15 @@ import Icons from "../components/global/Icons";
 import { useNavigate } from "react-router-dom";
 import ProjectDetailStyled from "../styled/project-detail/ProjectDetail.styled";
 import useBreakpoint from "../hooks/useBreakpoint";
+import ListProjects from "../components/global/ListProjects";
+import AllProjectsStyled from "../styled/all-projects/AllProjects.styled";
 
 const ProjectDetail_ = () => {
   const navigate = useNavigate();
 
   const { xs } = useBreakpoint();
+
+  const listMoreProjects = Array?.from({ length: 3 });
 
   return (
     <ProjectDetailStyled>
@@ -89,6 +93,26 @@ const ProjectDetail_ = () => {
           Try Demo
         </Button>
       </div>
+
+      <AllProjectsStyled
+        $style={{
+          marginTop: 80,
+        }}
+      >
+        <h2 className="title-section">
+          More Projects
+          <Icons
+            type="cat-foot-print"
+            style={{
+              width: 48,
+              height: 47,
+              position: "absolute",
+              bottom: 0,
+            }}
+          />
+        </h2>
+        <ListProjects listData={listMoreProjects} />
+      </AllProjectsStyled>
     </ProjectDetailStyled>
   );
 };

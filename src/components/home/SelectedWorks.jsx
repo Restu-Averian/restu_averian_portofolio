@@ -6,6 +6,7 @@ import Icons from "../global/Icons";
 import { Flex } from "../global/Layout";
 import SelectedWorksStyled from "../../styled/home/SelectedWorks.styled";
 import useBreakpoint from "../../hooks/useBreakpoint";
+import Footprint from "./selected-works/Footprint";
 
 const SelectedWorks_ = (_, ref) => {
   const navigate = useNavigate();
@@ -22,6 +23,10 @@ const SelectedWorks_ = (_, ref) => {
           style={{
             transform: "rotate(3deg)",
             color: "#FDF6E3",
+            ...(xs && {
+              width: 80,
+              height: 78,
+            }),
           }}
         />
       </div>
@@ -61,58 +66,7 @@ const SelectedWorks_ = (_, ref) => {
         })}
       </Flex>
 
-      {xs ? null : (
-        <Flex
-          style={{
-            position: "absolute",
-            top: 210,
-            left: 48,
-          }}
-        >
-          <Icons
-            type="cat-foot-print-v2"
-            style={{
-              transform: "rotate(90deg)",
-              color: "#E8DCC4",
-            }}
-          />
-          <Icons
-            type="cat-foot-print-v2"
-            style={{
-              transform: "rotate(-12deg)",
-              marginTop: 36,
-              color: "#E8DCC4",
-            }}
-          />
-        </Flex>
-      )}
-
-      {xs ? null : (
-        <Flex
-          style={{
-            position: "absolute",
-            top: 82,
-            right: 120,
-          }}
-          gap={24}
-        >
-          <Icons
-            type="cat-foot-print-v2"
-            style={{
-              transform: "rotate(10deg)",
-              marginTop: 24,
-              color: "#E8DCC4",
-            }}
-          />
-          <Icons
-            type="cat-foot-print-v2"
-            style={{
-              transform: "rotate(-90deg)",
-              color: "#E8DCC4",
-            }}
-          />
-        </Flex>
-      )}
+      <Footprint />
 
       <p className="ask-txt-persuasive">Tech that i ever used?</p>
 

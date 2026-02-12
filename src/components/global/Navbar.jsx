@@ -30,7 +30,7 @@ const Navbar_ = () => {
   }, [screen]);
 
   return (
-    <WrapperNavbar id="cause">
+    <WrapperNavbar>
       <ul className="wrapper-list-nav">
         <li>
           <Link to="/">

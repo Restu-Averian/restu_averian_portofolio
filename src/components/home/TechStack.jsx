@@ -6,6 +6,7 @@ import { Icon } from "@iconify/react";
 import Icons from "../global/Icons";
 import { Flex } from "../global/Layout";
 import useBreakpoint from "../../hooks/useBreakpoint";
+import { TECH_STACK_ITEM } from "../../constants";
 
 const TechStack_ = () => {
   const { xs } = useBreakpoint();
@@ -25,7 +26,7 @@ const TechStack_ = () => {
               position: "relative",
               top: 24,
               ...(xs && {
-                width: 48,
+                width: 32,
                 transform: "rotate(-110deg)",
               }),
             }}
@@ -38,7 +39,7 @@ const TechStack_ = () => {
               position: "relative",
               top: 42,
               ...(xs && {
-                width: 48,
+                width: 32,
               }),
             }}
           />
@@ -50,21 +51,37 @@ const TechStack_ = () => {
             style={{
               color: "#839496",
               ...(xs && {
-                width: 300,
+                width: 240,
               }),
             }}
           />
         </Flex>
 
-        <TechStackItemStyled
-          $borderSlice={xs ? 46 : 45}
-          $borderSize={xs ? 18 : 45}
-          $style={{
-            top: 96,
-          }}
-        >
-          <Icon icon="mdi:react" width={xs ? 64 : 150} color="#839496" />
-        </TechStackItemStyled>
+        {TECH_STACK_ITEM?.map((item, idx) => {
+          const width = item?.width;
+          const position = item?.position;
+
+          return (
+            <TechStackItemStyled
+              key={idx}
+              $style={{
+                ...(xs
+                  ? {
+                      ...(position?.xs || {}),
+                    }
+                  : {
+                      ...(position?.default || {}),
+                    }),
+              }}
+            >
+              <Icon
+                icon={item?.icon}
+                width={xs ? width?.xs : width?.default}
+                color="#839496"
+              />
+            </TechStackItemStyled>
+          );
+        })}
       </section>
     </TechStackStyled>
   );

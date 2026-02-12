@@ -37,7 +37,7 @@ const Card_ = ({
         <p className="subtitle">{subtitle}</p>
 
         <Button
-          type="secondary"
+          type="primary"
           className="btn-demo"
           containerAttrs={{
             className: "wrapper-btn-demo",
@@ -47,6 +47,9 @@ const Card_ = ({
                 padding: 8,
               }),
             },
+          }}
+          onClick={(e) => {
+            e?.stopPropagation();
           }}
         >
           Try Demo

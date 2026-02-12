@@ -3,6 +3,8 @@ import { SBGContainer } from "../../components/global/Layout";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const AllProjectsStyled = styled(SBGContainer)`
+  ${({ $style }) => $style}
+
   .title-section {
     font-family: "Caveat", cursive;
     font-size: 72px;
@@ -13,22 +15,9 @@ const AllProjectsStyled = styled(SBGContainer)`
     position: relative;
 
     ${MEDIA_QUERY_CSS?.xs(css`
-      font-size: 52px;
-      transform: rotate(2deg);
+      font-size: 36px;
+      transform: rotate(0deg);
       margin: auto;
-    `)}
-  }
-
-  .wrapper-all-projects {
-    display: flex;
-    gap: 128px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 80px;
-
-    ${MEDIA_QUERY_CSS?.xs(css`
-      gap: 24px;
-      margin-top: 63px;
     `)}
   }
 `;

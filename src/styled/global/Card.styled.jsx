@@ -27,6 +27,7 @@ const CardStyled = styled.div`
 
   transition: all 300ms;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 
   figure.thumbnail {
     width: 100%;
@@ -93,11 +94,14 @@ const CardStyled = styled.div`
   }
 
   .btn-demo {
-    font-size: 14px;
+    font-size: 24px;
+    padding: 12px 24px;
 
     ${MEDIA_QUERY_CSS?.xs(css`
-      font-size: 8px;
+      font-size: 18px;
       padding: 8px;
+      width: 100%;
+      text-align: center;
     `)}
   }
 `;

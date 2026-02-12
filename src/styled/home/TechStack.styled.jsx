@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import borderTechStack from "../../assets/border-tech-stack.svg";
 import { SBGContainer } from "../../components/global/Layout";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
@@ -40,12 +39,13 @@ export const TechStackItemStyled = styled.div`
 
   ${({ $style }) => $style}
 
-  ${({ $borderSlice, $borderSize }) => {
-    return css`
-      border: ${$borderSize}px solid transparent;
-      border-image: url("${borderTechStack}") ${$borderSlice} round;
-    `;
-  }}
+  border:3px solid #8D6E63;
+  border-radius: 100%;
+  padding: 16px;
+
+  ${MEDIA_QUERY_CSS?.xs(css`
+    padding: 12px;
+  `)}
 `;
 
 export default TechStackStyled;

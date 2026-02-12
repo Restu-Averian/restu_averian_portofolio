@@ -16,14 +16,20 @@ const SocialMedia_ = () => {
         {LIST_SOCIAL_CONNECTIONS?.map((item, idx) => {
           const positionValMobile = {
             1: {
-              top: "-48px",
+              ...(!xs && {
+                top: "-48px",
+              }),
               left: 18,
             },
             2: {
-              top: "96px",
+              ...(!xs && {
+                top: "5em",
+              }),
             },
             3: {
-              top: 80,
+              ...(!xs && {
+                top: 80,
+              }),
               left: "-38px",
             },
           };
@@ -35,11 +41,13 @@ const SocialMedia_ = () => {
               onClick={() => {
                 window.open(item?.link, "_blank");
               }}
-              {...(xs && {
-                $style: {
+              $style={{
+                width: 240,
+                ...(xs && {
                   ...positionValMobile?.[idx + 1],
-                },
-              })}
+                  width: "unset",
+                }),
+              }}
             >
               <div
                 style={{
@@ -60,7 +68,9 @@ const SocialMedia_ = () => {
         justifyContent="center"
         gap={xs ? 16 : 48}
         style={{
-          marginTop: 67,
+          ...(!xs && {
+            marginTop: 67,
+          }),
         }}
         flexWrap={xs ? "nowrap" : "wrap"}
       >

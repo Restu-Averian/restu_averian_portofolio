@@ -28,6 +28,9 @@ const SelectedWorksStyled = styled.section`
     ${MEDIA_QUERY_CSS?.xs(css`
       margin-left: unset;
       margin-bottom: 48px;
+      gap: 18px;
+      justify-content: center;
+      margin-left: 0px;
     `)}
 
     .title-section {
@@ -37,7 +40,7 @@ const SelectedWorksStyled = styled.section`
       font-weight: normal;
 
       ${MEDIA_QUERY_CSS?.xs(css`
-        font-size: 48px;
+        font-size: 32px;
       `)}
     }
   }
@@ -51,6 +54,8 @@ const SelectedWorksStyled = styled.section`
     font-family: "Caveat", cursive;
     font-size: 38px;
     font-weight: bold;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 
     ${MEDIA_QUERY_CSS?.xs(css`
       left: unset;
@@ -64,12 +69,22 @@ const SelectedWorksStyled = styled.section`
     right: 120px;
     transform: rotate(-2deg);
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 
     .btn-explore-more {
       font-family: "Quicksand", sans-serif;
       font-weight: bold;
       color: #fdf6e3;
       font-size: 28px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+
+      &::after {
+        content: "";
+        width: calc(100% - 2px);
+        border-bottom: 3px solid #fdf6e3;
+      }
 
       ${MEDIA_QUERY_CSS?.xs(css`
         font-size: 20px;

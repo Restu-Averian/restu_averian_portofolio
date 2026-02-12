@@ -94,3 +94,60 @@ export const INSPIRED_BY = [
     link: "https://slidesgo.com/theme/cat-illustrator-portfolio-infographics",
   },
 ];
+
+export const TECH_STACK_ITEM = [
+  {
+    title: "React",
+    icon: "mdi:react",
+    width: {
+      xs: 72,
+      default: 150,
+    },
+    position: {
+      xs: {
+        top: "calc(50% - 8em)",
+        left: "calc(50% - 11em)",
+      },
+      default: {
+        top: 0,
+        left: "calc(50% - 25em)",
+      },
+    },
+  },
+  {
+    title: "Ant Design",
+    icon: "simple-icons:antdesign",
+    width: {
+      xs: 36,
+      default: 80,
+    },
+    position: {
+      xs: {
+        top: "calc(50% - 6em)",
+        right: "calc(50% - 10em)",
+      },
+      default: {
+        top: "calc(50% - 11em)",
+        right: "calc(50% - 23em)",
+      },
+    },
+  },
+  {
+    title: "Javascript",
+    icon: "ic:round-javascript",
+    width: {
+      xs: 32,
+      default: 63,
+    },
+    position: {
+      xs: {
+        top: "50%",
+        left: 0,
+      },
+      default: {
+        top: "50%",
+        left: "calc(50% - 28em)",
+      },
+    },
+  },
+];

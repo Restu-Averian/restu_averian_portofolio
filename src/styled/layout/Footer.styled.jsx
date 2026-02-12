@@ -7,6 +7,7 @@ const FooterStyled = styled(SBGContainer)`
 
   ${MEDIA_QUERY_CSS?.xs(css`
     padding-top: 0px;
+    padding-bottom: 80px;
   `)}
 
   .copyright {
@@ -58,6 +59,7 @@ export const CardConectionStyled = styled.div`
     rotate(${$rotate}deg)
     `;
   }};
+  -webkit-tap-highlight-color: transparent;
 
   &::before {
     content: "";
@@ -87,13 +89,14 @@ export const CardConectionStyled = styled.div`
     font-size: 32px;
     text-align: center;
     font-family: "Mali", cursive;
-    width: 128px;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 
     ${MEDIA_QUERY_CSS?.xs(css`
       font-size: 14px;
+      width: 128px;
     `)}
   }
 
@@ -101,7 +104,7 @@ export const CardConectionStyled = styled.div`
 `;
 
 export const InspiredCreditsStyled = styled.section`
-  margin-top: 24px;
+  margin-top: 240px;
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -112,7 +115,7 @@ export const InspiredCreditsStyled = styled.section`
     margin-top: 128px;
 
     .illustrate-inspired-credits {
-      width: 360px;
+      width: 240px;
       height: 229px;
       margin: auto;
     }
