@@ -61,6 +61,37 @@ const SocialMedia_ = () => {
             </CardConectionStyled>
           );
         })}
+
+        <CardConectionStyled
+          $rotate={5}
+          onClick={() => {
+            const urlWA =
+              "https://api.whatsapp.com/send?phone=6282391365098&text=Hi!%F0%9F%91%8B%20Aku%20lihat%20portofolio%20kamu%20dan%20tertarik%20ngobrol%20soal%20project%20frontend%20web.%20Kalau%20kamu%20oke%2C%20kita%20bisa%20call%20bentar%20(%C2%B115%E2%80%9320%20menit)%20minggu%20ini.%20Biar%20aku%20bisa%20siapin%20gambaran%20solusi%20%26%20estimasi%2C%20boleh%20isi%20singkat%3A%201)%20Tujuan%20project%202)%20Fitur%20utama%203)%20Deadline%2Ftarget%20rilis";
+
+            window.open(urlWA, "_blank");
+          }}
+          $style={{
+            width: 240,
+            ...(xs && {
+              top: 0,
+              width: "unset",
+            }),
+          }}
+        >
+          <div
+            style={{
+              textAlign: "center",
+            }}
+          >
+            <Icon
+              icon="mingcute:whatsapp-fill"
+              width={xs ? 80 : 210}
+              color="#839496"
+            />
+          </div>
+
+          <p className="lbl-connection">+6282391365098</p>
+        </CardConectionStyled>
       </div>
 
       <Flex

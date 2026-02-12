@@ -81,13 +81,13 @@ const ProjectDetail_ = () => {
         </p>
 
         <Button
-          type="secondary"
+          type="primary"
           containerAttrs={{
             className: "wrapper-btn-try-demo",
           }}
           style={{
             transform: "rotate(5deg)",
-            fontSize: xs ? 16 : 24,
+            fontSize: xs ? 28 : 36,
           }}
         >
           Try Demo
