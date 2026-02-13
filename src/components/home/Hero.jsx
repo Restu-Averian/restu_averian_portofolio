@@ -40,7 +40,19 @@ const Hero_ = ({ selectedWorksRef }) => {
           </p>
 
           {!xs && (
-            <Button type="primary" className="btn-hero-explore">
+            <Button
+              type="primary"
+              className="btn-hero-explore"
+              onClick={() => {
+                if (selectedWorksRef?.current) {
+                  selectedWorksRef?.current?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                    inline: "nearest",
+                  });
+                }
+              }}
+            >
               Explore
             </Button>
           )}

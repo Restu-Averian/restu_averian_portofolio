@@ -38,12 +38,31 @@ const ProjectDetail_ = () => {
           }}
         />
 
-        <Flex alignItems="center" gap={8} flexWrap={xs ? "nowrap" : "wrap"}>
-          <p>Home</p>
+        <Flex
+          alignItems="center"
+          gap={8}
+          flexWrap={xs ? "nowrap" : "wrap"}
+          className="breadcrumbs"
+        >
+          <p
+            className="breadcrumb-item"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Home
+          </p>
           <Icons type="cat-double-foot-print" />
-          <p>Projects</p>
+          <p
+            className="breadcrumb-item"
+            onClick={() => {
+              navigate("/project");
+            }}
+          >
+            Projects
+          </p>
           <Icons type="cat-double-foot-print" />
-          <p>Detail Projects</p>
+          <p className="breadcrumb-item">Detail Projects</p>
         </Flex>
       </Flex>
 

@@ -8,13 +8,13 @@ import SelectedWorksStyled from "../../styled/home/SelectedWorks.styled";
 import useBreakpoint from "../../hooks/useBreakpoint";
 import Footprint from "./selected-works/Footprint";
 
-const SelectedWorks_ = (_, ref) => {
+const SelectedWorks_ = ({ techStackRef }, ref) => {
   const navigate = useNavigate();
 
   const { xs } = useBreakpoint();
 
   return (
-    <SelectedWorksStyled>
+    <SelectedWorksStyled ref={ref}>
       <div className="wrapper-title-section">
         <h2 className="title-section">Selected Project</h2>
 
@@ -68,9 +68,28 @@ const SelectedWorks_ = (_, ref) => {
 
       <Footprint />
 
-      <p className="ask-txt-persuasive">Tech that i ever used?</p>
+      <p
+        className="ask-txt-persuasive"
+        onClick={() => {
+          if (techStackRef?.current) {
+            techStackRef?.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+              inline: "nearest",
+            });
+          }
+        }}
+      >
+        Tech that i ever used?
+      </p>
 
-      <Flex alignItems="center" className="wrapper-explore-more">
+      <Flex
+        alignItems="center"
+        className="wrapper-explore-more"
+        onClick={() => {
+          navigate("/project");
+        }}
+      >
         <button className="btn-explore-more">Explore More</button>
 
         <Icons

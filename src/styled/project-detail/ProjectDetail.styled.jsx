@@ -4,6 +4,12 @@ import bgImg from "../../assets/bg-img.webp";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const ProjectDetailStyled = styled(SBGContainer)`
+  .breadcrumbs {
+    .breadcrumb-item {
+      cursor: pointer;
+    }
+  }
+
   .fgr-thumbnail {
     text-align: center;
     background-image: url("${bgImg}");

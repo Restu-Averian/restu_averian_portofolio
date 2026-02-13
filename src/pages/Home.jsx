@@ -4,16 +4,15 @@ import SelectedWorks from "../components/home/SelectedWorks";
 import TechStack from "../components/home/TechStack";
 const Home_ = () => {
   const selectedWorksRef = useRef(null);
+  const techStackRef = useRef(null);
 
   return (
     <>
-      <Hero />
+      <Hero selectedWorksRef={selectedWorksRef} />
 
-      <SelectedWorks />
+      <SelectedWorks ref={selectedWorksRef} techStackRef={techStackRef} />
 
-      <TechStack />
-      {/* <Hero selectedWorksRef={selectedWorksRef} />
-      <SelectedWorks ref={selectedWorksRef} /> */}
+      <TechStack ref={techStackRef} />
     </>
   );
 };

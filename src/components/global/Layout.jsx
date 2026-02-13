@@ -3,7 +3,7 @@ import {
   Container as ContainerGrid,
 } from "styled-bootstrap-grid";
 import { FlexStyled, RowStyled } from "../../styled/global/Layout.styled";
-import { useMemo } from "react";
+import { forwardRef, memo, useMemo } from "react";
 
 /**
  *
@@ -30,9 +30,15 @@ export const SBGRow = ({ gap, ...props }) => {
  * @param {import('styled-bootstrap-grid').ContainerProps} props
  * @returns
  */
-export const SBGContainer = ({ ...props }) => {
-  return <ContainerGrid {...props} />;
+const SBGContainer_ = ({ ...props }, ref) => {
+  return (
+    <div ref={ref}>
+      <ContainerGrid {...props} />;
+    </div>
+  );
 };
+
+export const SBGContainer = memo(forwardRef(SBGContainer_));
 
 /**
  *

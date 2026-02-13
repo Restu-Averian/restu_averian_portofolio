@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { forwardRef, memo } from "react";
 import TechStackStyled, {
   TechStackItemStyled,
 } from "../../styled/home/TechStack.styled";
@@ -8,11 +8,11 @@ import { Flex } from "../global/Layout";
 import useBreakpoint from "../../hooks/useBreakpoint";
 import { TECH_STACK_ITEM } from "../../constants";
 
-const TechStack_ = () => {
+const TechStack_ = (_, ref) => {
   const { xs } = useBreakpoint();
 
   return (
-    <TechStackStyled>
+    <TechStackStyled ref={ref}>
       <section
         style={{
           position: "relative",
@@ -87,5 +87,5 @@ const TechStack_ = () => {
   );
 };
 
-const TechStack = memo(TechStack_);
+const TechStack = memo(forwardRef(TechStack_));
 export default TechStack;
