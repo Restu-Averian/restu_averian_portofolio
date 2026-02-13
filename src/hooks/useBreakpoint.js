@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { css } from "styled-components";
 
 const BREAKPOINT = { xs: 0, sm: 576, md: 768, lg: 992, xl: 1200, xxl: 1600 };
@@ -23,16 +23,31 @@ function checkMatches(mqls) {
 }
 
 const useBreakpoint = () => {
-  const [screens, setScreens] = useState({
-    xs: false,
-    sm: false,
-    md: false,
-    lg: false,
-    xl: false,
-    xxl: false,
-  });
+  const getInitialScreens = () => {
+    if (typeof window === "undefined") {
+      return {
+        xs: false,
+        sm: false,
+        md: false,
+        lg: false,
+        xl: false,
+        xxl: false,
+      };
+    }
+    const mqls = {
+      xs: window.matchMedia(`(min-width:${BREAKPOINT.xs}px)`),
+      sm: window.matchMedia(`(min-width:${BREAKPOINT.sm}px)`),
+      md: window.matchMedia(`(min-width:${BREAKPOINT.md}px)`),
+      lg: window.matchMedia(`(min-width:${BREAKPOINT.lg}px)`),
+      xl: window.matchMedia(`(min-width:${BREAKPOINT.xl}px)`),
+      xxl: window.matchMedia(`(min-width:${BREAKPOINT.xxl}px)`),
+    };
+    return checkMatches(mqls);
+  };
 
-  useEffect(() => {
+  const [screens, setScreens] = useState(getInitialScreens());
+
+  useLayoutEffect(() => {
     if (typeof window === "undefined") return;
 
     const MEDIA_QUERY_LISTS = {

@@ -1,7 +1,7 @@
-import { memo } from "react";
+import { memo, Suspense } from "react";
 import { Outlet } from "react-router-dom";
-import Footer from "../components/home/Footer";
 import Navbar from "../components/global/Navbar";
+import Footer from "../components/home/Footer";
 
 const Layouts_ = () => {
   return (
