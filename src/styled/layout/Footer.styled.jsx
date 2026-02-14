@@ -125,6 +125,7 @@ export const InspiredCreditsStyled = styled.section`
   .title-group {
     font-family: "Quicksand", sans-serif;
     font-size: 40px;
+    color: #073642;
 
     ${MEDIA_QUERY_CSS?.xs(css`
       font-size: 24px;
@@ -133,12 +134,13 @@ export const InspiredCreditsStyled = styled.section`
 
   .lbl-item-inspired-credits {
     font-family: "Patrick Hand", sans-serif;
-    font-size: 60px;
+    font-size: 52px;
     cursor: pointer;
+    color: #073642;
 
     ${MEDIA_QUERY_CSS?.xs(css`
       font-size: 32px;
-    `)}
+    `)};
   }
 `;
 

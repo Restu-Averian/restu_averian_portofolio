@@ -38,6 +38,10 @@ export const CREDITS = [
     author: "Kim Sun Young",
     link: "https://thenounproject.com/creator/hookeeak/",
   },
+  {
+    author: "Xinh Studio",
+    link: "https://thenounproject.com/creator/xinhstudio/",
+  },
 ];
 
 export const INSPIRED_BY = [
