@@ -1,6 +1,28 @@
-import styled, { css } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 import { SBGContainer } from "../../components/global/Layout";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
+
+const tsItemIdle1 = keyframes`
+  0%, 100% { 
+    transform: translateY(0px) translateX(0)
+   }
+  33% { transform: translateY(-12px) translateX(-10px) }
+  66% { transform: translateY(-8px) translateX(-6px) }
+`;
+const tsItemIdle2 = keyframes`
+  0%, 100% { 
+    transform: translateY(0px) translateX(0)
+   }
+  33% { transform: translateY(-8px) translateX(2px) }
+  66% { transform: translateY(-1px) translateX(8px) }
+`;
+const tsItemIdle3 = keyframes`
+  0%, 100% { 
+    transform: translateY(0px) translateX(0)
+   }
+  33% { transform: translateY(9px) translateX(-5px) }
+  66% { transform: translateY(-2px) translateX(6px) }
+`;
 
 const TechStackStyled = styled(SBGContainer)`
   padding-top: 384px;
@@ -54,6 +76,9 @@ const TechStackStyled = styled(SBGContainer)`
 `;
 
 export const TechStackItemStyled = styled.div`
+  --float-y: ${({ $index = 0 }) => `${-8 - $index * 5}px`};
+  --float-x: ${({ $index = 0 }) => `${-10 - $index * 5}px`};
+
   position: absolute;
 
   ${({ $style }) => $style}
@@ -61,6 +86,20 @@ export const TechStackItemStyled = styled.div`
   border:3px solid #8D6E63;
   border-radius: 100%;
   padding: 16px;
+  ${({ $index }) => {
+    const index = $index;
+
+    const animateName = {
+      0: tsItemIdle1,
+      1: tsItemIdle2,
+      2: tsItemIdle3,
+    };
+
+    return css`
+      animation: ${animateName?.[index]} 3s normal infinite;
+      animation-timing-function: steps(12, end);
+    `;
+  }}
 
   ${MEDIA_QUERY_CSS?.xs(css`
     padding: 12px;

@@ -16,6 +16,7 @@ const ImageStyled = styled.div`
     border-radius: 4px 12px 6px 14px;
     flex-direction: column;
     z-index: 9999;
+    gap: 8px;
 
     &-icon {
       width: 24px;

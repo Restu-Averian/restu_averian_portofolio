@@ -84,11 +84,23 @@ const SelectedWorksStyled = styled.section`
         content: "";
         width: calc(100% - 2px);
         border-bottom: 3px solid #fdf6e3;
+        width: 0px;
+        transition: width 300ms;
+        transition-timing-function: steps(24, end);
+        will-change: width;
       }
 
       ${MEDIA_QUERY_CSS?.xs(css`
         font-size: 20px;
       `)}
+    }
+
+    &:hover {
+      .btn-explore-more {
+        &::after {
+          width: 100%;
+        }
+      }
     }
 
     ${MEDIA_QUERY_CSS?.xs(css`

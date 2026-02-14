@@ -65,6 +65,7 @@ const TechStack_ = (_, ref) => {
           return (
             <TechStackItemStyled
               key={idx}
+              $index={idx}
               $style={{
                 ...(xs
                   ? {

@@ -10,6 +10,26 @@ const ProjectDetailStyled = styled(SBGContainer)`
     }
   }
 
+  .img-loading {
+    &-icon {
+      width: 160px !important;
+      height: 192px !important;
+
+      ${MEDIA_QUERY_CSS.xs(css`
+        width: 80px !important;
+        height: 96px !important;
+      `)}
+    }
+
+    &-text {
+      font-size: 28px !important;
+
+      ${MEDIA_QUERY_CSS.xs(css`
+        font-size: 18px !important;
+      `)}
+    }
+  }
+
   .fgr-thumbnail {
     text-align: center;
     background-image: url("${bgImg}");
