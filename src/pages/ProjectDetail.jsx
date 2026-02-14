@@ -2,7 +2,6 @@ import { memo } from "react";
 import { Icon } from "@iconify/react";
 import Button from "../components/global/Button";
 import { Flex } from "../components/global/Layout";
-import fallbackProjectThumbnail from "../assets/fallback-project-thumbnail.webp";
 import Icons from "../components/global/Icons";
 import { useNavigate } from "react-router-dom";
 import ProjectDetailStyled from "../styled/project-detail/ProjectDetail.styled";

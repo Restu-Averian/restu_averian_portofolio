@@ -1,5 +1,4 @@
 import { memo } from "react";
-import VectorHero from "../../assets/home/VectorHero";
 import Button from "../global/Button";
 import Icons from "../global/Icons";
 import HeroStyled from "../../styled/home/Hero.styled";
@@ -7,6 +6,16 @@ import useBreakpoint from "../../hooks/useBreakpoint";
 
 const Hero_ = ({ selectedWorksRef }) => {
   const { xs } = useBreakpoint();
+
+  const onClickExplore = () => {
+    if (selectedWorksRef?.current) {
+      selectedWorksRef?.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest",
+      });
+    }
+  };
   return (
     <HeroStyled>
       <section className="wrapper-hero">
@@ -44,13 +53,7 @@ const Hero_ = ({ selectedWorksRef }) => {
               type="primary"
               className="btn-hero-explore"
               onClick={() => {
-                if (selectedWorksRef?.current) {
-                  selectedWorksRef?.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "top",
-                    inline: "nearest",
-                  });
-                }
+                onClickExplore();
               }}
             >
               Explore
@@ -130,6 +133,9 @@ const Hero_ = ({ selectedWorksRef }) => {
               style: {
                 textAlign: "center",
               },
+            }}
+            onClick={() => {
+              onClickExplore();
             }}
           >
             Explore
