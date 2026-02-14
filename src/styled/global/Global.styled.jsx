@@ -3,7 +3,10 @@ import baseTexture from "../../assets/base-texture.webp";
 
 const GlobalStyled = createGlobalStyle`
     :root{
-       
+        --text-color-code:7,54,66;
+        --icon-color-code:131,148,150;
+        --text-color:rgba(var(--text-color-code));
+        --icon-color:rgba(var(--icon-color-code));
     }
 
     body{

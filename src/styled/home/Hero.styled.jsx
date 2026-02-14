@@ -3,7 +3,7 @@ import { SBGContainer } from "../../components/global/Layout";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const HeroStyled = styled(SBGContainer)`
-  .wrapper-hero {
+  .hm__hero {
     display: flex;
     position: relative;
     margin-bottom: 63px;
@@ -13,7 +13,7 @@ const HeroStyled = styled(SBGContainer)`
       flex-direction: column;
     `)}
 
-    .wrapper-intro {
+    &-intro {
       margin-top: 80px;
       margin-left: -48px;
       position: relative;
@@ -22,7 +22,7 @@ const HeroStyled = styled(SBGContainer)`
         margin-left: 68px;
       `)}
 
-      .hello-text {
+      &-hello-text {
         font-family: "Quicksand", sans-serif;
         font-weight: 200;
         font-size: 35px;
@@ -31,17 +31,19 @@ const HeroStyled = styled(SBGContainer)`
           font-size: 22px;
         `)}
       }
-      .name {
+
+      &-name {
         font-size: 80px;
-        font-weight: 600;
+        font-weight: 500;
         font-family: "Quicksand", sans-serif;
+        color: var(--text-color);
 
         ${MEDIA_QUERY_CSS?.xs(css`
           font-size: 30px;
-        `)}
+        `)};
       }
 
-      .role {
+      &-role {
         font-family: "Caveat", cursive;
         font-style: italic;
         font-size: 28px;
@@ -49,7 +51,7 @@ const HeroStyled = styled(SBGContainer)`
         margin-bottom: 12px;
       }
 
-      .desc-self {
+      &-desc-self {
         font-family: "Patrick Hand", sans-serif;
         font-size: 28px;
         width: 360px;
@@ -61,11 +63,66 @@ const HeroStyled = styled(SBGContainer)`
       }
     }
 
+    &-icon-catlaydown {
+      margin-top: 176px;
+      color: var(--icon-color);
+
+      ${MEDIA_QUERY_CSS.xs(css`
+        width: 200px;
+        height: 213px;
+        transform: rotate(-10deg);
+        margin-top: -32px;
+      `)}
+    }
+
+    &-icon-yarnball {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      color: var(--icon-color);
+
+      ${MEDIA_QUERY_CSS.xs(css`
+        bottom: 0px;
+        left: calc(50% + 32px);
+        width: 84px;
+        height: 84px;
+      `)}
+    }
+
+    &-icon-catfootprint {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+
+      ${MEDIA_QUERY_CSS.xs(css`
+        top: calc(50% + 3em);
+        left: calc(50% + 3em);
+        bottom: unset;
+        transform: rotate(180deg);
+      `)}
+
+      &-item {
+        color: var(--icon-color);
+        transform: rotate(-36deg);
+
+        ${MEDIA_QUERY_CSS.xs(css`
+          width: 48px;
+          height: 47px;
+        `)}
+      }
+    }
+
     .btn-hero-explore {
       position: absolute;
       right: 72px;
       transform: rotate(-5deg);
       -webkit-tap-highlight-color: transparent;
+      transition: all 150ms;
+
+      &:hover {
+        transform: rotate(0deg);
+      }
 
       ${MEDIA_QUERY_CSS?.xs(css`
         font-size: 32px;

@@ -1,7 +1,7 @@
 import { memo, useRef } from "react";
-import Hero from "../components/home/Hero";
 import SelectedWorks from "../components/home/selected-works";
 import TechStack from "../components/home/tech-stack";
+import Hero from "../components/home/hero";
 
 const Home_ = () => {
   const selectedWorksRef = useRef(null);
