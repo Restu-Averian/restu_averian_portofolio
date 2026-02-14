@@ -1,9 +1,8 @@
 import { memo } from "react";
-import FallbackProjectThumbnail from "../../assets/fallback-project-thumbnail.webp";
 import Button from "./Button";
 import CardStyled from "../../styled/global/Card.styled";
 import useBreakpoint from "../../hooks/useBreakpoint";
-import Icons from "./Icons";
+import Image from "./image";
 
 const Card_ = ({
   title,
@@ -28,9 +27,12 @@ const Card_ = ({
       $translateX={configCard?.translateX}
       $translateY={configCard?.translateY}
     >
-      <figure className="thumbnail">
-        <img src={FallbackProjectThumbnail} />
-      </figure>
+      <Image
+        figureAttrs={{
+          className: "thumbnail",
+        }}
+        src="https://xxxx.jpg"
+      />
 
       <div className="info-project">
         <h3 className="title-project">{title}</h3>

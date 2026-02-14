@@ -9,6 +9,7 @@ import ProjectDetailStyled from "../styled/project-detail/ProjectDetail.styled";
 import useBreakpoint from "../hooks/useBreakpoint";
 import ListProjects from "../components/global/ListProjects";
 import AllProjectsStyled from "../styled/all-projects/AllProjects.styled";
+import Image from "../components/global/image";
 
 const ProjectDetail_ = () => {
   const navigate = useNavigate();
@@ -66,9 +67,12 @@ const ProjectDetail_ = () => {
         </Flex>
       </Flex>
 
-      <figure className="fgr-thumbnail">
-        <img src={fallbackProjectThumbnail} />
-      </figure>
+      <Image
+        figureAttrs={{
+          className: "fgr-thumbnail",
+        }}
+        src="https://sawit.jpg"
+      />
 
       <div
         style={{

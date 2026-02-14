@@ -1,4 +1,4 @@
-import githubIcon from "./assets/home/icon-github.webp";
+import FallbackProjectThumbnail from "./assets/bg-err-img.webp";
 
 export const DUMMY_PROJECTS_SELECTED_WORKS = [
   {
@@ -86,6 +86,10 @@ export const CREDITS = [
     author: "Teewara soontorn",
     link: "https://thenounproject.com/creator/Puckung/",
   },
+  {
+    author: "Kim Sun Young",
+    link: "https://thenounproject.com/creator/hookeeak/",
+  },
 ];
 
 export const INSPIRED_BY = [
@@ -151,3 +155,5 @@ export const TECH_STACK_ITEM = [
     },
   },
 ];
+
+export const FALLBACK_SRC_IMAGE = FallbackProjectThumbnail;
