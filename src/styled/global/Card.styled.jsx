@@ -106,40 +106,4 @@ const CardStyled = styled.div`
   }
 `;
 
-export const TitleProject = styled.h3`
-  font-family: "Playfair Display", serif;
-  margin: 0;
-  font-size: ${({ $level }) => {
-    switch ($level) {
-      case 1:
-        return "28px";
-      case 2:
-        return "22px";
-      default:
-        return "20px";
-    }
-  }};
-`;
-
-export const TechStackStyled = styled.ul`
-  font-family: "JetBrains Mono", monospace;
-  display: flex;
-  gap: 8px;
-  padding: 0px 18px;
-
-  li {
-    list-style: none;
-  }
-`;
-
-export const DescriptionStyled = styled.p`
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-break: break-word;
-  padding: 0 18px;
-  margin-top: 24px;
-`;
-
 export default CardStyled;
