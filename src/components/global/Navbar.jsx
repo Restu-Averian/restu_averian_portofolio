@@ -10,6 +10,8 @@ import {
 const Navbar_ = () => {
   const location = useLocation();
 
+  const { xs } = useBreakpoint();
+
   const checkActive = (pathnameKey) => {
     const currPathname = location?.pathname;
 
@@ -20,32 +22,34 @@ const Navbar_ = () => {
     return currPathname?.includes(pathnameKey);
   };
 
-  const screen = useBreakpoint();
-
   const WrapperNavbar = useMemo(() => {
-    if (screen?.xs) {
+    if (xs) {
       return NavbarMobileStyled;
     }
     return NavbarRegularStyled;
-  }, [screen]);
+  }, [xs]);
 
   return (
     <WrapperNavbar>
       <ul className="wrapper-list-nav">
         <li>
-          <Link to="/">
+          <Link to="/" className="nav-link">
             <Icons
               type="cat-home"
               className={`nav-item${checkActive("home") ? " active" : ""}`}
             />
+
+            {xs && <p className="nav-item-text">Home</p>}
           </Link>
         </li>
         <li>
-          <Link to="/project">
+          <Link to="/project" className="nav-link">
             <Icons
               type="cat-projects"
               className={`nav-item${checkActive("project") ? " active" : ""}`}
             />
+
+            {xs && <p className="nav-item-text">Projects</p>}
           </Link>
         </li>
       </ul>

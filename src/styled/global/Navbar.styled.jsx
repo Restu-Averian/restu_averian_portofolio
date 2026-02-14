@@ -60,14 +60,27 @@ export const NavbarMobileStyled = styled.nav`
     justify-content: space-between;
     padding: 8px 80px;
 
-    .nav-item {
-      color: #93a1a1;
-      width: 36px;
-      height: 37px;
+    .nav-link {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
 
-      &.active {
-        color: #8d6e63;
-        animation: ${initSelectedNavItem} 150ms ease-in-out;
+      .nav-item {
+        color: #93a1a1;
+        width: 36px;
+        height: 37px;
+
+        &.active {
+          color: #8d6e63;
+          animation: ${initSelectedNavItem} 150ms ease-in-out;
+        }
+
+        &-text {
+          font-family: "Mali", cursive;
+          font-size: 14px;
+        }
       }
     }
   }
