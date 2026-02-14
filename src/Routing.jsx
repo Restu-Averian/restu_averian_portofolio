@@ -17,7 +17,9 @@ const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<SuspenseLoading text="Open Home Page" />}>
+          <Suspense
+            fallback={<SuspenseLoading text="Warming up the homepage" />}
+          >
             <Home />
           </Suspense>
         ),
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
           {
             index: true,
             element: (
-              <Suspense fallback={<SuspenseLoading text="Open All Projects" />}>
+              <Suspense fallback={<SuspenseLoading text="Loading projects" />}>
                 <AllProjects />
               </Suspense>
             ),
@@ -37,7 +39,7 @@ const router = createBrowserRouter([
             path: ":id",
             element: (
               <Suspense
-                fallback={<SuspenseLoading text="Open Detail Project" />}
+                fallback={<SuspenseLoading text="Opening project details" />}
               >
                 <ProjectDetail />
               </Suspense>

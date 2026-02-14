@@ -1,12 +1,12 @@
 import { forwardRef, memo } from "react";
 import { useNavigate } from "react-router-dom";
-import Card from "../global/Card";
-import { getRandNum } from "../../helpers";
-import Icons from "../global/Icons";
-import { Flex } from "../global/Layout";
-import SelectedWorksStyled from "../../styled/home/SelectedWorks.styled";
-import useBreakpoint from "../../hooks/useBreakpoint";
-import Footprint from "./selected-works/Footprint";
+import useBreakpoint from "../../../hooks/useBreakpoint";
+import { getRandNum } from "../../../helpers";
+import Footprint from "./Footprint";
+import SelectedWorksStyled from "../../../styled/home/SelectedWorks.styled";
+import Icons from "../../global/Icons";
+import { Flex } from "../../global/Layout";
+import Card from "../../global/Card";
 
 const SelectedWorks_ = ({ techStackRef }, ref) => {
   const navigate = useNavigate();

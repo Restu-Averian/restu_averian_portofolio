@@ -9,7 +9,7 @@ const SocialMedia_ = () => {
   const { xs } = useBreakpoint();
 
   return (
-    <section>
+    <section className="ftr__social-media">
       <p className="copyright">© 2026 Restu Averian Putra</p>
 
       <div className="wrapper-list-connection">

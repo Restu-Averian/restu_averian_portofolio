@@ -33,7 +33,7 @@ export const SBGRow = ({ gap, ...props }) => {
 const SBGContainer_ = ({ ...props }, ref) => {
   return (
     <div ref={ref}>
-      <ContainerGrid {...props} />;
+      <ContainerGrid {...props} />
     </div>
   );
 };

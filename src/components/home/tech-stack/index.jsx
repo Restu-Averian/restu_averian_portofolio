@@ -1,12 +1,13 @@
 import { forwardRef, memo } from "react";
+import useBreakpoint from "../../../hooks/useBreakpoint";
 import TechStackStyled, {
   TechStackItemStyled,
-} from "../../styled/home/TechStack.styled";
+} from "../../../styled/home/TechStack.styled";
+import Icons from "../../global/Icons";
+import { Flex } from "../../global/Layout";
+import { TECH_STACK_ITEM } from "../../../constants";
 import { Icon } from "@iconify/react";
-import Icons from "../global/Icons";
-import { Flex } from "../global/Layout";
-import useBreakpoint from "../../hooks/useBreakpoint";
-import { TECH_STACK_ITEM } from "../../constants";
+import MyContactstText from "./MyContactstText";
 
 const TechStack_ = (_, ref) => {
   const { xs } = useBreakpoint();
@@ -82,6 +83,20 @@ const TechStack_ = (_, ref) => {
             </TechStackItemStyled>
           );
         })}
+
+        {xs ? (
+          <div
+            style={{
+              position: "absolute",
+              bottom: "50%",
+              left: "calc(50% - 19em)",
+            }}
+          >
+            <MyContactstText />
+          </div>
+        ) : (
+          <MyContactstText />
+        )}
       </section>
     </TechStackStyled>
   );

@@ -31,6 +31,25 @@ const TechStackStyled = styled(SBGContainer)`
         top: 0;
       `)}
     }
+
+    .ftr__ {
+      &my-contacts {
+        position: absolute;
+        bottom: calc(50% - 10em);
+        transform: rotate(-5deg);
+        right: calc(50% - 28em);
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        cursor: pointer;
+
+        &-text {
+          font-family: "Mali", cursive;
+          font-weight: 600;
+          font-size: 24px;
+        }
+      }
+    }
   }
 `;
 

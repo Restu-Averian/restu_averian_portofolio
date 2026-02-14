@@ -47,7 +47,7 @@ const Hero_ = ({ selectedWorksRef }) => {
                 if (selectedWorksRef?.current) {
                   selectedWorksRef?.current?.scrollIntoView({
                     behavior: "smooth",
-                    block: "center",
+                    block: "top",
                     inline: "nearest",
                   });
                 }

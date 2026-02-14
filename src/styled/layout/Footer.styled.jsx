@@ -18,6 +18,7 @@ const FooterStyled = styled(SBGContainer)`
 
     ${MEDIA_QUERY_CSS?.xs(css`
       font-size: 24px;
+      margin-bottom: 48px;
     `)}
   }
 

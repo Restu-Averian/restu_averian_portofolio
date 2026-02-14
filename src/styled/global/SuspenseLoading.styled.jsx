@@ -21,6 +21,9 @@ const SuspenseLoadingStyled = styled.div`
   justify-content: center;
   align-items: center;
   gap: 12px;
+  font-family: "Mali", cursive;
+  font-weight: 600;
+  color: #073642;
 
   svg {
     animation: ${animateRotate} 1500ms steps(18, end) infinite;
