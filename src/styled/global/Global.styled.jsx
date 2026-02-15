@@ -5,12 +5,14 @@ const GlobalStyled = createGlobalStyle`
     :root{
         --text-color-code:7,54,66;
         --icon-color-code:131,148,150;
+        --bg-color-code:253,246,227;
         --text-color:rgba(var(--text-color-code));
         --icon-color:rgba(var(--icon-color-code));
+        --bg-color:rgba(var(--bg-color-code));
     }
 
     body{
-        background-color: #FDF6E3;
+        background-color:var(--bg-color);
         -webkit-font-smoothing: antialiased; 
         -moz-osx-font-smoothing: grayscale;
         background-image: url(${baseTexture});
