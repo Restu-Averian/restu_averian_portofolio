@@ -25,19 +25,17 @@ const tsItemIdle3 = keyframes`
 `;
 
 const TechStackStyled = styled(SBGContainer)`
-  padding-top: 384px;
-  position: relative;
-
-  ${MEDIA_QUERY_CSS?.xs(css`
-    padding-top: 80px;
-  `)}
-
-  section {
+  .hm__ts {
+    padding-top: 384px;
     position: relative;
 
-    .title-section {
+    ${MEDIA_QUERY_CSS?.xs(css`
+      padding-top: 80px;
+    `)}
+
+    &-title-section {
       font-family: "Caveat", cursive;
-      color: #073642;
+      color: var(--text-color);
       font-size: 96px;
       font-weight: normal;
       transform: rotate(15deg);
@@ -52,24 +50,78 @@ const TechStackStyled = styled(SBGContainer)`
         bottom: unset;
         top: 0;
       `)}
+
+      &-icon-left {
+        transform: rotate(-32deg);
+        position: relative;
+        top: 24px;
+
+        ${MEDIA_QUERY_CSS?.xs(css`
+          width: 32px;
+          transform: rotate(-110deg);
+        `)}
+      }
+
+      &-icon-right {
+        transform: rotate(0deg);
+        position: relative;
+        top: 42px;
+
+        ${MEDIA_QUERY_CSS?.xs(css`
+          width: 32px;
+        `)}
+      }
     }
 
-    .ftr__ {
-      &my-contacts {
-        position: absolute;
-        bottom: calc(50% - 10em);
-        transform: rotate(-5deg);
-        right: calc(50% - 28em);
-        display: flex;
-        align-items: center;
-        gap: 18px;
-        cursor: pointer;
+    &-main-icon {
+      justify-content: center;
 
-        &-text {
-          font-family: "Mali", cursive;
-          font-weight: 600;
-          font-size: 24px;
-        }
+      &-item {
+        color: var(--icon-color);
+
+        ${MEDIA_QUERY_CSS.xs(css`
+          width: 240px;
+        `)}
+      }
+    }
+
+    &-item-icon {
+      color: var(--icon-color);
+    }
+
+    &-my-contacts {
+      -webkit-tap-highlight-color: transparent;
+      position: absolute;
+      bottom: 80px;
+      transform: rotate(-5deg);
+      right: calc(50% - 28em);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      cursor: pointer;
+      width: max-content;
+
+      ${MEDIA_QUERY_CSS?.xs(css`
+        left: calc(50% - 5em);
+        gap: 12px;
+      `)}
+
+      &-text {
+        font-family: "Mali", cursive;
+        font-weight: 600;
+        font-size: 24px;
+
+        ${MEDIA_QUERY_CSS.xs(css`
+          font-size: 18px;
+        `)}
+      }
+
+      &-icon {
+        width: 36px;
+
+        ${MEDIA_QUERY_CSS.xs(css`
+          width: 32px;
+        `)}
       }
     }
   }
@@ -83,7 +135,7 @@ export const TechStackItemStyled = styled.div`
 
   ${({ $style }) => $style}
 
-  border:3px solid #8D6E63;
+  border:3px solid var(--bg-secondary-color);
   border-radius: 100%;
   padding: 16px;
   ${({ $index }) => {

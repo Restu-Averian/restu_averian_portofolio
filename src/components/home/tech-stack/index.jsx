@@ -1,4 +1,5 @@
 import { forwardRef, memo } from "react";
+import { Icon } from "@iconify/react";
 import useBreakpoint from "../../../hooks/useBreakpoint";
 import TechStackStyled, {
   TechStackItemStyled,
@@ -6,56 +7,28 @@ import TechStackStyled, {
 import Icons from "../../global/Icons";
 import { Flex } from "../../global/Layout";
 import { TECH_STACK_ITEM } from "../../../constants";
-import { Icon } from "@iconify/react";
-import MyContactstText from "./MyContactstText";
+import MyContactstText from "./TechStackMyContactstText";
 
 const TechStack_ = (_, ref) => {
   const { xs } = useBreakpoint();
 
   return (
     <TechStackStyled ref={ref}>
-      <section
-        style={{
-          position: "relative",
-        }}
-      >
-        <h2 className="title-section">
+      <section className="hm__ts">
+        <h2 className="hm__ts-title-section">
           <Icons
             type="cat-foot-print"
-            style={{
-              transform: "rotate(-32deg)",
-              position: "relative",
-              top: 24,
-              ...(xs && {
-                width: 32,
-                transform: "rotate(-110deg)",
-              }),
-            }}
+            className="hm__ts-title-section-icon-left"
           />
           Tech Stack!
           <Icons
             type="cat-foot-print"
-            style={{
-              transform: "rotate(0deg)",
-              position: "relative",
-              top: 42,
-              ...(xs && {
-                width: 32,
-              }),
-            }}
+            className="hm__ts-title-section-icon-right"
           />
         </h2>
 
-        <Flex justifyContent="center">
-          <Icons
-            type="cat-tech-stack"
-            style={{
-              color: "#839496",
-              ...(xs && {
-                width: 240,
-              }),
-            }}
-          />
+        <Flex className="hm__ts-main-icon">
+          <Icons type="cat-tech-stack" className="hm__ts-main-icon-item" />
         </Flex>
 
         {TECH_STACK_ITEM?.map((item, idx) => {
@@ -77,27 +50,15 @@ const TechStack_ = (_, ref) => {
               }}
             >
               <Icon
+                className="hm__ts-item-icon"
                 icon={item?.icon}
                 width={xs ? width?.xs : width?.default}
-                color="#839496"
               />
             </TechStackItemStyled>
           );
         })}
 
-        {xs ? (
-          <div
-            style={{
-              position: "absolute",
-              bottom: "50%",
-              left: "calc(50% - 19em)",
-            }}
-          >
-            <MyContactstText />
-          </div>
-        ) : (
-          <MyContactstText />
-        )}
+        <MyContactstText />
       </section>
     </TechStackStyled>
   );

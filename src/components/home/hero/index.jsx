@@ -4,22 +4,14 @@ import useBreakpoint from "../../../hooks/useBreakpoint";
 import HeroStyled from "../../../styled/home/Hero.styled";
 import HeroCatYarnball from "./HeroCatYarnball";
 import HeroCatFootprint from "./HeroCatFootprint";
+import { onScrollTarget } from "../../../helpers";
 
 const Hero_ = ({ selectedWorksRef }) => {
   const { xs } = useBreakpoint();
 
   const onClickExplore = () => {
     if (selectedWorksRef?.current) {
-      const element = selectedWorksRef?.current;
-
-      const navbarHeight = 80;
-      const elementRect = element?.getBoundingClientRect();
-      const scrollTarget = window.pageYOffset + elementRect.top - navbarHeight;
-
-      window.scrollTo({
-        top: scrollTarget,
-        behavior: "smooth",
-      });
+      onScrollTarget(selectedWorksRef?.current);
     }
   };
   return (

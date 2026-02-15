@@ -1,7 +1,7 @@
 import { forwardRef, memo } from "react";
 import { useNavigate } from "react-router-dom";
 import useBreakpoint from "../../../hooks/useBreakpoint";
-import { getRandNum } from "../../../helpers";
+import { getRandNum, onScrollTarget } from "../../../helpers";
 import SelectedWorksFootprint from "./SelectedWorksFootprint";
 import SelectedWorksStyled from "../../../styled/home/SelectedWorks.styled";
 import Icons from "../../global/Icons";
@@ -15,11 +15,7 @@ const SelectedWorks_ = ({ techStackRef }, ref) => {
 
   const onClickTechEverUsed = () => {
     if (techStackRef?.current) {
-      techStackRef?.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "nearest",
-      });
+      onScrollTarget(techStackRef?.current);
     }
   };
 

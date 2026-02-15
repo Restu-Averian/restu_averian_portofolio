@@ -6,9 +6,11 @@ const GlobalStyled = createGlobalStyle`
         --text-color-code:7,54,66;
         --icon-color-code:131,148,150;
         --bg-color-code:253,246,227;
+        --bg-secondary-color-code:141,110,99;
         --text-color:rgba(var(--text-color-code));
         --icon-color:rgba(var(--icon-color-code));
         --bg-color:rgba(var(--bg-color-code));
+        --bg-secondary-color:rgba(var(--bg-secondary-color-code));
     }
 
     body{
