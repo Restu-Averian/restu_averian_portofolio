@@ -2,22 +2,21 @@ import { memo } from "react";
 import { CREDITS, INSPIRED_BY } from "../../constants";
 import { Flex } from "../global/Layout";
 import Icons from "../global/Icons";
-import { InspiredCreditsStyled } from "../../styled/layout/Footer.styled";
 import useBreakpoint from "../../hooks/useBreakpoint";
 
 const InspiredCredits_ = () => {
   const { xs } = useBreakpoint();
 
   return (
-    <InspiredCreditsStyled>
-      <Flex flexDirection="column" justifyContent="flex-end">
-        <span className="title-group">Credits</span>
+    <section className="ftr__inspired-credits">
+      <Flex className="ftr__inspired-credits-group">
+        <span className="ftr__inspired-credits-group-title">Credits</span>
 
         {CREDITS?.map((item, idx) => {
           return (
             <p
               key={idx}
-              className="lbl-item-inspired-credits"
+              className="ftr__inspired-credits-group-item"
               onClick={() => {
                 window.open(item?.link, "_blank");
               }}
@@ -31,19 +30,18 @@ const InspiredCredits_ = () => {
       <Icons type="cat-lay-one-back" className="illustrate-inspired-credits" />
 
       <Flex
-        flexDirection="column"
-        justifyContent="flex-end"
+        className="ftr__inspired-credits-group"
         {...(xs && {
           alignSelf: "flex-end",
         })}
       >
-        <span className="title-group">Inspired By</span>
+        <span className="ftr__inspired-credits-group-title">Inspired By</span>
 
         {INSPIRED_BY?.map((item, idx) => {
           return (
             <p
               key={idx}
-              className="lbl-item-inspired-credits"
+              className="ftr__inspired-credits-group-item"
               onClick={() => {
                 window.open(item?.link, "_blank");
               }}
@@ -53,7 +51,7 @@ const InspiredCredits_ = () => {
           );
         })}
       </Flex>
-    </InspiredCreditsStyled>
+    </section>
   );
 };
 

@@ -38,6 +38,10 @@ const GlobalStyled = createGlobalStyle`
         margin: unset;
     }
 
+    p,h1,h2,h3{
+        color:var(--text-color);
+    }
+
     
 
     button {

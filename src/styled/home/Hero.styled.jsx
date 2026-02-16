@@ -36,7 +36,6 @@ const HeroStyled = styled(SBGContainer)`
         font-size: 80px;
         font-weight: 500;
         font-family: "Quicksand", sans-serif;
-        color: var(--text-color);
 
         ${MEDIA_QUERY_CSS?.xs(css`
           font-size: 30px;
@@ -46,9 +45,13 @@ const HeroStyled = styled(SBGContainer)`
       &-role {
         font-family: "Caveat", cursive;
         font-style: italic;
-        font-size: 28px;
+        font-size: 48px;
         font-weight: 200;
         margin-bottom: 12px;
+
+        ${MEDIA_QUERY_CSS.xs(css`
+          font-size: 28px;
+        `)}
       }
 
       &-desc-self {
@@ -107,8 +110,8 @@ const HeroStyled = styled(SBGContainer)`
         transform: rotate(-36deg);
 
         ${MEDIA_QUERY_CSS.xs(css`
-          width: 48px;
-          height: 47px;
+          width: 36px;
+          height: 35px;
         `)}
       }
     }

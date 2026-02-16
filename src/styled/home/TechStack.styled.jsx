@@ -30,12 +30,11 @@ const TechStackStyled = styled(SBGContainer)`
     position: relative;
 
     ${MEDIA_QUERY_CSS?.xs(css`
-      padding-top: 80px;
+      margin-top: 80px;
     `)}
 
     &-title-section {
       font-family: "Caveat", cursive;
-      color: var(--text-color);
       font-size: 96px;
       font-weight: normal;
       transform: rotate(15deg);
@@ -102,7 +101,7 @@ const TechStackStyled = styled(SBGContainer)`
       width: max-content;
 
       ${MEDIA_QUERY_CSS?.xs(css`
-        left: calc(50% - 5em);
+        left: calc(50% - 2em);
         gap: 12px;
       `)}
 
@@ -112,7 +111,7 @@ const TechStackStyled = styled(SBGContainer)`
         font-size: 24px;
 
         ${MEDIA_QUERY_CSS.xs(css`
-          font-size: 18px;
+          font-size: 20px;
         `)}
       }
 
