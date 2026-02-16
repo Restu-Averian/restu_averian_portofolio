@@ -20,7 +20,7 @@ const ProjectDetailStyled = styled(SBGContainer)`
         cursor: pointer;
       }
 
-      &-breadcrumb-list {
+      &-list {
         align-items: center;
         gap: 8px;
         flex-wrap: wrap;
@@ -32,6 +32,11 @@ const ProjectDetailStyled = styled(SBGContainer)`
         &-item {
           font-family: "Patrick Hand", sans-serif;
           cursor: pointer;
+          font-size: 20px;
+
+          &-separator {
+            color: var(--icon-color);
+          }
         }
       }
     }
@@ -72,6 +77,7 @@ const ProjectDetailStyled = styled(SBGContainer)`
         border-radius: 30px;
         padding: 20px;
         object-fit: cover;
+        height: 520px;
 
         ${MEDIA_QUERY_CSS.xs(css`
           width: calc(100% - 32px);

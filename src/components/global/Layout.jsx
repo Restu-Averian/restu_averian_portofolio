@@ -62,7 +62,7 @@ export const Flex = ({
   gap = 8,
   flex,
   flexWrap = "wrap",
-  alignSelf = "flex-start",
+  alignSelf = "center",
   style,
   className,
   onClick,

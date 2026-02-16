@@ -3,7 +3,7 @@ import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const CardStyled = styled.div`
   background-color: #fff8e1;
-  border: 3px solid #3e2723;
+  border: 2px solid #3e2723;
   border-radius: 4px 12px 8px 18px;
   position: relative;
 
@@ -63,7 +63,7 @@ const CardStyled = styled.div`
       font-weight: normal;
 
       ${MEDIA_QUERY_CSS?.xs(css`
-        font-size: 14px;
+        font-size: 16px;
         overflow: hidden;
         width: 128px;
         white-space: nowrap;

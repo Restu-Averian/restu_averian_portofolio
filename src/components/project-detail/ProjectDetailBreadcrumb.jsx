@@ -25,7 +25,12 @@ const ProjectDetailBreadcrumb_ = () => {
         >
           Home
         </p>
-        <Icons type="cat-double-foot-print" />
+
+        <Icons
+          type="cat-double-foot-print"
+          className="pd__breadcrumb-list-item-separator"
+        />
+
         <p
           className="pd__breadcrumb-list-item"
           onClick={() => {
@@ -34,7 +39,11 @@ const ProjectDetailBreadcrumb_ = () => {
         >
           Projects
         </p>
-        <Icons type="cat-double-foot-print" />
+
+        <Icons
+          type="cat-double-foot-print"
+          className="pd__breadcrumb-list-item-separator"
+        />
 
         <p className="pd__breadcrumb-list-item">Detail Projects</p>
       </Flex>

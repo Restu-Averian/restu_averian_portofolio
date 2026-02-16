@@ -31,6 +31,12 @@ const ImageStyled = styled.div`
       font-weight: 600;
     }
   }
+
+  .img {
+    display: block;
+    transition: opacity 200ms ease-in-out;
+    object-fit: cover;
+  }
 `;
 
 export default ImageStyled;

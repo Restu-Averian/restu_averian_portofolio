@@ -23,6 +23,7 @@ const Image_ = ({ src, figureAttrs = {}, ...props }) => {
 
       <figure {...figureAttrs}>
         <img
+          className={`img${props?.className ? ` ${props?.className}` : ""}`}
           key={src}
           loading="lazy"
           src={imgSrc || FALLBACK_SRC_IMAGE}
@@ -35,12 +36,14 @@ const Image_ = ({ src, figureAttrs = {}, ...props }) => {
           onLoad={() => {
             setLoaded(true);
           }}
+          {...props}
           style={{
             display: "block",
             opacity: isLoaded ? 1 : 0,
             transition: "opacity 200ms ease-in-out",
+            objectFit: "cover",
+            ...(props?.style || {}),
           }}
-          {...props}
         />
       </figure>
     </ImageStyled>

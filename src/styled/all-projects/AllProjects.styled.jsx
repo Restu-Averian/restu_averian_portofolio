@@ -26,6 +26,7 @@ const AllProjectsStyled = styled(SBGContainer)`
         height: 47px;
         position: absolute;
         bottom: 0;
+        color: var(--icon-color);
 
         ${MEDIA_QUERY_CSS?.xs(css`
           width: 32px;
