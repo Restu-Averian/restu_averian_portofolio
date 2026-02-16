@@ -21,22 +21,15 @@ const SocialMedia_ = () => {
               onClick={() => {
                 window.open(item?.link, "_blank");
               }}
-              $style={{
-                width: 240,
-                ...(xs && {
-                  width: "unset",
-                }),
-              }}
+              className="ftr__social-media-list-item"
             >
-              <div className="ftr__social-media-list-item">
-                <Icon
-                  className="ftr__social-media-list-item-icon"
-                  icon={item?.icon}
-                  width={xs ? 80 : 210}
-                />
+              <Icon
+                className="ftr__social-media-list-item-icon"
+                icon={item?.icon}
+                width={xs ? 58 : 210}
+              />
 
-                <p className="ftr__social-media-list-item-text">{item?.text}</p>
-              </div>
+              <p className="ftr__social-media-list-item-text">{item?.text}</p>
             </CardConectionStyled>
           );
         })}

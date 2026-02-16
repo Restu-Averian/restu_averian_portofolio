@@ -18,7 +18,7 @@ const FooterStyled = styled(SBGContainer)`
       margin-bottom: 80px;
 
       ${MEDIA_QUERY_CSS?.xs(css`
-        font-size: 24px;
+        font-size: 18px;
         margin-bottom: 48px;
       `)}
     }
@@ -37,6 +37,13 @@ const FooterStyled = styled(SBGContainer)`
 
       &-item {
         text-align: center;
+        width: 240px;
+
+        ${MEDIA_QUERY_CSS.xs(css`
+          width: 120px;
+          padding: 18px 8px;
+          border: 1.5px solid var(--bg-secondary-color);
+        `)}
 
         &-icon {
           width: 210px;
@@ -57,8 +64,8 @@ const FooterStyled = styled(SBGContainer)`
           text-overflow: ellipsis;
 
           ${MEDIA_QUERY_CSS?.xs(css`
-            font-size: 14px;
-            width: 128px;
+            font-size: 12px;
+            width: 120px;
           `)}
         }
       }
@@ -74,6 +81,7 @@ const FooterStyled = styled(SBGContainer)`
       ${MEDIA_QUERY_CSS?.xs(css`
         gap: 16px;
         flex-wrap: nowrap;
+        margin-top: unset;
       `)}
 
       &-text {

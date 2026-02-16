@@ -13,7 +13,12 @@ const AllProjects_ = ({ title, listData, styleContainer, extraContent }) => {
   }, [listData]);
 
   return (
-    <AllProjectsStyled $style={styleContainer}>
+    <AllProjectsStyled
+      $style={{
+        margin: "80px 0px",
+        ...(styleContainer || {}),
+      }}
+    >
       <section className="ap">
         <h2 className="ap__title-section">
           {title || "All Projects"}

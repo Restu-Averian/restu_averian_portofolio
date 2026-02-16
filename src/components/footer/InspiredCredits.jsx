@@ -2,11 +2,8 @@ import { memo } from "react";
 import { CREDITS, INSPIRED_BY } from "../../constants";
 import { Flex } from "../global/Layout";
 import Icons from "../global/Icons";
-import useBreakpoint from "../../hooks/useBreakpoint";
 
 const InspiredCredits_ = () => {
-  const { xs } = useBreakpoint();
-
   return (
     <section className="ftr__inspired-credits">
       <Flex className="ftr__inspired-credits-group">
@@ -29,12 +26,7 @@ const InspiredCredits_ = () => {
 
       <Icons type="cat-lay-one-back" className="illustrate-inspired-credits" />
 
-      <Flex
-        className="ftr__inspired-credits-group"
-        {...(xs && {
-          alignSelf: "flex-end",
-        })}
-      >
+      <Flex className="ftr__inspired-credits-group">
         <span className="ftr__inspired-credits-group-title">Inspired By</span>
 
         {INSPIRED_BY?.map((item, idx) => {
