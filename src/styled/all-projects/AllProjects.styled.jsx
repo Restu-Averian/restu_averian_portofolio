@@ -5,20 +5,36 @@ import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 const AllProjectsStyled = styled(SBGContainer)`
   ${({ $style }) => $style}
 
-  .title-section {
-    font-family: "Caveat", cursive;
-    font-size: 72px;
-    font-weight: normal;
-    color: #073642;
-    transform: rotate(-8deg);
-    width: max-content;
-    position: relative;
+  .ap {
+    &__title-section {
+      font-family: "Caveat", cursive;
+      font-size: 72px;
+      font-weight: normal;
+      color: #073642;
+      transform: rotate(-8deg);
+      width: max-content;
+      position: relative;
 
-    ${MEDIA_QUERY_CSS?.xs(css`
-      font-size: 36px;
-      transform: rotate(0deg);
-      margin: auto;
-    `)}
+      ${MEDIA_QUERY_CSS?.xs(css`
+        font-size: 36px;
+        transform: rotate(0deg);
+        margin: auto;
+      `)}
+
+      &-icon {
+        width: 48px;
+        height: 47px;
+        position: absolute;
+        bottom: 0;
+
+        ${MEDIA_QUERY_CSS?.xs(css`
+          width: 32px;
+          top: 12px;
+          transform: rotate(24deg);
+          bottom: unset;
+        `)}
+      }
+    }
   }
 `;
 

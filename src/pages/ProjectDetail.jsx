@@ -1,140 +1,35 @@
 import { memo } from "react";
-import { Icon } from "@iconify/react";
-import Button from "../components/global/Button";
-import { Flex } from "../components/global/Layout";
-import Icons from "../components/global/Icons";
-import { useNavigate } from "react-router-dom";
 import ProjectDetailStyled from "../styled/project-detail/ProjectDetail.styled";
-import useBreakpoint from "../hooks/useBreakpoint";
-import ListProjects from "../components/global/ListProjects";
-import AllProjectsStyled from "../styled/all-projects/AllProjects.styled";
 import Image from "../components/global/image";
+import ProjectDetailBreadcrumb from "../components/project-detail/ProjectDetailBreadcrumb";
+import ProjectDetailContent from "../components/project-detail/ProjectDetailContent";
+import AllProjects from "./AllProjects";
 
 const ProjectDetail_ = () => {
-  const navigate = useNavigate();
-
-  const { xs } = useBreakpoint();
-
   const listMoreProjects = Array?.from({ length: 3 });
 
   return (
     <ProjectDetailStyled>
-      <Flex
-        alignItems="center"
-        gap={xs ? 18 : 36}
-        style={{
-          marginBottom: 36,
-        }}
-        flexWrap="nowrap"
-      >
-        <Icons
-          type="back-icon-cat"
-          style={{
-            color: "#8D6E63",
-            cursor: "pointer",
+      <section className="pd">
+        <ProjectDetailBreadcrumb />
+
+        <Image
+          figureAttrs={{
+            className: "pd__thumbnail",
           }}
-          onClick={() => {
-            navigate("/project");
-          }}
+          src="https://sawit.jpg"
         />
 
-        <Flex
-          alignItems="center"
-          gap={8}
-          flexWrap={xs ? "nowrap" : "wrap"}
-          className="breadcrumbs"
-        >
-          <p
-            className="breadcrumb-item"
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Home
-          </p>
-          <Icons type="cat-double-foot-print" />
-          <p
-            className="breadcrumb-item"
-            onClick={() => {
-              navigate("/project");
-            }}
-          >
-            Projects
-          </p>
-          <Icons type="cat-double-foot-print" />
-          <p className="breadcrumb-item">Detail Projects</p>
-        </Flex>
-      </Flex>
+        <ProjectDetailContent />
 
-      <Image
-        figureAttrs={{
-          className: "fgr-thumbnail",
-        }}
-        src="https://sawit.jpg"
-      />
-
-      <div
-        style={{
-          marginTop: 32,
-        }}
-      >
-        <h1 className="title-project">Project 1 - Destroyer of the World</h1>
-
-        <ul className="wrapper-list-tech-stack">
-          <li className="tech-stack-item">
-            <Icon icon="mdi:react" style={{ fontSize: xs ? 24 : 36 }} />
-            <span className="lbl-tech-stack">React</span>
-          </li>
-
-          <li className="tech-stack-item">
-            <Icon
-              icon="ant-design:ant-design-outlined"
-              style={{ fontSize: xs ? 24 : 36 }}
-            />
-            <span className="lbl-tech-stack">Ant Design</span>
-          </li>
-        </ul>
-
-        <p className="desc">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis
-          consectetur architecto iste, labore quibusdam inventore doloribus
-          quas! Quidem cum possimus ratione mollitia enim. Iusto fugit nemo
-          saepe quae dignissimos? Cumque?
-        </p>
-
-        <Button
-          type="primary"
-          containerAttrs={{
-            className: "wrapper-btn-try-demo",
+        <AllProjects
+          title="More Projects"
+          listData={listMoreProjects}
+          styleContainer={{
+            marginTop: 80,
           }}
-          style={{
-            transform: "rotate(5deg)",
-            fontSize: xs ? 28 : 36,
-          }}
-        >
-          Try Demo
-        </Button>
-      </div>
-
-      <AllProjectsStyled
-        $style={{
-          marginTop: 80,
-        }}
-      >
-        <h2 className="title-section">
-          More Projects
-          <Icons
-            type="cat-foot-print"
-            style={{
-              width: 48,
-              height: 47,
-              position: "absolute",
-              bottom: 0,
-            }}
-          />
-        </h2>
-        <ListProjects listData={listMoreProjects} />
-      </AllProjectsStyled>
+        />
+      </section>
     </ProjectDetailStyled>
   );
 };

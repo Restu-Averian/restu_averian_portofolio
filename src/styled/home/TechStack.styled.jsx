@@ -26,7 +26,7 @@ const tsItemIdle3 = keyframes`
 
 const TechStackStyled = styled(SBGContainer)`
   .hm__ts {
-    padding-top: 384px;
+    margin-top: 384px;
     position: relative;
 
     ${MEDIA_QUERY_CSS?.xs(css`

@@ -1,37 +1,29 @@
-import { memo } from "react";
+import { memo, useMemo } from "react";
 import AllProjectsStyled from "../styled/all-projects/AllProjects.styled";
 import Icons from "../components/global/Icons";
 import ListProjects from "../components/global/ListProjects";
-import useBreakpoint from "../hooks/useBreakpoint";
 
-const AllProjects_ = () => {
-  const listData = Array.from({ length: 6 });
+const AllProjects_ = ({ title, listData, styleContainer, extraContent }) => {
+  const datas = useMemo(() => {
+    if (typeof listData !== "undefined") {
+      return listData;
+    }
 
-  const { xs } = useBreakpoint();
+    return Array.from({ length: 6 });
+  }, [listData]);
 
   return (
-    <AllProjectsStyled>
-      <h2 className="title-section">
-        All Projects
-        <Icons
-          type="cat-foot-print"
-          style={{
-            width: xs ? 32 : 48,
-            height: 47,
-            position: "absolute",
-            ...(xs
-              ? {
-                  top: 12,
-                  transform: "rotate(24deg)",
-                }
-              : {
-                  bottom: 0,
-                }),
-          }}
-        />
-      </h2>
+    <AllProjectsStyled $style={styleContainer}>
+      <section className="ap">
+        <h2 className="ap__title-section">
+          {title || "All Projects"}
+          <Icons type="cat-foot-print" className="ap__title-section-icon" />
+        </h2>
 
-      <ListProjects listData={listData} />
+        <ListProjects listData={datas} />
+
+        {extraContent && extraContent}
+      </section>
     </AllProjectsStyled>
   );
 };
