@@ -22,7 +22,13 @@ const ProjectDetail_ = () => {
 
         <ProjectDetailContent />
 
-        <AllProjects title="More Projects" listData={listMoreProjects} />
+        <AllProjects
+          title="More Projects"
+          listData={listMoreProjects}
+          styleContainer={{
+            margin: "80px 0px",
+          }}
+        />
       </section>
     </ProjectDetailStyled>
   );

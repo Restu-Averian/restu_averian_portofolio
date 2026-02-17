@@ -4,10 +4,10 @@ import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const FooterStyled = styled(SBGContainer)`
   .ftr__social-media {
-    padding: 384px 0px 240px;
+    padding: 240px 0px;
 
     ${MEDIA_QUERY_CSS?.xs(css`
-      padding-top: 0px;
+      padding-top: 120px;
       padding-bottom: 80px;
     `)}
 

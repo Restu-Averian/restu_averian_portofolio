@@ -15,7 +15,6 @@ const AllProjects_ = ({ title, listData, styleContainer, extraContent }) => {
   return (
     <AllProjectsStyled
       $style={{
-        margin: "80px 0px",
         ...(styleContainer || {}),
       }}
     >
