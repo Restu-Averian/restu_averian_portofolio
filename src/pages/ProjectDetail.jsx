@@ -1,12 +1,20 @@
-import { memo } from "react";
+import { memo, useMemo } from "react";
+import { useParams } from "react-router-dom";
 import ProjectDetailStyled from "../styled/project-detail/ProjectDetail.styled";
 import Image from "../components/global/image";
 import ProjectDetailBreadcrumb from "../components/project-detail/ProjectDetailBreadcrumb";
 import ProjectDetailContent from "../components/project-detail/ProjectDetailContent";
 import AllProjects from "./AllProjects";
+import { LIST_PROJECTS } from "../constants";
 
 const ProjectDetail_ = () => {
-  const listMoreProjects = Array?.from({ length: 3 });
+  const listMoreProjects = LIST_PROJECTS?.filter((_, idx) => idx <= 2);
+  const { id } = useParams();
+
+  const detailProject = useMemo(
+    () => LIST_PROJECTS?.find((item) => String(item?.id) === String(id)),
+    [id],
+  );
 
   return (
     <ProjectDetailStyled>
@@ -17,10 +25,10 @@ const ProjectDetail_ = () => {
           figureAttrs={{
             className: "pd__thumbnail",
           }}
-          src="https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_16x9.jpg?w=1200"
+          src={detailProject?.img}
         />
 
-        <ProjectDetailContent />
+        <ProjectDetailContent detailProject={detailProject} />
 
         <AllProjects
           title="More Projects"

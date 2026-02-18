@@ -115,3 +115,32 @@ export const TECH_STACK_ITEM = [
 ];
 
 export const FALLBACK_SRC_IMAGE = FallbackProjectThumbnail;
+
+export const LIST_PROJECTS = [
+  {
+    id: 1,
+    title: "Pustaka Pribadi",
+    img: "https://res.cloudinary.com/dcvolkyfb/image/upload/v1655373065/Project-Screenshot/Vue/pustaka-pribadi-vue_jsx7zc.png",
+    techStacks: [
+      {
+        label: "Javascript",
+        icon: "ri:javascript-fill",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Winnowing Tools",
+    img: "https://res.cloudinary.com/dcvolkyfb/image/upload/v1702825574/Project-Screenshot/React/fxxg1k0xydljdeq9xsza.png",
+    techStacks: [
+      {
+        label: "React",
+        icon: "mdi:react",
+      },
+      {
+        label: "Ant Design",
+        icon: "ant-design:ant-design-outlined",
+      },
+    ],
+  },
+];

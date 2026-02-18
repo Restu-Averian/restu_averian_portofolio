@@ -36,6 +36,7 @@ const ImageStyled = styled.div`
     display: block;
     transition: opacity 200ms ease-in-out;
     object-fit: cover;
+    margin: auto;
   }
 `;
 

@@ -13,10 +13,9 @@ const Image_ = ({ src, figureAttrs = {}, ...props }) => {
   return (
     <ImageStyled
       style={{
-        ...(xs &&
-          isLoaded === false && {
-            height: 100,
-          }),
+        ...(isLoaded === false && {
+          height: xs ? 100 : 180,
+        }),
       }}
     >
       {isLoaded ? null : <ImageLoading />}

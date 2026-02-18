@@ -2,6 +2,7 @@ import { memo, useMemo } from "react";
 import AllProjectsStyled from "../styled/all-projects/AllProjects.styled";
 import Icons from "../components/global/Icons";
 import ListProjects from "../components/global/ListProjects";
+import { LIST_PROJECTS } from "../constants";
 
 const AllProjects_ = ({ title, listData, styleContainer, extraContent }) => {
   const datas = useMemo(() => {
@@ -9,7 +10,7 @@ const AllProjects_ = ({ title, listData, styleContainer, extraContent }) => {
       return listData;
     }
 
-    return Array.from({ length: 6 });
+    return LIST_PROJECTS;
   }, [listData]);
 
   return (

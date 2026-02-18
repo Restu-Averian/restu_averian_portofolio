@@ -39,6 +39,7 @@ const CardStyled = styled.div`
       object-fit: cover;
       width: 100%;
       border-radius: 4px 12px 6px 14px;
+      height: 180px;
 
       ${MEDIA_QUERY_CSS?.xs(css`
         height: 100px;

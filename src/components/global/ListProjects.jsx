@@ -18,15 +18,16 @@ const ListProjects_ = ({ listData }) => {
 
   return (
     <ListProjectsStyled>
-      {listData?.map((_, idx) => {
+      {listData?.map((item, idx) => {
         return (
           <Card
+            imgSrc={item?.img}
             onClick={() => {
-              navigate(`/project/${1}`);
+              navigate(`/project/${item?.id}`);
             }}
             width={xs ? 140 : 360}
             key={idx}
-            title={`Project ${arrAtas?.includes(idx + 1) ? "genap" : "1"} - Destroyer The World`}
+            title={item?.title}
             subtitle="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
       accusantium soluta adipisci tenetur. Repellendus tempore delectus eum
       consectetur laborum, ducimus aperiam quisquam animi modi exercitationem

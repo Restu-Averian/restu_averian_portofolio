@@ -15,6 +15,7 @@ const Card_ = ({
   rotateBtn = 0,
   width,
   onClick,
+  imgSrc,
   className,
 }) => {
   const { xs } = useBreakpoint();
@@ -31,7 +32,7 @@ const Card_ = ({
         figureAttrs={{
           className: "thumbnail",
         }}
-        src="https://xxxx.jpg"
+        src={imgSrc}
       />
 
       <div className="info-project">

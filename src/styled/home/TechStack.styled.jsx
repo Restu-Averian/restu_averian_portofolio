@@ -54,6 +54,7 @@ const TechStackStyled = styled(SBGContainer)`
         transform: rotate(-32deg);
         position: relative;
         top: 24px;
+        color: var(--icon-color);
 
         ${MEDIA_QUERY_CSS?.xs(css`
           width: 32px;
@@ -65,6 +66,7 @@ const TechStackStyled = styled(SBGContainer)`
         transform: rotate(0deg);
         position: relative;
         top: 42px;
+        color: var(--icon-color);
 
         ${MEDIA_QUERY_CSS?.xs(css`
           width: 32px;
