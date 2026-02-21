@@ -1,7 +1,8 @@
-import { memo } from "react";
+import { Fragment, memo, useMemo } from "react";
 import {
   ButtonPrimaryStyled,
   ButtonSecondaryStyled,
+  ButtonTextStyled,
 } from "../../styled/global/Button.styled";
 
 /**
@@ -20,8 +21,18 @@ const Button_ = ({
   type = "primary",
   ...props
 }) => {
-  const WrapperStyled =
-    type === "primary" ? ButtonPrimaryStyled : ButtonSecondaryStyled;
+  const WrapperStyled = useMemo(() => {
+    switch (type) {
+      case "primary":
+        return ButtonPrimaryStyled;
+      case "secondary":
+        return ButtonSecondaryStyled;
+      case "text":
+        return ButtonTextStyled;
+      default:
+        return Fragment;
+    }
+  }, [type]);
 
   return (
     <div {...(containerAttrs || {})}>

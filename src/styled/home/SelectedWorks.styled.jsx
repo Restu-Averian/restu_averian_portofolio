@@ -1,69 +1,51 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import bgSelectedProjects from "../../assets/home/bg-selected-projects.webp";
-import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
-const SelectedWorksStyled = styled.div`
+export const SelectedWorksMobileStyled = styled.div`
   .hm__sw {
     background-image: url("${bgSelectedProjects}");
     background-position: center;
     background-repeat: no-repeat;
-    margin-top: 80px;
     background-size: 100% 100%;
     min-height: 400px;
-    padding: 96px 112px 192px 80px;
     position: relative;
-
-    ${MEDIA_QUERY_CSS?.xs(css`
-      padding: 80px 35px 192px 35px;
-      margin-top: 200px;
-    `)}
+    padding: 16px 0px 136px 0px;
+    margin-top: 200px;
 
     &-title-section {
       display: flex;
-      gap: 48px;
       align-items: center;
-      margin-bottom: 118px;
       margin-top: 18px;
-      margin-left: 84px;
-
-      ${MEDIA_QUERY_CSS?.xs(css`
-        margin-left: unset;
-        margin-bottom: 48px;
-        gap: 18px;
-        justify-content: center;
-        margin-left: 0px;
-      `)}
+      z-index: 1;
+      margin-bottom: 12px;
+      gap: 18px;
+      margin-left: 0px;
 
       &-text {
         font-family: "Caveat", cursive;
         color: rgba(253, 246, 227);
-        font-size: 80px;
         font-weight: normal;
-
-        ${MEDIA_QUERY_CSS?.xs(css`
-          font-size: 32px;
-        `)}
+        margin-left: 12px;
+        font-size: 32px;
       }
 
       &-icon {
         transform: rotate(3deg);
         color: var(--bg-color);
-
-        ${MEDIA_QUERY_CSS?.xs(css`
-          width: 80px;
-          height: 78px;
-        `)}
+        width: 72px;
+        height: 70px;
       }
     }
 
     &-list-projects {
       gap: 36px;
       justify-content: center;
-      flex-wrap: nowrap;
+      position: relative;
+      flex-wrap: wrap;
 
-      ${MEDIA_QUERY_CSS?.xs(css`
-        flex-wrap: wrap;
-      `)}
+      &-btn-explore {
+        font-size: 12px !important;
+      }
     }
 
     &-cat-footprint {
@@ -106,33 +88,24 @@ const SelectedWorksStyled = styled.div`
     &-ask-txt-persuasive {
       position: absolute;
       bottom: 126px;
-      left: calc(50% - 210px);
       transform: rotate(-6deg);
       color: #fdf6e3;
       font-family: "Caveat", cursive;
-      font-size: 38px;
       font-weight: bold;
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
-
-      ${MEDIA_QUERY_CSS?.xs(css`
-        left: unset;
-        font-size: 28px;
-      `)}
+      left: unset;
+      font-size: 28px;
     }
 
     &-explore-more {
       position: absolute;
-      bottom: 56px;
-      right: 120px;
       transform: rotate(-2deg);
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
       padding: 8px 16px;
-
-      ${MEDIA_QUERY_CSS?.xs(css`
-        right: 32px;
-      `)}
+      right: 32px;
+      bottom: 45px;
 
       &:hover {
         transform: rotate(0deg);
@@ -149,14 +122,10 @@ const SelectedWorksStyled = styled.div`
         font-family: "Quicksand", sans-serif;
         font-weight: bold;
         color: #fdf6e3;
-        font-size: 28px;
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
-
-        ${MEDIA_QUERY_CSS?.xs(css`
-          font-size: 20px;
-        `)}
+        font-size: 24px;
 
         &::after {
           content: "";
@@ -176,4 +145,141 @@ const SelectedWorksStyled = styled.div`
   }
 `;
 
-export default SelectedWorksStyled;
+export const SelectedWorksDesktopStyled = styled.div`
+  .hm__sw {
+    background-image: url("${bgSelectedProjects}");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    min-height: 400px;
+    padding: 48px 120px 12px;
+    position: relative;
+
+    &-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      position: relative;
+
+      &-list-projects {
+        position: relative;
+        justify-content: center;
+        flex-wrap: nowrap;
+        width: 600px;
+        height: 320px;
+      }
+
+      &-texts {
+        &-title-section {
+          display: flex;
+          align-items: center;
+          margin-top: 18px;
+          z-index: 1;
+          margin-bottom: 12px;
+          gap: 18px;
+          margin-left: 0px;
+
+          &-text {
+            font-family: "Caveat", cursive;
+            color: rgba(253, 246, 227);
+            font-weight: normal;
+            margin-left: 12px;
+            font-size: 80px;
+          }
+
+          &-icon {
+            transform: rotate(3deg);
+            color: var(--bg-color);
+            width: 100px;
+            height: 98px;
+          }
+        }
+
+        &-btn {
+          align-items: center;
+          -webkit-tap-highlight-color: transparent;
+          justify-content: center;
+
+          &-text {
+            font-family: "Quicksand", sans-serif;
+            font-weight: bold;
+            color: #fdf6e3;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 24px;
+
+            &::after {
+              content: "";
+              border-bottom: 3px solid var(--bg-color);
+              width: 0px;
+              transition: width 240ms;
+              transition-timing-function: steps(24, end);
+              will-change: width;
+            }
+          }
+
+          &-icon {
+            transform: scale(-1, 1);
+            color: var(--bg-color);
+          }
+        }
+      }
+
+      &-ask-tech {
+        position: absolute;
+        transform: rotate(-6deg);
+        color: var(--bg-color);
+        font-family: "Caveat", cursive;
+        font-weight: bold;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        font-size: 28px;
+        right: 120px;
+        bottom: -50px;
+      }
+    }
+
+    &-cat-footprint {
+      &-1 {
+        color: var(--bg-color);
+        position: absolute;
+        top: 38px;
+        left: 48px;
+
+        &-item {
+          &-1 {
+            transform: rotate(90deg);
+            width: 28px;
+          }
+          &-2 {
+            transform: rotate(-12deg);
+            margin-top: 28px;
+            width: 28px;
+          }
+        }
+      }
+
+      &-2 {
+        position: absolute;
+        bottom: 36px;
+        right: 120px;
+        color: var(--bg-color);
+        gap: 12px;
+
+        &-item {
+          &-1 {
+            transform: rotate(10deg);
+            margin-top: 28px;
+            width: 28px;
+          }
+          &-2 {
+            transform: rotate(-90deg);
+            width: 28px;
+          }
+        }
+      }
+    }
+  }
+`;

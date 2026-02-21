@@ -22,6 +22,7 @@ const CardStyled = styled.div`
   transform-origin: center;
   transition: transform 200ms ease-in-out;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 
   &::before {
     content: "";
