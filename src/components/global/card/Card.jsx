@@ -4,9 +4,23 @@ import Image from "../image";
 import { Icon } from "@iconify/react";
 import Button from "../Button";
 
-const Card_ = ({ imgSrc, onClick, title, subtitle, techStacks }) => {
+const Card_ = ({
+  imgSrc,
+  onClick,
+  title,
+  subtitle,
+  techStacks,
+  onClickDemo,
+}) => {
   return (
-    <CardStyled onClick={onClick}>
+    <CardStyled
+      onClick={(e) => {
+        e.stopPropagation();
+        if (typeof onClick === "function") {
+          onClick(e);
+        }
+      }}
+    >
       <Image
         figureAttrs={{
           className: "crd__fgr-img",
@@ -28,7 +42,17 @@ const Card_ = ({ imgSrc, onClick, title, subtitle, techStacks }) => {
           })}
         </ul>
 
-        <Button type="secondary" className="crd__ftr-btn-try-demo">
+        <Button
+          type="secondary"
+          className="crd__ftr-btn-try-demo"
+          onClick={(e) => {
+            e.stopPropagation();
+
+            if (typeof onClickDemo === "function") {
+              onClickDemo(e);
+            }
+          }}
+        >
           Try Demo
         </Button>
       </div>
