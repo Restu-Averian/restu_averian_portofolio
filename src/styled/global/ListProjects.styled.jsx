@@ -3,7 +3,7 @@ import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const ListProjectsStyled = styled.section`
   display: flex;
-  gap: 80px;
+  gap: 32px;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 80px;

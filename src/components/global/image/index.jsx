@@ -4,6 +4,13 @@ import useBreakpoint from "../../../hooks/useBreakpoint";
 import ImageStyled from "../../../styled/global/Image.styled";
 import ImageLoading from "./ImageLoading";
 
+/**
+ *
+ * @param {object} props
+ * @param {string} props.src
+ * @param {React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>} props.figureAttrs
+ * @returns
+ */
 const Image_ = ({ src, figureAttrs = {}, ...props }) => {
   const { xs } = useBreakpoint();
 
