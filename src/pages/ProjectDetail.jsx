@@ -4,12 +4,15 @@ import ProjectDetailStyled from "../styled/project-detail/ProjectDetail.styled";
 import Image from "../components/global/image";
 import ProjectDetailBreadcrumb from "../components/project-detail/ProjectDetailBreadcrumb";
 import ProjectDetailContent from "../components/project-detail/ProjectDetailContent";
-import AllProjects from "./AllProjects";
 import { LIST_PROJECTS } from "../constants";
+import { Flex } from "../components/global/Layout";
+import ProjectDetailMoreProjects from "../components/project-detail/ProjectDetailMoreProjects";
+import useBreakpoint from "../hooks/useBreakpoint";
 
 const ProjectDetail_ = () => {
-  const listMoreProjects = LIST_PROJECTS?.filter((_, idx) => idx <= 2);
   const { id } = useParams();
+
+  const { xs } = useBreakpoint();
 
   const detailProject = useMemo(
     () => LIST_PROJECTS?.find((item) => String(item?.id) === String(id)),
@@ -21,22 +24,27 @@ const ProjectDetail_ = () => {
       <section className="pd">
         <ProjectDetailBreadcrumb />
 
-        <Image
-          figureAttrs={{
-            className: "pd__thumbnail",
-          }}
-          src={detailProject?.img}
-        />
+        <Flex flexDirection={xs ? "column" : "row"}>
+          <div
+            {...(!xs && {
+              style: {
+                flex: "0 0 50%",
+                maxWidth: "50%",
+              },
+            })}
+          >
+            <Image
+              figureAttrs={{
+                className: "pd__thumbnail",
+              }}
+              src={detailProject?.img}
+            />
 
-        <ProjectDetailContent detailProject={detailProject} />
+            <ProjectDetailContent detailProject={detailProject} />
+          </div>
 
-        <AllProjects
-          title="More Projects"
-          listData={listMoreProjects}
-          styleContainer={{
-            margin: "80px 0px",
-          }}
-        />
+          <ProjectDetailMoreProjects />
+        </Flex>
       </section>
     </ProjectDetailStyled>
   );

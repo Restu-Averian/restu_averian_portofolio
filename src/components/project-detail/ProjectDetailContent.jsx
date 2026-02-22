@@ -33,7 +33,7 @@ const ProjectDetailContent_ = ({ detailProject }) => {
       <Button
         type="primary"
         containerAttrs={{
-          className: "wrapper-btn-try-demo",
+          className: "pd__content-btn-try-demo",
         }}
       >
         Try Demo

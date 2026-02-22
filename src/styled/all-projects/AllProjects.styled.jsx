@@ -10,7 +10,7 @@ const AllProjectsStyled = styled(SBGContainer)`
       font-family: "Caveat", cursive;
       font-size: 72px;
       font-weight: normal;
-      color: #073642;
+      color: var(--text-color);
       transform: rotate(-8deg);
       width: max-content;
       position: relative;

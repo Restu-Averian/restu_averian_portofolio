@@ -32,7 +32,7 @@ export const NavbarRegularStyled = styled.nav`
     align-items: center;
 
     .nav-item {
-      color: #93a1a1;
+      color: var(--icon-color-inactive);
       width: 52px;
       height: 53px;
       padding: 12px 18px;

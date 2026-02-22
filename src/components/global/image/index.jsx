@@ -19,6 +19,7 @@ const Image_ = ({ src, figureAttrs = {}, ...props }) => {
 
   return (
     <ImageStyled
+      className="img-wrapper"
       style={{
         ...(isLoaded === false && {
           height: xs ? 100 : 180,
