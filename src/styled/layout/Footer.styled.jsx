@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import { SBGContainer } from "../../components/global/Layout";
+import { Container } from "../../components/global/Layout";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
-const FooterStyled = styled(SBGContainer)`
+const FooterStyled = styled(Container)`
   .ftr__social-media {
     padding: 240px 0px;
 

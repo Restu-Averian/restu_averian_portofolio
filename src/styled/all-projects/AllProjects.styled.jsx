@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import { SBGContainer } from "../../components/global/Layout";
+import { Container } from "../../components/global/Layout";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
-const AllProjectsStyled = styled(SBGContainer)`
+const AllProjectsStyled = styled(Container)`
   ${({ $style }) => $style}
 
   .ap {

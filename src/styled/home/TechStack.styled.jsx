@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { SBGContainer } from "../../components/global/Layout";
+import { Container } from "../../components/global/Layout";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 const tsItemIdle1 = keyframes`
@@ -24,7 +24,7 @@ const tsItemIdle3 = keyframes`
   66% { transform: translateY(-2px) translateX(6px) }
 `;
 
-const TechStackStyled = styled(SBGContainer)`
+const TechStackStyled = styled(Container)`
   .hm__ts {
     margin-top: 384px;
     position: relative;

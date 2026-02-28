@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { SBGContainer } from "../../components/global/Layout";
+import { Container } from "../../components/global/Layout";
 import bgImg from "../../assets/bg-img.webp";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
@@ -15,7 +15,7 @@ const hoverAnimate = keyframes`
     }
 `;
 
-const ProjectDetailStyled = styled(SBGContainer)`
+const ProjectDetailStyled = styled(Container)`
   .pd {
     &__breadcrumb {
       align-items: center;

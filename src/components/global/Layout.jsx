@@ -1,44 +1,15 @@
-import {
-  Col as ColGrid,
-  Container as ContainerGrid,
-} from "styled-bootstrap-grid";
-import { FlexStyled, RowStyled } from "../../styled/global/Layout.styled";
+import { ContainerStyled, FlexStyled } from "../../styled/global/Layout.styled";
 import { forwardRef, memo, useMemo } from "react";
 
-/**
- *
- * @param {import('styled-bootstrap-grid').ColProps} props
- * @returns
- */
-export const SBGCol = ({ ...props }) => {
-  return <ColGrid {...props} />;
-};
-
-/**
- *
- * @param {import('styled-bootstrap-grid').RowProps & {
- * gap?:import("react").CSSProperties['gap']
- * } } props
- * @returns
- */
-export const SBGRow = ({ gap, ...props }) => {
-  return <RowStyled {...props} $gap={gap} />;
-};
-
-/**
- *
- * @param {import('styled-bootstrap-grid').ContainerProps} props
- * @returns
- */
-const SBGContainer_ = ({ ...props }, ref) => {
+const Container_ = ({ ...props }, ref) => {
   return (
-    <div ref={ref}>
-      <ContainerGrid {...props} />
-    </div>
+    <ContainerStyled {...props} ref={ref}>
+      {props?.children}
+    </ContainerStyled>
   );
 };
 
-export const SBGContainer = memo(forwardRef(SBGContainer_));
+export const Container = memo(forwardRef(Container_));
 
 /**
  *

@@ -1,5 +1,6 @@
 import { Row } from "styled-bootstrap-grid";
 import styled, { css } from "styled-components";
+import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
 export const FlexStyled = styled.div`
   display: flex;
@@ -16,15 +17,20 @@ export const FlexStyled = styled.div`
   }}
 `;
 
-export const RowStyled = styled(Row)`
-  && {
-    margin-right: 0;
-    margin-left: 0;
-
-    ${({ $gap }) => {
-      return css`
-        gap: ${$gap}px;
-      `;
-    }}
-  }
+export const ContainerStyled = styled.div`
+  ${MEDIA_QUERY_CSS.xs(css`
+    max-width: 100%;
+  `)}
+  ${MEDIA_QUERY_CSS.sm(css`
+    max-width: 600px;
+  `)}
+    ${MEDIA_QUERY_CSS.md(css`
+    max-width: 960px;
+  `)}
+    ${MEDIA_QUERY_CSS.lg(css`
+    max-width: 1200px;
+  `)}
+    ${MEDIA_QUERY_CSS.xl(css`
+    max-width: 1440px;
+  `)}
 `;

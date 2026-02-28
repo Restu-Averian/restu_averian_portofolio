@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import { SBGContainer } from "../../components/global/Layout";
+import { Container } from "../../components/global/Layout";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
-const HeroStyled = styled(SBGContainer)`
+const HeroStyled = styled(Container)`
   .hm__hero {
     display: flex;
     position: relative;

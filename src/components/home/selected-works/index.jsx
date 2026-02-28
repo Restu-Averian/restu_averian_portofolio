@@ -1,16 +1,11 @@
 import { forwardRef, memo, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import useBreakpoint from "../../../hooks/useBreakpoint";
-import { getRandNum, onScrollTarget } from "../../../helpers";
-import SelectedWorksFootprint from "./SelectedWorksFootprint";
+import { onScrollTarget } from "../../../helpers";
 import {
   SelectedWorksDesktopStyled,
   SelectedWorksMobileStyled,
 } from "../../../styled/home/SelectedWorks.styled";
-import Icons from "../../global/Icons";
-import { Flex } from "../../global/Layout";
-import Card from "../../global/Card";
-import CardSP from "../../global/card/CardSP";
 import SelectedWorksContentMobile from "./SelectedWorksContentMobile";
 import SelectedWorksContentDesktop from "./SelectedWorksContentDesktop";
 
