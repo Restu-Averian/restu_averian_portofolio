@@ -184,7 +184,7 @@ const ProjectDetailStyled = styled(Container)`
 
       &-contents {
         overflow: hidden;
-        height: 630px;
+        height: 480px;
         position: relative;
         padding: 24px 12px;
 
@@ -261,22 +261,22 @@ const ProjectDetailStyled = styled(Container)`
           transition: all 200ms ease-in-out;
           padding: 8px;
           -webkit-tap-highlight-color: transparent;
-          position: absolute;
-          z-index: 99;
 
           ${MEDIA_QUERY_CSS.xs(css`
+            position: absolute;
+            z-index: 99;
             border: 1px dashed var(--bg-secondary-color);
             background-color: var(--bg-color);
             transform: scale(1.08);
+
+            &.prev {
+              left: 15px;
+            }
+
+            &.next {
+              right: 15px;
+            }
           `)}
-
-          &.prev {
-            left: 15px;
-          }
-
-          &.next {
-            right: 15px;
-          }
 
           &:hover {
             animation: ${hoverAnimate} 180ms ease-in-out;
