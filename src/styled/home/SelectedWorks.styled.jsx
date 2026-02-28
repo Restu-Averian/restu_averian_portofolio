@@ -9,7 +9,7 @@ export const SelectedWorksMobileStyled = styled.div`
     background-size: 100% 100%;
     min-height: 400px;
     position: relative;
-    padding: 16px 0px 136px 0px;
+    padding: 16px 0px 58px 0px;
     margin-top: 200px;
 
     &-title-section {
@@ -141,6 +141,10 @@ export const SelectedWorksMobileStyled = styled.div`
         transform: scale(-1, 1);
         color: var(--bg-color);
       }
+    }
+
+    .swiper-slide-shadow {
+      background: unset;
     }
   }
 `;

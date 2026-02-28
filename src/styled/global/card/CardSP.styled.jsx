@@ -17,7 +17,7 @@ const CardSPStyled = styled.div`
   }
 
   ${MEDIA_QUERY_CSS.xs(css`
-    width: 180px;
+    width: 240px;
   `)}
 
   ${({ $style }) => $style}
@@ -58,7 +58,6 @@ const CardSPStyled = styled.div`
         font-weight: normal;
 
         ${MEDIA_QUERY_CSS?.xs(css`
-          font-size: 12px;
           overflow: hidden;
           width: 128px;
           white-space: nowrap;
@@ -78,7 +77,6 @@ const CardSPStyled = styled.div`
         font-size: 12px;
 
         ${MEDIA_QUERY_CSS?.xs(css`
-          font-size: 8px;
           line-height: unset;
         `)}
       }

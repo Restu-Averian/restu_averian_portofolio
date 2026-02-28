@@ -47,9 +47,9 @@ const SelectedWorksContentDesktop_ = () => {
                   position: "absolute",
                   ...(styleCard || {}),
                 }}
-                // onClick={() => {
-                //   navigate(`/project/${idx + 1}`);
-                // }}
+                onClick={() => {
+                  navigate(`/project/${idx + 1}`);
+                }}
               />
             );
           })}

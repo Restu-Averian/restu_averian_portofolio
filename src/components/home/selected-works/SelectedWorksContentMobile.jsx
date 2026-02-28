@@ -5,6 +5,10 @@ import { Flex } from "../../global/Layout";
 import CardSP from "../../global/card/CardSP";
 import SelectedWorksFootprint from "./SelectedWorksFootprint";
 import Button from "../../global/Button";
+import { EffectCards } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-cards";
 
 const SelectedWorksContentMobile_ = () => {
   const navigate = useNavigate();
@@ -38,7 +42,40 @@ const SelectedWorksContentMobile_ = () => {
         />
       </div>
 
-      <Flex className="hm__sw-list-projects">
+      <Swiper
+        effect="cards"
+        grabCursor={true}
+        modules={[EffectCards]}
+        className="mySwiper"
+      >
+        {Array.from({ length: 3 })?.map((_, idx) => {
+          return (
+            <SwiperSlide key={idx}>
+              <CardSP
+                title={`Project ${idx + 1} - Destroyer The World`}
+                subtitle="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
+        accusantium soluta adipisci tenetur. Repellendus tempore delectus eum
+        consectetur laborum, ducimus aperiam quisquam animi modi exercitationem
+        itaque velit deleniti numquam deserunt?"
+                extraBtn={
+                  <Button
+                    type="text"
+                    className="hm__sw-list-projects-btn-explore"
+                    onClick={() => navigate(`/project/${idx + 1}`)}
+                  >
+                    Explore
+                  </Button>
+                }
+                style={{
+                  margin: "auto",
+                }}
+              />
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+
+      {/* <Flex className="hm__sw-list-projects">
         {Array.from({ length: 3 })?.map((_, idx) => {
           const transform = TRANSFORM_CARD?.[idx + 1];
 
@@ -69,7 +106,7 @@ const SelectedWorksContentMobile_ = () => {
             />
           );
         })}
-      </Flex>
+      </Flex> */}
 
       <SelectedWorksFootprint />
 
