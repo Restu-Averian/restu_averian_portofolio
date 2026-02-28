@@ -1,4 +1,4 @@
-import { memo, Suspense } from "react";
+import { memo } from "react";
 import { Outlet, ScrollRestoration } from "react-router-dom";
 import Navbar from "../components/global/Navbar";
 import Footer from "../components/home/Footer";

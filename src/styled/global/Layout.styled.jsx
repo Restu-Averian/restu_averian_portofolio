@@ -1,4 +1,3 @@
-import { Row } from "styled-bootstrap-grid";
 import styled, { css } from "styled-components";
 import { MEDIA_QUERY_CSS } from "../../hooks/useBreakpoint";
 
