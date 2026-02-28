@@ -14,6 +14,7 @@ const CardSPStyled = styled.div`
   &:hover {
     transform: rotate(0deg) translateY(-24px);
     z-index: 1;
+    transition-delay: 150ms;
   }
 
   ${MEDIA_QUERY_CSS.xs(css`

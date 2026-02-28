@@ -6,6 +6,8 @@ const AllProjectsStyled = styled(Container)`
   ${({ $style }) => $style}
 
   .ap {
+    padding-bottom: 80px;
+
     &__title-section {
       font-family: "Caveat", cursive;
       font-size: 72px;

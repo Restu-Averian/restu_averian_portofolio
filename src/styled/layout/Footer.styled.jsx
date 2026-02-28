@@ -7,7 +7,7 @@ const FooterStyled = styled(Container)`
     padding: 240px 0px;
 
     ${MEDIA_QUERY_CSS?.xs(css`
-      padding-top: 120px;
+      padding-top: unset;
       padding-bottom: 80px;
     `)}
 
