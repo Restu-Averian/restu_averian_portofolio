@@ -105,7 +105,7 @@ export const SelectedWorksMobileStyled = styled.div`
       -webkit-tap-highlight-color: transparent;
       padding: 8px 16px;
       right: 32px;
-      bottom: 45px;
+      bottom: 28px;
 
       &:hover {
         transform: rotate(0deg);
@@ -141,10 +141,6 @@ export const SelectedWorksMobileStyled = styled.div`
         transform: scale(-1, 1);
         color: var(--bg-color);
       }
-    }
-
-    .swiper-slide-shadow {
-      background: unset;
     }
   }
 `;
