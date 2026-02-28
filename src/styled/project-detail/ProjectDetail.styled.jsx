@@ -22,6 +22,7 @@ const ProjectDetailStyled = styled(SBGContainer)`
       gap: 36px;
       margin-bottom: 36px;
       flex-wrap: nowrap;
+      -webkit-tap-highlight-color: transparent;
 
       ${MEDIA_QUERY_CSS.xs(css`
         gap: 18px;
@@ -170,6 +171,7 @@ const ProjectDetailStyled = styled(SBGContainer)`
       ${MEDIA_QUERY_CSS.xs(css`
         height: auto;
         position: static;
+        margin-top: 48px;
       `)}
 
       &-title {
@@ -195,12 +197,10 @@ const ProjectDetailStyled = styled(SBGContainer)`
         &-list {
           flex-wrap: nowrap;
           flex-direction: column;
-          touch-action: pan-y pinch-zoom;
           height: 100%;
           gap: 12px;
 
           ${MEDIA_QUERY_CSS.xs(css`
-            touch-action: pan-x pinch-zoom;
             flex-direction: row;
           `)}
 
@@ -237,6 +237,7 @@ const ProjectDetailStyled = styled(SBGContainer)`
       &-wrapper {
         flex-wrap: nowrap;
         justify-content: center;
+        position: relative;
 
         ${MEDIA_QUERY_CSS.xs(css`
           flex-direction: column;
@@ -251,8 +252,7 @@ const ProjectDetailStyled = styled(SBGContainer)`
           flex-direction: row;
         `)}
 
-        &-item,
-        &-item-disabled {
+        &-item {
           user-select: none;
           color: var(--bg-secondary-color);
           cursor: pointer;
@@ -261,6 +261,22 @@ const ProjectDetailStyled = styled(SBGContainer)`
           transition: all 200ms ease-in-out;
           padding: 8px;
           -webkit-tap-highlight-color: transparent;
+          position: absolute;
+          z-index: 99;
+
+          ${MEDIA_QUERY_CSS.xs(css`
+            border: 1px dashed var(--bg-secondary-color);
+            background-color: var(--bg-color);
+            transform: scale(1.08);
+          `)}
+
+          &.prev {
+            left: 15px;
+          }
+
+          &.next {
+            right: 15px;
+          }
 
           &:hover {
             animation: ${hoverAnimate} 180ms ease-in-out;
@@ -268,17 +284,6 @@ const ProjectDetailStyled = styled(SBGContainer)`
             transform: scale(1.08);
           }
           &:active {
-            transform: scale(1);
-          }
-        }
-
-        &-item-disabled {
-          color: var(--icon-color-inactive);
-          cursor: not-allowed;
-
-          &:hover {
-            animation: unset;
-            border: unset;
             transform: scale(1);
           }
         }

@@ -6,8 +6,8 @@ import ProjectDetailBreadcrumb from "../components/project-detail/ProjectDetailB
 import ProjectDetailContent from "../components/project-detail/ProjectDetailContent";
 import { LIST_PROJECTS } from "../constants";
 import { Flex } from "../components/global/Layout";
-import ProjectDetailMoreProjects from "../components/project-detail/ProjectDetailMoreProjects";
 import useBreakpoint from "../hooks/useBreakpoint";
+import ProjectDetailMoreProjectsMobile from "../components/project-detail/more-projects/ProjectDetailMoreProjectsMobile";
 
 const ProjectDetail_ = () => {
   const { id } = useParams();
@@ -43,7 +43,8 @@ const ProjectDetail_ = () => {
             <ProjectDetailContent detailProject={detailProject} />
           </div>
 
-          <ProjectDetailMoreProjects />
+          {xs ? <ProjectDetailMoreProjectsMobile /> : null}
+          {/* <ProjectDetailMoreProjects /> */}
         </Flex>
       </section>
     </ProjectDetailStyled>
