@@ -105,10 +105,11 @@ const FooterStyled = styled(Container)`
     display: flex;
     gap: 8px;
     justify-content: center;
-    padding: 0px 24px 96px;
+    padding: 0px 24px 180px;
 
     ${MEDIA_QUERY_CSS?.xs(css`
       flex-direction: column;
+      padding-bottom: 96px;
 
       .illustrate-inspired-credits {
         width: 240px;

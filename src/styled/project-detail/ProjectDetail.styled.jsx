@@ -158,6 +158,12 @@ const ProjectDetailStyled = styled(Container)`
 
         ${MEDIA_QUERY_CSS.xs(css`
           margin-right: 32px;
+          margin-top: 24px;
+
+          button {
+            font-size: 28px;
+            padding: 12px 24px;
+          }
         `)}
       }
     }

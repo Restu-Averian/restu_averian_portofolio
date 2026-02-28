@@ -6,8 +6,8 @@ const tsItemIdle1 = keyframes`
   0%, 100% { 
     transform: translateY(0px) translateX(0)
    }
-  33% { transform: translateY(-12px) translateX(-10px) }
-  66% { transform: translateY(-8px) translateX(-6px) }
+  33% { transform: translateY(-12px) translateX(8px) }
+  66% { transform: translateY(-8px) translateX(2px) }
 `;
 const tsItemIdle2 = keyframes`
   0%, 100% { 
@@ -119,6 +119,7 @@ const TechStackStyled = styled(Container)`
 
       &-icon {
         width: 36px;
+        color: var(--icon-color);
 
         ${MEDIA_QUERY_CSS.xs(css`
           width: 32px;
@@ -139,6 +140,7 @@ export const TechStackItemStyled = styled.div`
   border:3px solid var(--bg-secondary-color);
   border-radius: 100%;
   padding: 16px;
+
   ${({ $index }) => {
     const index = $index;
 

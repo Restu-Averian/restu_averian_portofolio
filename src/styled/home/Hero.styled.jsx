@@ -129,7 +129,8 @@ const HeroStyled = styled(Container)`
 
       ${MEDIA_QUERY_CSS?.xs(css`
         font-size: 32px;
-        bottom: -120px;
+        bottom: -80px;
+        padding: 5px 22px;
       `)}
     }
   }

@@ -197,9 +197,11 @@ export const SelectedWorksDesktopStyled = styled.div`
         }
 
         &-btn {
+          cursor: pointer;
           align-items: center;
           -webkit-tap-highlight-color: transparent;
           justify-content: center;
+          transition: all 240ms;
 
           &-text {
             font-family: "Quicksand", sans-serif;
@@ -214,15 +216,24 @@ export const SelectedWorksDesktopStyled = styled.div`
               content: "";
               border-bottom: 3px solid var(--bg-color);
               width: 0px;
-              transition: width 240ms;
+              transition: all 240ms;
               transition-timing-function: steps(24, end);
-              will-change: width;
             }
           }
 
           &-icon {
             transform: scale(-1, 1);
             color: var(--bg-color);
+          }
+
+          &:hover {
+            transform: rotate(-1deg);
+
+            .hm__sw-content-texts-btn-text {
+              &::after {
+                width: calc(100% - 24px);
+              }
+            }
           }
         }
       }
