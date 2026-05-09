@@ -5,7 +5,7 @@ import WorkExperienceCard from "./WorkExperienceCard";
 
 const WorkExperience_ = () => {
   return (
-    <section className="px-16">
+    <section className="px-16 hidden md:block">
       <h2 className="mb-24 flex items-center gap-2 text-2xl font-semibold text-foreground">
         <Icon icon="material-symbols:work-outline" width="36" height="36" />
         Work Experience

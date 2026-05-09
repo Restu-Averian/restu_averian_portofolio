@@ -57,13 +57,13 @@ function ProjectCard({ title, desc, tags, thumb, onClick }) {
       onClick={onClick}
     >
       <div className="flex items-center gap-4">
-        <div className="rounded-3xl bg-[#E5D0BD] p-3">
-          <div className="shrink-0 overflow-hidden w-21 h-20 rounded-3xl">
+        <div className=" rounded-xl sm:rounded-3xl bg-[#E5D0BD] p-3 sm:p-3">
+          <div className="shrink-0 overflow-hidden w-16 h-16 sm:w-21 sm:h-20 rounded-xl sm:rounded-3xl">
             <img
               src={thumb}
               alt={`${title} preview`}
               loading="lazy"
-              className="h-full w-full object-cover rounded-3xl"
+              className="h-full w-full object-cover rounded-xl sm:rounded-3xl"
             />
           </div>
         </div>
@@ -113,12 +113,13 @@ const Projects_ = () => {
         Project
       </h2>
 
-      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {PROJECTS.map((project, i) => (
           <ProjectCard
-            key={i}
+            key={project.id ?? i}
             {...project}
             onClick={() => {
+              // setSelectedProject(project);
               setShowModalDetail(true);
             }}
           />
