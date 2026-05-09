@@ -1,11 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import SideNavButton from "./SideNavButton";
-import MobileSwitcher from "./MobileSwitcher";
-import InfoSection from "./InfoSection";
-import ThumbnailSection from "./ThumbnailSection";
 import { PROJECTS } from "@/components/page/Projects";
 import MobileDrawer from "./MobileDrawer";
+import DesktopDialog from "./DesktopDialog";
 
 const ModalDetailProject = ({ open, onClose, project }) => {
   const initialIndex = useMemo(() => {
@@ -33,56 +29,40 @@ const ModalDetailProject = ({ open, onClose, project }) => {
 
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 767px)");
+
     setIsMobile(mq.matches);
-    const handler = (e) => setIsMobile(e.matches);
+
+    const handler = (e) => setIsMobile(e?.matches);
+
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
   }, []);
 
   if (isMobile) {
-    return <MobileDrawer open={open} onClose={onClose} project={project} />;
+    return (
+      <MobileDrawer
+        open={open}
+        onClose={onClose}
+        prevProject={prevProject}
+        nextProject={nextProject}
+        goPrev={goPrev}
+        goNext={goNext}
+        currentProject={currentProject}
+        currentIndex={currentIndex}
+      />
+    );
   }
 
   return (
-    <Dialog open={open} onOpenChange={(value) => !value && onClose?.()}>
-      <DialogContent>
-        <DialogTitle className="sr-only">Detail Project</DialogTitle>
-
-        <div className="relative mx-auto w-full max-w-315">
-          <SideNavButton
-            direction="left"
-            label={prevProject?.title || "Previous Project"}
-            onClick={goPrev}
-          />
-
-          <div className="grid gap-8 xl:grid-cols-[0.95fr_1fr] xl:gap-10">
-            <ThumbnailSection images={currentProject?.images} />
-            <InfoSection project={currentProject} />
-          </div>
-
-          <MobileSwitcher
-            next={{
-              onClick() {
-                goNext();
-              },
-              label: nextProject?.title,
-            }}
-            prev={{
-              onClick() {
-                goPrev();
-              },
-              label: prevProject?.title,
-            }}
-          />
-        </div>
-
-        <SideNavButton
-          direction="right"
-          label={nextProject?.title || "Next Project"}
-          onClick={goNext}
-        />
-      </DialogContent>
-    </Dialog>
+    <DesktopDialog
+      open={open}
+      onClose={onClose}
+      prevProject={prevProject}
+      nextProject={nextProject}
+      goPrev={goPrev}
+      goNext={goNext}
+      currentProject={currentProject}
+    />
   );
 };
 

@@ -1,4 +1,3 @@
-import { useMemo, useState } from "react";
 import {
   Drawer,
   DrawerContent,
@@ -10,25 +9,16 @@ import { PROJECTS } from "@/components/page/Projects";
 import ThumbnailSection from "./ThumbnailSection";
 import InfoSection from "./InfoSection";
 
-const MobileDrawer = ({ open, onClose, project }) => {
-  const initialIndex = useMemo(() => {
-    if (!project?.id) return 0;
-    const found = PROJECTS.findIndex((item) => item.id === project.id);
-    return found === -1 ? 0 : found;
-  }, [project]);
-
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const currentProject = PROJECTS[currentIndex] || PROJECTS[0];
-
-  const goPrev = () =>
-    setCurrentIndex((prev) => (prev === 0 ? PROJECTS.length - 1 : prev - 1));
-  const goNext = () =>
-    setCurrentIndex((prev) => (prev === PROJECTS.length - 1 ? 0 : prev + 1));
-
-  const prevProject =
-    PROJECTS[(currentIndex - 1 + PROJECTS.length) % PROJECTS.length];
-  const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
-
+const MobileDrawer = ({
+  open,
+  onClose,
+  prevProject,
+  nextProject,
+  goPrev,
+  goNext,
+  currentProject,
+  currentIndex,
+}) => {
   return (
     <Drawer open={open} onOpenChange={(val) => !val && onClose?.()}>
       <DrawerContent

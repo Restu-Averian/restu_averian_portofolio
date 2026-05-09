@@ -25,7 +25,7 @@ const InfoSection_ = ({ project }) => {
     <div className="flex h-full flex-col justify-between gap-6 py-3">
       <div className="space-y-6">
         <div className="flex items-start justify-between gap-4">
-          <h2 className="text-[52px] font-semibold leading-[0.95] text-porto-text">
+          <h2 className="text-4xl font-semibold leading-[0.95] text-porto-text sm:text-[52px]">
             {project?.title}
           </h2>
 
