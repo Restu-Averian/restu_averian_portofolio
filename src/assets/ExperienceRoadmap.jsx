@@ -12,24 +12,24 @@ const ExperienceRoadmap_ = () => {
       <path
         d="M0 274.5C288 274.5 321.5 297 321.5 162"
         stroke="#D8C7C3"
-        stroke-width="24"
+        strokeWidth="24"
       />
       <path
         d="M0 274.5C288 274.5 321.5 297 321.5 162"
         stroke="#BE919C"
-        stroke-width="16"
+        strokeWidth="16"
       />
       <path
         d="M230 136.5C83.5 136.5 68.5 139 68.5 12"
         stroke="#D8C7C3"
-        stroke-width="24"
-        stroke-linecap="round"
+        strokeWidth="24"
+        strokeLinecap="round"
       />
       <path
         d="M230 136.5C83.5 136.5 68.5 139 68.5 12"
         stroke="#BE919C"
-        stroke-width="16"
-        stroke-linecap="round"
+        strokeWidth="16"
+        strokeLinecap="round"
       />
       <circle cx="40.5" cy="274.5" r="2" fill="#FFF8F6" />
       <circle cx="112.5" cy="275.5" r="2" fill="#FFF8F6" />

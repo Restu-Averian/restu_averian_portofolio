@@ -1,32 +1,45 @@
 import { Icon } from "@iconify/react";
 import { Home } from "lucide-react";
-import { memo } from "react";
+import { memo, useState } from "react";
+import ModalDetailProject from "../modal/detail-project";
 
 const THUMB =
   "https://i.pinimg.com/236x/f7/9e/52/f79e5203f41bdaaf1a5b4176f98a8736.jpg";
 
-const PROJECTS = [
+const THUMB2 =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOc1D7KFRX9rRA9RMJzPZGs8sCcF-8Zw0k3w&s";
+
+export const PROJECTS = [
   {
     title: "Package Rich Texteditor",
     desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
     tags: ["React", "Tiptap", "Shadcn-ui"],
+    demoUrl: "#",
+    githubUrl: "#",
     thumb: THUMB,
+    images: [THUMB2, THUMB, THUMB],
   },
   {
     title: "Daily Planner",
     desc: "A highly interactive daily planner designed for optimal task organization,",
     tags: ["React", "Shadcn-ui"],
     thumb: THUMB,
+    images: [THUMB, THUMB, THUMB],
+    demoUrl: "#",
+    githubUrl: "#",
   },
   {
     title: "Optimized Transfer ANTD",
     desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
     tags: ["React", "Ant Design"],
     thumb: THUMB,
+    images: [THUMB, THUMB, THUMB],
+    demoUrl: "#",
+    githubUrl: "#",
   },
 ];
 
-function ProjectCard({ title, desc, tags, thumb }) {
+function ProjectCard({ title, desc, tags, thumb, onClick }) {
   return (
     <li
       className="
@@ -41,15 +54,18 @@ function ProjectCard({ title, desc, tags, thumb }) {
         bg-background
         cursor-pointer
       "
+      onClick={onClick}
     >
       <div className="flex items-center gap-4">
-        <div className="shrink-0 overflow-hidden rounded-xl border-8 border-border w-20 h-20">
-          <img
-            src={thumb}
-            alt={`${title} preview`}
-            loading="lazy"
-            className="h-full w-full object-cover"
-          />
+        <div className="rounded-3xl bg-[#E5D0BD] p-3">
+          <div className="shrink-0 overflow-hidden w-21 h-20 rounded-3xl">
+            <img
+              src={thumb}
+              alt={`${title} preview`}
+              loading="lazy"
+              className="h-full w-full object-cover rounded-3xl"
+            />
+          </div>
         </div>
 
         {/* Title */}
@@ -88,6 +104,8 @@ function ProjectCard({ title, desc, tags, thumb }) {
 }
 
 const Projects_ = () => {
+  const [showModalDetail, setShowModalDetail] = useState(false);
+
   return (
     <section>
       <h2 className="mb-6 flex items-center gap-2 text-2xl font-semibold text-foreground">
@@ -97,9 +115,29 @@ const Projects_ = () => {
 
       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((project, i) => (
-          <ProjectCard key={i} {...project} />
+          <ProjectCard
+            key={i}
+            {...project}
+            onClick={() => {
+              setShowModalDetail(true);
+            }}
+          />
         ))}
       </ul>
+
+      <ModalDetailProject
+        open={showModalDetail}
+        onClose={() => {
+          setShowModalDetail(false);
+        }}
+        project={{
+          title: "Package Rich Texteditor",
+          desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
+          tags: ["React", "Tiptap", "Shadcn-ui"],
+          thumb: THUMB,
+          stickerUrl: THUMB,
+        }}
+      />
     </section>
   );
 };
