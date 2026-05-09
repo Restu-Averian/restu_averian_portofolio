@@ -1,7 +1,6 @@
 import { memo } from "react";
 import FotoProfile from "../../assets/foto-profile.jpg";
 import FotoSampul from "../../assets/foto-sampul-2.png";
-import { Home } from "lucide-react";
 import Mascott from "@/assets/icons/Mascott";
 import { Icon } from "@iconify/react";
 
