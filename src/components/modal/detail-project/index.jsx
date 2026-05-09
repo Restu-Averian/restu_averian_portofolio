@@ -1,10 +1,11 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import SideNavButton from "./SideNavButton";
 import MobileSwitcher from "./MobileSwitcher";
 import InfoSection from "./InfoSection";
 import ThumbnailSection from "./ThumbnailSection";
 import { PROJECTS } from "@/components/page/Projects";
+import MobileDrawer from "./MobileDrawer";
 
 const ModalDetailProject = ({ open, onClose, project }) => {
   const initialIndex = useMemo(() => {
@@ -14,6 +15,7 @@ const ModalDetailProject = ({ open, onClose, project }) => {
   }, [project]);
 
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [isMobile, setIsMobile] = useState(false);
 
   const currentProject = PROJECTS[currentIndex] || PROJECTS[0];
 
@@ -28,6 +30,18 @@ const ModalDetailProject = ({ open, onClose, project }) => {
   const prevProject =
     PROJECTS[(currentIndex - 1 + PROJECTS.length) % PROJECTS.length];
   const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  if (isMobile) {
+    return <MobileDrawer open={open} onClose={onClose} project={project} />;
+  }
 
   return (
     <Dialog open={open} onOpenChange={(value) => !value && onClose?.()}>
