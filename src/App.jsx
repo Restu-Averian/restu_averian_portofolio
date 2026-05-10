@@ -15,7 +15,7 @@ export default function App() {
       <Profile />
 
       <main className="px-4 md:px-10">
-        <div className="flex justify-between gap-20">
+        <div className="flex justify-between gap-20 flex-col lg:flex-row">
           <WorkExperience />
 
           <Projects />

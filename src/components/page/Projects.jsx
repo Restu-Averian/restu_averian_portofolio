@@ -107,7 +107,7 @@ const Projects_ = () => {
   const [showModalDetail, setShowModalDetail] = useState(false);
 
   return (
-    <section>
+    <section className="order-1 lg:order-2">
       <h2 className="mb-6 flex items-center gap-2 text-2xl font-semibold text-foreground">
         <Icon icon="ri:sparkling-line" width="36" height="36" />
         Project
