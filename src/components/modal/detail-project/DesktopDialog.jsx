@@ -2,8 +2,8 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { memo } from "react";
 import SideNavButton from "./SideNavButton";
 import ThumbnailSection from "./ThumbnailSection";
-import InfoSection from "./InfoSection";
 import MobileSwitcher from "./MobileSwitcher";
+import InfoSection from "./info-section";
 
 const DesktopDialog_ = ({
   open,

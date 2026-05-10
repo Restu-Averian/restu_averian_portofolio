@@ -5,9 +5,9 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer";
 import { ArrowLeft, ArrowRight, X } from "lucide-react";
-import { PROJECTS } from "@/components/page/Projects";
+import { PROJECTS } from "@/constants";
 import ThumbnailSection from "./ThumbnailSection";
-import InfoSection from "./InfoSection";
+import InfoSection from "./info-section";
 
 const MobileDrawer = ({
   open,

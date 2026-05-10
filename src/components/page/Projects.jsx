@@ -1,43 +1,7 @@
 import { Icon } from "@iconify/react";
-import { Home } from "lucide-react";
-import { memo, useState } from "react";
+import { memo, useRef, useState } from "react";
 import ModalDetailProject from "../modal/detail-project";
-
-const THUMB =
-  "https://i.pinimg.com/236x/f7/9e/52/f79e5203f41bdaaf1a5b4176f98a8736.jpg";
-
-const THUMB2 =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOc1D7KFRX9rRA9RMJzPZGs8sCcF-8Zw0k3w&s";
-
-export const PROJECTS = [
-  {
-    title: "Package Rich Texteditor",
-    desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
-    tags: ["React", "Tiptap", "Shadcn-ui"],
-    demoUrl: "#",
-    githubUrl: "#",
-    thumb: THUMB,
-    images: [THUMB2, THUMB, THUMB],
-  },
-  {
-    title: "Daily Planner",
-    desc: "A highly interactive daily planner designed for optimal task organization,",
-    tags: ["React", "Shadcn-ui"],
-    thumb: THUMB,
-    images: [THUMB, THUMB, THUMB],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "Optimized Transfer ANTD",
-    desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
-    tags: ["React", "Ant Design"],
-    thumb: THUMB,
-    images: [THUMB, THUMB, THUMB],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-];
+import { PROJECTS } from "@/constants";
 
 function ProjectCard({ title, desc, tags, thumb, onClick }) {
   return (
@@ -81,9 +45,9 @@ function ProjectCard({ title, desc, tags, thumb, onClick }) {
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2">
-        {tags.map((tag) => (
+        {tags?.map((tag, idx) => (
           <span
-            key={tag}
+            key={`${tag?.icon}-${idx}`}
             className="
               inline-flex items-center gap-1.5
               rounded-full
@@ -91,11 +55,11 @@ function ProjectCard({ title, desc, tags, thumb, onClick }) {
               bg-(--tags)
               px-3 py-1
               text-xs font-medium
-              text-muted-foreground
+              text-foreground
             "
           >
-            <Home className="h-3 w-3 shrink-0 text-porto-btn" />
-            {tag}
+            <Icon icon={tag?.icon} className="h-4 w-4" />
+            {tag?.label}
           </span>
         ))}
       </div>
@@ -105,6 +69,8 @@ function ProjectCard({ title, desc, tags, thumb, onClick }) {
 
 const Projects_ = () => {
   const [showModalDetail, setShowModalDetail] = useState(false);
+
+  const detailProjectRef = useRef({});
 
   return (
     <section className="order-1 lg:order-2">
@@ -119,6 +85,7 @@ const Projects_ = () => {
             key={project.id ?? i}
             {...project}
             onClick={() => {
+              detailProjectRef.current = project;
               // setSelectedProject(project);
               setShowModalDetail(true);
             }}
@@ -130,14 +97,9 @@ const Projects_ = () => {
         open={showModalDetail}
         onClose={() => {
           setShowModalDetail(false);
+          detailProjectRef.current = {};
         }}
-        project={{
-          title: "Package Rich Texteditor",
-          desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
-          tags: ["React", "Tiptap", "Shadcn-ui"],
-          thumb: THUMB,
-          stickerUrl: THUMB,
-        }}
+        project={detailProjectRef?.current}
       />
     </section>
   );

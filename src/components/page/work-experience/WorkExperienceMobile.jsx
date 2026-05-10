@@ -1,19 +1,17 @@
 import { cn } from "@/lib/utils";
 import { memo } from "react";
-
-const LOGO =
-  "https://i.pinimg.com/474x/0b/19/06/0b1906a5182d47c024d9df36f0d9f4f1.jpg";
+import DataOnThumb from "../../../assets/work-experiences/image-removebg-preview.png";
 
 const experiences = [
   {
     title: "Staff as Frontend Engineer at PT. Indodev Niaga Internet",
     period: "2024 - Now",
-    logo: LOGO,
+    logo: DataOnThumb,
   },
   {
     title: "Intern as Frontend Engineer at PT. Indodev Niaga Internet",
     period: "2023 - 2024",
-    logo: LOGO,
+    logo: DataOnThumb,
   },
 ];
 
@@ -42,7 +40,7 @@ const WorkExperienceMobile_ = () => {
                 src={exp.logo}
                 alt="Company logo"
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-contain"
               />
             </div>
 

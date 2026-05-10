@@ -2,9 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
-
-const THUMB =
-  "https://i.pinimg.com/236x/f7/9e/52/f79e5203f41bdaaf1a5b4176f98a8736.jpg";
+import DataOnThumb from "../../../assets/work-experiences/image-removebg-preview.png";
 
 const titleScale = cva("font-semibold leading-snug text-foreground", {
   variants: {
@@ -37,7 +35,7 @@ const periodTextScale = cva("mt-1 text-muted-foreground", {
 });
 
 export default function WorkExperienceCard({
-  logo = THUMB,
+  logo = DataOnThumb,
   title = "Intern as Frontend Engineer at PT. Indodev Niaga Internet",
   period = "(2023 - 2024)",
   showTopConnector = true,
@@ -77,7 +75,7 @@ export default function WorkExperienceCard({
               src={logo}
               alt="Company logo"
               loading="lazy"
-              className="h-full w-full object-cover "
+              className="h-full w-full object-contain"
             />
           </div>
 
