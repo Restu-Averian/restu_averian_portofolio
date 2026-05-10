@@ -3,6 +3,7 @@ import { memo } from "react";
 import SideNavButton from "./SideNavButton";
 import ThumbnailSection from "./ThumbnailSection";
 import InfoSection from "./InfoSection";
+import MobileSwitcher from "./MobileSwitcher";
 
 const DesktopDialog_ = ({
   open,
@@ -30,7 +31,7 @@ const DesktopDialog_ = ({
             <InfoSection project={currentProject} />
           </div>
 
-          {/* <MobileSwitcher
+          <MobileSwitcher
             next={{
               onClick() {
                 goNext();
@@ -43,7 +44,7 @@ const DesktopDialog_ = ({
               },
               label: prevProject?.title,
             }}
-          /> */}
+          />
         </div>
 
         <SideNavButton

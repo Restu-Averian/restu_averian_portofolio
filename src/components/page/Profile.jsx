@@ -66,7 +66,7 @@ const Profile_ = () => {
             <span className="text-lg sm:text-2xl font-medium text-foreground">
               Find me on:
             </span>
-            <div className="flex items-center gap-2 sm:gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
               {SOCIAL_LINKS.map(({ label, icon, href }) => (
                 <a
                   key={label}

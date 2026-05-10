@@ -9,12 +9,16 @@ const ThumbnailSection_ = ({ images = [] }) => {
 
   return (
     <div className="flex h-full flex-col gap-6">
-      <div className="rounded-4xl border-[3px] border-porto-btn/50 bg-[#ead8c8] p-8">
+      <div className="rounded-4xl border-[3px] border-porto-btn/50 bg-[#ead8c8] p-8 sm:p-4">
         <div className="overflow-hidden rounded-[1.75rem] shadow-sm">
           <img
             src={activeImage}
             alt="Project thumbnail"
-            className="aspect-[1.1/0.92] w-full object-cover"
+            className="w-full object-cover object-center
+                xl:aspect-[1.1/0.92] h-auto
+                md:aspect-[0.8/0.3]
+                lg:aspect-3/1 
+                "
           />
         </div>
       </div>
@@ -29,7 +33,7 @@ const ThumbnailSection_ = ({ images = [] }) => {
               type="button"
               onClick={() => setActiveImage(img)}
               className={[
-                "overflow-hidden rounded-3xl border-[3px] bg-[#ead8c8] p-4 text-left transition-all duration-200 cursor-pointer",
+                "overflow-hidden rounded-3xl border-[3px] bg-[#ead8c8] p-4 text-left transition-all duration-200 cursor-pointer ",
                 active
                   ? "border-porto-btn/70 shadow-[0_8px_24px_rgba(190,145,156,0.15)]"
                   : "border-porto-btn/40 hover:border-porto-btn/70",
@@ -38,7 +42,9 @@ const ThumbnailSection_ = ({ images = [] }) => {
               <img
                 src={img}
                 alt={`Project thumbnail ${idx + 1}`}
-                className="aspect-[1.1/0.92] w-full rounded-2xl object-cover"
+                className="xl:aspect-[1.1/0.92] h-auto
+                md:aspect-2/1
+                lg:aspect-3/1  w-full rounded-2xl object-cover"
               />
             </button>
           );

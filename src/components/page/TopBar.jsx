@@ -25,7 +25,7 @@ const TopBar_ = () => {
   });
 
   return (
-    <header className="flex items-center justify-between px-4 py-2 md:px-28">
+    <header className="flex items-center justify-between px-4 py-2 md:px-28 flex-wrap">
       {/* Greeting */}
       <span className="flex items-center gap-1 text-[10px] font-medium text-foreground sm:text-xs md:text-sm">
         Welcome, {greeting}

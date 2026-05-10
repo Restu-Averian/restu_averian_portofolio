@@ -56,7 +56,7 @@ function ProjectCard({ title, desc, tags, thumb, onClick }) {
       "
       onClick={onClick}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 flex-wrap">
         <div className=" rounded-xl sm:rounded-3xl bg-[#E5D0BD] p-3 sm:p-3">
           <div className="shrink-0 overflow-hidden w-16 h-16 sm:w-21 sm:h-20 rounded-xl sm:rounded-3xl">
             <img
