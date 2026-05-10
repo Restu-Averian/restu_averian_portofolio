@@ -4,14 +4,7 @@ import FotoSampul from "../../assets/foto-sampul-2.png";
 import Mascott from "@/assets/icons/Mascott";
 import { Icon } from "@iconify/react";
 import useIsMobile from "@/hooks/useIsMobile";
-
-const SOCIAL_LINKS = [
-  { label: "Instagram", icon: "mdi:instagram", href: "#" },
-  { label: "LinkedIn", icon: "line-md:linkedin", href: "#" },
-  { label: "GitHub", icon: "mdi:github", href: "#" },
-  { label: "npm", icon: "mdi:npm", href: "#" },
-  { label: "WhatsApp", icon: "mdi:whatsapp", href: "#" },
-];
+import { SOCIAL_LINKS } from "@/constants";
 
 const Profile_ = () => {
   const isMobile = useIsMobile();
@@ -55,17 +48,17 @@ const Profile_ = () => {
 
           {/* Nama + subtitle */}
           <div className="mt-3 md:mt-0 md:ml-4 md:pb-4">
-            <h1 className="text-2xl font-semibold text-foreground sm:text-3xl">
+            <h1 className="text-2xl font-semibold text-foreground sm:text-5xl">
               Resu Ave
             </h1>
-            <p className="mt-1 text-sm text-muted-foreground sm:text-base">
+            <p className="mt-1 text-sm text-muted-foreground sm:text-2xl">
               Building high performance frontend interfaces
             </p>
           </div>
 
           {/* Find me on — desktop: push ke kanan */}
           <div className="mt-4 flex flex-col items-center gap-2 md:ml-auto md:mt-0 md:items-start md:pb-4">
-            <span className="text-lg sm:text-2xl font-medium text-foreground">
+            <span className="text-lg sm:text-2xl font-normal text-foreground">
               Find me on:
             </span>
             <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
@@ -77,19 +70,19 @@ const Profile_ = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    flex h-9 w-9 items-center justify-center
+                    flex items-center justify-center
                     rounded-full
-                    border border-porto-border
+                    border-3 border-porto-border
                     bg-background
                     text-foreground
                     transition-all
                     hover:scale-105
                     hover:border-porto-btn
                     hover:text-porto-btn
-                    sm:h-10 sm:w-10
+                    p-2
                   "
                 >
-                  <Icon icon={icon} width="18" height="18" />
+                  <Icon icon={icon} width="28" height="28" />
                 </a>
               ))}
             </div>
