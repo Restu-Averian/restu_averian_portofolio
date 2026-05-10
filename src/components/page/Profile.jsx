@@ -3,6 +3,7 @@ import FotoProfile from "../../assets/foto-profile.jpg";
 import FotoSampul from "../../assets/foto-sampul-2.png";
 import Mascott from "@/assets/icons/Mascott";
 import { Icon } from "@iconify/react";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const SOCIAL_LINKS = [
   { label: "Instagram", icon: "mdi:instagram", href: "#" },
@@ -13,6 +14,7 @@ const SOCIAL_LINKS = [
 ];
 
 const Profile_ = () => {
+  const isMobile = useIsMobile();
   return (
     <section className="w-full">
       {/* ── BANNER ── */}
@@ -105,7 +107,7 @@ const Profile_ = () => {
           }}
         />
         <div className="mx-3 shrink-0">
-          <Mascott size="6em" />
+          <Mascott size={isMobile ? "4.5em" : "6em"} />
         </div>
         <div
           className="flex-1 rounded-r-full bg-repeating-pattern opacity-40 h-1.25"

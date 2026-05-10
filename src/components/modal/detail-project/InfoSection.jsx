@@ -1,4 +1,5 @@
 import MascottTexteditor from "@/assets/icons/MascottTexteditor";
+import useIsMobile from "@/hooks/useIsMobile";
 import { Icon } from "@iconify/react";
 import { ExternalLink, Home, PencilLine } from "lucide-react";
 import { memo } from "react";
@@ -21,17 +22,18 @@ const TechChip = ({ label }) => {
 };
 
 const InfoSection_ = ({ project }) => {
+  const isMobile = useIsMobile();
   return (
     <div className="flex h-full flex-col justify-between gap-6 py-3">
       <div className="space-y-6">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex  items-center md:items-start justify-between gap-4">
           <h2 className="text-4xl font-semibold leading-[0.95] text-porto-text sm:text-[52px]">
             {project?.title}
           </h2>
 
           <MascottTexteditor
-            size={88}
-            className="mt-1 hidden shrink-0 text-porto-text/80 md:block"
+            size={isMobile ? 100 : 88}
+            className="mt-1  shrink-0 text-porto-text/80"
           />
         </div>
 

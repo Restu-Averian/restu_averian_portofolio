@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { PROJECTS } from "@/components/page/Projects";
 import MobileDrawer from "./MobileDrawer";
 import DesktopDialog from "./DesktopDialog";
+import useIsMobile from "@/hooks/useIsMobile";
 
 const ModalDetailProject = ({ open, onClose, project }) => {
   const initialIndex = useMemo(() => {
@@ -11,7 +12,8 @@ const ModalDetailProject = ({ open, onClose, project }) => {
   }, [project]);
 
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
-  const [isMobile, setIsMobile] = useState(false);
+
+  const isMobile = useIsMobile();
 
   const currentProject = PROJECTS[currentIndex] || PROJECTS[0];
 
@@ -26,17 +28,6 @@ const ModalDetailProject = ({ open, onClose, project }) => {
   const prevProject =
     PROJECTS[(currentIndex - 1 + PROJECTS.length) % PROJECTS.length];
   const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
-
-    setIsMobile(mq.matches);
-
-    const handler = (e) => setIsMobile(e?.matches);
-
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
 
   if (isMobile) {
     return (
