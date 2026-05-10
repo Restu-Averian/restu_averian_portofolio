@@ -23,6 +23,7 @@ export const PROJECTS = [
     thumb: THUMB,
     images: [THUMB2, THUMB, THUMB],
     isFinished: true,
+    stickerType: "mascott-texteditor",
   },
   {
     id: 2,
@@ -40,6 +41,7 @@ export const PROJECTS = [
     demoUrl: "",
     githubUrl: "",
     isFinished: false,
+    stickerType: "mascott-daily-planner",
   },
   {
     id: 3,
@@ -58,5 +60,6 @@ It was also optimized to handle very large datasets, including lists with more t
     demoUrl: "",
     githubUrl: "https://github.com/Restu-Averian/optimized-transfer-antd",
     isFinished: true,
+    stickerType: null,
   },
 ];
