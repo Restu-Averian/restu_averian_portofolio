@@ -37,7 +37,7 @@ const Profile_ = () => {
             sm:-mt-14 sm:h-24 sm:w-24
             md:-mt-16 md:h-48 md:w-48
             overflow-hidden rounded-full
-            border-4 border-background
+            border-5 border-border
             bg-background
             shadow-md
             z-10
@@ -105,7 +105,7 @@ const Profile_ = () => {
           }}
         />
         <div className="mx-3 shrink-0">
-          <Mascott />
+          <Mascott size="6em" />
         </div>
         <div
           className="flex-1 rounded-r-full bg-repeating-pattern opacity-40 h-1.25"

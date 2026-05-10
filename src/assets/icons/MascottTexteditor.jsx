@@ -1,9 +1,6 @@
-import { memo, useId } from "react";
+import { memo } from "react";
 
 const MascottTexteditor_ = ({ size = "1em", className = "" }) => {
-  const id = useId();
-  const clipId = `clip-mascott-${id}`;
-
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,13 +1,14 @@
 import { memo } from "react";
 
-const Mascott_ = () => {
+const Mascott_ = ({ size = "1em", className }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="100"
-      height="70"
+      width={size}
+      height={`calc(${size} * 0.8)`}
       viewBox="0 0 110 88"
       fill="none"
+      className={className}
     >
       <path
         d="M49.8542 22.6431C45.8407 31.7106 53.2731 40.7782 46.7325 41.3728C39.3596 38.5187 41.4803 28.8368 43.4622 24.4269C45.692 23.6836 49.9731 22.4052 49.8542 22.6431Z"
