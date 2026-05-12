@@ -11,7 +11,7 @@ const Profile_ = () => {
   return (
     <section className="w-full">
       {/* ── BANNER ── */}
-      <div className="h-12 w-full overflow-hidden sm:h-44 md:h-32">
+      <div className="h-14 w-full overflow-hidden sm:h-14 md:h-32">
         <img
           src={FotoSampul}
           alt="Banner"
@@ -82,7 +82,7 @@ const Profile_ = () => {
                     p-2
                   "
                 >
-                  <Icon icon={icon} width="28" height="28" />
+                  <Icon icon={icon} className="h-5 w-5 md:h-7 md:w-7" />
                 </a>
               ))}
             </div>
@@ -91,7 +91,7 @@ const Profile_ = () => {
       </div>
 
       {/* ── STRIPE DIVIDER ── */}
-      <div className="mt-4 flex items-center gap-0 px-4 sm:px-8 md:px-10">
+      <div className="flex items-center gap-0 mt-4 md:mt-0">
         <div
           className="flex-1 rounded-l-full bg-repeating-pattern opacity-40 h-1.25"
           style={{

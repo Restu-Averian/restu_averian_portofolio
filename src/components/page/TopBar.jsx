@@ -1,5 +1,5 @@
-import { Home } from "lucide-react";
-import { memo, useState, useEffect } from "react";
+import { Icon } from "@iconify/react";
+import { memo, useState, useEffect, useMemo } from "react";
 
 const TopBar_ = () => {
   const [now, setNow] = useState(() => new Date());
@@ -24,6 +24,11 @@ const TopBar_ = () => {
     year: "numeric",
   });
 
+  const nowHour = useMemo(() => {
+    const hour24 = now?.getHours();
+    return hour24 % 12 || 12;
+  }, [now]);
+
   useEffect(() => {
     const msUntilNextMinute = () => {
       const n = new Date();
@@ -42,15 +47,16 @@ const TopBar_ = () => {
   }, []);
 
   return (
-    <header className="flex items-center justify-between px-4 py-2 md:px-28 flex-wrap">
-      <span className="flex items-center gap-1 text-[10px] font-medium text-foreground sm:text-xs md:text-sm">
+    <header className="flex items-center justify-between px-4 py-3.5 md:px-28 flex-wrap">
+      <span className="flex items-center gap-1 text-[10px] font-medium text-foreground sm:text-xs md:text-base">
         Welcome, {greeting}
-        <Home className="h-3 w-3 sm:h-4 sm:w-4" />
+        <Icon icon="solar:sun-linear" className="h-4 w-4 sm:h-6 sm:w-6" />
       </span>
-      <span className="flex items-center gap-1 text-[10px] font-medium text-foreground sm:text-xs md:text-sm">
-        <Home className="h-3 w-3 sm:h-4 sm:w-4" />| {timeStr}
+      <span className="flex items-center gap-1 text-[10px] font-medium text-foreground sm:text-xs md:text-base">
+        <Icon icon={`tabler:clock-hour-${nowHour}`} width="24" height="24" />|{" "}
+        {timeStr}
       </span>
-      <span className="text-[10px] font-medium text-foreground sm:text-xs md:text-sm">
+      <span className="text-[10px] font-medium text-foreground sm:text-xs md:text-base">
         {dateStr}
       </span>
     </header>

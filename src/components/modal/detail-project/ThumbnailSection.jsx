@@ -1,11 +1,11 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 const ThumbnailSection_ = ({ images = [] }) => {
-  const safeImages = images?.length
-    ? images
-    : [FALLBACK_IMG, FALLBACK_IMG, FALLBACK_IMG];
+  const [activeImage, setActiveImage] = useState(images[0]);
 
-  const [activeImage, setActiveImage] = useState(safeImages[0]);
+  useEffect(() => {
+    setActiveImage(images?.[0]);
+  }, [JSON.stringify(images)]);
 
   return (
     <div className="flex h-full flex-col gap-6">
@@ -24,7 +24,7 @@ const ThumbnailSection_ = ({ images = [] }) => {
       </div>
 
       <div className="grid grid-cols-3 gap-6">
-        {safeImages?.slice(0, 3).map((img, idx) => {
+        {images?.slice(0, 3).map((img, idx) => {
           const active = activeImage === img;
 
           return (

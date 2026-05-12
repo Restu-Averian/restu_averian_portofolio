@@ -1,4 +1,6 @@
 import DailyPlannerThumb from "./assets/projects/daily-planner.png";
+import TexteditorThumb1 from "./assets/projects/texteditor/thumb1.png";
+import TexteditorThumb2 from "./assets/projects/texteditor/thumb2.png";
 
 export const THUMB =
   "https://i.pinimg.com/236x/f7/9e/52/f79e5203f41bdaaf1a5b4176f98a8736.jpg";
@@ -20,8 +22,8 @@ export const PROJECTS = [
     ],
     demoUrl: "",
     githubUrl: "https://github.com/Restu-Averian/-resuave-texteditor",
-    thumb: THUMB,
-    images: [THUMB2, THUMB, THUMB],
+    thumb: TexteditorThumb1,
+    images: [TexteditorThumb1, TexteditorThumb2, THUMB],
     isFinished: true,
     stickerType: "mascott-texteditor",
   },
@@ -46,7 +48,7 @@ export const PROJECTS = [
   {
     id: 3,
     title: "Optimized Transfer ANTD",
-    desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
+    desc: "Built a custom Transfer component for 80k+ items with shift-click, drag-select, and double-click for fast, desktop-like list selection",
     descDetail: `Built a custom Transfer package designed to make large-list selection feel faster and more practical through desktop-like interactions such as shift-click, drag-select, and double-click.
 The component was focused on improving control and efficiency for data-heavy workflows, rather than relying on the more limited default Transfer behavior.
 It was also optimized to handle very large datasets, including lists with more than 80k items, while keeping the experience stable and responsive.`,

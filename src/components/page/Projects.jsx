@@ -21,8 +21,8 @@ function ProjectCard({ title, desc, tags, thumb, onClick }) {
       onClick={onClick}
     >
       <div className="flex items-center gap-4 flex-wrap">
-        <div className=" rounded-xl sm:rounded-3xl bg-[#E5D0BD] p-3 sm:p-3">
-          <div className="shrink-0 overflow-hidden w-16 h-16 sm:w-21 sm:h-20 rounded-xl sm:rounded-3xl">
+        <div className=" rounded-xl sm:rounded-3xl bg-[#E5D0BD] p-1.5">
+          <div className="shrink-0 overflow-hidden w-16 h-16 sm:w-18 sm:h-16 rounded-xl sm:rounded-3xl">
             <img
               src={thumb}
               alt={`${title} preview`}
@@ -39,9 +39,7 @@ function ProjectCard({ title, desc, tags, thumb, onClick }) {
       </div>
 
       {/* Description */}
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-        {desc}
-      </p>
+      <p className="mt-3 flex-1 text-[13px] text-muted-foreground">{desc}</p>
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2">
@@ -74,8 +72,8 @@ const Projects_ = () => {
 
   return (
     <section className="order-1 lg:order-2">
-      <h2 className="mb-6 flex items-center gap-2 text-2xl font-semibold text-foreground">
-        <Icon icon="ri:sparkling-line" width="36" height="36" />
+      <h2 className="mb-6 flex items-center gap-2 text-xl md:text-2xl font-semibold text-foreground">
+        <Icon icon="ri:sparkling-line" className="w-7 h-7 md:w-9 md:h-9" />
         Project
       </h2>
 

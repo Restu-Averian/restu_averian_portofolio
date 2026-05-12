@@ -6,9 +6,12 @@ import WorkExperienceMobile from "./WorkExperienceMobile";
 
 const WorkExperience_ = () => {
   return (
-    <section className="px-16 max-md:px-4 order-2 lg:order-1">
-      <h2 className="mb-12 lg:mb-24 max-md:mb-8 flex items-center gap-2 text-2xl font-semibold text-foreground">
-        <Icon icon="material-symbols:work-outline" width="36" height="36" />
+    <section className="md:px-16  order-2 lg:order-1">
+      <h2 className="mb-12 lg:mb-24 max-md:mb-8 flex items-center gap-2 text-xl md:text-2xl font-semibold text-foreground">
+        <Icon
+          icon="material-symbols:work-outline"
+          className="w-7 h-7 md:w-9 md:h-9"
+        />
         Work Experience
       </h2>
 
