@@ -29,7 +29,6 @@ export const PROJECTS = [
     thumb: NisoraThumb1,
     images: [NisoraThumb1, NisoraThumb2, NisoraThumb3],
     isFinished: true,
-    stickerType: "mascott-nisora",
   },
   {
     id: 2,
@@ -47,7 +46,6 @@ export const PROJECTS = [
     thumb: TexteditorThumb1,
     images: [TexteditorThumb1, TexteditorThumb2, THUMB],
     isFinished: true,
-    stickerType: "mascott-texteditor",
   },
   {
     id: 3,
@@ -65,7 +63,6 @@ export const PROJECTS = [
     demoUrl: "",
     githubUrl: "",
     isFinished: false,
-    stickerType: "mascott-daily-planner",
   },
   {
     id: 4,
@@ -84,7 +81,6 @@ It was also optimized to handle very large datasets, including lists with more t
     demoUrl: "",
     githubUrl: "https://github.com/Restu-Averian/optimized-transfer-antd",
     isFinished: true,
-    stickerType: null,
   },
 ];
 

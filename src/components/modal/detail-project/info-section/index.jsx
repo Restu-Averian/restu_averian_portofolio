@@ -1,10 +1,8 @@
-import MascottTexteditor from "@/assets/icons/MascottTexteditor";
 import useIsMobile from "@/hooks/useIsMobile";
 import { Icon } from "@iconify/react";
 import { ExternalLink, Home, PencilLine } from "lucide-react";
 import { memo } from "react";
 import ProjectActionButton from "./ProjectActionButton";
-import MascottDailyPlanner from "@/assets/icons/MascottDailyPlanner";
 
 const TechChip = ({ tag }) => {
   return (
@@ -15,16 +13,7 @@ const TechChip = ({ tag }) => {
   );
 };
 
-const Mascott = ({ stickerType, ...props }) => {
-  switch (stickerType) {
-    case "mascott-texteditor":
-      return <MascottTexteditor {...props} />;
-    case "mascott-daily-planner":
-      return <MascottDailyPlanner {...props} />;
-    default:
-      return null;
-  }
-};
+
 
 const InfoSection_ = ({ project }) => {
   const isMobile = useIsMobile();
@@ -36,12 +25,6 @@ const InfoSection_ = ({ project }) => {
           <h2 className="text-4xl font-semibold leading-[0.95] text-porto-text sm:text-[52px]">
             {project?.title}
           </h2>
-
-          <Mascott
-            stickerType={project?.stickerType}
-            size={isMobile ? 100 : 88}
-            className="mt-1  shrink-0 text-porto-text/80"
-          />
         </div>
 
         <hr className="border-t-[5px] border-porto-divider" />
