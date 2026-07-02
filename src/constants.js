@@ -47,41 +47,41 @@ export const PROJECTS = [
     images: [TexteditorThumb1, TexteditorThumb2, THUMB],
     isFinished: true,
   },
-  {
-    id: 3,
-    title: "Daily Planner",
-    desc: "A highly interactive daily planner designed for optimal task organization,",
-    descDetail:
-      "Built a personal daily planner that combines journaling, task management, and money tracking in one cozy and easy-to-use experience. Focused on keeping the workflow simple and personal through custom task status, drag-and-drop planning, and monthly recap features.",
-    tags: [
-      { icon: "mdi:react", label: "React" },
-      { icon: "mdi:react", label: "Tiptap" },
-      { icon: "bxl:shadcn-ui", label: "Shadcn-ui" },
-    ],
-    thumb: DailyPlannerThumb,
-    images: [DailyPlannerThumb, THUMB, THUMB],
-    demoUrl: "",
-    githubUrl: "",
-    isFinished: false,
-  },
-  {
-    id: 4,
-    title: "Optimized Transfer ANTD",
-    desc: "Built a custom Transfer component for 80k+ items with shift-click, drag-select, and double-click for fast, desktop-like list selection",
-    descDetail: `Built a custom Transfer package designed to make large-list selection feel faster and more practical through desktop-like interactions such as shift-click, drag-select, and double-click.
-The component was focused on improving control and efficiency for data-heavy workflows, rather than relying on the more limited default Transfer behavior.
-It was also optimized to handle very large datasets, including lists with more than 80k items, while keeping the experience stable and responsive.`,
-    tags: [
-      { icon: "mdi:react", label: "React" },
-      { icon: "simple-icons:antdesign", label: "Ant Design" },
-      { icon: "bxl:shadcn-ui", label: "Shadcn-ui" },
-    ],
-    thumb: THUMB,
-    images: [THUMB, THUMB, THUMB],
-    demoUrl: "",
-    githubUrl: "https://github.com/Restu-Averian/optimized-transfer-antd",
-    isFinished: true,
-  },
+  //   {
+  //     id: 3,
+  //     title: "Daily Planner",
+  //     desc: "A highly interactive daily planner designed for optimal task organization,",
+  //     descDetail:
+  //       "Built a personal daily planner that combines journaling, task management, and money tracking in one cozy and easy-to-use experience. Focused on keeping the workflow simple and personal through custom task status, drag-and-drop planning, and monthly recap features.",
+  //     tags: [
+  //       { icon: "mdi:react", label: "React" },
+  //       { icon: "mdi:react", label: "Tiptap" },
+  //       { icon: "bxl:shadcn-ui", label: "Shadcn-ui" },
+  //     ],
+  //     thumb: DailyPlannerThumb,
+  //     images: [DailyPlannerThumb, THUMB, THUMB],
+  //     demoUrl: "",
+  //     githubUrl: "",
+  //     isFinished: false,
+  //   },
+  //   {
+  //     id: 4,
+  //     title: "Optimized Transfer ANTD",
+  //     desc: "Built a custom Transfer component for 80k+ items with shift-click, drag-select, and double-click for fast, desktop-like list selection",
+  //     descDetail: `Built a custom Transfer package designed to make large-list selection feel faster and more practical through desktop-like interactions such as shift-click, drag-select, and double-click.
+  // The component was focused on improving control and efficiency for data-heavy workflows, rather than relying on the more limited default Transfer behavior.
+  // It was also optimized to handle very large datasets, including lists with more than 80k items, while keeping the experience stable and responsive.`,
+  //     tags: [
+  //       { icon: "mdi:react", label: "React" },
+  //       { icon: "simple-icons:antdesign", label: "Ant Design" },
+  //       { icon: "bxl:shadcn-ui", label: "Shadcn-ui" },
+  //     ],
+  //     thumb: THUMB,
+  //     images: [THUMB, THUMB, THUMB],
+  //     demoUrl: "",
+  //     githubUrl: "https://github.com/Restu-Averian/optimized-transfer-antd",
+  //     isFinished: true,
+  //   },
 ];
 
 export const SOCIAL_LINKS = [

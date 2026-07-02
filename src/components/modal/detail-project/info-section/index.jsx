@@ -1,6 +1,5 @@
 import useIsMobile from "@/hooks/useIsMobile";
 import { Icon } from "@iconify/react";
-import { ExternalLink, Home, PencilLine } from "lucide-react";
 import { memo } from "react";
 import ProjectActionButton from "./ProjectActionButton";
 
@@ -12,8 +11,6 @@ const TechChip = ({ tag }) => {
     </span>
   );
 };
-
-
 
 const InfoSection_ = ({ project }) => {
   const isMobile = useIsMobile();
@@ -54,7 +51,7 @@ const InfoSection_ = ({ project }) => {
           href={project?.demoUrl}
           icon={
             project?.demoUrl ? (
-              <ExternalLink className="h-6 w-6" />
+              <Icon icon="lucide:globe" className="h-6 w-6" />
             ) : (
               <Icon icon="lucide:hammer" className="h-6 w-6" />
             )
