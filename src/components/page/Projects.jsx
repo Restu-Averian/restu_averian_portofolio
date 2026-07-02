@@ -9,11 +9,13 @@ function ProjectCard({ title, desc, tags, thumb, onClick }) {
       className="
         flex flex-col
         rounded-xl
-        border-[6px]
+        border-[6px] border-porto-border
         p-4
         shadow-sm
         transition-all
-        hover:-translate-y-0.5
+        hover:scale-102
+        active:scale-100
+        hover:border-porto-btn
         hover:shadow-md
         bg-background
         cursor-pointer
