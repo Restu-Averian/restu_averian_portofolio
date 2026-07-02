@@ -90,7 +90,7 @@ const InfoSection_ = ({ project }) => {
               <Icon icon="lucide:hammer" className="h-6 w-6" />
             )
           }
-          label={project?.githubUrl ? "Live Demo" : "View on Github"}
+          label={project?.githubUrl ? "View on Github " : "Live Demo"}
           disabled={!project?.githubUrl}
           variant="solid"
         />

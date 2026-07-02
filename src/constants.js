@@ -1,6 +1,9 @@
 import DailyPlannerThumb from "./assets/projects/daily-planner.png";
 import TexteditorThumb1 from "./assets/projects/texteditor/thumb1.png";
 import TexteditorThumb2 from "./assets/projects/texteditor/thumb2.png";
+import NisoraThumb1 from "./assets/projects/nisora/pic1.webp";
+import NisoraThumb2 from "./assets/projects/nisora/pic2.webp";
+import NisoraThumb3 from "./assets/projects/nisora/pic3.webp";
 
 export const THUMB =
   "https://i.pinimg.com/236x/f7/9e/52/f79e5203f41bdaaf1a5b4176f98a8736.jpg";
@@ -11,6 +14,25 @@ export const THUMB2 =
 export const PROJECTS = [
   {
     id: 1,
+    title: "Nisora",
+    desc: "A clean and calming book tracker app for organizing reading progress, personal collections, and book notes.",
+    descDetail:
+      "Built a responsive book tracking web app with authentication, personal library management, reading status, and a clean interface designed to make tracking books feel simple and enjoyable.",
+    tags: [
+      { icon: "mdi:react", label: "React" },
+      { icon: "simple-icons:supabase", label: "Supabase" },
+      { icon: "bxl:tailwind-css", label: "Tailwind CSS" },
+      { icon: "bxl:shadcn-ui", label: "Shadcn/ui" },
+    ],
+    demoUrl: "https://nisora.pages.dev",
+    githubUrl: "https://github.com/Restu-Averian/nisora",
+    thumb: NisoraThumb1,
+    images: [NisoraThumb1, NisoraThumb2, NisoraThumb3],
+    isFinished: true,
+    stickerType: "mascott-nisora",
+  },
+  {
+    id: 2,
     title: "Package Rich Texteditor",
     desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
     descDetail:
@@ -28,7 +50,7 @@ export const PROJECTS = [
     stickerType: "mascott-texteditor",
   },
   {
-    id: 2,
+    id: 3,
     title: "Daily Planner",
     desc: "A highly interactive daily planner designed for optimal task organization,",
     descDetail:
@@ -46,7 +68,7 @@ export const PROJECTS = [
     stickerType: "mascott-daily-planner",
   },
   {
-    id: 3,
+    id: 4,
     title: "Optimized Transfer ANTD",
     desc: "Built a custom Transfer component for 80k+ items with shift-click, drag-select, and double-click for fast, desktop-like list selection",
     descDetail: `Built a custom Transfer package designed to make large-list selection feel faster and more practical through desktop-like interactions such as shift-click, drag-select, and double-click.

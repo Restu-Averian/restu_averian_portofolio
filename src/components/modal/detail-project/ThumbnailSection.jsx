@@ -1,7 +1,10 @@
 import { memo, useEffect, useState } from "react";
+import { Icon } from "@iconify/react";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 const ThumbnailSection_ = ({ images = [] }) => {
   const [activeImage, setActiveImage] = useState(images[0]);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     setActiveImage(images?.[0]);
@@ -10,7 +13,7 @@ const ThumbnailSection_ = ({ images = [] }) => {
   return (
     <div className="flex h-full flex-col gap-6">
       <div className="rounded-4xl border-[3px] border-porto-btn/50 bg-[#ead8c8] p-8 sm:p-4">
-        <div className="overflow-hidden rounded-[1.75rem] shadow-sm">
+        <div className="relative overflow-hidden rounded-[1.75rem] shadow-sm">
           <img
             src={activeImage}
             alt="Project thumbnail"
@@ -20,8 +23,30 @@ const ThumbnailSection_ = ({ images = [] }) => {
                 lg:aspect-3/1 
                 "
           />
+          <button
+            type="button"
+            onClick={() => setIsExpanded(true)}
+            className="absolute top-4 right-4 z-10 flex cursor-pointer items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-sm font-semibold text-porto-text shadow-[0_4px_12px_rgba(0,0,0,0.1)] backdrop-blur-sm transition-all hover:scale-105 hover:bg-white"
+          >
+            <Icon icon="lucide:maximize" className="h-4 w-4" />
+            Expand +
+          </button>
         </div>
       </div>
+
+      <Dialog open={isExpanded} onOpenChange={setIsExpanded}>
+        <DialogContent
+          showCloseButton={false}
+          className="!h-[95vh] !w-[95vw] !max-w-none !border-none !bg-transparent !p-0 !shadow-none !ring-0 !rounded-none xl:!w-[90vw] sm:!h-[95vh]"
+        >
+          <DialogTitle className="sr-only">Expanded Image</DialogTitle>
+          <img
+            src={activeImage}
+            alt="Expanded thumbnail"
+            className="h-full w-full rounded-2xl object-contain shadow-2xl"
+          />
+        </DialogContent>
+      </Dialog>
 
       <div className="grid grid-cols-3 gap-6">
         {images?.slice(0, 3).map((img, idx) => {
