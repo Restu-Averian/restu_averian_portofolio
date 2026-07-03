@@ -18,7 +18,7 @@ const ArtShelf_ = () => {
 
   return (
     <div className="rounded-3xl p-6 relative">
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex flex-col items-start md:flex-row md:items-center gap-1 md:gap-3 mb-4">
         <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
           <Icon
             icon="solar:stars-minimalistic-bold"
@@ -34,13 +34,13 @@ const ArtShelf_ = () => {
       {/* Scroll Buttons */}
       <button
         onClick={() => scroll(artScrollRef, "left")}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:bg-gray-50 max-md:hidden cursor-pointer"
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm md:bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:bg-gray-50 cursor-pointer"
       >
         <Icon icon="lucide:chevron-left" />
       </button>
       <button
         onClick={() => scroll(artScrollRef, "right")}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:bg-gray-50 max-md:hidden cursor-pointer"
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm md:bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:bg-gray-50 cursor-pointer"
       >
         <Icon icon="lucide:chevron-right" />
       </button>

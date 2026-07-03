@@ -37,13 +37,15 @@ const ThumbnailSection_ = ({ images = [] }) => {
       <Dialog open={isExpanded} onOpenChange={setIsExpanded}>
         <DialogContent
           showCloseButton={false}
-          className="!h-[95vh] !w-[95vw] !max-w-none !border-none !bg-transparent !p-0 !shadow-none !ring-0 !rounded-none xl:!w-[90vw] sm:!h-[95vh]"
+          overlayClassName="backdrop-blur-2xl"
+          className="h-fit! w-fit! max-h-[95vh]!  max-w-[95vw]! border-none! bg-transparent! p-0! shadow-none! ring-0! rounded-none!"
+          onClick={() => setIsExpanded(false)}
         >
           <DialogTitle className="sr-only">Expanded Image</DialogTitle>
           <img
             src={activeImage}
             alt="Expanded thumbnail"
-            className="h-full w-full rounded-2xl object-contain shadow-2xl"
+            className="max-h-[95vh] max-w-[95vw] rounded-2xl object-contain shadow-2xl"
           />
         </DialogContent>
       </Dialog>
