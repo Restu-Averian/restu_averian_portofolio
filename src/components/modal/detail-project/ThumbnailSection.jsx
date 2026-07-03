@@ -12,7 +12,7 @@ const ThumbnailSection_ = ({ images = [] }) => {
 
   return (
     <div className="flex h-full flex-col gap-6">
-      <div className="rounded-4xl border-[3px] border-porto-btn/50 bg-[#ead8c8] p-8 sm:p-4">
+      <div className="rounded-4xl border-[3px] border-porto-btn/50 bg-[#ead8c8] p-3 sm:p-2">
         <div className="relative overflow-hidden rounded-[1.75rem] shadow-sm">
           <img
             src={activeImage}
@@ -44,7 +44,7 @@ const ThumbnailSection_ = ({ images = [] }) => {
               type="button"
               onClick={() => setActiveImage(img)}
               className={[
-                "overflow-hidden rounded-3xl border-[3px] bg-[#ead8c8] p-4 text-left transition-all duration-200 cursor-pointer ",
+                "overflow-hidden rounded-3xl border-[3px] bg-[#ead8c8] p-1 text-left transition-all duration-200 cursor-pointer ",
                 active
                   ? "border-porto-btn/70 shadow-[0_8px_24px_rgba(190,145,156,0.15)] opacity-100"
                   : "border-transparent opacity-50 grayscale hover:opacity-100 hover:grayscale-0 hover:border-porto-btn/40",

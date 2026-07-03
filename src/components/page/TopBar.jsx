@@ -53,7 +53,10 @@ const TopBar_ = () => {
         <Icon icon="solar:sun-linear" className="h-4 w-4 md:h-5 md:w-5" />
       </span>
       <span className="flex-1 flex justify-center items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
-        <Icon icon={`tabler:clock-hour-${nowHour}`} className="h-4 w-4 md:h-5 md:w-5" />
+        <Icon
+          icon={`tabler:clock-hour-${nowHour}`}
+          className="h-4 w-4 md:h-5 md:w-5"
+        />
         {timeStr}
       </span>
       <span className="flex-1 flex justify-end items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
