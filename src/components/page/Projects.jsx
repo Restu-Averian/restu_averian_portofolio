@@ -53,7 +53,7 @@ function ProjectCard({
             ))}
           </div>
 
-          <div className="mt-auto pt-4 flex gap-2">
+          <div className="mt-auto pt-4 flex flex-row-reverse md:flex-row gap-2">
             <a
               href={demoUrl}
               target="_blank"
@@ -111,13 +111,13 @@ const Projects_ = () => {
         {/* Scroll Buttons */}
         <button
           onClick={() => scroll(featuredScrollRef, "left")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm md:bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:bg-gray-50 cursor-pointer"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm md:bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
         >
           <Icon icon="lucide:chevron-left" />
         </button>
         <button
           onClick={() => scroll(featuredScrollRef, "right")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm md:bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:bg-gray-50 cursor-pointer"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm md:bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
         >
           <Icon icon="lucide:chevron-right" />
         </button>
