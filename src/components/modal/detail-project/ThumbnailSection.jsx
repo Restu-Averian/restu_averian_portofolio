@@ -34,6 +34,34 @@ const ThumbnailSection_ = ({ images = [] }) => {
         </div>
       </div>
 
+      <div className="grid grid-cols-3 gap-6">
+        {images?.slice(0, 3).map((img, idx) => {
+          const active = activeImage === img;
+
+          return (
+            <button
+              key={`${img}-${idx}`}
+              type="button"
+              onClick={() => setActiveImage(img)}
+              className={[
+                "overflow-hidden rounded-3xl border-[3px] bg-[#ead8c8] p-4 text-left transition-all duration-200 cursor-pointer ",
+                active
+                  ? "border-porto-btn/70 shadow-[0_8px_24px_rgba(190,145,156,0.15)] opacity-100"
+                  : "border-transparent opacity-50 grayscale hover:opacity-100 hover:grayscale-0 hover:border-porto-btn/40",
+              ].join(" ")}
+            >
+              <img
+                src={img}
+                alt={`Project thumbnail ${idx + 1}`}
+                className="xl:aspect-[1.1/0.92] h-auto
+                md:aspect-2/1
+                lg:aspect-3/1  w-full rounded-2xl object-cover"
+              />
+            </button>
+          );
+        })}
+      </div>
+
       <Dialog open={isExpanded} onOpenChange={setIsExpanded}>
         <DialogContent
           showCloseButton={false}
@@ -49,34 +77,6 @@ const ThumbnailSection_ = ({ images = [] }) => {
           />
         </DialogContent>
       </Dialog>
-
-      <div className="grid grid-cols-3 gap-6">
-        {images?.slice(0, 3).map((img, idx) => {
-          const active = activeImage === img;
-
-          return (
-            <button
-              key={`${img}-${idx}`}
-              type="button"
-              onClick={() => setActiveImage(img)}
-              className={[
-                "overflow-hidden rounded-3xl border-[3px] bg-[#ead8c8] p-4 text-left transition-all duration-200 cursor-pointer ",
-                active
-                  ? "border-porto-btn/70 shadow-[0_8px_24px_rgba(190,145,156,0.15)]"
-                  : "border-porto-btn/40 hover:border-porto-btn/70",
-              ].join(" ")}
-            >
-              <img
-                src={img}
-                alt={`Project thumbnail ${idx + 1}`}
-                className="xl:aspect-[1.1/0.92] h-auto
-                md:aspect-2/1
-                lg:aspect-3/1  w-full rounded-2xl object-cover"
-              />
-            </button>
-          );
-        })}
-      </div>
     </div>
   );
 };
