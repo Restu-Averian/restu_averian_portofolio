@@ -2,96 +2,140 @@ import { Icon } from "@iconify/react";
 import { memo, useRef, useState } from "react";
 import ModalDetailProject from "../modal/detail-project";
 import { PROJECTS } from "@/constants";
+import ArtShelf from "./ArtShelf";
 
-function ProjectCard({ title, desc, tags, thumb, onClick }) {
+function ProjectCard({
+  title,
+  desc,
+  tags,
+  thumb,
+  demoUrl,
+  githubUrl,
+  onClick,
+}) {
   return (
-    <li
-      className="
-        flex flex-col
-        rounded-xl
-        border-[6px] border-porto-border
-        p-4
-        shadow-sm
-        transition-all
-        hover:scale-102
-        active:scale-100
-        hover:border-porto-btn
-        hover:shadow-md
-        bg-background
-        cursor-pointer
-      "
-      onClick={onClick}
-    >
-      <div className="flex items-center gap-4 flex-wrap">
-        <div className=" rounded-xl sm:rounded-3xl bg-[#E5D0BD] p-1.5">
-          <div className="shrink-0 overflow-hidden w-16 h-16 sm:w-18 sm:h-16 rounded-xl sm:rounded-3xl">
-            <img
-              src={thumb}
-              alt={`${title} preview`}
-              loading="lazy"
-              className="h-full w-full object-cover rounded-xl sm:rounded-3xl"
-            />
-          </div>
+    <div className="shrink-0 w-[300px] sm:w-[400px] lg:w-[450px] snap-center">
+      <div className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm">
+        {/* Left: Image (or top on mobile) */}
+        <div
+          className="w-full sm:w-2/5 h-40 sm:h-auto overflow-hidden rounded-xl bg-muted cursor-pointer shrink-0"
+          onClick={onClick}
+        >
+          <img
+            src={thumb}
+            alt={title}
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
         </div>
 
-        {/* Title */}
-        <h3 className="flex-1 pt-1 text-xl font-semibold leading-snug text-foreground">
-          {title}
-        </h3>
-      </div>
-
-      {/* Description */}
-      <p className="mt-3 flex-1 text-[13px] text-muted-foreground">{desc}</p>
-
-      {/* Tags */}
-      <div className="flex flex-wrap gap-2">
-        {tags?.map((tag, idx) => (
-          <span
-            key={`${tag?.icon}-${idx}`}
-            className="
-              inline-flex items-center gap-1.5
-              rounded-full
-              border border-porto-border
-              bg-(--tags)
-              px-3 py-1
-              text-xs font-medium
-              text-foreground
-            "
+        {/* Right: Details */}
+        <div className="flex flex-col flex-1">
+          <h3
+            className="text-base font-bold text-foreground cursor-pointer"
+            onClick={onClick}
           >
-            <Icon icon={tag?.icon} className="h-4 w-4" />
-            {tag?.label}
-          </span>
-        ))}
+            {title}
+          </h3>
+          <p className="mt-1 text-xs text-muted-foreground line-clamp-3">
+            {desc}
+          </p>
+
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {tags?.map((tag, idx) => (
+              <span
+                key={`${tag?.icon}-${idx}`}
+                className="inline-flex items-center gap-1 rounded-md bg-muted px-2 py-0.5 text-[10px] font-medium text-foreground"
+              >
+                <Icon icon={tag?.icon} className="h-3 w-3" />
+                {tag?.label}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-auto pt-4 flex gap-2">
+            <a
+              href={demoUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-white rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity"
+            >
+              <Icon icon="mdi:eye" className="w-3 h-3" /> View Project
+            </a>
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="flex-1 flex items-center justify-center gap-1 border border-porto-border rounded-full py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-colors"
+            >
+              <Icon icon="mdi:code-tags" className="w-3 h-3" /> Source Code
+            </a>
+          </div>
+        </div>
       </div>
-    </li>
+    </div>
   );
 }
 
 const Projects_ = () => {
   const [showModalDetail, setShowModalDetail] = useState(false);
-
   const detailProjectRef = useRef({});
+  const featuredScrollRef = useRef(null);
+
+  const scroll = (ref, dir) => {
+    if (ref.current) {
+      ref.current.scrollBy({
+        left: dir === "left" ? -300 : 300,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
-    <section className="order-1 lg:order-2">
-      <h2 className="mb-6 flex items-center gap-2 text-xl md:text-2xl font-semibold text-foreground">
-        <Icon icon="ri:sparkling-line" className="w-7 h-7 md:w-9 md:h-9" />
-        Project
-      </h2>
-
-      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
-        {PROJECTS.map((project, i) => (
-          <ProjectCard
-            key={project.id ?? i}
-            {...project}
-            onClick={() => {
-              detailProjectRef.current = project;
-              // setSelectedProject(project);
-              setShowModalDetail(true);
-            }}
+    <section className="flex flex-col gap-6">
+      {/* Featured Projects */}
+      <div className="bg-background rounded-3xl p-6 relative">
+        <h2 className="flex items-center gap-2 text-xl font-bold text-foreground mb-4">
+          <Icon
+            icon="solar:stars-minimalistic-bold"
+            className="text-yellow-400 h-5 w-5"
           />
-        ))}
-      </ul>
+          Featured Projects
+        </h2>
+
+        {/* Scroll Buttons */}
+        <button
+          onClick={() => scroll(featuredScrollRef, "left")}
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:bg-gray-50 max-md:hidden cursor-pointer"
+        >
+          <Icon icon="lucide:chevron-left" />
+        </button>
+        <button
+          onClick={() => scroll(featuredScrollRef, "right")}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:bg-gray-50 max-md:hidden cursor-pointer"
+        >
+          <Icon icon="lucide:chevron-right" />
+        </button>
+
+        <div
+          ref={featuredScrollRef}
+          className="flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4"
+        >
+          {PROJECTS.map((project, i) => (
+            <ProjectCard
+              key={project.id ?? i}
+              {...project}
+              onClick={() => {
+                detailProjectRef.current = project;
+                setShowModalDetail(true);
+              }}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Art Shelf */}
+      <ArtShelf />
 
       <ModalDetailProject
         open={showModalDetail}
