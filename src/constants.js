@@ -1,6 +1,6 @@
-import DailyPlannerThumb from "./assets/projects/daily-planner.png";
-import TexteditorThumb1 from "./assets/projects/texteditor/thumb1.png";
-import TexteditorThumb2 from "./assets/projects/texteditor/thumb2.png";
+import ResuAveTextEditor1 from "./assets/projects/texteditor/pic1.webp";
+import ResuAveTextEditor2 from "./assets/projects/texteditor/pic2.webp";
+import ResuAveTextEditor3 from "./assets/projects/texteditor/pic3.webp";
 import NisoraThumb1 from "./assets/projects/nisora/pic1.webp";
 import NisoraThumb2 from "./assets/projects/nisora/pic2.webp";
 import NisoraThumb3 from "./assets/projects/nisora/pic3.webp";
@@ -41,10 +41,10 @@ export const PROJECTS = [
       { icon: "mdi:react", label: "Tiptap" },
       { icon: "bxl:shadcn-ui", label: "Shadcn-ui" },
     ],
-    demoUrl: "",
+    demoUrl: "https://resuave-texteditor.pages.dev/",
     githubUrl: "https://github.com/Restu-Averian/-resuave-texteditor",
-    thumb: TexteditorThumb1,
-    images: [TexteditorThumb1, TexteditorThumb2, THUMB],
+    thumb: ResuAveTextEditor1,
+    images: [ResuAveTextEditor1, ResuAveTextEditor2, ResuAveTextEditor3],
     isFinished: true,
   },
   //   {

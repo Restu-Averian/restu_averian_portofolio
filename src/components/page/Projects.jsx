@@ -14,7 +14,7 @@ function ProjectCard({
   onClick,
 }) {
   return (
-    <div className="shrink-0 w-[300px] sm:w-[400px] lg:w-[450px] snap-center">
+    <div className="shrink-0 w-75 sm:w-100 lg:w-112.5 snap-center">
       <div className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm">
         {/* Left: Image (or top on mobile) */}
         <div
