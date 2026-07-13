@@ -1,7 +1,8 @@
 import { Icon } from "@iconify/react";
 import { memo, useRef, useState } from "react";
-import { THUMB, THUMB2 } from "@/constants";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+
+const VISUAL_EXPERIMENTS = [];
 
 const ArtShelf_ = () => {
   const artScrollRef = useRef(null);
@@ -24,47 +25,56 @@ const ArtShelf_ = () => {
             icon="solar:stars-minimalistic-bold"
             className="text-yellow-400 h-5 w-5"
           />
-          Art Shelf
+          Visual Experiments
         </h2>
         <span className="text-xs text-muted-foreground">
-          Little visual things I love making and collecting.
+          A small archive of UI studies and visual edits.
         </span>
       </div>
 
-      {/* Scroll Buttons */}
-      <button
-        onClick={() => scroll(artScrollRef, "left")}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
-      >
-        <Icon icon="lucide:chevron-left" />
-      </button>
-      <button
-        onClick={() => scroll(artScrollRef, "right")}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
-      >
-        <Icon icon="lucide:chevron-right" />
-      </button>
-
-      <div
-        ref={artScrollRef}
-        className="flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2"
-      >
-        {/* Using dummy images for Art Shelf since assets are not provided */}
-        {[THUMB, THUMB2, THUMB, THUMB2].map((img, i) => (
-          <div
-            key={i}
-            onClick={() => setExpandedImg(img)}
-            className="shrink-0 w-64 h-40 snap-center rounded-2xl overflow-hidden border border-porto-border cursor-pointer"
+      {VISUAL_EXPERIMENTS.length > 0 ? (
+        <>
+          <button
+            type="button"
+            aria-label="Visual experiments sebelumnya"
+            onClick={() => scroll(artScrollRef, "left")}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
           >
-            <img
-              src={img}
-              alt={`Art ${i}`}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <Icon icon="lucide:chevron-left" />
+          </button>
+          <button
+            type="button"
+            aria-label="Visual experiments berikutnya"
+            onClick={() => scroll(artScrollRef, "right")}
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
+          >
+            <Icon icon="lucide:chevron-right" />
+          </button>
+          <div
+            ref={artScrollRef}
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2"
+          >
+            {VISUAL_EXPERIMENTS.map((img, i) => (
+              <div
+                key={img}
+                onClick={() => setExpandedImg(img)}
+                className="shrink-0 w-64 h-40 snap-center rounded-2xl overflow-hidden border border-porto-border cursor-pointer"
+              >
+                <img
+                  src={img}
+                  alt={`Visual experiment ${i + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      ) : (
+        <p className="rounded-2xl border border-dashed border-porto-border bg-card/40 px-4 py-3 text-xs text-muted-foreground">
+          Akan diisi dengan karya visual orisinal.
+        </p>
+      )}
 
       {/* Expanded Image Modal */}
       <Dialog

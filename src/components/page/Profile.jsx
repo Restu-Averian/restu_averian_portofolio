@@ -1,5 +1,4 @@
 import { memo } from "react";
-import FotoProfile from "../../assets/foto-profile.jpg";
 import FotoSampul from "../../assets/foto-sampul-2.png";
 import Mascott from "@/assets/icons/Mascott";
 import { Icon } from "@iconify/react";
@@ -45,25 +44,24 @@ const Profile_ = () => {
               relative
             "
             >
-              <img
-                src={FotoProfile}
-                alt="Profile-Photo"
-                className="h-full w-full object-cover"
-                loading="lazy"
-              />
+              <Mascott size="8rem" className="h-full w-full p-3" />
             </div>
 
             {/* Nama + subtitle */}
             <div className="mt-3 md:mt-0 md:ml-6 flex-1">
               <h1 className="text-2xl font-semibold text-foreground sm:text-4xl flex items-center justify-center md:justify-start gap-2">
-                Resu Ave
+                Restu Averian Putra
                 <Icon
                   icon="solar:stars-minimalistic-bold"
                   className="text-yellow-400 h-5 w-5 md:h-7 md:w-7"
                 />
               </h1>
               <p className="mt-2 text-sm text-muted-foreground sm:text-base max-w-md">
-                Building clean interfaces with cozy little details.
+                Frontend Engineer building reusable interfaces and complete
+                user-facing features.
+              </p>
+              <p className="mt-1 text-xs font-medium text-porto-btn">
+                @resuave
               </p>
               <p className="mt-2 text-xs text-muted-foreground flex items-center justify-center md:justify-start gap-1">
                 <Icon icon="solar:map-point-linear" className="h-4 w-4" />

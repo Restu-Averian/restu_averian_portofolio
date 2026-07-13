@@ -1,93 +1,67 @@
-// src/components/page/WorkExperienceCard.jsx
+import { memo } from "react";
+import { Icon } from "@iconify/react";
 
-import { cn } from "@/lib/utils";
-import { cva } from "class-variance-authority";
-import DataOnThumb from "../../../assets/work-experiences/image-removebg-preview.png";
+/**
+ * @param {{
+ *   experience: import("@/data/workExperiences").WorkExperience,
+ *   onClick: () => void,
+ *   index: number
+ * }} props
+ */
+const WorkExperienceCard_ = ({ experience, onClick, index }) => {
+  const borderColor = index === 0 ? "border-[#ffcd72]" : "border-[#ff8e8e]";
 
-const titleScale = cva("font-semibold leading-snug text-foreground", {
-  variants: {
-    scaleFont: {
-      1: "text-xs",
-      2: "text-sm",
-      3: "text-base",
-      4: "text-lg",
-      5: "text-xl",
-    },
-  },
-  defaultVariants: {
-    scaleFont: 2,
-  },
-});
-
-const periodTextScale = cva("mt-1 text-muted-foreground", {
-  variants: {
-    scaleFont: {
-      1: "text-xs",
-      2: "text-sm",
-      3: "text-base",
-      4: "text-lg",
-      5: "text-xl",
-    },
-  },
-  defaultVariants: {
-    scaleFont: 1,
-  },
-});
-
-export default function WorkExperienceCard({
-  logo = DataOnThumb,
-  title = "Intern as Frontend Engineer at PT. Indodev Niaga Internet",
-  period = "(2023 - 2024)",
-  showTopConnector = true,
-  position = {
-    xClass: "",
-    yClass: "",
-  },
-  imgSize = {
-    widthClass: "w-12",
-    heightClass: "h-12",
-  },
-  scaleFont = 2,
-  scalePeriodText = 1,
-}) {
   return (
-    <div className={cn("absolute", position?.xClass, position?.yClass)}>
-      <div className="relative flex-1 px-3 py-2">
-        {showTopConnector && (
-          <div className="absolute left-1/2 -translate-x-1/2 -top-3 z-10 h-8 w-8 rounded-full bg-primary" />
-        )}
-
-        <div
-          className="flex items-center gap-4 rounded-md bg-card px-4 py-4 w-72"
-          style={{ border: "5px solid var(--primary)" }}
-        >
-          <div
-            className={cn(
-              "shrink-0 overflow-hidden rounded-full",
-              imgSize?.widthClass,
-              imgSize?.heightClass,
-            )}
-            style={{
-              border: "4px solid var(--primary)",
-            }}
-          >
+    <div className="relative z-10 flex items-start gap-4 mb-6 ml-[-5.5px]">
+      <div
+        className={`w-4 h-4 rounded-full bg-card border-[3px] mt-4 z-10 shrink-0 ${borderColor}`}
+      ></div>
+      <button
+        type="button"
+        onClick={onClick}
+        aria-label={`View details for ${experience.role} at ${experience.company}`}
+        className="flex-1 bg-card border border-porto-border rounded-xl p-3 flex flex-col sm:flex-row sm:items-center gap-3 shadow-sm text-left transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-btn focus:border-transparent group"
+      >
+        {experience.logo && (
+          <div className="w-10 h-10 rounded-full border border-porto-border overflow-hidden shrink-0 flex items-center justify-center bg-popover p-1 group-hover:scale-105 transition-transform">
             <img
-              src={logo}
-              alt="Company logo"
+              src={experience.logo}
+              alt={`${experience.company} Logo`}
+              className="w-full h-full object-contain"
               loading="lazy"
-              className="h-full w-full object-contain"
             />
           </div>
-
-          {/* Text */}
-          <div className="flex-1 text-center">
-            <p className={cn(titleScale({ scaleFont }))}>{title}</p>
-            <p className={cn(periodTextScale({ scaleFont: scalePeriodText }))}>
-              {period}
-            </p>
+        )}
+        <div className="flex-1">
+          <div className="flex items-start justify-between gap-2">
+            <div>
+              <p className="text-sm font-bold text-foreground leading-tight group-hover:text-porto-btn transition-colors">
+                {experience.role}
+              </p>
+              <p className="text-xs text-muted-foreground mt-0.5 font-medium">
+                {experience.employmentType && `${experience.employmentType} • `}
+                {experience.company}
+              </p>
+            </div>
+            {experience.isCurrent && (
+              <span className="bg-porto-btn/10 text-porto-btn text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
+                Current
+              </span>
+            )}
           </div>
+
+          <div className="flex items-center gap-1.5 mt-2 text-[11px] font-medium text-foreground bg-muted w-max px-2 py-1 rounded-md">
+            <Icon icon="solar:calendar-linear" className="w-3 h-3" />
+            {experience.period}
+          </div>
+
+          <p className="text-xs text-muted-foreground mt-2 line-clamp-2">
+            {experience.shortSummary}
+          </p>
         </div>
-      </div>
+      </button>
     </div>
   );
-}
+};
+
+export const WorkExperienceCard = memo(WorkExperienceCard_);

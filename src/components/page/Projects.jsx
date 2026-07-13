@@ -4,15 +4,7 @@ import ModalDetailProject from "../modal/detail-project";
 import { PROJECTS } from "@/constants";
 import ArtShelf from "./ArtShelf";
 
-function ProjectCard({
-  title,
-  desc,
-  tags,
-  thumb,
-  demoUrl,
-  githubUrl,
-  onClick,
-}) {
+function ProjectCard({ title, desc, tags, thumb, githubUrl, onClick }) {
   return (
     <div className="shrink-0 w-75 sm:w-100 lg:w-112.5 snap-center">
       <div className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm">
@@ -53,15 +45,14 @@ function ProjectCard({
             ))}
           </div>
 
-          <div className="mt-auto pt-4 flex flex-row-reverse md:flex-row gap-2">
-            <a
-              href={demoUrl}
-              target="_blank"
-              rel="noreferrer"
+          <div className="mt-auto pt-4 flex gap-2">
+            <button
+              type="button"
+              onClick={onClick}
               className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-porto-btn-text rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity"
             >
               <Icon icon="mdi:eye" className="w-3 h-3" /> View Project
-            </a>
+            </button>
             <a
               href={githubUrl}
               target="_blank"
@@ -104,7 +95,7 @@ const Projects_ = () => {
             Featured Projects
           </h2>
           <span className="text-xs text-muted-foreground">
-            Highlight of my best works.
+            Selected public work and technical experiments.
           </span>
         </div>
 

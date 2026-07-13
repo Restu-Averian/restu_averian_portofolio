@@ -1,108 +1,62 @@
-import { Icon } from "@iconify/react";
-import { memo } from "react";
-import DataOnThumb from "@/assets/work-experiences/image-removebg-preview.png";
-import MascottSticker from "@/assets/work-experiences/mascott-sticker.webp";
+import { memo, useState } from "react";
+import { WORK_EXPERIENCES } from "@/data/workExperiences";
+import { WorkExperienceCard } from "./WorkExperienceCard";
+import { WorkExperienceDialog } from "./WorkExperienceDialog";
 
 const WorkExperience_ = () => {
+  const [selectedExperience, setSelectedExperience] = useState(null);
+
+  const handleClose = (isOpen) => {
+    if (!isOpen) {
+      setSelectedExperience(null);
+    }
+  };
+
   return (
     <section className="rounded-3xl px-6 relative">
       {/* Header */}
-      <div className="flex justify-between items-start">
+      <div className="flex justify-between items-start mb-4">
         <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
           Work Journey
-          <Icon
-            icon="solar:stars-minimalistic-bold"
-            className="text-yellow-400 h-5 w-5"
-          />
         </h2>
-        {/* Mascot */}
-        <div className="w-16 h-16 shrink-0 relative -top-4 -right-2">
-          <img
-            src={MascottSticker}
-            alt="Mascot"
-            className="w-full h-full object-contain drop-shadow-sm"
-            loading="lazy"
-          />
-        </div>
       </div>
 
       {/* Timeline */}
       <div className="relative pl-8 pr-2 py-2">
-        {/* Vertical Line */}
-        <div className="absolute left-9.75 top-6 bottom-6 w-0.5 bg-porto-divider z-0"></div>
+        {/* Vertical Line - Dashed or Dotted per requirement */}
+        <div className="absolute left-9.75 top-6 bottom-6 w-[2px] border-l-2 border-dashed border-porto-divider z-0"></div>
 
         {/* Start Badge */}
         <div className="relative z-10 flex items-center mb-6 -ml-4">
-          <span className="bg-porto-btn text-porto-btn-text text-xs font-bold px-3 py-1 rounded-full z-10 shadow-sm">
+          <span className="bg-porto-btn text-porto-btn-text text-xs font-bold px-3 py-1 rounded-full shadow-sm">
             Start
           </span>
         </div>
 
-        {/* Node 1 */}
-        <div className="relative z-10 flex items-start gap-4 mb-6 ml-[-5.5px]">
-          <div className="w-4 h-4 rounded-full bg-card border-[3px] border-[#ff8e8e] mt-4 z-10 shrink-0"></div>
-          <div className="flex-1 bg-card border border-porto-border rounded-xl p-3 flex items-center gap-3 shadow-sm">
-            <div className="w-10 h-10 rounded-full border border-porto-border overflow-hidden shrink-0 flex items-center justify-center bg-popover p-1">
-              <img
-                src={DataOnThumb}
-                alt="Logo"
-                className="w-full h-full object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-foreground leading-tight">
-                Intern as Frontend Engineer
-              </p>
-              <p className="text-[10px] text-muted-foreground mt-0.5">
-                at PT. Indodev Niaga Internet.
-              </p>
-              <div className="flex items-center gap-1 mt-1 text-[10px] font-medium text-foreground">
-                <Icon icon="solar:calendar-linear" className="w-3 h-3" />
-                2023 - 2024
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Node 2 */}
-        <div className="relative z-10 flex items-start gap-4 mb-6 ml-[-5.5px]">
-          <div className="w-4 h-4 rounded-full bg-card border-[3px] border-[#ffcd72] mt-4 z-10 shrink-0"></div>
-          <div className="flex-1 bg-card border border-porto-border rounded-xl p-3 flex items-center gap-3 shadow-sm">
-            <div className="w-10 h-10 rounded-full border border-porto-border overflow-hidden shrink-0 flex items-center justify-center bg-popover p-1">
-              <img
-                src={DataOnThumb}
-                alt="Logo"
-                className="w-full h-full object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <p className="text-xs font-bold text-foreground leading-tight">
-                Frontend Engineer (Staff)
-              </p>
-              <p className="text-[10px] text-muted-foreground mt-0.5">
-                at PT. Indodev Niaga Internet.
-              </p>
-              <div className="flex items-center gap-1 mt-1 text-[10px] font-medium text-foreground">
-                <Icon icon="solar:calendar-linear" className="w-3 h-3" />
-                2024 - sekarang
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* Roles */}
+        {WORK_EXPERIENCES.map((experience, index) => (
+          <WorkExperienceCard
+            key={experience.id}
+            experience={experience}
+            index={index}
+            onClick={() => setSelectedExperience(experience)}
+          />
+        ))}
 
         {/* Next Badge */}
-        <div className="relative z-10 flex items-center -ml-4">
-          <span className="bg-accent text-foreground text-xs font-bold px-3 py-1 rounded-full z-10 flex items-center gap-1">
+        <div className="relative z-10 flex items-center -ml-4 mt-2">
+          <span className="bg-[#b8c99a] text-foreground text-xs font-bold px-3 py-1 rounded-full shadow-sm">
             Next
-            <Icon
-              icon="solar:stars-minimalistic-bold"
-              className="text-yellow-400 h-3 w-3"
-            />
           </span>
         </div>
       </div>
+
+      {/* Detail Dialog / Drawer */}
+      <WorkExperienceDialog
+        isOpen={!!selectedExperience}
+        onClose={handleClose}
+        experience={selectedExperience}
+      />
     </section>
   );
 };
