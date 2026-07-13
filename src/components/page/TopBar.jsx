@@ -1,8 +1,10 @@
 import { Icon } from "@iconify/react";
 import { memo, useState, useEffect, useMemo } from "react";
+import { useTheme } from "@/hooks/useTheme";
 
 const TopBar_ = () => {
   const [now, setNow] = useState(() => new Date());
+  const { theme, nextTheme } = useTheme();
 
   const greeting = (() => {
     const hour = now.getHours();
@@ -59,9 +61,31 @@ const TopBar_ = () => {
         />
         {timeStr}
       </span>
-      <span className="flex-1 flex justify-end items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
+      <span className="flex flex-1 justify-end items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
         <Icon icon="solar:calendar-linear" className="h-4 w-4 md:h-5 md:w-5" />
         {dateStr}
+        <button
+          type="button"
+          onClick={nextTheme}
+          aria-label={`Theme: ${theme}. Activate to switch theme.`}
+          title={`Theme: ${theme}. Click to switch.`}
+          className="ml-1 inline-flex items-center gap-1 rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn"
+        >
+          <Icon
+            icon={
+              theme === "dark"
+                ? "solar:moon-linear"
+                : theme === "light"
+                  ? "solar:sun-linear"
+                  : "solar:monitor-linear"
+            }
+            className="h-4 w-4"
+            aria-hidden="true"
+          />
+          <span className="hidden sm:inline text-[10px] capitalize">
+            {theme}
+          </span>
+        </button>
       </span>
     </header>
   );

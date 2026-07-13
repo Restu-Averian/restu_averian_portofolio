@@ -38,7 +38,7 @@ const Profile_ = () => {
               sm:-mt-16 sm:h-28 sm:w-28
               md:-mt-20 md:h-36 md:w-36
               overflow-hidden rounded-full
-              border-[6px] border-[#fcf5ef]
+              border-[6px] border-card
               bg-background
               shadow-sm
               z-10

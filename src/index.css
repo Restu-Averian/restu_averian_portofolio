@@ -55,24 +55,37 @@
 }
 
 .dark {
-  --background: oklch(0.147 0.004 49.3);
-  --foreground: oklch(0.986 0.002 67.8);
-  --card: oklch(0.214 0.009 43.1);
-  --card-foreground: oklch(0.986 0.002 67.8);
-  --popover: oklch(0.214 0.009 43.1);
-  --popover-foreground: oklch(0.986 0.002 67.8);
-  --primary: oklch(0.922 0.005 34.3);
-  --primary-foreground: oklch(0.214 0.009 43.1);
-  --secondary: oklch(0.268 0.011 36.5);
-  --secondary-foreground: oklch(0.986 0.002 67.8);
-  --muted: oklch(0.268 0.011 36.5);
-  --muted-foreground: oklch(0.714 0.014 41.2);
-  --accent: oklch(0.268 0.011 36.5);
-  --accent-foreground: oklch(0.986 0.002 67.8);
+  --background: #1d1a19;
+  --foreground: #eee7df;
+  --card: #2a2422;
+  --card-foreground: #eee7df;
+  --popover: #2a2422;
+  --popover-foreground: #eee7df;
+  --primary: #d9a5b0;
+  --primary-foreground: #2a2422;
+  --secondary: #362e2b;
+  --secondary-foreground: #eee7df;
+  --muted: #362e2b;
+  --muted-foreground: #b9ada5;
+  --accent: #483a3a;
+  --accent-foreground: #eee7df;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.547 0.021 43.1);
+  --border: #514541;
+  --input: #514541;
+  --ring: #e7b4bd;
+
+  --color-border-image: #463a35;
+  --color-porto-bg: #1d1a19;
+  --color-porto-surface: #2a2422;
+  --color-porto-border: #514541;
+  --color-porto-divider: #413733;
+  --color-porto-text: #eee7df;
+  --color-porto-muted: #b9ada5;
+  --color-porto-btn: #d9a5b0;
+  --color-porto-btn-hover: #e7b4bd;
+  --color-porto-btn-text: #2a2422;
+  --color-porto-accent: #483a3a;
+  --color-overlay: #171312;
 }
 
 @theme inline {
@@ -127,6 +140,16 @@
     font-family: "Fredoka", sans-serif;
     -webkit-font-smoothing: antialiased;
   }
+
+  :where(button, a):focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
+  }
 }
-.hide-scrollbar::-webkit-scrollbar { display: none; }
-.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

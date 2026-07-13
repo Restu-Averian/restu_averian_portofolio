@@ -58,7 +58,7 @@ function ProjectCard({
               href={demoUrl}
               target="_blank"
               rel="noreferrer"
-              className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-white rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity"
+              className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-porto-btn-text rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity"
             >
               <Icon icon="mdi:eye" className="w-3 h-3" /> View Project
             </a>
@@ -111,13 +111,13 @@ const Projects_ = () => {
         {/* Scroll Buttons */}
         <button
           onClick={() => scroll(featuredScrollRef, "left")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm md:bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
         >
           <Icon icon="lucide:chevron-left" />
         </button>
         <button
           onClick={() => scroll(featuredScrollRef, "right")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 backdrop-blur-sm md:bg-white border border-[#f5e3d7] shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
         >
           <Icon icon="lucide:chevron-right" />
         </button>

@@ -5,10 +5,10 @@ import { Icon } from "@iconify/react";
 const Footer_ = () => {
   return (
     <footer className="w-full px-4 md:px-10 pb-6">
-      <div className="bg-[#f3e3d4] rounded-full px-4 md:px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0 relative">
+      <div className="bg-card rounded-full px-4 md:px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0 relative">
         {/* Left Side: Avatar + Text */}
         <div className="flex flex-col md:flex-row items-center gap-3 w-full md:w-auto text-center md:text-left">
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 border-2 border-white shadow-sm overflow-hidden">
+          <div className="w-10 h-10 bg-popover rounded-full flex items-center justify-center shrink-0 border-2 border-card shadow-sm overflow-hidden">
             <img
               src={MascottSticker}
               alt="Mascot"

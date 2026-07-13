@@ -10,7 +10,7 @@ const SideNavButton = forwardRef(
     return (
       <TooltipBase
         content={
-          <span className="min-w-60 rounded-[20px] border-[3px] border-porto-btn/60 bg-[#f7e8dd] px-6 py-4 text-center text-[18px] leading-[1.2] text-porto-text shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-all duration-200 ">
+          <span className="min-w-60 rounded-[20px] border-[3px] border-porto-btn/60 bg-card px-6 py-4 text-center text-[18px] leading-[1.2] text-porto-text shadow-[0_10px_30px_rgba(0,0,0,0.12)] transition-all duration-200 ">
             <span className="inline-flex items-center gap-3">
               {isLeft && <ArrowLeft className="h-5 w-5 shrink-0" />}
               <span>
