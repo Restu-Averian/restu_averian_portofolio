@@ -20,7 +20,7 @@ const WorkExperienceCard_ = ({ experience, onClick, index }) => {
         type="button"
         onClick={onClick}
         aria-label={`View details for ${experience.role} at ${experience.company}`}
-        className="flex-1 bg-card border border-porto-border rounded-xl p-3 flex flex-col sm:flex-row sm:items-center gap-3 shadow-sm text-left transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-btn focus:border-transparent group"
+        className="flex-1 bg-card border border-porto-border rounded-xl p-3 flex flex-col sm:flex-row sm:items-center gap-3 shadow-sm text-left transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-btn focus:border-transparent group cursor-pointer"
       >
         {experience.logo && (
           <div className="w-10 h-10 rounded-full border border-porto-border overflow-hidden shrink-0 flex items-center justify-center bg-popover p-1 group-hover:scale-105 transition-transform">

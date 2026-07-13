@@ -60,9 +60,6 @@ const Profile_ = () => {
                 Frontend Engineer building reusable interfaces and complete
                 user-facing features.
               </p>
-              <p className="mt-1 text-xs font-medium text-porto-btn">
-                @resuave
-              </p>
               <p className="mt-2 text-xs text-muted-foreground flex items-center justify-center md:justify-start gap-1">
                 <Icon icon="solar:map-point-linear" className="h-4 w-4" />
                 Tangerang, Indonesia

@@ -7,12 +7,12 @@ import ArtShelf from "./ArtShelf";
 function ProjectCard({ title, desc, tags, thumb, githubUrl, onClick }) {
   return (
     <div className="shrink-0 w-75 sm:w-100 lg:w-112.5 snap-center">
-      <div className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm">
+      <div
+        className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm cursor-pointer"
+        onClick={onClick}
+      >
         {/* Left: Image (or top on mobile) */}
-        <div
-          className="w-full sm:w-2/5 h-40 sm:h-auto overflow-hidden rounded-xl bg-muted cursor-pointer shrink-0"
-          onClick={onClick}
-        >
+        <div className="w-full sm:w-2/5 h-40 sm:h-auto overflow-hidden rounded-xl bg-muted shrink-0">
           <img
             src={thumb}
             alt={title}
@@ -23,12 +23,7 @@ function ProjectCard({ title, desc, tags, thumb, githubUrl, onClick }) {
 
         {/* Right: Details */}
         <div className="flex flex-col flex-1">
-          <h3
-            className="text-base font-bold text-foreground cursor-pointer"
-            onClick={onClick}
-          >
-            {title}
-          </h3>
+          <h3 className="text-base font-bold text-foreground">{title}</h3>
           <p className="mt-1 text-xs text-muted-foreground line-clamp-3">
             {desc}
           </p>
@@ -48,7 +43,6 @@ function ProjectCard({ title, desc, tags, thumb, githubUrl, onClick }) {
           <div className="mt-auto pt-4 flex gap-2">
             <button
               type="button"
-              onClick={onClick}
               className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-porto-btn-text rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity"
             >
               <Icon icon="mdi:eye" className="w-3 h-3" /> View Project
@@ -57,6 +51,7 @@ function ProjectCard({ title, desc, tags, thumb, githubUrl, onClick }) {
               href={githubUrl}
               target="_blank"
               rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="flex-1 flex items-center justify-center gap-1 border border-porto-border rounded-full py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-colors"
             >
               <Icon icon="mdi:code-tags" className="w-3 h-3" /> Source Code
