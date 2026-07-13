@@ -16,8 +16,10 @@ export const PROJECTS = [
     id: 1,
     title: "Nisora",
     desc: "A clean and calming book tracker app for organizing reading progress, personal collections, and book notes.",
+    descKey: "NisoraDesc",
     descDetail:
       "Built a responsive book tracking web app with authentication, personal library management, reading status, and a clean interface designed to make tracking books feel simple and enjoyable.",
+    descDetailKey: "NisoraDescDetail",
     tags: [
       { icon: "mdi:react", label: "React" },
       { icon: "simple-icons:supabase", label: "Supabase" },
@@ -34,8 +36,10 @@ export const PROJECTS = [
     id: 2,
     title: "Package Rich Texteditor",
     desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
+    descKey: "TextEditorDesc",
     descDetail:
       "Developed a reusable rich text editor package designed to be configurable, mobile-friendly, and easier to fit into different product requirements.",
+    descDetailKey: "TextEditorDescDetail",
     tags: [
       { icon: "mdi:react", label: "React" },
       { icon: "mdi:react", label: "Tiptap" },

@@ -1,8 +1,10 @@
 import { memo } from "react";
 import MascottSticker from "@/assets/work-experiences/mascott-sticker.webp";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "@/i18n";
 
 const Footer_ = () => {
+  const { t } = useTranslation();
   return (
     <footer className="w-full px-4 md:px-10 pb-6">
       <div className="bg-card rounded-full px-4 md:px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0 relative">
@@ -17,7 +19,7 @@ const Footer_ = () => {
             />
           </div>
           <p className="text-xs md:text-sm font-medium text-foreground flex items-center justify-center gap-1">
-            Thanks for stopping by! Let's build beautiful, cozy things together.
+            {t("ThanksForStoppingBy", "Thanks for stopping by! Let's build beautiful, cozy things together.")}
             <Icon
               icon="solar:stars-minimalistic-bold"
               className="text-yellow-500 h-4 w-4"
@@ -36,7 +38,7 @@ const Footer_ = () => {
 
         {/* Right Side: Copyright */}
         <div className="text-xs md:text-sm font-medium text-foreground w-full md:w-auto text-center md:text-right">
-          © 2026 Resu Ave. All rights reserved.
+          {t("Copyright", "© {{year}} Restu Averian Putra. All rights reserved.", { year: new Date().getFullYear() })}
         </div>
       </div>
     </footer>

@@ -2,9 +2,11 @@ import { memo, useState } from "react";
 import { WORK_EXPERIENCES } from "@/data/workExperiences";
 import { WorkExperienceCard } from "./WorkExperienceCard";
 import { WorkExperienceDialog } from "./WorkExperienceDialog";
+import { useTranslation } from "@/i18n";
 
 const WorkExperience_ = () => {
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const { t } = useTranslation();
 
   const handleClose = (isOpen) => {
     if (!isOpen) {
@@ -17,7 +19,7 @@ const WorkExperience_ = () => {
       {/* Header */}
       <div className="flex justify-between items-start mb-4">
         <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
-          Work Journey
+          {t("WorkJourney", "Work Journey")}
         </h2>
       </div>
 
@@ -29,7 +31,7 @@ const WorkExperience_ = () => {
         {/* Start Badge */}
         <div className="relative z-10 flex items-center mb-6 -ml-4">
           <span className="bg-porto-btn text-porto-btn-text text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-            Start
+            {t("WorkJourneyStart", "Start")}
           </span>
         </div>
 
@@ -46,7 +48,7 @@ const WorkExperience_ = () => {
         {/* Next Badge */}
         <div className="relative z-10 flex items-center -ml-4 mt-2">
           <span className="bg-[#b8c99a] text-foreground text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-            Next
+            {t("WorkJourneyNext", "Next")}
           </span>
         </div>
       </div>

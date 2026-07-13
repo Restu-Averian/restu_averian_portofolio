@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "@/i18n";
 
 /**
  * @param {{
@@ -9,6 +10,7 @@ import { Icon } from "@iconify/react";
  * }} props
  */
 const WorkExperienceCard_ = ({ experience, onClick, index }) => {
+  const { t } = useTranslation();
   const borderColor = index === 0 ? "border-[#ffcd72]" : "border-[#ff8e8e]";
 
   return (
@@ -19,7 +21,7 @@ const WorkExperienceCard_ = ({ experience, onClick, index }) => {
       <button
         type="button"
         onClick={onClick}
-        aria-label={`View details for ${experience.role} at ${experience.company}`}
+        aria-label={`View details for ${experience.roleDefaultText} at ${experience.company}`}
         className="flex-1 bg-card border border-porto-border rounded-xl p-3 flex flex-col sm:flex-row sm:items-center gap-3 shadow-sm text-left transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-btn focus:border-transparent group cursor-pointer"
       >
         {experience.logo && (
@@ -36,16 +38,16 @@ const WorkExperienceCard_ = ({ experience, onClick, index }) => {
           <div className="flex items-start justify-between gap-2">
             <div>
               <p className="text-sm font-bold text-foreground leading-tight group-hover:text-porto-btn transition-colors">
-                {experience.role}
+                {t(experience.roleKey, experience.roleDefaultText)}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5 font-medium">
-                {experience.employmentType && `${experience.employmentType} • `}
+                {experience.employmentTypeKey && `${t(experience.employmentTypeKey, experience.employmentTypeDefaultText)} • `}
                 {experience.company}
               </p>
             </div>
             {experience.isCurrent && (
               <span className="bg-porto-btn/10 text-porto-btn text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
-                Current
+                {t("CurrentRole", "Current")}
               </span>
             )}
           </div>
@@ -56,7 +58,7 @@ const WorkExperienceCard_ = ({ experience, onClick, index }) => {
           </div>
 
           <p className="text-xs text-muted-foreground mt-2 line-clamp-2">
-            {experience.shortSummary}
+            {t(experience.shortSummaryKey, experience.shortSummaryDefaultText)}
           </p>
         </div>
       </button>

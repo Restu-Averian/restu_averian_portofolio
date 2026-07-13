@@ -1,10 +1,12 @@
 import { memo } from "react";
 import { Icon } from "@iconify/react";
+import { useTranslation } from "@/i18n";
 
 /**
  * @param {{ experience: import("@/data/workExperiences").WorkExperience }} props
  */
 const WorkExperienceDetail_ = ({ experience }) => {
+  const { t } = useTranslation();
   if (!experience) return null;
 
   return (
@@ -26,10 +28,10 @@ const WorkExperienceDetail_ = ({ experience }) => {
             id="experience-detail-title"
             className="text-lg md:text-xl font-bold text-foreground leading-tight"
           >
-            {experience.role}
-            {experience.employmentType && (
+            {t(experience.roleKey, experience.roleDefaultText)}
+            {experience.employmentTypeKey && (
               <span className="ml-2 text-xs font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-full align-middle whitespace-nowrap">
-                {experience.employmentType}
+                {t(experience.employmentTypeKey, experience.employmentTypeDefaultText)}
               </span>
             )}
           </h2>
@@ -48,7 +50,7 @@ const WorkExperienceDetail_ = ({ experience }) => {
 
       {/* Overview */}
       <div className="text-sm leading-relaxed text-foreground bg-card border border-border p-3 rounded-xl shadow-sm">
-        {experience.overview}
+        {t(experience.overviewKey, experience.overviewDefaultText)}
       </div>
 
       {/* Scope */}
@@ -73,7 +75,7 @@ const WorkExperienceDetail_ = ({ experience }) => {
               icon="solar:star-fall-bold"
               className="text-porto-btn w-4 h-4"
             />
-            Key Contributions
+            {t("KeyContributions", "Key Contributions")}
           </h3>
           <ul className="space-y-2.5 text-sm leading-relaxed text-muted-foreground">
             {experience.contributions.map((contribution, idx) => (
@@ -82,7 +84,7 @@ const WorkExperienceDetail_ = ({ experience }) => {
                   icon="solar:check-circle-bold"
                   className="w-4 h-4 text-green-500/80 shrink-0 mt-0.5"
                 />
-                <span className="flex-1">{contribution}</span>
+                <span className="flex-1">{t(contribution.key, contribution.defaultText)}</span>
               </li>
             ))}
           </ul>
@@ -90,13 +92,13 @@ const WorkExperienceDetail_ = ({ experience }) => {
       )}
 
       {/* Confidentiality Note */}
-      {experience.confidentialityNote && (
+      {experience.confidentialityNoteKey && (
         <div className="mt-4 text-xs leading-relaxed text-muted-foreground/80 flex items-start gap-2 bg-muted/50 p-3 rounded-lg border border-border/50">
           <Icon
             icon="solar:shield-warning-linear"
             className="w-4 h-4 shrink-0 mt-0.5"
           />
-          <p>{experience.confidentialityNote}</p>
+          <p>{t(experience.confidentialityNoteKey, experience.confidentialityNoteDefaultText)}</p>
         </div>
       )}
     </div>

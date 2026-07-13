@@ -32,6 +32,7 @@ export function useTheme() {
 
   return {
     theme,
+    setTheme,
     nextTheme: () =>
       setTheme(
         (current) => themes[(themes.indexOf(current) + 1) % themes.length],

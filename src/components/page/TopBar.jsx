@@ -1,25 +1,62 @@
 import { Icon } from "@iconify/react";
 import { memo, useState, useEffect, useMemo } from "react";
 import { useTheme } from "@/hooks/useTheme";
+import { useTranslation } from "@/i18n";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const LOCALES = [
+  { value: "en", label: "EN", flag: "🇬🇧" },
+  { value: "id", label: "ID", flag: "🇮🇩" },
+];
+
+const THEMES = [
+  {
+    value: "light",
+    icon: "solar:sun-linear",
+    labelKey: "ThemeLight",
+    defaultLabel: "Light",
+  },
+  {
+    value: "dark",
+    icon: "solar:moon-linear",
+    labelKey: "ThemeDark",
+    defaultLabel: "Dark",
+  },
+  {
+    value: "system",
+    icon: "solar:monitor-linear",
+    labelKey: "ThemeSystem",
+    defaultLabel: "System",
+  },
+];
 
 const TopBar_ = () => {
   const [now, setNow] = useState(() => new Date());
-  const { theme, nextTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
+  const { t, locale, setLocale } = useTranslation();
 
   const greeting = (() => {
     const hour = now.getHours();
-    if (hour < 12) return "Good morning!";
-    if (hour < 17) return "Good afternoon!";
-    return "Good evening!";
+    if (hour < 12) return t("WelcomeGoodMorning", "Welcome, Good morning!");
+    if (hour < 17) return t("WelcomeGoodAfternoon", "Welcome, Good afternoon!");
+    return t("WelcomeGoodEvening", "Welcome, Good evening!");
   })();
 
-  const timeStr = now.toLocaleTimeString("en-US", {
+  const dateLocale = locale === "id" ? "id-ID" : "en-US";
+
+  const timeStr = now.toLocaleTimeString(dateLocale, {
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
   });
 
-  const dateStr = now.toLocaleDateString("en-US", {
+  const dateStr = now.toLocaleDateString(dateLocale, {
     weekday: "long",
     day: "numeric",
     month: "short",
@@ -51,7 +88,7 @@ const TopBar_ = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-between px-4 py-3.5 md:px-10 flex-wrap">
       <span className="flex-1 flex items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
-        Welcome, {greeting}
+        {greeting}
         <Icon icon="solar:sun-linear" className="h-4 w-4 md:h-5 md:w-5" />
       </span>
       <span className="flex-1 flex justify-center items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
@@ -64,28 +101,52 @@ const TopBar_ = () => {
       <span className="flex flex-1 justify-end items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
         <Icon icon="solar:calendar-linear" className="h-4 w-4 md:h-5 md:w-5" />
         {dateStr}
-        <button
-          type="button"
-          onClick={nextTheme}
-          aria-label={`Theme: ${theme}. Activate to switch theme.`}
-          title={`Theme: ${theme}. Click to switch.`}
-          className="ml-1 inline-flex items-center gap-1 rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn"
-        >
-          <Icon
-            icon={
-              theme === "dark"
-                ? "solar:moon-linear"
-                : theme === "light"
-                  ? "solar:sun-linear"
-                  : "solar:monitor-linear"
+        <Select value={locale} onValueChange={setLocale}>
+          <SelectTrigger
+            aria-label={
+              locale === "en"
+                ? t("SwitchToIndonesian", "Switch language to Indonesian")
+                : t("SwitchToEnglish", "Switch language to English")
             }
-            className="h-4 w-4"
-            aria-hidden="true"
-          />
-          <span className="hidden sm:inline text-[10px] capitalize">
-            {theme}
-          </span>
-        </button>
+            title={t("LanguageSelector", "Language selector")}
+            className="ml-1 h-[26px] rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
+          >
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent align="end">
+            {LOCALES.map(({ value, label, flag }) => (
+              <SelectItem key={value} value={value}>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[12px]">{flag}</span>
+                  <span className="text-[10px] font-bold uppercase">
+                    {label}
+                  </span>
+                </div>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        <Select value={theme} onValueChange={setTheme}>
+          <SelectTrigger
+            aria-label={`Theme: ${theme}. Activate to switch theme.`}
+            title={`Theme: ${theme}. Click to switch.`}
+            className="ml-1 h-[26px] rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
+          >
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent align="end">
+            {THEMES.map(({ value, icon, labelKey, defaultLabel }) => (
+              <SelectItem key={value} value={value}>
+                <div className="flex items-center gap-1.5">
+                  <Icon icon={icon} className="h-4 w-4" aria-hidden="true" />
+                  <span className="text-[10px] capitalize">
+                    {t(labelKey, defaultLabel)}
+                  </span>
+                </div>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </span>
     </header>
   );

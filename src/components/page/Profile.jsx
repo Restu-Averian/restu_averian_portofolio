@@ -4,9 +4,11 @@ import Mascott from "@/assets/icons/Mascott";
 import { Icon } from "@iconify/react";
 import useIsMobile from "@/hooks/useIsMobile";
 import { SOCIAL_LINKS } from "@/constants";
+import { useTranslation } from "@/i18n";
 
 const Profile_ = () => {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
   return (
     <section className="w-full px-4 md:px-10 mt-2">
       <div className="relative w-full">
@@ -57,19 +59,21 @@ const Profile_ = () => {
                 />
               </h1>
               <p className="mt-2 text-sm text-muted-foreground sm:text-base max-w-md">
-                Frontend Engineer building reusable interfaces and complete
-                user-facing features.
+                {t(
+                  "PortfolioTagline",
+                  "Frontend Engineer building reusable interfaces and complete user-facing features."
+                )}
               </p>
               <p className="mt-2 text-xs text-muted-foreground flex items-center justify-center md:justify-start gap-1">
                 <Icon icon="solar:map-point-linear" className="h-4 w-4" />
-                Tangerang, Indonesia
+                {t("Location", "Tangerang, Indonesia")}
               </p>
             </div>
 
             {/* Find me on */}
             <div className="mt-6 flex flex-col items-center gap-3 md:ml-auto md:mt-0 md:items-start">
               <span className="text-sm font-medium text-foreground">
-                Find me on:
+                {t("FindMeOn", "Find me on:")}
               </span>
               <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
                 {SOCIAL_LINKS.map(({ label, icon, href }) => (

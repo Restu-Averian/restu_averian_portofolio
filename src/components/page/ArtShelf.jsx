@@ -1,12 +1,14 @@
 import { Icon } from "@iconify/react";
 import { memo, useRef, useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { useTranslation } from "@/i18n";
 
 const VISUAL_EXPERIMENTS = [];
 
 const ArtShelf_ = () => {
   const artScrollRef = useRef(null);
   const [expandedImg, setExpandedImg] = useState(null);
+  const { t } = useTranslation();
 
   const scroll = (ref, dir) => {
     if (ref.current) {
@@ -25,10 +27,10 @@ const ArtShelf_ = () => {
             icon="solar:stars-minimalistic-bold"
             className="text-yellow-400 h-5 w-5"
           />
-          Visual Experiments
+          {t("ArtShelf", "Visual Experiments")}
         </h2>
         <span className="text-xs text-muted-foreground">
-          A small archive of UI studies and visual edits.
+          {t("ArtShelfDescription", "A small archive of UI studies and visual edits.")}
         </span>
       </div>
 
@@ -36,7 +38,7 @@ const ArtShelf_ = () => {
         <>
           <button
             type="button"
-            aria-label="Visual experiments sebelumnya"
+            aria-label={t("PreviousArtwork", "Previous artwork")}
             onClick={() => scroll(artScrollRef, "left")}
             className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
           >
@@ -44,7 +46,7 @@ const ArtShelf_ = () => {
           </button>
           <button
             type="button"
-            aria-label="Visual experiments berikutnya"
+            aria-label={t("NextArtwork", "Next artwork")}
             onClick={() => scroll(artScrollRef, "right")}
             className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
           >
@@ -72,7 +74,7 @@ const ArtShelf_ = () => {
         </>
       ) : (
         <p className="rounded-2xl border border-dashed border-porto-border bg-card/40 px-4 py-3 text-xs text-muted-foreground">
-          Akan diisi dengan karya visual orisinal.
+          {t("EmptyArtShelf", "Will be filled with original visual works.")}
         </p>
       )}
 

@@ -3,8 +3,10 @@ import { memo, useRef, useState } from "react";
 import ModalDetailProject from "../modal/detail-project";
 import { PROJECTS } from "@/constants";
 import ArtShelf from "./ArtShelf";
+import { useTranslation } from "@/i18n";
 
-function ProjectCard({ title, desc, tags, thumb, githubUrl, onClick }) {
+function ProjectCard({ title, desc, descKey, descDefault, tags, thumb, githubUrl, onClick }) {
+  const { t } = useTranslation();
   return (
     <div className="shrink-0 w-75 sm:w-100 lg:w-112.5 snap-center">
       <div
@@ -25,7 +27,7 @@ function ProjectCard({ title, desc, tags, thumb, githubUrl, onClick }) {
         <div className="flex flex-col flex-1">
           <h3 className="text-base font-bold text-foreground">{title}</h3>
           <p className="mt-1 text-xs text-muted-foreground line-clamp-3">
-            {desc}
+            {descKey ? t(descKey, descDefault || desc) : desc}
           </p>
 
           <div className="mt-3 flex flex-wrap gap-1.5">
@@ -45,7 +47,7 @@ function ProjectCard({ title, desc, tags, thumb, githubUrl, onClick }) {
               type="button"
               className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-porto-btn-text rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity"
             >
-              <Icon icon="mdi:eye" className="w-3 h-3" /> View Project
+              <Icon icon="mdi:eye" className="w-3 h-3" /> {t("ViewProject", "View Project")}
             </button>
             <a
               href={githubUrl}
@@ -54,7 +56,7 @@ function ProjectCard({ title, desc, tags, thumb, githubUrl, onClick }) {
               onClick={(e) => e.stopPropagation()}
               className="flex-1 flex items-center justify-center gap-1 border border-porto-border rounded-full py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-colors"
             >
-              <Icon icon="mdi:code-tags" className="w-3 h-3" /> Source Code
+              <Icon icon="mdi:code-tags" className="w-3 h-3" /> {t("SourceCode", "Source Code")}
             </a>
           </div>
         </div>
@@ -67,6 +69,7 @@ const Projects_ = () => {
   const [showModalDetail, setShowModalDetail] = useState(false);
   const detailProjectRef = useRef({});
   const featuredScrollRef = useRef(null);
+  const { t } = useTranslation();
 
   const scroll = (ref, dir) => {
     if (ref.current) {
@@ -87,22 +90,24 @@ const Projects_ = () => {
               icon="solar:stars-minimalistic-bold"
               className="text-yellow-400 h-5 w-5"
             />
-            Featured Projects
+            {t("FeaturedProjects", "Featured Projects")}
           </h2>
           <span className="text-xs text-muted-foreground">
-            Selected public work and technical experiments.
+            {t("FeaturedProjectsDesc", "Selected public work and technical experiments.")}
           </span>
         </div>
 
         {/* Scroll Buttons */}
         <button
           onClick={() => scroll(featuredScrollRef, "left")}
+          aria-label={t("PreviousSlide", "Previous slide")}
           className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
         >
           <Icon icon="lucide:chevron-left" />
         </button>
         <button
           onClick={() => scroll(featuredScrollRef, "right")}
+          aria-label={t("NextSlide", "Next slide")}
           className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
         >
           <Icon icon="lucide:chevron-right" />

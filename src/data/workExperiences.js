@@ -20,20 +20,24 @@ import DataOnThumb from "@/assets/work-experiences/image-removebg-preview.png";
 export const WORK_EXPERIENCES = [
   {
     id: "frontend-intern",
-    role: "Frontend Engineer Intern",
-    employmentType: "Internship",
+    roleKey: "InternRole",
+    roleDefaultText: "Frontend Engineer Intern",
+    employmentTypeKey: "InternEmploymentType",
+    employmentTypeDefaultText: "Internship",
     company: "PT. Indodev Niaga Internet",
     period: "2023–2024",
     isCurrent: false,
-    shortSummary:
+    shortSummaryKey: "InternSummary",
+    shortSummaryDefaultText:
       "Frontend foundations, responsive implementation, and reusable component development.",
-    overview:
+    overviewKey: "InternOverview",
+    overviewDefaultText:
       "Contributed to production frontend development while learning the team’s engineering workflow, component patterns, and delivery process.",
     contributions: [
-      "Implemented responsive user interfaces based on product requirements and existing design guidelines.",
-      "Developed and maintained reusable frontend components.",
-      "Resolved frontend bugs and improved visual and behavioral consistency.",
-      "Collaborated through Git-based workflows, code reviews, and team development processes.",
+      { key: "InternContrib1", defaultText: "Implemented responsive user interfaces based on product requirements and existing design guidelines." },
+      { key: "InternContrib2", defaultText: "Developed and maintained reusable frontend components." },
+      { key: "InternContrib3", defaultText: "Resolved frontend bugs and improved visual and behavioral consistency." },
+      { key: "InternContrib4", defaultText: "Collaborated through Git-based workflows, code reviews, and team development processes." },
     ],
     scope: [
       "Frontend Development",
@@ -46,23 +50,27 @@ export const WORK_EXPERIENCES = [
   },
   {
     id: "frontend-staff",
-    role: "Frontend Engineer",
-    employmentType: "Staff",
+    roleKey: "FrontendEngineerRole",
+    roleDefaultText: "Frontend Engineer",
+    employmentTypeKey: "StaffEmploymentType",
+    employmentTypeDefaultText: "Staff",
     company: "PT. Indodev Niaga Internet",
     period: "2024–Present",
     isCurrent: true,
-    shortSummary:
+    shortSummaryKey: "FrontendStaffSummary",
+    shortSummaryDefaultText:
       "Reusable UI Systems, configurable forms, page-building interfaces, and frontend tooling.",
-    overview:
+    overviewKey: "StaffOverview",
+    overviewDefaultText:
       "Contributing to internal frontend platforms and reusable systems used across multiple development needs.",
     contributions: [
-      "Developed reusable frontend components that can be adopted across multiple internal projects and development flows.",
-      "Delivered end-to-end frontend implementation for complex configurable form experiences.",
-      "Built frontend functionality for configurable page-building interfaces.",
-      "Implemented dynamic fields, validation behavior, conditional interface states, and reusable interaction patterns.",
-      "Improved navigation usability through searchable menu experiences and persistent URL-based interface state.",
-      "Improved component maintainability by refining component structure and frontend documentation.",
-      "Supported frontend build improvements, including build-tool configuration and alignment with the Docker build workflow.",
+      { key: "StaffContrib1", defaultText: "Developed reusable frontend components that can be adopted across multiple internal projects and development flows." },
+      { key: "StaffContrib2", defaultText: "Delivered end-to-end frontend implementation for complex configurable form experiences." },
+      { key: "StaffContrib3", defaultText: "Built frontend functionality for configurable page-building interfaces." },
+      { key: "StaffContrib4", defaultText: "Implemented dynamic fields, validation behavior, conditional interface states, and reusable interaction patterns." },
+      { key: "StaffContrib5", defaultText: "Improved navigation usability through searchable menu experiences and persistent URL-based interface state." },
+      { key: "StaffContrib6", defaultText: "Improved component maintainability by refining component structure and frontend documentation." },
+      { key: "StaffContrib7", defaultText: "Supported frontend build improvements, including build-tool configuration and alignment with the Docker build workflow." },
     ],
     scope: [
       "React",
@@ -73,7 +81,8 @@ export const WORK_EXPERIENCES = [
       "Component Documentation",
       "Build Tooling",
     ],
-    confidentialityNote:
+    confidentialityNoteKey: "ConfidentialityNote",
+    confidentialityNoteDefaultText:
       "Specific product names, client information, screenshots, source code, business rules, and internal workflows are intentionally omitted due to confidentiality obligations.",
     logo: DataOnThumb,
   },
