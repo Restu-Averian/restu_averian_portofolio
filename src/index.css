@@ -55,37 +55,37 @@
 }
 
 .dark {
-  --background: #1d1a19;
-  --foreground: #eee7df;
-  --card: #2a2422;
-  --card-foreground: #eee7df;
-  --popover: #2a2422;
-  --popover-foreground: #eee7df;
-  --primary: #d9a5b0;
-  --primary-foreground: #2a2422;
-  --secondary: #362e2b;
-  --secondary-foreground: #eee7df;
-  --muted: #362e2b;
-  --muted-foreground: #b9ada5;
-  --accent: #483a3a;
-  --accent-foreground: #eee7df;
+  --background: #39302D;
+  --foreground: #F3D6AC;
+  --card: #302A27;
+  --card-foreground: #F3D6AC;
+  --popover: #302A27;
+  --popover-foreground: #F3D6AC;
+  --primary: #E0A18F;
+  --primary-foreground: #171817;
+  --secondary: #927356;
+  --secondary-foreground: #171817;
+  --muted: #302A27;
+  --muted-foreground: #E0B391;
+  --accent: #C2945B;
+  --accent-foreground: #171817;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #514541;
-  --input: #514541;
-  --ring: #e7b4bd;
+  --border: #927356;
+  --input: #927356;
+  --ring: #E3C9A1;
 
-  --color-border-image: #463a35;
-  --color-porto-bg: #1d1a19;
-  --color-porto-surface: #2a2422;
-  --color-porto-border: #514541;
-  --color-porto-divider: #413733;
-  --color-porto-text: #eee7df;
-  --color-porto-muted: #b9ada5;
-  --color-porto-btn: #d9a5b0;
-  --color-porto-btn-hover: #e7b4bd;
-  --color-porto-btn-text: #2a2422;
-  --color-porto-accent: #483a3a;
-  --color-overlay: #171312;
+  --color-border-image: #171817;
+  --color-porto-bg: #39302D;
+  --color-porto-surface: #302A27;
+  --color-porto-border: #927356;
+  --color-porto-divider: #927356;
+  --color-porto-text: #F3D6AC;
+  --color-porto-muted: #E0B391;
+  --color-porto-btn: #E0A18F;
+  --color-porto-btn-hover: #E3C9A1;
+  --color-porto-btn-text: #171817;
+  --color-porto-accent: #C2945B;
+  --color-overlay: #171817;
 }
 
 @theme inline {
