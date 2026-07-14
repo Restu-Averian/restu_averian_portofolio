@@ -61,7 +61,7 @@ const Profile_ = () => {
               <p className="mt-2 text-sm text-muted-foreground sm:text-base max-w-md">
                 {t(
                   "PortfolioTagline",
-                  "Frontend Engineer building reusable interfaces and complete user-facing features."
+                  "Frontend Engineer building reusable interfaces and complete user-facing features.",
                 )}
               </p>
               <p className="mt-2 text-xs text-muted-foreground flex items-center justify-center md:justify-start gap-1">
