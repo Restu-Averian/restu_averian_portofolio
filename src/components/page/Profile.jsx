@@ -1,13 +1,15 @@
 import { memo } from "react";
 import FotoSampul from "../../assets/foto-sampul-2.png";
-import Mascott from "@/assets/icons/Mascott";
+import FotoProfileLight from "../../assets/foto-profile-light.png";
+import FotoProfileDark from "../../assets/foto-profile-dark.png";
 import { Icon } from "@iconify/react";
 import useIsMobile from "@/hooks/useIsMobile";
+import { useIsDark } from "@/hooks/useTheme";
 import { SOCIAL_LINKS } from "@/constants";
 import { useTranslation } from "@/i18n";
 
 const Profile_ = () => {
-  const isMobile = useIsMobile();
+  const isDark = useIsDark();
   const { t } = useTranslation();
   return (
     <section className="w-full px-4 md:px-10 mt-2">
@@ -46,7 +48,13 @@ const Profile_ = () => {
               relative
             "
             >
-              <Mascott size="8rem" className="h-full w-full p-3" />
+              <img
+                src={isDark ? FotoProfileDark : FotoProfileLight}
+                alt="Restu Averian Putra"
+                className="h-full w-full object-cover"
+                loading="eager"
+                fetchPriority="high"
+              />
             </div>
 
             {/* Nama + subtitle */}
