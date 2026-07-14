@@ -16,6 +16,8 @@ export const id = {
   PortfolioTagline: "Frontend Engineer yang membangun antarmuka terstruktur dan fitur interaktif yang lengkap.",
   Location: "Tangerang, Indonesia",
   FindMeOn: "Temukan saya di:",
+  ViewResume: "Lihat Resume",
+  OpenResumeInNewTab: "Buka resume Restu Averian Putra di tab baru",
 
   // Featured Projects
   FeaturedProjects: "Proyek Unggulan",

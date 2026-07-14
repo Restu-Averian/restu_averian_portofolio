@@ -41,7 +41,8 @@ const WorkExperienceCard_ = ({ experience, onClick, index }) => {
                 {t(experience.roleKey, experience.roleDefaultText)}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5 font-medium">
-                {experience.employmentTypeKey && `${t(experience.employmentTypeKey, experience.employmentTypeDefaultText)} • `}
+                {experience.employmentTypeKey &&
+                  `${t(experience.employmentTypeKey, experience.employmentTypeDefaultText)} • `}
                 {experience.company}
               </p>
             </div>

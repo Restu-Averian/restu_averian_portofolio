@@ -16,6 +16,8 @@ export const en = {
   PortfolioTagline: "Frontend Engineer building reusable interfaces and complete user-facing features.",
   Location: "Tangerang, Indonesia",
   FindMeOn: "Find me on:",
+  ViewResume: "View Resume",
+  OpenResumeInNewTab: "Open Restu Averian Putra's resume in a new tab",
 
   // Featured Projects
   FeaturedProjects: "Featured Projects",

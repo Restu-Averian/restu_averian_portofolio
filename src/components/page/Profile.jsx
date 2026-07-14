@@ -2,6 +2,7 @@ import { memo } from "react";
 import FotoSampul from "../../assets/foto-sampul-2.png";
 import FotoProfileLight from "../../assets/foto-profile-light.png";
 import FotoProfileDark from "../../assets/foto-profile-dark.png";
+import ResumePDF from "../../assets/pdf/restu-averian-putra-resume.pdf";
 import { Icon } from "@iconify/react";
 import useIsMobile from "@/hooks/useIsMobile";
 import { useIsDark } from "@/hooks/useTheme";
@@ -76,6 +77,31 @@ const Profile_ = () => {
                 <Icon icon="solar:map-point-linear" className="h-4 w-4" />
                 {t("Location", "Tangerang, Indonesia")}
               </p>
+
+              <div className="mt-5 flex justify-center md:justify-start">
+                <a
+                  href={ResumePDF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t(
+                    "OpenResumeInNewTab",
+                    "Open Restu Averian Putra's resume in a new tab",
+                  )}
+                  className="
+                    inline-flex items-center justify-center gap-2
+                    rounded-full
+                    bg-porto-btn text-porto-btn-text
+                    px-5 py-2 text-sm font-medium
+                    transition-all
+                    hover:scale-105 hover:bg-porto-btn-hover hover:text-porto-btn-text
+                    focus:outline-none focus:ring-2 focus:ring-porto-btn focus:ring-offset-2 focus:ring-offset-background
+                    shadow-sm
+                  "
+                >
+                  <Icon icon="mdi:open-in-new" className="h-4 w-4" />
+                  {t("ViewResume", "View Resume")}
+                </a>
+              </div>
             </div>
 
             {/* Find me on */}
