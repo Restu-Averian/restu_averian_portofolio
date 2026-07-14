@@ -38,6 +38,7 @@ const THEMES = [
 
 const TopBar_ = () => {
   const [now, setNow] = useState(() => new Date());
+  const [openSelect, setOpenSelect] = useState(null);
   const { theme, setTheme } = useTheme();
   const { t, locale, setLocale } = useTranslation();
 
@@ -85,6 +86,17 @@ const TopBar_ = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+  const handlePointerDownOutside = (e) => {
+    const target = e.detail.originalEvent.target;
+    const trigger =
+      target instanceof Element
+        ? target.closest('button[data-topbar-select]')
+        : null;
+    if (trigger) {
+      setTimeout(() => setOpenSelect(trigger.dataset.topbarSelect), 0);
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-between px-4 py-3.5 md:px-10 flex-wrap">
       <span className="flex-1 flex items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
@@ -101,19 +113,29 @@ const TopBar_ = () => {
       <span className="flex flex-1 justify-end items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
         <Icon icon="solar:calendar-linear" className="h-4 w-4 md:h-5 md:w-5" />
         {dateStr}
-        <Select value={locale} onValueChange={setLocale}>
+        <Select
+          value={locale}
+          open={openSelect === "language"}
+          onOpenChange={(open) => setOpenSelect(open ? "language" : null)}
+          onValueChange={setLocale}
+        >
           <SelectTrigger
+            data-topbar-select="language"
             aria-label={
               locale === "en"
                 ? t("SwitchToIndonesian", "Switch language to Indonesian")
                 : t("SwitchToEnglish", "Switch language to English")
             }
             title={t("LanguageSelector", "Language selector")}
-            className="ml-1 h-[26px] rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
+            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
           >
             <SelectValue />
           </SelectTrigger>
-          <SelectContent position="popper" align="end">
+          <SelectContent
+            position="popper"
+            align="end"
+            onPointerDownOutside={handlePointerDownOutside}
+          >
             {LOCALES.map(({ value, label, flag }) => (
               <SelectItem key={value} value={value}>
                 <div className="flex items-center gap-1.5">
@@ -127,15 +149,25 @@ const TopBar_ = () => {
           </SelectContent>
         </Select>
 
-        <Select value={theme} onValueChange={setTheme}>
+        <Select
+          value={theme}
+          open={openSelect === "theme"}
+          onOpenChange={(open) => setOpenSelect(open ? "theme" : null)}
+          onValueChange={setTheme}
+        >
           <SelectTrigger
+            data-topbar-select="theme"
             aria-label={`Theme: ${theme}. Activate to switch theme.`}
             title={`Theme: ${theme}. Click to switch.`}
-            className="ml-1 h-[26px] rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
+            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
           >
             <SelectValue />
           </SelectTrigger>
-          <SelectContent position="popper" align="end">
+          <SelectContent
+            position="popper"
+            align="end"
+            onPointerDownOutside={handlePointerDownOutside}
+          >
             {THEMES.map(({ value, icon, labelKey, defaultLabel }) => (
               <SelectItem key={value} value={value}>
                 <div className="flex items-center gap-1.5">
