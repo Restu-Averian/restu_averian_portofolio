@@ -113,7 +113,7 @@ const TopBar_ = () => {
           >
             <SelectValue />
           </SelectTrigger>
-          <SelectContent align="end">
+          <SelectContent position="popper" align="end">
             {LOCALES.map(({ value, label, flag }) => (
               <SelectItem key={value} value={value}>
                 <div className="flex items-center gap-1.5">
@@ -126,6 +126,7 @@ const TopBar_ = () => {
             ))}
           </SelectContent>
         </Select>
+
         <Select value={theme} onValueChange={setTheme}>
           <SelectTrigger
             aria-label={`Theme: ${theme}. Activate to switch theme.`}
@@ -134,7 +135,7 @@ const TopBar_ = () => {
           >
             <SelectValue />
           </SelectTrigger>
-          <SelectContent align="end">
+          <SelectContent position="popper" align="end">
             {THEMES.map(({ value, icon, labelKey, defaultLabel }) => (
               <SelectItem key={value} value={value}>
                 <div className="flex items-center gap-1.5">
