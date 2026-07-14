@@ -10,7 +10,7 @@ function ProjectCard({ title, desc, descKey, descDefault, tags, thumb, githubUrl
   return (
     <div className="shrink-0 w-75 sm:w-100 lg:w-112.5 snap-center">
       <div
-        className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm cursor-pointer"
+        className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm cursor-pointer group transition-all hover:border-porto-btn hover:shadow-md"
         onClick={onClick}
       >
         {/* Left: Image (or top on mobile) */}
@@ -18,14 +18,14 @@ function ProjectCard({ title, desc, descKey, descDefault, tags, thumb, githubUrl
           <img
             src={thumb}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform group-hover:scale-105"
             loading="lazy"
           />
         </div>
 
         {/* Right: Details */}
         <div className="flex flex-col flex-1">
-          <h3 className="text-base font-bold text-foreground">{title}</h3>
+          <h3 className="text-base font-bold text-foreground transition-colors group-hover:text-porto-btn">{title}</h3>
           <p className="mt-1 text-xs text-muted-foreground line-clamp-3">
             {descKey ? t(descKey, descDefault || desc) : desc}
           </p>
