@@ -120,7 +120,7 @@ const WorkExperienceDetail_ = ({ experience }) => {
                 key={metric.labelKey}
                 className="rounded-xl border border-porto-border bg-card px-3 py-2 shadow-sm"
               >
-                <p className="text-base font-bold text-porto-btn break-words">
+                <p className="text-base font-bold text-porto-btn wrap-break-word">
                   {metric.value}
                 </p>
                 <p className="text-xs leading-snug text-muted-foreground">
@@ -144,7 +144,7 @@ const WorkExperienceDetail_ = ({ experience }) => {
             {experience.scope.map((tag) => (
               <span
                 key={tag}
-                className="text-xs font-medium px-2.5 py-1 bg-secondary text-secondary-foreground rounded-md"
+                className="inline-flex items-center rounded-full bg-porto-accent/70 px-4 py-1.5 text-sm font-medium text-porto-text"
               >
                 {tag}
               </span>

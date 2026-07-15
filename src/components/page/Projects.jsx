@@ -5,7 +5,16 @@ import { PROJECTS } from "@/constants";
 import ArtShelf from "./ArtShelf";
 import { useTranslation } from "@/i18n";
 
-function ProjectCard({ title, desc, descKey, descDefault, tags, thumb, githubUrl, onClick }) {
+function ProjectCard({
+  title,
+  desc,
+  descKey,
+  descDefault,
+  tags,
+  thumb,
+  githubUrl,
+  onClick,
+}) {
   const { t } = useTranslation();
   return (
     <div className="shrink-0 w-75 sm:w-100 lg:w-112.5 snap-center">
@@ -25,7 +34,9 @@ function ProjectCard({ title, desc, descKey, descDefault, tags, thumb, githubUrl
 
         {/* Right: Details */}
         <div className="flex flex-col flex-1">
-          <h3 className="text-base font-bold text-foreground transition-colors group-hover:text-porto-btn">{title}</h3>
+          <h3 className="text-base font-bold text-foreground transition-colors group-hover:text-porto-btn">
+            {title}
+          </h3>
           <p className="mt-1 text-xs text-muted-foreground line-clamp-3">
             {descKey ? t(descKey, descDefault || desc) : desc}
           </p>
@@ -45,9 +56,10 @@ function ProjectCard({ title, desc, descKey, descDefault, tags, thumb, githubUrl
           <div className="mt-auto pt-4 flex gap-2">
             <button
               type="button"
-              className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-porto-btn-text rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity"
+              className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-porto-btn-text rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity cursor-pointer"
             >
-              <Icon icon="mdi:eye" className="w-3 h-3" /> {t("ViewProject", "View Project")}
+              <Icon icon="mdi:eye" className="w-3 h-3" />{" "}
+              {t("ViewProject", "View Project")}
             </button>
             <a
               href={githubUrl}
@@ -56,7 +68,8 @@ function ProjectCard({ title, desc, descKey, descDefault, tags, thumb, githubUrl
               onClick={(e) => e.stopPropagation()}
               className="flex-1 flex items-center justify-center gap-1 border border-porto-border rounded-full py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-colors"
             >
-              <Icon icon="mdi:code-tags" className="w-3 h-3" /> {t("SourceCode", "Source Code")}
+              <Icon icon="mdi:code-tags" className="w-3 h-3" />{" "}
+              {t("SourceCode", "Source Code")}
             </a>
           </div>
         </div>
@@ -93,7 +106,10 @@ const Projects_ = () => {
             {t("FeaturedProjects", "Featured Projects")}
           </h2>
           <span className="text-xs text-muted-foreground">
-            {t("FeaturedProjectsDesc", "Selected public work and technical experiments.")}
+            {t(
+              "FeaturedProjectsDesc",
+              "Selected public work and technical experiments.",
+            )}
           </span>
         </div>
 
