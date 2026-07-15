@@ -110,23 +110,27 @@ export const id = {
   TechnicalHighlights: "Sorotan Teknis",
   TechnicalHighlightsDescription:
     "Kekuatan utama yang dibuktikan melalui pengembangan frontend production.",
-  HighlightConfigurableTitle: "Sistem UI yang Dapat Dikonfigurasi",
-  HighlightConfigurableDesc:
-    "Membangun antarmuka page-building dan form-customization dengan komponen yang dapat dikonfigurasi, field dinamis, perilaku validasi, responsive settings, preview workflow, dan pola interaksi reusable.",
-  HighlightPerformanceTitle: "Performa pada Skala Besar",
-  HighlightPerformanceDesc:
-    "Mengoptimalkan antarmuka lama dan data-heavy, termasuk pengurangan bundle size 90% dan interaksi responsif pada lebih dari 80.000 record.",
-  HighlightEditorTitle: "Editor dan Developer Tooling",
-  HighlightEditorDesc:
-    "Mengembangkan dan memigrasikan pengalaman rich-text dan Markdown editing menggunakan Tiptap, ProseMirror, rendering JSX reusable, cursor preservation, dan native undo/redo.",
-  TagDynamicForms: "Form Dinamis",
-  TagComponentArchitecture: "Arsitektur Komponen",
-  TagPerformanceOptimization: "Optimasi Performa",
-  TagRenderingStability: "Stabilitas Rendering",
-  TagEditorArchitecture: "Arsitektur Editor",
-  TagDeveloperTooling: "Developer Tooling",
-  MetricBundleReductionShort: "Pengurangan bundle",
-  MetricInteractiveRecords: "Record interaktif",
+  TechnicalHighlightConfigurableTitle:
+    "Sistem UI yang Dapat Dikonfigurasi",
+  TechnicalHighlightConfigurableDescription:
+    "Membangun antarmuka page builder dan form yang dapat dikonfigurasi dengan field dinamis, validasi, dan pola reusable.",
+  TechnicalHighlightConfigurableProofPoint: "20+ tipe field",
+  TechnicalHighlightPerformanceTitle: "Performa dalam Skala Besar",
+  TechnicalHighlightPerformanceDescription:
+    "Mengoptimalkan antarmuka berbasis data dalam jumlah besar sambil mempertahankan interaksi yang responsif.",
+  TechnicalHighlightPerformanceProofBundle: "Pengurangan bundle 90%",
+  TechnicalHighlightPerformanceProofRecords: "80K+ data interaktif",
+  TechnicalHighlightEditorTitle: "Editor & Developer Tooling",
+  TechnicalHighlightEditorDescription:
+    "Membangun pengalaman rich-text editor dan Markdown dengan cursor preservation serta undo/redo native.",
+  TechnicalHighlightTagReact: "React",
+  TechnicalHighlightTagTypeScript: "TypeScript",
+  TechnicalHighlightTagCraft: "Craft.js",
+  TechnicalHighlightTagPerformance: "Performa",
+  TechnicalHighlightTagMapSet: "Map & Set",
+  TechnicalHighlightTagTiptap: "Tiptap",
+  TechnicalHighlightTagProseMirror: "ProseMirror",
+  TechnicalHighlightTagMarkdown: "Markdown",
 
   // Projects
   NisoraDesc:

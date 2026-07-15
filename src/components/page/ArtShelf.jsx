@@ -5,76 +5,131 @@ import { useTranslation } from "@/i18n";
 const TECHNICAL_HIGHLIGHTS = [
   {
     icon: "solar:widget-2-linear",
-    titleKey: "HighlightConfigurableTitle",
+    titleKey: "TechnicalHighlightConfigurableTitle",
     titleDefaultText: "Configurable UI Systems",
-    descriptionKey: "HighlightConfigurableDesc",
+    descriptionKey: "TechnicalHighlightConfigurableDescription",
     descriptionDefaultText:
-      "Built page-building and form-customization interfaces with configurable components, dynamic fields, validation behavior, responsive settings, preview workflows, and reusable interaction patterns.",
-    tags: [
-      { label: "React" },
-      { label: "TypeScript" },
-      { label: "Craft.js" },
-      { labelKey: "TagDynamicForms", labelDefaultText: "Dynamic Forms" },
+      "Built configurable page-building and form interfaces with dynamic fields, validation, and reusable patterns.",
+    proofPoints: [
       {
-        labelKey: "TagComponentArchitecture",
-        labelDefaultText: "Component Architecture",
+        textKey: "TechnicalHighlightConfigurableProofPoint",
+        textDefaultText: "20+ field types",
+      },
+    ],
+    tags: [
+      {
+        labelKey: "TechnicalHighlightTagReact",
+        labelDefaultText: "React",
+      },
+      {
+        labelKey: "TechnicalHighlightTagTypeScript",
+        labelDefaultText: "TypeScript",
+      },
+      {
+        labelKey: "TechnicalHighlightTagCraft",
+        labelDefaultText: "Craft.js",
       },
     ],
   },
   {
     icon: "solar:bolt-linear",
-    titleKey: "HighlightPerformanceTitle",
+    titleKey: "TechnicalHighlightPerformanceTitle",
     titleDefaultText: "Performance at Scale",
-    descriptionKey: "HighlightPerformanceDesc",
+    descriptionKey: "TechnicalHighlightPerformanceDescription",
     descriptionDefaultText:
-      "Optimized legacy and data-heavy interfaces, including a 90% bundle-size reduction and responsive interactions across more than 80,000 records.",
+      "Optimized data-heavy interfaces while maintaining responsive interactions across large datasets.",
+    proofPoints: [
+      {
+        textKey: "TechnicalHighlightPerformanceProofBundle",
+        textDefaultText: "90% bundle reduction",
+      },
+      {
+        textKey: "TechnicalHighlightPerformanceProofRecords",
+        textDefaultText: "80K+ interactive records",
+      },
+    ],
     tags: [
       {
-        labelKey: "TagPerformanceOptimization",
-        labelDefaultText: "Performance Optimization",
-      },
-      { label: "Map and Set" },
-      {
-        labelKey: "TagRenderingStability",
-        labelDefaultText: "Rendering Stability",
-      },
-      { label: "Chrome DevTools" },
-    ],
-    metrics: [
-      {
-        value: "90%",
-        labelKey: "MetricBundleReductionShort",
-        labelDefaultText: "Bundle reduction",
+        labelKey: "TechnicalHighlightTagPerformance",
+        labelDefaultText: "Performance",
       },
       {
-        value: "80K+",
-        labelKey: "MetricInteractiveRecords",
-        labelDefaultText: "Interactive records",
+        labelKey: "TechnicalHighlightTagMapSet",
+        labelDefaultText: "Map & Set",
       },
     ],
   },
   {
     icon: "solar:pen-new-square-linear",
-    titleKey: "HighlightEditorTitle",
-    titleDefaultText: "Editor and Developer Tooling",
-    descriptionKey: "HighlightEditorDesc",
+    titleKey: "TechnicalHighlightEditorTitle",
+    titleDefaultText: "Editor & Developer Tooling",
+    descriptionKey: "TechnicalHighlightEditorDescription",
     descriptionDefaultText:
-      "Developed and migrated rich-text and Markdown editing experiences using Tiptap, ProseMirror, reusable JSX rendering, cursor preservation, and native undo/redo.",
+      "Built rich-text and Markdown editor experiences with cursor preservation and native undo/redo.",
     tags: [
-      { label: "Tiptap" },
-      { label: "ProseMirror" },
-      { label: "Markdown" },
       {
-        labelKey: "TagEditorArchitecture",
-        labelDefaultText: "Editor Architecture",
+        labelKey: "TechnicalHighlightTagTiptap",
+        labelDefaultText: "Tiptap",
       },
       {
-        labelKey: "TagDeveloperTooling",
-        labelDefaultText: "Developer Tooling",
+        labelKey: "TechnicalHighlightTagProseMirror",
+        labelDefaultText: "ProseMirror",
+      },
+      {
+        labelKey: "TechnicalHighlightTagMarkdown",
+        labelDefaultText: "Markdown",
       },
     ],
   },
 ];
+
+const TechnicalHighlightCard = ({ highlight, t }) => (
+  <article className="flex h-full flex-col rounded-2xl border border-porto-border bg-card p-4 shadow-sm">
+    <div className="flex items-start gap-3">
+      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-porto-accent text-porto-btn">
+        <Icon icon={highlight.icon} className="h-4 w-4" />
+      </span>
+      <div className="min-w-0">
+        <h3 className="text-sm font-bold leading-tight text-foreground">
+          {t(highlight.titleKey, highlight.titleDefaultText)}
+        </h3>
+        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+          {t(highlight.descriptionKey, highlight.descriptionDefaultText)}
+        </p>
+      </div>
+    </div>
+
+    <div className="mt-auto pt-3">
+      {highlight.proofPoints?.length > 0 && (
+        <div
+          className={
+            highlight.proofPoints.length > 1 ? "grid grid-cols-2 gap-2" : "flex"
+          }
+        >
+          {highlight.proofPoints.map((proofPoint) => (
+            <p
+              key={proofPoint.textKey}
+              className="flex w-full items-center justify-center text-center rounded-xl border border-porto-border bg-porto-surface-elevated px-3 py-2 text-xs font-bold leading-tight text-porto-btn"
+            >
+              {t(proofPoint.textKey, proofPoint.textDefaultText)}
+            </p>
+          ))}
+        </div>
+      )}
+
+      <div className="mt-3 flex flex-wrap gap-1.5">
+        {highlight.tags.map((tag) => (
+          <span
+            key={tag.labelKey}
+            className="rounded-md border border-porto-chip-border bg-porto-chip px-2 py-0.5 text-[10px] font-medium text-porto-chip-text"
+          >
+            {t(tag.labelKey, tag.labelDefaultText)}
+          </span>
+        ))}
+      </div>
+    </div>
+  </article>
+);
 
 const ArtShelf_ = () => {
   const { t } = useTranslation();
@@ -97,60 +152,13 @@ const ArtShelf_ = () => {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
         {TECHNICAL_HIGHLIGHTS.map((highlight) => (
-          <article
+          <TechnicalHighlightCard
             key={highlight.titleKey}
-            className="rounded-2xl border border-porto-border bg-card p-4 shadow-sm"
-          >
-            <div className="flex items-start gap-3">
-              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-porto-accent text-porto-btn">
-                <Icon icon={highlight.icon} className="h-5 w-5" />
-              </span>
-              <div className="min-w-0">
-                <h3 className="text-sm font-bold leading-tight text-foreground">
-                  {t(highlight.titleKey, highlight.titleDefaultText)}
-                </h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                  {t(
-                    highlight.descriptionKey,
-                    highlight.descriptionDefaultText,
-                  )}
-                </p>
-              </div>
-            </div>
-
-            {highlight.metrics && (
-              <div className="mt-3 grid grid-cols-2 gap-2">
-                {highlight.metrics.map((metric) => (
-                  <div
-                    key={metric.labelKey}
-                    className="rounded-xl border border-porto-border bg-porto-surface-elevated px-3 py-2"
-                  >
-                    <p className="text-base font-bold text-porto-btn">
-                      {metric.value}
-                    </p>
-                    <p className="text-[11px] leading-tight text-muted-foreground">
-                      {t(metric.labelKey, metric.labelDefaultText)}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            <div className="mt-3 flex flex-wrap gap-1.5">
-              {highlight.tags.map((tag) => (
-                <span
-                  key={tag.labelKey ?? tag.label}
-                  className="rounded-md border border-porto-chip-border bg-porto-chip px-2 py-0.5 text-[10px] font-medium text-porto-chip-text"
-                >
-                  {tag.labelKey
-                    ? t(tag.labelKey, tag.labelDefaultText)
-                    : tag.label}
-                </span>
-              ))}
-            </div>
-          </article>
+            highlight={highlight}
+            t={t}
+          />
         ))}
       </div>
     </section>

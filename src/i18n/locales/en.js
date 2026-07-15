@@ -110,23 +110,26 @@ export const en = {
   TechnicalHighlights: "Technical Highlights",
   TechnicalHighlightsDescription:
     "Selected strengths demonstrated through production frontend work.",
-  HighlightConfigurableTitle: "Configurable UI Systems",
-  HighlightConfigurableDesc:
-    "Built page-building and form-customization interfaces with configurable components, dynamic fields, validation behavior, responsive settings, preview workflows, and reusable interaction patterns.",
-  HighlightPerformanceTitle: "Performance at Scale",
-  HighlightPerformanceDesc:
-    "Optimized legacy and data-heavy interfaces, including a 90% bundle-size reduction and responsive interactions across more than 80,000 records.",
-  HighlightEditorTitle: "Editor and Developer Tooling",
-  HighlightEditorDesc:
-    "Developed and migrated rich-text and Markdown editing experiences using Tiptap, ProseMirror, reusable JSX rendering, cursor preservation, and native undo/redo.",
-  TagDynamicForms: "Dynamic Forms",
-  TagComponentArchitecture: "Component Architecture",
-  TagPerformanceOptimization: "Performance Optimization",
-  TagRenderingStability: "Rendering Stability",
-  TagEditorArchitecture: "Editor Architecture",
-  TagDeveloperTooling: "Developer Tooling",
-  MetricBundleReductionShort: "Bundle reduction",
-  MetricInteractiveRecords: "Interactive records",
+  TechnicalHighlightConfigurableTitle: "Configurable UI Systems",
+  TechnicalHighlightConfigurableDescription:
+    "Built configurable page-building and form interfaces with dynamic fields, validation, and reusable patterns.",
+  TechnicalHighlightConfigurableProofPoint: "20+ field types",
+  TechnicalHighlightPerformanceTitle: "Performance at Scale",
+  TechnicalHighlightPerformanceDescription:
+    "Optimized data-heavy interfaces while maintaining responsive interactions across large datasets.",
+  TechnicalHighlightPerformanceProofBundle: "90% bundle reduction",
+  TechnicalHighlightPerformanceProofRecords: "80K+ interactive records",
+  TechnicalHighlightEditorTitle: "Editor & Developer Tooling",
+  TechnicalHighlightEditorDescription:
+    "Built rich-text and Markdown editor experiences with cursor preservation and native undo/redo.",
+  TechnicalHighlightTagReact: "React",
+  TechnicalHighlightTagTypeScript: "TypeScript",
+  TechnicalHighlightTagCraft: "Craft.js",
+  TechnicalHighlightTagPerformance: "Performance",
+  TechnicalHighlightTagMapSet: "Map & Set",
+  TechnicalHighlightTagTiptap: "Tiptap",
+  TechnicalHighlightTagProseMirror: "ProseMirror",
+  TechnicalHighlightTagMarkdown: "Markdown",
 
   // Projects
   NisoraDesc:
