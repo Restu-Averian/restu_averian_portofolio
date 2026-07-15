@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link id="app-favicon" rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <script>
       (() => {
         const theme = localStorage.getItem("theme") || "system";
@@ -14,7 +15,7 @@
         document.documentElement.classList.toggle("dark", dark);
         document.documentElement.dataset.theme = theme;
         document.documentElement.style.colorScheme = dark ? "dark" : "light";
-        
+
         const favicon = document.querySelector('link[rel="icon"]');
         if (favicon) {
           favicon.href = dark ? "/logo-dark.png" : "/logo.png";
@@ -22,7 +23,24 @@
       })();
     </script>
     <link rel="stylesheet" href="src/index.css" />
-    <title>Restu's Portofolio</title>
+    <title>Restu Averian Putra — Frontend Engineer</title>
+
+    <meta
+      name="description"
+      content="Frontend Engineer portfolio featuring React projects, reusable UI systems, performance-focused engineering, and professional experience."
+    />
+
+    <meta
+      property="og:title"
+      content="Restu Averian Putra — Frontend Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Frontend Engineer portfolio featuring selected React projects, reusable UI systems, and performance-focused work."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://restu-averian-putra.my.id/" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
