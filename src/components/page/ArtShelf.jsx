@@ -85,7 +85,7 @@ const ArtShelf_ = () => {
         <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
           <Icon
             icon="solar:stars-minimalistic-bold"
-            className="text-yellow-400 h-5 w-5"
+            className="text-porto-gold h-5 w-5"
           />
           {t("TechnicalHighlights", "Technical Highlights")}
         </h2>
@@ -104,7 +104,7 @@ const ArtShelf_ = () => {
             className="rounded-2xl border border-porto-border bg-card p-4 shadow-sm"
           >
             <div className="flex items-start gap-3">
-              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-muted text-porto-btn">
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-porto-accent text-porto-btn">
                 <Icon icon={highlight.icon} className="h-5 w-5" />
               </span>
               <div className="min-w-0">
@@ -112,7 +112,10 @@ const ArtShelf_ = () => {
                   {t(highlight.titleKey, highlight.titleDefaultText)}
                 </h3>
                 <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                  {t(highlight.descriptionKey, highlight.descriptionDefaultText)}
+                  {t(
+                    highlight.descriptionKey,
+                    highlight.descriptionDefaultText,
+                  )}
                 </p>
               </div>
             </div>
@@ -122,7 +125,7 @@ const ArtShelf_ = () => {
                 {highlight.metrics.map((metric) => (
                   <div
                     key={metric.labelKey}
-                    className="rounded-xl border border-porto-border bg-background/60 px-3 py-2"
+                    className="rounded-xl border border-porto-border bg-porto-surface-elevated px-3 py-2"
                   >
                     <p className="text-base font-bold text-porto-btn">
                       {metric.value}
@@ -139,9 +142,11 @@ const ArtShelf_ = () => {
               {highlight.tags.map((tag) => (
                 <span
                   key={tag.labelKey ?? tag.label}
-                  className="rounded-md bg-secondary px-2 py-0.5 text-[10px] font-medium text-secondary-foreground"
+                  className="rounded-md border border-porto-chip-border bg-porto-chip px-2 py-0.5 text-[10px] font-medium text-porto-chip-text"
                 >
-                  {tag.labelKey ? t(tag.labelKey, tag.labelDefaultText) : tag.label}
+                  {tag.labelKey
+                    ? t(tag.labelKey, tag.labelDefaultText)
+                    : tag.label}
                 </span>
               ))}
             </div>

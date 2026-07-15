@@ -16,7 +16,7 @@ const DesktopDialog_ = ({
 }) => {
   return (
     <Dialog open={open} onOpenChange={(value) => !value && onClose?.()}>
-      <DialogContent className="w-[95vw] sm:max-w-[90vw] xl:max-w-[1260px] border-none bg-porto-bg p-6 sm:p-10 shadow-2xl rounded-[32px] sm:rounded-[40px]">
+      <DialogContent className="w-[95vw] sm:max-w-[90vw] xl:max-w-[1260px] border border-porto-border bg-porto-surface-elevated p-6 sm:p-10 shadow-2xl rounded-[32px] sm:rounded-[40px]">
         <DialogTitle className="sr-only">Detail Project</DialogTitle>
 
         <div className="relative mx-auto w-full">

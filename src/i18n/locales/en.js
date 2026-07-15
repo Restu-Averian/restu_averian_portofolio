@@ -25,7 +25,7 @@ export const en = {
   FeaturedProjects: "Featured Projects",
   FeaturedProjectsDesc: "Selected public work and technical experiments.",
   ViewProject: "View Project",
-  SourceCode: "Source Code",
+  GitHub: "GitHub",
   ComingSoon: "Coming Soon",
   MoreInTheWorks: "More in the Works",
   PreviousSlide: "Previous slide",
@@ -46,7 +46,6 @@ export const en = {
   ViewExperienceDetails: "View details for {{role}} at {{company}}",
   ExperienceDetailTitle: "{{role}} Detail",
   LiveDemo: "Live Demo",
-  ViewSourceCode: "View Source Code",
   Close: "Close",
   Expand: "Expand",
   PreviousProject: "Previous Project",
@@ -75,8 +74,7 @@ export const en = {
     "Builds scalable React applications, configurable internal tools, reusable UI systems, editor tooling, and performance-critical frontend experiences.",
   StaffContrib1:
     "Built a configurable Page Builder from scratch with React and Craft.js.",
-  StaffContrib1Item1:
-    "Supported drag-and-drop composition and nested layouts.",
+  StaffContrib1Item1: "Supported drag-and-drop composition and nested layouts.",
   StaffContrib1Item2:
     "Added responsive settings, live preview, component configuration, undo and redo, and API-based save/load workflows.",
   StaffContrib2:
@@ -131,12 +129,17 @@ export const en = {
   MetricInteractiveRecords: "Interactive records",
 
   // Projects
-  NisoraDesc: "A clean and calming book tracker app for organizing reading progress, personal collections, and book notes.",
-  NisoraDescDetail: "Built a responsive book tracking web app with authentication, personal library management, reading status, and a clean interface designed to make tracking books feel simple and enjoyable.",
-  TextEditorDesc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
-  TextEditorDescDetail: "Developed a reusable rich text editor package designed to be configurable, mobile-friendly, and easier to fit into different product requirements.",
+  NisoraDesc:
+    "A clean and calming book tracker app for organizing reading progress, personal collections, and book notes.",
+  NisoraDescDetail:
+    "Built a responsive book tracking web app with authentication, personal library management, reading status, and a clean interface designed to make tracking books feel simple and enjoyable.",
+  TextEditorDesc:
+    "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
+  TextEditorDescDetail:
+    "Developed a reusable rich text editor package designed to be configurable, mobile-friendly, and easier to fit into different product requirements.",
 
   // Footer
-  ThanksForStoppingBy: "Thanks for stopping by! Let's build beautiful, cozy things together.",
+  ThanksForStoppingBy:
+    "Thanks for stopping by! Let's build beautiful, cozy things together.",
   Copyright: "© {{year}} Restu Averian Putra. All rights reserved.",
 };

@@ -90,7 +90,7 @@ const TopBar_ = () => {
     const target = e.detail.originalEvent.target;
     const trigger =
       target instanceof Element
-        ? target.closest('button[data-topbar-select]')
+        ? target.closest("button[data-topbar-select]")
         : null;
     if (trigger) {
       setTimeout(() => setOpenSelect(trigger.dataset.topbarSelect), 0);
@@ -127,7 +127,7 @@ const TopBar_ = () => {
                 : t("SwitchToEnglish", "Switch language to English")
             }
             title={t("LanguageSelector", "Language selector")}
-            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
+            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-porto-focus"
           >
             <SelectValue />
           </SelectTrigger>
@@ -159,7 +159,7 @@ const TopBar_ = () => {
             data-topbar-select="theme"
             aria-label={`Theme: ${theme}. Activate to switch theme.`}
             title={`Theme: ${theme}. Click to switch.`}
-            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
+            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-porto-focus"
           >
             <SelectValue />
           </SelectTrigger>

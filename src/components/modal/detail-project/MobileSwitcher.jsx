@@ -7,7 +7,7 @@ const MobileSwitcher_ = ({ prev, next }) => {
       <button
         type="button"
         onClick={prev?.onClick}
-        className="flex flex-1 items-center justify-center gap-2 rounded-2xl border-2 border-porto-btn/60 bg-card px-4 py-3 text-sm font-medium text-porto-text"
+        className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-porto-border bg-card px-4 py-3 text-sm font-medium text-porto-text transition-colors hover:border-porto-btn hover:bg-porto-accent/40 focus:outline-none focus:ring-2 focus:ring-porto-focus"
       >
         <ArrowLeft className="h-4 w-4" />
         Prev
@@ -21,7 +21,7 @@ const MobileSwitcher_ = ({ prev, next }) => {
       <button
         type="button"
         onClick={next?.onClick}
-        className="flex flex-1 items-center justify-center gap-2 rounded-2xl border-2 border-porto-btn/60 bg-card px-4 py-3 text-sm font-medium text-porto-text"
+        className="flex flex-1 items-center justify-center gap-2 rounded-2xl border border-porto-border bg-card px-4 py-3 text-sm font-medium text-porto-text transition-colors hover:border-porto-btn hover:bg-porto-accent/40 focus:outline-none focus:ring-2 focus:ring-porto-focus"
       >
         Next
         <ArrowRight className="h-4 w-4" />

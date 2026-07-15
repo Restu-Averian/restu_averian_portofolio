@@ -31,7 +31,7 @@ const Profile_ = () => {
             {/* Sparkle Decorations */}
             <Icon
               icon="solar:stars-minimalistic-bold"
-              className="absolute top-4 left-4 text-yellow-400/50 h-5 w-5"
+              className="absolute top-4 left-4 text-porto-gold/60 h-5 w-5"
             />
 
             {/* Avatar */}
@@ -64,7 +64,7 @@ const Profile_ = () => {
                 Restu Averian Putra
                 <Icon
                   icon="solar:stars-minimalistic-bold"
-                  className="text-yellow-400 h-5 w-5 md:h-7 md:w-7"
+                  className="text-porto-gold h-5 w-5 md:h-7 md:w-7"
                 />
               </h1>
               <p className="mt-2 text-sm text-muted-foreground sm:text-base max-w-md">
@@ -99,7 +99,7 @@ const Profile_ = () => {
                     px-5 py-2 text-sm font-medium
                     transition-all
                     hover:scale-105 hover:bg-porto-btn-hover hover:text-porto-btn-text
-                    focus:outline-none focus:ring-2 focus:ring-porto-btn focus:ring-offset-2 focus:ring-offset-background
+                    focus:outline-none focus:ring-2 focus:ring-porto-focus focus:ring-offset-2 focus:ring-offset-background
                     shadow-sm
                   "
                 >
@@ -131,6 +131,7 @@ const Profile_ = () => {
                       transition-all
                       hover:scale-105
                       hover:border-porto-btn
+                      hover:bg-porto-accent/40
                       hover:text-porto-btn
                       p-2.5
                       shadow-sm

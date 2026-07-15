@@ -25,7 +25,7 @@ export const id = {
   FeaturedProjects: "Proyek Unggulan",
   FeaturedProjectsDesc: "Kumpulan karya publik dan eksperimen teknis pilihan.",
   ViewProject: "Lihat Proyek",
-  SourceCode: "Kode Sumber",
+  GitHub: "GitHub",
   ComingSoon: "Segera Hadir",
   MoreInTheWorks: "Lebih Banyak Lagi",
   PreviousSlide: "Slide sebelumnya",
@@ -46,7 +46,6 @@ export const id = {
   ViewExperienceDetails: "Lihat detail {{role}} di {{company}}",
   ExperienceDetailTitle: "Detail {{role}}",
   LiveDemo: "Demo Langsung",
-  ViewSourceCode: "Lihat Kode Sumber",
   Close: "Tutup",
   Expand: "Perluas",
   PreviousProject: "Proyek Sebelumnya",
@@ -75,8 +74,7 @@ export const id = {
     "Membangun aplikasi React berskala besar, alat internal yang dapat dikonfigurasi, sistem UI reusable, editor tooling, dan pengalaman frontend berperforma tinggi.",
   StaffContrib1:
     "Membangun Page Builder yang dapat dikonfigurasi dari awal dengan React dan Craft.js.",
-  StaffContrib1Item1:
-    "Mendukung komposisi drag-and-drop dan nested layout.",
+  StaffContrib1Item1: "Mendukung komposisi drag-and-drop dan nested layout.",
   StaffContrib1Item2:
     "Menambahkan responsive settings, live preview, konfigurasi komponen, undo dan redo, serta alur save/load berbasis API.",
   StaffContrib2:
@@ -131,12 +129,18 @@ export const id = {
   MetricInteractiveRecords: "Record interaktif",
 
   // Projects
-  NisoraDesc: "Aplikasi pelacak buku yang bersih dan menenangkan untuk mengatur progres membaca, koleksi pribadi, dan catatan buku.",
-  NisoraDescDetail: "Membangun aplikasi pelacak buku responsif dengan autentikasi, manajemen pustaka pribadi, status membaca, dan antarmuka bersih yang dirancang agar melacak buku terasa sederhana dan menyenangkan.",
-  TextEditorDesc: "Rich text editor minimalis yang menggabungkan fleksibilitas Tiptap dengan UI yang bersih dan mudah diakses.",
-  TextEditorDescDetail: "Mengembangkan paket rich text editor yang dapat digunakan kembali, dirancang agar mudah dikonfigurasi, ramah seluler, dan lebih mudah disesuaikan dengan kebutuhan produk yang berbeda.",
+  NisoraDesc:
+    "Aplikasi pelacak buku yang bersih dan menenangkan untuk mengatur progres membaca, koleksi pribadi, dan catatan buku.",
+  NisoraDescDetail:
+    "Membangun aplikasi pelacak buku responsif dengan autentikasi, manajemen pustaka pribadi, status membaca, dan antarmuka bersih yang dirancang agar melacak buku terasa sederhana dan menyenangkan.",
+  TextEditorDesc:
+    "Rich text editor minimalis yang menggabungkan fleksibilitas Tiptap dengan UI yang bersih dan mudah diakses.",
+  TextEditorDescDetail:
+    "Mengembangkan paket rich text editor yang dapat digunakan kembali, dirancang agar mudah dikonfigurasi, ramah seluler, dan lebih mudah disesuaikan dengan kebutuhan produk yang berbeda.",
 
   // Footer
-  ThanksForStoppingBy: "Terima kasih sudah berkunjung! Mari bangun hal-hal indah bersama-sama.",
-  Copyright: "© {{year}} Restu Averian Putra. Hak cipta dilindungi undang-undang.",
+  ThanksForStoppingBy:
+    "Terima kasih sudah berkunjung! Mari bangun hal-hal indah bersama-sama.",
+  Copyright:
+    "© {{year}} Restu Averian Putra. Hak cipta dilindungi undang-undang.",
 };

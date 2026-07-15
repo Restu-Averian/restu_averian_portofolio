@@ -85,7 +85,7 @@ const WorkExperienceDetail_ = ({ experience }) => {
               <li key={idx} className="flex items-start gap-2.5">
                 <Icon
                   icon="solar:check-circle-bold"
-                  className="w-4 h-4 text-green-500/80 shrink-0 mt-0.5"
+                  className="w-4 h-4 text-porto-success shrink-0 mt-0.5"
                 />
                 <div className="flex-1">
                   <span>{t(contribution.key, contribution.defaultText)}</span>
@@ -144,7 +144,7 @@ const WorkExperienceDetail_ = ({ experience }) => {
             {experience.scope.map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center rounded-full bg-porto-accent/70 px-4 py-1.5 text-sm font-medium text-porto-text"
+                className="inline-flex items-center rounded-full border border-porto-chip-border bg-porto-chip px-4 py-1.5 text-sm font-medium text-porto-chip-text"
               >
                 {tag}
               </span>
