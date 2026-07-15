@@ -1,27 +1,29 @@
-import { Suspense, lazy } from "react";
-import { Route, Routes, useLocation } from "react-router-dom";
-import Loading from "./components/Loading";
+// src/App.jsx
+import TopBar from "./components/page/TopBar";
+import Profile from "./components/page/Profile";
+import Projects from "./components/page/Projects";
+import WorkExperience from "./components/page/work-experience";
+import Footer from "./components/page/Footer";
 
-const Home = lazy(() => import("./pages/Home"));
-const Certificates = lazy(() => import("./pages/Certificates"));
-const Projects = lazy(() => import("./pages/Projects"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const Tes = lazy(() => import("./pages/Tes"));
-
-function App() {
-  const location = useLocation();
-
+export default function App() {
   return (
-    <Suspense fallback={<Loading />}>
-      <Routes location={location}>
-        <Route path="/" Component={Home} />
-        <Route path="/certificates" Component={Certificates} />
-        <Route path="/projects" Component={Projects} />
-        <Route path="/tes" Component={Tes} />
-        <Route path="*" Component={NotFound} />
-      </Routes>
-    </Suspense>
+    <div className="min-h-screen bg-background text-foreground flex flex-col">
+      <TopBar />
+
+      <Profile />
+
+      <main className="px-4 md:px-10 pb-6 grow">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="lg:col-span-2 space-y-6 my-6">
+            <Projects />
+          </div>
+          <div className="lg:col-span-1 my-6">
+            <WorkExperience />
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
-
-export default App;

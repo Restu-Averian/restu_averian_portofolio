@@ -1,10 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
-    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <link id="app-favicon" rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (() => {
+        const theme = localStorage.getItem("theme") || "system";
+        const dark =
+          theme === "dark" ||
+          (theme === "system" &&
+            matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.classList.toggle("dark", dark);
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        
+        const favicon = document.querySelector('link[rel="icon"]');
+        if (favicon) {
+          favicon.href = dark ? "/logo-dark.png" : "/logo.png";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="src/index.css" />
     <title>Restu's Portofolio</title>
     <link
       rel="stylesheet"
@@ -12,6 +29,12 @@
       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+      rel="stylesheet"
     />
   </head>
   <body>

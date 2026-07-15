@@ -1,0 +1,155 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/noto-sans";
+@import "@fontsource-variable/playfair-display";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #fff4e0;
+  --foreground: #5c554d;
+  --card: #f3e5dd;
+  --card-foreground: #5c554d;
+  --popover: #f3e5dd;
+  --popover-foreground: #5c554d;
+  --primary: #be919c;
+  --primary-foreground: #fff8f6;
+  --secondary: #f3e5dd;
+  --secondary-foreground: #5c554d;
+  --muted: #e6d9d3;
+  --muted-foreground: #8c847a;
+  --accent: #e5d1d0;
+  --accent-foreground: #5c554d;
+  --border: #d8c7c3;
+  --input: #d8c7c3;
+  --ring: #be919c;
+  --chart-1: #be919c;
+  --chart-2: #e5d1d0;
+  --chart-3: #e6d9d3;
+  --chart-4: #d8c7c3;
+  --chart-5: #5c554d;
+  --tags: #e5d1d0;
+  --radius: 1.25rem;
+  --sidebar: #f3e5dd;
+  --sidebar-foreground: #5c554d;
+  --sidebar-primary: #be919c;
+  --sidebar-primary-foreground: #fff8f6;
+  --sidebar-accent: #e5d1d0;
+  --sidebar-accent-foreground: #5c554d;
+  --sidebar-border: #d8c7c3;
+  --sidebar-ring: #be919c;
+
+  --color-border-image: #ead8c8;
+  --color-porto-bg: #fff4e0;
+  --color-porto-surface: #f3e5dd;
+  --color-porto-border: #d8c7c3;
+  --color-porto-divider: #e6d9d3;
+  --color-porto-text: #5c554d;
+  --color-porto-muted: #8c847a;
+  --color-porto-btn: #be919c;
+  --color-porto-btn-hover: #a97885;
+  --color-porto-btn-text: #fff8f6;
+  --color-porto-accent: #e5d1d0;
+  --color-overlay: #f3e5dd;
+}
+
+.dark {
+  --background: #39302D;
+  --foreground: #F3D6AC;
+  --card: #302A27;
+  --card-foreground: #F3D6AC;
+  --popover: #302A27;
+  --popover-foreground: #F3D6AC;
+  --primary: #E0A18F;
+  --primary-foreground: #171817;
+  --secondary: #927356;
+  --secondary-foreground: #171817;
+  --muted: #302A27;
+  --muted-foreground: #E0B391;
+  --accent: #C2945B;
+  --accent-foreground: #171817;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: #927356;
+  --input: #927356;
+  --ring: #E3C9A1;
+
+  --color-border-image: #171817;
+  --color-porto-bg: #39302D;
+  --color-porto-surface: #302A27;
+  --color-porto-border: #927356;
+  --color-porto-divider: #927356;
+  --color-porto-text: #F3D6AC;
+  --color-porto-muted: #E0B391;
+  --color-porto-btn: #E0A18F;
+  --color-porto-btn-hover: #E3C9A1;
+  --color-porto-btn-text: #171817;
+  --color-porto-accent: #C2945B;
+  --color-overlay: #171817;
+}
+
+@theme inline {
+  --font-sans: "Noto Sans Variable", sans-serif;
+  --font-heading: "Playfair Display Variable", serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-porto-bg: var(--color-porto-bg);
+  --color-porto-surface: var(--color-porto-surface);
+  --color-porto-border: var(--color-porto-border);
+  --color-porto-divider: var(--color-porto-divider);
+  --color-porto-text: var(--color-porto-text);
+  --color-porto-muted: var(--color-porto-muted);
+  --color-porto-btn: var(--color-porto-btn);
+  --color-porto-btn-hover: var(--color-porto-btn-hover);
+  --color-porto-btn-text: var(--color-porto-btn-text);
+  --color-porto-accent: var(--color-porto-accent);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Fredoka", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :where(button, a):focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 3px;
+  }
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
