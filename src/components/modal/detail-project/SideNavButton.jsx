@@ -27,7 +27,9 @@ const SideNavButton = forwardRef(
           onClick={onClick}
           className={cn(
             "absolute top-1/2 z-50 hidden -translate-y-1/2 xl:flex xl:flex-col xl:items-center xl:gap-5 focus:outline-none cursor-pointer",
-            isLeft ? "-left-48" : "-right-48",
+            isLeft
+              ? "left-[max(-12rem,calc(1.5rem-(100vw-100%)/2))]"
+              : "right-[max(-12rem,calc(1.5rem-(100vw-100%)/2))]",
             className,
           )}
           {...props}
