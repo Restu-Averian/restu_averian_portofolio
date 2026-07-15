@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { memo, useState } from "react";
+import { memo, useState, useEffect, useMemo } from "react";
 import { useTheme } from "@/hooks/useTheme";
 import { useTranslation } from "@/i18n";
 import {
@@ -7,6 +7,7 @@ import {
   SelectContent,
   SelectItem,
   SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 
 const LOCALES = [
@@ -36,14 +37,54 @@ const THEMES = [
 ];
 
 const TopBar_ = () => {
+  const [now, setNow] = useState(() => new Date());
   const [openSelect, setOpenSelect] = useState(null);
   const { theme, setTheme } = useTheme();
   const { t, locale, setLocale } = useTranslation();
 
-  const activeTheme =
-    THEMES.find((item) => item.value === theme) ?? THEMES[0];
-  const activeLocale =
-    LOCALES.find((item) => item.value === locale) ?? LOCALES[0];
+  const greeting = (() => {
+    const hour = now.getHours();
+    if (hour < 12) return t("WelcomeGoodMorning", "Welcome, Good morning!");
+    if (hour < 17) return t("WelcomeGoodAfternoon", "Welcome, Good afternoon!");
+    return t("WelcomeGoodEvening", "Welcome, Good evening!");
+  })();
+
+  const dateLocale = locale === "id" ? "id-ID" : "en-US";
+
+  const timeStr = now.toLocaleTimeString(dateLocale, {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+
+  const dateStr = now.toLocaleDateString(dateLocale, {
+    weekday: "long",
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
+  const nowHour = useMemo(() => {
+    const hour24 = now?.getHours();
+    return hour24 % 12 || 12;
+  }, [now]);
+
+  useEffect(() => {
+    const msUntilNextMinute = () => {
+      const n = new Date();
+      return (60 - n.getSeconds()) * 1000 - n.getMilliseconds();
+    };
+
+    const timeout = setTimeout(() => {
+      setNow(new Date());
+
+      const interval = setInterval(() => setNow(new Date()), 60_000);
+
+      return () => clearInterval(interval);
+    }, msUntilNextMinute());
+
+    return () => clearTimeout(timeout);
+  }, []);
 
   const handlePointerDownOutside = (e) => {
     const target = e.detail.originalEvent.target;
@@ -57,97 +98,89 @@ const TopBar_ = () => {
   };
 
   return (
-    <header className="sticky top-3 z-50 px-4 md:px-10">
-      <div className="mx-auto flex max-w-[calc(100vw-2rem)] items-center justify-between gap-3 rounded-[1.75rem] border border-porto-border/80 bg-background/90 px-5 py-4 text-foreground shadow-[0_16px_40px_rgba(42,35,33,0.18)] backdrop-blur-md dark:bg-background/85 md:max-w-none md:px-7 lg:px-9">
-        <span className="flex min-w-0 items-center gap-3 text-sm font-medium md:text-base lg:text-lg">
-          <Icon
-            icon="solar:star-bold"
-            className="h-5 w-5 shrink-0 text-porto-gold md:h-6 md:w-6"
-          />
-          <span className="truncate">
-            {t("ProfileGreeting", "Hello, I'm Restu ✨")}
-          </span>
-        </span>
-        <span className="flex shrink-0 items-center justify-end gap-2 md:gap-3">
-          <Select
-            value={locale}
-            open={openSelect === "language"}
-            onOpenChange={(open) => setOpenSelect(open ? "language" : null)}
-            onValueChange={setLocale}
+    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-between px-4 py-3.5 md:px-10 flex-wrap">
+      <span className="flex-1 flex items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
+        {greeting}
+        <Icon icon="solar:sun-linear" className="h-4 w-4 md:h-5 md:w-5" />
+      </span>
+      <span className="flex-1 flex justify-center items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
+        <Icon
+          icon={`tabler:clock-hour-${nowHour}`}
+          className="h-4 w-4 md:h-5 md:w-5"
+        />
+        {timeStr}
+      </span>
+      <span className="flex flex-1 justify-end items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
+        <Icon icon="solar:calendar-linear" className="h-4 w-4 md:h-5 md:w-5" />
+        {dateStr}
+        <Select
+          value={locale}
+          open={openSelect === "language"}
+          onOpenChange={(open) => setOpenSelect(open ? "language" : null)}
+          onValueChange={setLocale}
+        >
+          <SelectTrigger
+            data-topbar-select="language"
+            aria-label={
+              locale === "en"
+                ? t("SwitchToIndonesian", "Switch language to Indonesian")
+                : t("SwitchToEnglish", "Switch language to English")
+            }
+            title={t("LanguageSelector", "Language selector")}
+            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-porto-focus"
           >
-            <SelectTrigger
-              data-topbar-select="language"
-              aria-label={
-                locale === "en"
-                  ? t("SwitchToIndonesian", "Switch language to Indonesian")
-                  : t("SwitchToEnglish", "Switch language to English")
-              }
-              title={t("LanguageSelector", "Language selector")}
-              className="h-10 min-w-20 cursor-pointer rounded-full border border-porto-border bg-card/80 px-3 py-2 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-porto-focus md:min-w-24"
-            >
-              <span className="flex items-center gap-2">
-                <Icon icon="solar:global-linear" className="h-5 w-5" />
-                <span className="text-sm font-semibold uppercase">
-                  {activeLocale.label}
-                </span>
-              </span>
-            </SelectTrigger>
-            <SelectContent
-              position="popper"
-              align="end"
-              onPointerDownOutside={handlePointerDownOutside}
-            >
-              {LOCALES.map(({ value, label, flag }) => (
-                <SelectItem key={value} value={value}>
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[12px]">{flag}</span>
-                    <span className="text-[10px] font-bold uppercase">
-                      {label}
-                    </span>
-                  </div>
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent
+            position="popper"
+            align="end"
+            onPointerDownOutside={handlePointerDownOutside}
+          >
+            {LOCALES.map(({ value, label, flag }) => (
+              <SelectItem key={value} value={value}>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[12px]">{flag}</span>
+                  <span className="text-[10px] font-bold uppercase">
+                    {label}
+                  </span>
+                </div>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
-          <Select
-            value={theme}
-            open={openSelect === "theme"}
-            onOpenChange={(open) => setOpenSelect(open ? "theme" : null)}
-            onValueChange={setTheme}
+        <Select
+          value={theme}
+          open={openSelect === "theme"}
+          onOpenChange={(open) => setOpenSelect(open ? "theme" : null)}
+          onValueChange={setTheme}
+        >
+          <SelectTrigger
+            data-topbar-select="theme"
+            aria-label={`Theme: ${theme}. Activate to switch theme.`}
+            title={`Theme: ${theme}. Click to switch.`}
+            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-porto-focus"
           >
-            <SelectTrigger
-              data-topbar-select="theme"
-              aria-label={`Theme: ${theme}. Activate to switch theme.`}
-              title={`Theme: ${theme}. Click to switch.`}
-              className="h-10 min-w-20 cursor-pointer rounded-full border border-porto-border bg-card/80 px-3 py-2 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-porto-focus md:min-w-28"
-            >
-              <span className="flex items-center gap-2">
-                <Icon icon={activeTheme.icon} className="h-5 w-5" />
-                <span className="hidden text-sm font-semibold capitalize sm:inline">
-                  {t(activeTheme.labelKey, activeTheme.defaultLabel)}
-                </span>
-              </span>
-            </SelectTrigger>
-            <SelectContent
-              position="popper"
-              align="end"
-              onPointerDownOutside={handlePointerDownOutside}
-            >
-              {THEMES.map(({ value, icon, labelKey, defaultLabel }) => (
-                <SelectItem key={value} value={value}>
-                  <div className="flex items-center gap-1.5">
-                    <Icon icon={icon} className="h-4 w-4" aria-hidden="true" />
-                    <span className="text-[10px] capitalize">
-                      {t(labelKey, defaultLabel)}
-                    </span>
-                  </div>
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </span>
-      </div>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent
+            position="popper"
+            align="end"
+            onPointerDownOutside={handlePointerDownOutside}
+          >
+            {THEMES.map(({ value, icon, labelKey, defaultLabel }) => (
+              <SelectItem key={value} value={value}>
+                <div className="flex items-center gap-1.5">
+                  <Icon icon={icon} className="h-4 w-4" aria-hidden="true" />
+                  <span className="text-[10px] capitalize">
+                    {t(labelKey, defaultLabel)}
+                  </span>
+                </div>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </span>
     </header>
   );
 };

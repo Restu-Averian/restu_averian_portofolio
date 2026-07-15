@@ -24,20 +24,19 @@ const Profile_ = () => {
   ).filter(Boolean);
 
   return (
-    <section className="w-full px-4 pt-2 md:px-10">
-      <div className="relative w-full pb-8 md:pb-12">
-        <div className="relative h-56 w-full overflow-hidden rounded-[2rem] sm:h-64 md:h-72 lg:h-[19rem]">
+    <section className="w-full px-4 md:px-10 mt-2">
+      <div className="relative w-full">
+        <div className="h-32 w-full overflow-hidden sm:h-40 md:h-56 rounded-4xl">
           <img
             src={FotoSampul}
-            alt="Cozy desk scene with mascot figures"
-            className="h-full w-full object-cover object-[50%_62%] brightness-[0.72] contrast-[1.08] saturate-[0.9] dark:brightness-[0.42] dark:contrast-[1.18]"
+            alt="Banner"
+            className="h-full w-full object-cover object-[50%_56%]"
             loading="lazy"
           />
-          <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-b from-background/10 via-background/0 to-background/80 dark:from-background/20 dark:to-background/95" />
         </div>
 
         <div className="relative mx-auto -mt-16 max-w-[93%] md:-mt-20 lg:-mt-24">
-          <div className="relative grid grid-cols-1 items-center gap-8 overflow-hidden rounded-[2rem] border border-porto-border bg-background/95 p-6 text-center shadow-[0_22px_55px_rgba(42,35,33,0.24)] backdrop-blur md:p-8 md:text-left lg:grid-cols-[18rem_minmax(0,1fr)_21rem] lg:gap-10 lg:px-12 lg:py-12 dark:bg-background/95">
+          <div className="relative grid grid-cols-1 items-center gap-8 overflow-hidden rounded-[2rem] border border-porto-border bg-background/95 p-6 text-center backdrop-blur md:p-8 md:text-left lg:grid-cols-[18rem_minmax(0,1fr)_21rem] lg:gap-10 lg:px-12 lg:py-12 dark:bg-background/95">
             <Icon
               icon="solar:stars-minimalistic-bold"
               className="absolute left-6 top-7 h-6 w-6 text-porto-gold md:left-10 md:top-12"
@@ -55,9 +54,6 @@ const Profile_ = () => {
             </div>
 
             <div className="min-w-0 lg:border-r lg:border-porto-border lg:pr-10">
-              <p className="mb-2 text-sm font-semibold text-porto-gold lg:hidden">
-                {t("ProfileGreeting", "Hello, I'm Restu ✨")}
-              </p>
               <h1 className="mx-auto flex max-w-3xl items-center justify-center gap-2 text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:mx-0 lg:justify-start lg:text-6xl">
                 Restu Averian Putra
                 <Icon
