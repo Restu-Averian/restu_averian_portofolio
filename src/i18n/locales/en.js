@@ -13,10 +13,14 @@ export const en = {
   ThemeSystem: "System",
 
   // Profile
+  ProfileGreeting: "Hello, I'm Restu ✨",
+  ProfileRole: "Frontend Engineer",
   ProfileProfessionalSummary:
-    "Frontend Engineer building scalable React applications, configurable internal tools, and performance-critical UI systems.",
+    "I build scalable React applications, configurable internal tools, and performance-focused UI systems.",
   ExperienceLabel: "3+ Years of Experience",
   Location: "Tangerang, Indonesia",
+  AvailableForWork: "Available for new opportunities",
+  LetsWorkTogether: "Let's Work Together",
   FindMeOn: "Find me on:",
   ViewResume: "View Resume",
   OpenResumeInNewTab: "Open Restu Averian Putra's resume in a new tab",

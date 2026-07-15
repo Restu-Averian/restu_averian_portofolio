@@ -13,10 +13,14 @@ export const id = {
   ThemeSystem: "Sistem",
 
   // Profile
+  ProfileGreeting: "Halo, saya Restu ✨",
+  ProfileRole: "Frontend Engineer",
   ProfileProfessionalSummary:
-    "Frontend Engineer yang membangun aplikasi React berskala besar, alat internal yang dapat dikonfigurasi, dan sistem antarmuka berperforma tinggi.",
+    "Saya membangun aplikasi React berskala besar, alat internal yang dapat dikonfigurasi, dan sistem UI yang fokus pada performa.",
   ExperienceLabel: "Pengalaman 3+ Tahun",
   Location: "Tangerang, Indonesia",
+  AvailableForWork: "Terbuka untuk peluang baru",
+  LetsWorkTogether: "Mari Bekerja Sama",
   FindMeOn: "Temukan saya di:",
   ViewResume: "Lihat Resume",
   OpenResumeInNewTab: "Buka resume Restu Averian Putra di tab baru",
