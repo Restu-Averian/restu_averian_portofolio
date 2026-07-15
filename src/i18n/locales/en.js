@@ -13,7 +13,9 @@ export const en = {
   ThemeSystem: "System",
 
   // Profile
-  PortfolioTagline: "Frontend Engineer building reusable interfaces and complete user-facing features.",
+  ProfileProfessionalSummary:
+    "Frontend Engineer building scalable React applications, configurable internal tools, and performance-critical UI systems.",
+  ExperienceLabel: "3+ Years of Experience",
   Location: "Tangerang, Indonesia",
   FindMeOn: "Find me on:",
   ViewResume: "View Resume",
@@ -37,8 +39,12 @@ export const en = {
   CurrentRole: "Current",
   Overview: "Overview",
   KeyContributions: "Key Contributions",
-  Scope: "Scope",
+  SelectedTechnicalImpact: "Selected Technical Impact",
+  TechnologiesAndScope: "Technologies and Scope",
+  ConfidentialityNoteTitle: "Confidentiality Note",
   Technologies: "Technologies",
+  ViewExperienceDetails: "View details for {{role}} at {{company}}",
+  ExperienceDetailTitle: "{{role}} Detail",
   LiveDemo: "Live Demo",
   ViewSourceCode: "View Source Code",
   Close: "Close",
@@ -49,35 +55,80 @@ export const en = {
   // Work roles
   FrontendEngineerRole: "Frontend Engineer",
   StaffEmploymentType: "Staff",
-  FrontendStaffSummary: "Reusable UI systems, complex forms, and configurable page-building interfaces.",
+  StaffPeriod: "February 2023 - Present",
+  FrontendStaffSummary:
+    "Configurable internal tools, reusable UI systems, editor tooling, and frontend performance optimization.",
 
   InternRole: "Frontend Engineer Intern",
   InternEmploymentType: "Internship",
-  InternSummary: "Frontend foundations, responsive implementation, and reusable component development.",
-  InternOverview: "Contributed to production frontend development while learning the team’s engineering workflow, component patterns, and delivery process.",
-  InternContrib1: "Implemented responsive user interfaces based on product requirements and existing design guidelines.",
-  InternContrib2: "Developed and maintained reusable frontend components.",
-  InternContrib3: "Resolved frontend bugs and improved visual and behavioral consistency.",
-  InternContrib4: "Collaborated through Git-based workflows, code reviews, and team development processes.",
+  InternPeriod: "August 2022 - February 2023",
+  InternSummary:
+    "Frontend foundations, responsive implementation, legacy component modernization, and reusable component development.",
+  InternOverview:
+    "Built frontend foundations through responsive implementation, legacy component modernization, and reusable component development.",
+  InternContrib1:
+    "Improved Ant Design table sorting to provide clearer and more consistent data presentation.",
+  InternContrib2:
+    "Refactored legacy React class components into functional components, improving page performance by approximately 10%.",
 
-  StaffOverview: "Contributing to internal frontend platforms and reusable systems used across multiple development needs.",
-  StaffContrib1: "Developed reusable frontend components that can be adopted across multiple internal projects and development flows.",
-  StaffContrib2: "Delivered end-to-end frontend implementation for complex configurable form experiences.",
-  StaffContrib3: "Built frontend functionality for configurable page-building interfaces.",
-  StaffContrib4: "Implemented dynamic fields, validation behavior, conditional interface states, and reusable interaction patterns.",
-  StaffContrib5: "Improved navigation usability through searchable menu experiences and persistent URL-based interface state.",
-  StaffContrib6: "Improved component maintainability by refining component structure and frontend documentation.",
-  StaffContrib7: "Supported frontend build improvements, including build-tool configuration and alignment with the Docker build workflow.",
-  ConfidentialityNote: "Specific product names, client information, screenshots, source code, business rules, and internal workflows are intentionally omitted due to confidentiality obligations.",
+  StaffOverview:
+    "Builds scalable React applications, configurable internal tools, reusable UI systems, editor tooling, and performance-critical frontend experiences.",
+  StaffContrib1:
+    "Built a configurable Page Builder from scratch with React and Craft.js.",
+  StaffContrib1Item1:
+    "Supported drag-and-drop composition and nested layouts.",
+  StaffContrib1Item2:
+    "Added responsive settings, live preview, component configuration, undo and redo, and API-based save/load workflows.",
+  StaffContrib2:
+    "Integrated internal framework components and a broad set of Ant Design v4 components into the Page Builder.",
+  StaffContrib3:
+    "Rebuilt an internal Chatbot Widget in React, reducing bundle size by approximately 90% from 2.5 MB to 244 KB while adding offline handling and automatic reconnection.",
+  StaffContrib4:
+    "Extended Ant Design Transfer v4 using React and TypeScript with drag-select, shift-click, and double-click actions.",
+  StaffContrib4Item1:
+    "Optimized lookups with Map and Set and maintained responsive interactions across more than 80,000 records.",
+  StaffContrib5:
+    "Built a GUI-based Form Customizer for more than 20 field types, reducing repetitive frontend changes.",
+  StaffContrib5Item1:
+    "Improved responsiveness by replacing broad Form.useWatch subscriptions with localized React state.",
+  StaffContrib6:
+    "Migrated legacy Quill and SunEditor implementations to a custom Tiptap editor built on ProseMirror.",
+  StaffContrib7:
+    "Developed a dependency-free Markdown Editor with consistent JSX rendering, cursor preservation, and native undo/redo.",
+  StaffContrib8:
+    "Designed and delivered six hands-on JavaScript and React training sessions for groups of 3-7 participants, including new hires, developers, implementation team members, and interns.",
+  StaffContrib9:
+    "Adopted agentic AI workflows for requirements analysis, solution planning, frontend implementation, debugging, code review, and documentation while retaining ownership of technical decisions and production readiness.",
+  MetricBundleReduction: "Approximate bundle-size reduction",
+  MetricBundleSize: "Chatbot Widget bundle size",
+  MetricRecords: "Responsive interactive records",
+  MetricFieldTypes: "Configurable form field types",
+  MetricTraining: "Technical training sessions",
+  MetricInternPerformance: "Approximate page-performance improvement",
+  ConfidentialityNote:
+    "Specific product names, client information, screenshots, source code, and internal business workflows are omitted due to confidentiality obligations.",
 
-  // Art Shelf
-  ArtShelf: "Visual Experiments",
-  ArtShelfDescription: "A small archive of UI studies and visual edits.",
-  EmptyArtShelf: "Will be filled with original visual works.",
-  CloseImagePreview: "Close image preview",
-  ExpandImage: "Expand image",
-  PreviousArtwork: "Previous artwork",
-  NextArtwork: "Next artwork",
+  // Technical Highlights
+  TechnicalHighlights: "Technical Highlights",
+  TechnicalHighlightsDescription:
+    "Selected strengths demonstrated through production frontend work.",
+  HighlightConfigurableTitle: "Configurable UI Systems",
+  HighlightConfigurableDesc:
+    "Built page-building and form-customization interfaces with configurable components, dynamic fields, validation behavior, responsive settings, preview workflows, and reusable interaction patterns.",
+  HighlightPerformanceTitle: "Performance at Scale",
+  HighlightPerformanceDesc:
+    "Optimized legacy and data-heavy interfaces, including a 90% bundle-size reduction and responsive interactions across more than 80,000 records.",
+  HighlightEditorTitle: "Editor and Developer Tooling",
+  HighlightEditorDesc:
+    "Developed and migrated rich-text and Markdown editing experiences using Tiptap, ProseMirror, reusable JSX rendering, cursor preservation, and native undo/redo.",
+  TagDynamicForms: "Dynamic Forms",
+  TagComponentArchitecture: "Component Architecture",
+  TagPerformanceOptimization: "Performance Optimization",
+  TagRenderingStability: "Rendering Stability",
+  TagEditorArchitecture: "Editor Architecture",
+  TagDeveloperTooling: "Developer Tooling",
+  MetricBundleReductionShort: "Bundle reduction",
+  MetricInteractiveRecords: "Interactive records",
 
   // Projects
   NisoraDesc: "A clean and calming book tracker app for organizing reading progress, personal collections, and book notes.",

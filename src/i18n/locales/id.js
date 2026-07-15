@@ -13,7 +13,9 @@ export const id = {
   ThemeSystem: "Sistem",
 
   // Profile
-  PortfolioTagline: "Frontend Engineer yang membangun antarmuka terstruktur dan fitur interaktif yang lengkap.",
+  ProfileProfessionalSummary:
+    "Frontend Engineer yang membangun aplikasi React berskala besar, alat internal yang dapat dikonfigurasi, dan sistem antarmuka berperforma tinggi.",
+  ExperienceLabel: "Pengalaman 3+ Tahun",
   Location: "Tangerang, Indonesia",
   FindMeOn: "Temukan saya di:",
   ViewResume: "Lihat Resume",
@@ -37,8 +39,12 @@ export const id = {
   CurrentRole: "Saat ini",
   Overview: "Ringkasan",
   KeyContributions: "Kontribusi Utama",
-  Scope: "Cakupan",
+  SelectedTechnicalImpact: "Dampak Teknis Pilihan",
+  TechnologiesAndScope: "Teknologi dan Cakupan",
+  ConfidentialityNoteTitle: "Catatan Kerahasiaan",
   Technologies: "Teknologi",
+  ViewExperienceDetails: "Lihat detail {{role}} di {{company}}",
+  ExperienceDetailTitle: "Detail {{role}}",
   LiveDemo: "Demo Langsung",
   ViewSourceCode: "Lihat Kode Sumber",
   Close: "Tutup",
@@ -49,35 +55,80 @@ export const id = {
   // Work roles
   FrontendEngineerRole: "Frontend Engineer",
   StaffEmploymentType: "Staf",
-  FrontendStaffSummary: "Sistem UI reusable, form kompleks, dan antarmuka page-builder yang dapat dikonfigurasi.",
+  StaffPeriod: "Februari 2023 - Sekarang",
+  FrontendStaffSummary:
+    "Alat internal yang dapat dikonfigurasi, sistem UI reusable, editor tooling, dan optimasi performa frontend.",
 
   InternRole: "Frontend Engineer Intern",
   InternEmploymentType: "Magang",
-  InternSummary: "Dasar-dasar frontend, implementasi responsif, dan pengembangan komponen yang dapat digunakan kembali.",
-  InternOverview: "Berkontribusi pada pengembangan frontend produksi sambil mempelajari alur kerja rekayasa, pola komponen, dan proses pengiriman tim.",
-  InternContrib1: "Mengimplementasikan antarmuka pengguna responsif berdasarkan kebutuhan produk dan panduan desain yang ada.",
-  InternContrib2: "Mengembangkan dan memelihara komponen frontend yang dapat digunakan kembali.",
-  InternContrib3: "Menyelesaikan bug frontend serta meningkatkan konsistensi visual dan perilaku.",
-  InternContrib4: "Berkolaborasi melalui alur kerja berbasis Git, tinjauan kode, dan proses pengembangan tim.",
+  InternPeriod: "Agustus 2022 - Februari 2023",
+  InternSummary:
+    "Fondasi frontend, implementasi responsif, modernisasi komponen lama, dan pengembangan komponen reusable.",
+  InternOverview:
+    "Membangun fondasi frontend melalui implementasi responsif, modernisasi komponen lama, dan pengembangan komponen reusable.",
+  InternContrib1:
+    "Meningkatkan sorting tabel Ant Design agar penyajian data lebih jelas dan konsisten.",
+  InternContrib2:
+    "Melakukan refactor komponen React class lama menjadi komponen functional, meningkatkan performa halaman sekitar 10%.",
 
-  StaffOverview: "Berkontribusi pada platform frontend internal dan sistem yang dapat digunakan kembali untuk berbagai kebutuhan pengembangan.",
-  StaffContrib1: "Mengembangkan komponen frontend yang dapat diadopsi di berbagai proyek internal dan alur pengembangan.",
-  StaffContrib2: "Memberikan implementasi frontend end-to-end untuk pengalaman form yang kompleks dan dapat dikonfigurasi.",
-  StaffContrib3: "Membangun fungsionalitas frontend untuk antarmuka page-building yang dapat dikonfigurasi.",
-  StaffContrib4: "Menerapkan kolom dinamis, perilaku validasi, kondisi antarmuka bersyarat, dan pola interaksi yang dapat digunakan kembali.",
-  StaffContrib5: "Meningkatkan kegunaan navigasi melalui pengalaman menu yang dapat dicari dan kondisi antarmuka berbasis URL yang persisten.",
-  StaffContrib6: "Meningkatkan rawatan komponen dengan menyempurnakan struktur komponen dan dokumentasi frontend.",
-  StaffContrib7: "Mendukung peningkatan build frontend, termasuk konfigurasi build-tool dan penyelarasan dengan alur kerja build Docker.",
-  ConfidentialityNote: "Nama produk tertentu, informasi klien, tangkapan layar, kode sumber, aturan bisnis, dan alur kerja internal sengaja dihilangkan karena kewajiban kerahasiaan.",
+  StaffOverview:
+    "Membangun aplikasi React berskala besar, alat internal yang dapat dikonfigurasi, sistem UI reusable, editor tooling, dan pengalaman frontend berperforma tinggi.",
+  StaffContrib1:
+    "Membangun Page Builder yang dapat dikonfigurasi dari awal dengan React dan Craft.js.",
+  StaffContrib1Item1:
+    "Mendukung komposisi drag-and-drop dan nested layout.",
+  StaffContrib1Item2:
+    "Menambahkan responsive settings, live preview, konfigurasi komponen, undo dan redo, serta alur save/load berbasis API.",
+  StaffContrib2:
+    "Mengintegrasikan komponen framework internal dan berbagai komponen Ant Design v4 ke dalam Page Builder.",
+  StaffContrib3:
+    "Membangun ulang Chatbot Widget internal dengan React, mengurangi bundle size sekitar 90% dari 2.5 MB menjadi 244 KB sekaligus menambahkan offline handling dan automatic reconnection.",
+  StaffContrib4:
+    "Mengembangkan Ant Design Transfer v4 menggunakan React dan TypeScript dengan drag-select, shift-click, dan double-click actions.",
+  StaffContrib4Item1:
+    "Mengoptimalkan lookup dengan Map dan Set serta menjaga interaksi tetap responsif pada lebih dari 80.000 record.",
+  StaffContrib5:
+    "Membangun GUI-based Form Customizer untuk lebih dari 20 field type, mengurangi perubahan frontend yang repetitif.",
+  StaffContrib5Item1:
+    "Meningkatkan responsivitas dengan mengganti langganan Form.useWatch yang luas menjadi state React lokal.",
+  StaffContrib6:
+    "Memigrasikan implementasi Quill dan SunEditor lama ke custom Tiptap editor yang dibangun di atas ProseMirror.",
+  StaffContrib7:
+    "Mengembangkan Markdown Editor tanpa dependency dengan rendering JSX yang konsisten, cursor preservation, dan native undo/redo.",
+  StaffContrib8:
+    "Merancang dan membawakan enam sesi pelatihan JavaScript dan React secara hands-on untuk grup berisi 3-7 peserta, termasuk new hire, developer, anggota tim implementasi, dan intern.",
+  StaffContrib9:
+    "Mengadopsi alur kerja agentic AI untuk analisis requirement, perencanaan solusi, implementasi frontend, debugging, code review, dan dokumentasi sambil tetap memegang keputusan teknis dan kesiapan production.",
+  MetricBundleReduction: "Pengurangan bundle size sekitar",
+  MetricBundleSize: "Bundle size Chatbot Widget",
+  MetricRecords: "Record interaktif yang tetap responsif",
+  MetricFieldTypes: "Field type form yang dapat dikonfigurasi",
+  MetricTraining: "Sesi pelatihan teknis",
+  MetricInternPerformance: "Peningkatan performa halaman sekitar",
+  ConfidentialityNote:
+    "Nama produk tertentu, informasi klien, tangkapan layar, kode sumber, dan alur bisnis internal tidak ditampilkan karena kewajiban kerahasiaan.",
 
-  // Art Shelf
-  ArtShelf: "Eksperimen Visual",
-  ArtShelfDescription: "Sebuah arsip kecil studi UI dan pengeditan visual.",
-  EmptyArtShelf: "Akan diisi dengan karya visual orisinal.",
-  CloseImagePreview: "Tutup pratinjau gambar",
-  ExpandImage: "Perbesar gambar",
-  PreviousArtwork: "Karya sebelumnya",
-  NextArtwork: "Karya berikutnya",
+  // Technical Highlights
+  TechnicalHighlights: "Sorotan Teknis",
+  TechnicalHighlightsDescription:
+    "Kekuatan utama yang dibuktikan melalui pengembangan frontend production.",
+  HighlightConfigurableTitle: "Sistem UI yang Dapat Dikonfigurasi",
+  HighlightConfigurableDesc:
+    "Membangun antarmuka page-building dan form-customization dengan komponen yang dapat dikonfigurasi, field dinamis, perilaku validasi, responsive settings, preview workflow, dan pola interaksi reusable.",
+  HighlightPerformanceTitle: "Performa pada Skala Besar",
+  HighlightPerformanceDesc:
+    "Mengoptimalkan antarmuka lama dan data-heavy, termasuk pengurangan bundle size 90% dan interaksi responsif pada lebih dari 80.000 record.",
+  HighlightEditorTitle: "Editor dan Developer Tooling",
+  HighlightEditorDesc:
+    "Mengembangkan dan memigrasikan pengalaman rich-text dan Markdown editing menggunakan Tiptap, ProseMirror, rendering JSX reusable, cursor preservation, dan native undo/redo.",
+  TagDynamicForms: "Form Dinamis",
+  TagComponentArchitecture: "Arsitektur Komponen",
+  TagPerformanceOptimization: "Optimasi Performa",
+  TagRenderingStability: "Stabilitas Rendering",
+  TagEditorArchitecture: "Arsitektur Editor",
+  TagDeveloperTooling: "Developer Tooling",
+  MetricBundleReductionShort: "Pengurangan bundle",
+  MetricInteractiveRecords: "Record interaktif",
 
   // Projects
   NisoraDesc: "Aplikasi pelacak buku yang bersih dan menenangkan untuk mengatur progres membaca, koleksi pribadi, dan catatan buku.",

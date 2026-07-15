@@ -2,12 +2,12 @@ import { memo } from "react";
 import FotoSampul from "../../assets/foto-sampul-2.png";
 import FotoProfileLight from "../../assets/foto-profile-light.png";
 import FotoProfileDark from "../../assets/foto-profile-dark.png";
-import ResumePDF from "../../assets/pdf/restu-averian-putra-resume.pdf";
 import { Icon } from "@iconify/react";
-import useIsMobile from "@/hooks/useIsMobile";
 import { useIsDark } from "@/hooks/useTheme";
 import { SOCIAL_LINKS } from "@/constants";
 import { useTranslation } from "@/i18n";
+
+const RESUME_URL = "/resume/Restu-Averian-Putra-Resume.pdf";
 
 const Profile_ = () => {
   const isDark = useIsDark();
@@ -69,18 +69,23 @@ const Profile_ = () => {
               </h1>
               <p className="mt-2 text-sm text-muted-foreground sm:text-base max-w-md">
                 {t(
-                  "PortfolioTagline",
-                  "Frontend Engineer building reusable interfaces and complete user-facing features.",
+                  "ProfileProfessionalSummary",
+                  "Frontend Engineer building scalable React applications, configurable internal tools, and performance-critical UI systems.",
                 )}
               </p>
-              <p className="mt-2 text-xs text-muted-foreground flex items-center justify-center md:justify-start gap-1">
-                <Icon icon="solar:map-point-linear" className="h-4 w-4" />
-                {t("Location", "Tangerang, Indonesia")}
-              </p>
+              <div className="mt-2 flex flex-wrap items-center justify-center md:justify-start gap-2 text-xs text-muted-foreground">
+                <span className="inline-flex items-center gap-1">
+                  <Icon icon="solar:map-point-linear" className="h-4 w-4" />
+                  {t("Location", "Tangerang, Indonesia")}
+                </span>
+                <span className="inline-flex rounded-full bg-muted px-2.5 py-1 font-medium text-foreground">
+                  {t("ExperienceLabel", "3+ Years of Experience")}
+                </span>
+              </div>
 
               <div className="mt-5 flex justify-center md:justify-start">
                 <a
-                  href={ResumePDF}
+                  href={RESUME_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={t(

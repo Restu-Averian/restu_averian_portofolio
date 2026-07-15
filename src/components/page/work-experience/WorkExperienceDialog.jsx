@@ -3,6 +3,7 @@ import useIsMobile from "@/hooks/useIsMobile";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import { WorkExperienceDetail } from "./WorkExperienceDetail";
+import { useTranslation } from "@/i18n";
 
 /**
  * @param {{
@@ -13,17 +14,21 @@ import { WorkExperienceDetail } from "./WorkExperienceDetail";
  */
 const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
 
   if (!experience) return null;
+  const title = t("ExperienceDetailTitle", "{{role}} Detail", {
+    role: t(experience.roleKey, experience.roleDefaultText),
+  });
 
   if (isMobile) {
     return (
       <Drawer open={isOpen} onOpenChange={onClose}>
-        <DrawerContent className="px-6 pb-8 pt-4 rounded-t-[32px]">
+        <DrawerContent className="max-h-[90dvh] px-6 pb-8 pt-4 rounded-t-[32px]">
           <DrawerTitle className="sr-only" id="experience-detail-title">
-            {experience.role} Detail
+            {title}
           </DrawerTitle>
-          <div className="overflow-y-auto max-h-[80vh] pt-4 custom-scrollbar">
+          <div className="min-h-0 overflow-y-auto pt-4 custom-scrollbar">
             <WorkExperienceDetail experience={experience} />
           </div>
         </DrawerContent>
@@ -34,10 +39,10 @@ const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
-        className="max-w-2xl rounded-[32px] border border-porto-border bg-background p-6 sm:p-8 md:p-10 max-h-[85vh] overflow-y-auto custom-scrollbar shadow-xl"
+        className="max-h-[85dvh] max-w-2xl overflow-x-hidden overflow-y-auto! overscroll-contain rounded-4xl border border-porto-border bg-background p-6 shadow-xl custom-scrollbar sm:p-8 md:p-10 xl:overflow-y-auto!"
         aria-labelledby="experience-detail-title"
       >
-        <DialogTitle className="sr-only">{experience.role} Detail</DialogTitle>
+        <DialogTitle className="sr-only">{title}</DialogTitle>
         <WorkExperienceDetail experience={experience} />
       </DialogContent>
     </Dialog>

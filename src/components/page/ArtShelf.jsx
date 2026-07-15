@@ -1,102 +1,154 @@
 import { Icon } from "@iconify/react";
-import { memo, useRef, useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { memo } from "react";
 import { useTranslation } from "@/i18n";
 
-const VISUAL_EXPERIMENTS = [];
+const TECHNICAL_HIGHLIGHTS = [
+  {
+    icon: "solar:widget-2-linear",
+    titleKey: "HighlightConfigurableTitle",
+    titleDefaultText: "Configurable UI Systems",
+    descriptionKey: "HighlightConfigurableDesc",
+    descriptionDefaultText:
+      "Built page-building and form-customization interfaces with configurable components, dynamic fields, validation behavior, responsive settings, preview workflows, and reusable interaction patterns.",
+    tags: [
+      { label: "React" },
+      { label: "TypeScript" },
+      { label: "Craft.js" },
+      { labelKey: "TagDynamicForms", labelDefaultText: "Dynamic Forms" },
+      {
+        labelKey: "TagComponentArchitecture",
+        labelDefaultText: "Component Architecture",
+      },
+    ],
+  },
+  {
+    icon: "solar:bolt-linear",
+    titleKey: "HighlightPerformanceTitle",
+    titleDefaultText: "Performance at Scale",
+    descriptionKey: "HighlightPerformanceDesc",
+    descriptionDefaultText:
+      "Optimized legacy and data-heavy interfaces, including a 90% bundle-size reduction and responsive interactions across more than 80,000 records.",
+    tags: [
+      {
+        labelKey: "TagPerformanceOptimization",
+        labelDefaultText: "Performance Optimization",
+      },
+      { label: "Map and Set" },
+      {
+        labelKey: "TagRenderingStability",
+        labelDefaultText: "Rendering Stability",
+      },
+      { label: "Chrome DevTools" },
+    ],
+    metrics: [
+      {
+        value: "90%",
+        labelKey: "MetricBundleReductionShort",
+        labelDefaultText: "Bundle reduction",
+      },
+      {
+        value: "80K+",
+        labelKey: "MetricInteractiveRecords",
+        labelDefaultText: "Interactive records",
+      },
+    ],
+  },
+  {
+    icon: "solar:pen-new-square-linear",
+    titleKey: "HighlightEditorTitle",
+    titleDefaultText: "Editor and Developer Tooling",
+    descriptionKey: "HighlightEditorDesc",
+    descriptionDefaultText:
+      "Developed and migrated rich-text and Markdown editing experiences using Tiptap, ProseMirror, reusable JSX rendering, cursor preservation, and native undo/redo.",
+    tags: [
+      { label: "Tiptap" },
+      { label: "ProseMirror" },
+      { label: "Markdown" },
+      {
+        labelKey: "TagEditorArchitecture",
+        labelDefaultText: "Editor Architecture",
+      },
+      {
+        labelKey: "TagDeveloperTooling",
+        labelDefaultText: "Developer Tooling",
+      },
+    ],
+  },
+];
 
 const ArtShelf_ = () => {
-  const artScrollRef = useRef(null);
-  const [expandedImg, setExpandedImg] = useState(null);
   const { t } = useTranslation();
 
-  const scroll = (ref, dir) => {
-    if (ref.current) {
-      ref.current.scrollBy({
-        left: dir === "left" ? -300 : 300,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
-    <div className="rounded-3xl p-6 relative">
+    <section className="rounded-3xl p-6 relative">
       <div className="flex flex-col items-start md:flex-row md:items-center gap-1 md:gap-3 mb-4">
         <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
           <Icon
             icon="solar:stars-minimalistic-bold"
             className="text-yellow-400 h-5 w-5"
           />
-          {t("ArtShelf", "Visual Experiments")}
+          {t("TechnicalHighlights", "Technical Highlights")}
         </h2>
         <span className="text-xs text-muted-foreground">
-          {t("ArtShelfDescription", "A small archive of UI studies and visual edits.")}
+          {t(
+            "TechnicalHighlightsDescription",
+            "Selected strengths demonstrated through production frontend work.",
+          )}
         </span>
       </div>
 
-      {VISUAL_EXPERIMENTS.length > 0 ? (
-        <>
-          <button
-            type="button"
-            aria-label={t("PreviousArtwork", "Previous artwork")}
-            onClick={() => scroll(artScrollRef, "left")}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-3">
+        {TECHNICAL_HIGHLIGHTS.map((highlight) => (
+          <article
+            key={highlight.titleKey}
+            className="rounded-2xl border border-porto-border bg-card p-4 shadow-sm"
           >
-            <Icon icon="lucide:chevron-left" />
-          </button>
-          <button
-            type="button"
-            aria-label={t("NextArtwork", "Next artwork")}
-            onClick={() => scroll(artScrollRef, "right")}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
-          >
-            <Icon icon="lucide:chevron-right" />
-          </button>
-          <div
-            ref={artScrollRef}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2"
-          >
-            {VISUAL_EXPERIMENTS.map((img, i) => (
-              <div
-                key={img}
-                onClick={() => setExpandedImg(img)}
-                className="shrink-0 w-64 h-40 snap-center rounded-2xl overflow-hidden border border-porto-border cursor-pointer"
-              >
-                <img
-                  src={img}
-                  alt={`Visual experiment ${i + 1}`}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
+            <div className="flex items-start gap-3">
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-muted text-porto-btn">
+                <Icon icon={highlight.icon} className="h-5 w-5" />
+              </span>
+              <div className="min-w-0">
+                <h3 className="text-sm font-bold leading-tight text-foreground">
+                  {t(highlight.titleKey, highlight.titleDefaultText)}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  {t(highlight.descriptionKey, highlight.descriptionDefaultText)}
+                </p>
               </div>
-            ))}
-          </div>
-        </>
-      ) : (
-        <p className="rounded-2xl border border-dashed border-porto-border bg-card/40 px-4 py-3 text-xs text-muted-foreground">
-          {t("EmptyArtShelf", "Will be filled with original visual works.")}
-        </p>
-      )}
+            </div>
 
-      {/* Expanded Image Modal */}
-      <Dialog
-        open={!!expandedImg}
-        onOpenChange={(open) => !open && setExpandedImg(null)}
-      >
-        <DialogContent
-          className="p-2 sm:p-2 bg-transparent border-none shadow-none w-fit sm:max-w-fit xl:max-w-fit sm:h-fit xl:h-fit"
-          showCloseButton={false}
-        >
-          {expandedImg && (
-            <img
-              src={expandedImg}
-              alt="Expanded Art"
-              className="max-w-[90vw] max-h-[90vh] rounded-xl object-contain shadow-2xl"
-            />
-          )}
-        </DialogContent>
-      </Dialog>
-    </div>
+            {highlight.metrics && (
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                {highlight.metrics.map((metric) => (
+                  <div
+                    key={metric.labelKey}
+                    className="rounded-xl border border-porto-border bg-background/60 px-3 py-2"
+                  >
+                    <p className="text-base font-bold text-porto-btn">
+                      {metric.value}
+                    </p>
+                    <p className="text-[11px] leading-tight text-muted-foreground">
+                      {t(metric.labelKey, metric.labelDefaultText)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {highlight.tags.map((tag) => (
+                <span
+                  key={tag.labelKey ?? tag.label}
+                  className="rounded-md bg-secondary px-2 py-0.5 text-[10px] font-medium text-secondary-foreground"
+                >
+                  {tag.labelKey ? t(tag.labelKey, tag.labelDefaultText) : tag.label}
+                </span>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 };
 
