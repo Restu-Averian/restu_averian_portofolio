@@ -30,10 +30,7 @@ const WorkExperience_ = () => {
             {t("WorkJourney", "Work Journey")}
           </h2>
           <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
-            {t(
-              "WorkJourneyDescription",
-              "My professional path and impact.",
-            )}
+            {t("WorkJourneyDescription", "My professional path and impact.")}
           </p>
         </div>
       </div>
@@ -43,13 +40,6 @@ const WorkExperience_ = () => {
         {/* Vertical Line - Dashed or Dotted per requirement */}
         <div className="absolute left-[1.95rem] top-5 bottom-5 w-px bg-porto-divider z-0"></div>
 
-        {/* Start Badge */}
-        <div className="relative z-10 flex items-center mb-4 -ml-3">
-          <span className="bg-porto-btn text-porto-btn-text text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm">
-            {t("WorkJourneyStart", "Start")}
-          </span>
-        </div>
-
         {/* Roles */}
         {orderedExperiences.map((experience) => (
           <WorkExperienceCard
@@ -58,13 +48,6 @@ const WorkExperience_ = () => {
             onClick={() => setSelectedExperience(experience)}
           />
         ))}
-
-        {/* Next Badge */}
-        <div className="relative z-10 flex items-center -ml-3 mt-1">
-          <span className="bg-emerald-200 text-foreground text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm dark:bg-emerald-700/70 dark:text-foreground">
-            {t("WorkJourneyNext", "Next")}
-          </span>
-        </div>
       </div>
 
       {/* Detail Dialog / Drawer */}
