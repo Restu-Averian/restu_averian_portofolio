@@ -41,7 +41,7 @@ const MobileDrawer_ = ({
         </button>
 
         {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto px-5 pt-8 pb-4 space-y-6">
+        <div className="flex-1 overflow-y-auto porto-scrollbar pr-3 pl-5 pt-8 pb-4 space-y-6">
           <ThumbnailSection images={currentProject.images} />
           <InfoSection project={currentProject} />
         </div>

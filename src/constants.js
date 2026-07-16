@@ -43,7 +43,8 @@ export const PROJECTS = [
     descDetailKey: "TextEditorDescDetail",
     tags: [
       { icon: "mdi:react", label: "React" },
-      { icon: "mdi:react", label: "Tiptap" },
+      { icon: "simple-icons:tiptap", label: "Tiptap" },
+      { icon: "simple-icons:prosemirror", label: "ProseMirror" },
       { icon: "bxl:shadcn-ui", label: "Shadcn-ui" },
     ],
     demoUrl: "https://resuave-texteditor.pages.dev/",

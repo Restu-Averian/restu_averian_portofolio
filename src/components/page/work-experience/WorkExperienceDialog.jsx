@@ -28,7 +28,7 @@ const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
           <DrawerTitle className="sr-only" id="experience-detail-title">
             {experience.roleDefaultText} Detail
           </DrawerTitle>
-          <div className="overflow-y-auto max-h-[80vh] pt-4 custom-scrollbar">
+          <div className="overflow-y-auto max-h-[80vh] pt-4 porto-scrollbar pr-2">
             <WorkExperienceDetail experience={experience} />
           </div>
         </DrawerContent>
@@ -39,7 +39,7 @@ const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
-        className="max-w-2xl rounded-[32px] border border-porto-border bg-background p-6 sm:p-8 md:p-10 max-h-[85vh] overflow-y-auto custom-scrollbar shadow-xl"
+        className="max-w-2xl rounded-[32px] border border-porto-border bg-background p-6 sm:p-8 md:p-10 shadow-xl"
         aria-labelledby="experience-detail-title"
       >
         <DialogTitle className="sr-only">
@@ -48,7 +48,9 @@ const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
         <DialogDescription className="sr-only">
           Work experience overview, scope, and key contributions.
         </DialogDescription>
-        <WorkExperienceDetail experience={experience} />
+        <div className="overflow-y-auto max-h-[70vh] porto-scrollbar pr-2">
+          <WorkExperienceDetail experience={experience} />
+        </div>
       </DialogContent>
     </Dialog>
   );
