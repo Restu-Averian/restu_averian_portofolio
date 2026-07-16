@@ -4,12 +4,10 @@ import {
   FileText,
   LayoutGrid,
   PencilLine,
-  Sparkles,
   TrendingUp,
   Zap,
 } from "lucide-react";
 import { memo } from "react";
-import MascottSticker from "@/assets/work-experiences/mascott-sticker.webp";
 import { useTranslation } from "@/i18n";
 
 const TECHNICAL_HIGHLIGHTS = [

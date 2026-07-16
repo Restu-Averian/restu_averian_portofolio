@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { translate } from "./translate";
 
 export const TranslationContext = createContext(undefined);
@@ -12,7 +7,7 @@ const LOCALE_STORAGE_KEY = "portfolio-locale";
 
 function getInitialLocale() {
   if (typeof window === "undefined") return "en";
-  
+
   try {
     const persisted = localStorage.getItem(LOCALE_STORAGE_KEY);
     if (persisted === "id" || persisted === "en") {
@@ -38,7 +33,7 @@ export function TranslationProvider({ children }) {
     if (typeof document !== "undefined") {
       document.documentElement.lang = locale;
     }
-    
+
     // Persist to localStorage
     try {
       localStorage.setItem(LOCALE_STORAGE_KEY, locale);
