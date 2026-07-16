@@ -11,7 +11,7 @@ const ModalDetailProject = ({ open, onClose, project }) => {
     return found === -1 ? 0 : found;
   }, [project, open]);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
   const isMobile = useIsMobile();
 
@@ -37,6 +37,14 @@ const ModalDetailProject = ({ open, onClose, project }) => {
       setCurrentIndex(initialIndex);
     }
   }, [open, initialIndex]);
+
+  useEffect(() => {
+    if (open && currentProject?.id) {
+      const newUrl = new URL(window.location);
+      newUrl.searchParams.set("p", `project-${currentProject.id}`);
+      window.history.replaceState(null, "", window.location.pathname + newUrl.search);
+    }
+  }, [open, currentProject]);
 
   if (isMobile) {
     return (

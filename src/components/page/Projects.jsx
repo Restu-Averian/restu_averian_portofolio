@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import { memo, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import ModalDetailProject from "../modal/detail-project";
 import { PROJECTS } from "@/constants";
 import { useTranslation } from "@/i18n";
@@ -104,6 +104,19 @@ const Projects_ = () => {
     return 0;
   });
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get("p");
+    if (p && p.startsWith("project-")) {
+      const projectId = p.replace("project-", "");
+      const foundProject = PROJECTS.find((proj) => String(proj.id) === projectId);
+      if (foundProject) {
+        detailProjectRef.current = foundProject;
+        setShowModalDetail(true);
+      }
+    }
+  }, []);
+
   return (
     <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">
       <div className="mb-3 flex shrink-0 items-start gap-3">
@@ -145,6 +158,11 @@ const Projects_ = () => {
         onClose={() => {
           setShowModalDetail(false);
           detailProjectRef.current = {};
+          const newUrl = new URL(window.location);
+          if (newUrl.searchParams.has("p")) {
+            newUrl.searchParams.delete("p");
+            window.history.replaceState(null, "", window.location.pathname + newUrl.search);
+          }
         }}
         project={detailProjectRef?.current}
       />

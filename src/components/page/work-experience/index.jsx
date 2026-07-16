@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import { WORK_EXPERIENCES } from "@/constants";
 import { WorkExperienceCard } from "./WorkExperienceCard";
@@ -15,8 +15,33 @@ const WorkExperience_ = () => {
   const handleClose = (isOpen) => {
     if (!isOpen) {
       setSelectedExperience(null);
+      const newUrl = new URL(window.location);
+      if (newUrl.searchParams.has("w")) {
+        newUrl.searchParams.delete("w");
+        window.history.replaceState(null, "", window.location.pathname + newUrl.search);
+      }
     }
   };
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const w = params.get("w");
+    if (w && w.startsWith("work-")) {
+      const expId = w.replace("work-", "");
+      const found = WORK_EXPERIENCES.find((e) => String(e.id) === expId);
+      if (found) {
+        setSelectedExperience(found);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (selectedExperience?.id) {
+      const newUrl = new URL(window.location);
+      newUrl.searchParams.set("w", `work-${selectedExperience.id}`);
+      window.history.replaceState(null, "", window.location.pathname + newUrl.search);
+    }
+  }, [selectedExperience]);
 
   return (
     <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">

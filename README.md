@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./public/logo.png" alt="Restu Averian Putra portfolio logo" width="96" />
+  <img src="./public/logo-web.png" alt="Restu Averian Putra portfolio logo" width="96" />
 </p>
 
 <h1 align="center">Restu Averian Putra — Frontend Engineer Portfolio</h1>
