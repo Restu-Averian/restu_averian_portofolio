@@ -4,7 +4,7 @@ import { useTranslation } from "@/i18n";
 
 /**
  * @param {Object} props
- * @param {import("@/data/workExperiences").WorkExperience} props.experience
+ * @param {import("@/constants").WorkExperience} props.experience
  * @param {() => void} props.onClick
  */
 const WorkExperienceCard_ = ({ experience, onClick }) => {
@@ -23,7 +23,10 @@ const WorkExperienceCard_ = ({ experience, onClick }) => {
       <button
         type="button"
         onClick={onClick}
-        aria-label={`View details for ${experience.roleDefaultText} at ${experience.company}`}
+        aria-label={`${t("ViewWorkExperience", "View work experience")}: ${t(
+          experience.roleKey,
+          experience.roleDefaultText,
+        )} at ${experience.company}`}
         className={`group flex-1 cursor-pointer rounded-2xl border p-2.5 text-left shadow-sm transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-btn focus:border-transparent ${
           isCurrent
             ? "border-porto-btn/80 bg-background/70"
@@ -69,7 +72,7 @@ const WorkExperienceCard_ = ({ experience, onClick }) => {
 
             <div className="mt-2.5 flex w-max items-center gap-1.5 rounded-md bg-muted/80 px-2 py-1 text-[11px] font-medium text-foreground">
               <Icon icon="solar:calendar-linear" className="h-3 w-3" />
-              {experience.period}
+              {t(experience.periodKey, experience.periodDefaultText)}
             </div>
 
             <p

@@ -2,6 +2,7 @@ import useIsMobile from "@/hooks/useIsMobile";
 import { Icon } from "@iconify/react";
 import { memo } from "react";
 import ProjectActionButton from "./ProjectActionButton";
+import { useTranslation } from "@/i18n";
 
 const TechChip = ({ tag }) => {
   return (
@@ -14,6 +15,7 @@ const TechChip = ({ tag }) => {
 
 const InfoSection_ = ({ project }) => {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
 
   return (
     <div className="flex h-full flex-col justify-between gap-6 py-3">
@@ -27,14 +29,16 @@ const InfoSection_ = ({ project }) => {
         <hr className="border-t-[5px] border-porto-divider" />
 
         <p className="max-w-145 text-[17px] leading-[1.45] text-porto-muted">
-          {project?.descDetail || ""}
+          {project?.descDetailKey
+            ? t(project.descDetailKey, project.descDetail)
+            : project?.descDetail || ""}
         </p>
 
         <div className="space-y-4 pt-6">
           <div className="flex items-center gap-3 text-porto-text">
             <Icon icon="grommet-icons:technology" width="24" height="24" />
             <h3 className="text-[24px] font-semibold leading-none">
-              Tech Stack
+              {t("TechStack", "Tech Stack")}
             </h3>
           </div>
 
@@ -56,7 +60,11 @@ const InfoSection_ = ({ project }) => {
               <Icon icon="lucide:hammer" className="h-6 w-6" />
             )
           }
-          label={project?.demoUrl ? "Live Demo" : "In Progress"}
+          label={
+            project?.demoUrl
+              ? t("LiveDemo", "Live Demo")
+              : t("InProgress", "In Progress")
+          }
           disabled={!project?.demoUrl}
           variant="outline"
         />
@@ -70,7 +78,11 @@ const InfoSection_ = ({ project }) => {
               <Icon icon="lucide:hammer" className="h-6 w-6" />
             )
           }
-          label={project?.githubUrl ? "View on Github " : "Live Demo"}
+          label={
+            project?.githubUrl
+              ? t("ViewOnGithub", "View on Github")
+              : t("LiveDemo", "Live Demo")
+          }
           disabled={!project?.githubUrl}
           variant="solid"
         />

@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { memo, useState, useEffect, useMemo } from "react";
-import { useTheme } from "@/hooks/useTheme";
+import { useIsDark, useTheme } from "@/hooks/useTheme";
 import { useTranslation } from "@/i18n";
 import {
   Select,
@@ -41,6 +41,8 @@ const TopBar_ = () => {
   const [openSelect, setOpenSelect] = useState(null);
   const { theme, setTheme } = useTheme();
   const { t, locale, setLocale } = useTranslation();
+
+  const isDark = useIsDark();
 
   const greeting = (() => {
     const hour = now.getHours();
@@ -101,7 +103,7 @@ const TopBar_ = () => {
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-between px-4 py-3.5 md:px-10 flex-wrap gap-y-2">
       <span className="flex-1 flex items-center gap-2 md:gap-3 text-xs font-medium text-foreground md:text-base">
         <img
-          src={theme === "dark" ? "/logo-dark.png" : "/logo.png"}
+          src={isDark ? "/logo-dark.png" : "/logo.png"}
           alt="Logo"
           className="h-8 w-8 md:h-10 md:w-10 object-contain"
         />
