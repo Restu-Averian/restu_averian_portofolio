@@ -8,7 +8,7 @@ import { ProfileAction } from "./profile/ProfileAction";
 const Profile_ = () => {
   return (
     <section className="w-full mt-1 lg:shrink-0">
-      <div className="relative mx-auto w-full max-w-375">
+      <div className="relative mx-auto w-full">
         <ProfileBanner />
 
         <div className="relative mx-auto -mt-10 max-w-[94%] md:-mt-12 lg:-mt-18 lg:max-w-[84%] xl:-mt-24">
