@@ -6,61 +6,79 @@ import { useTranslation } from "@/i18n";
  * @param {{
  *   experience: import("@/data/workExperiences").WorkExperience,
  *   onClick: () => void,
- *   index: number
  * }} props
  */
-const WorkExperienceCard_ = ({ experience, onClick, index }) => {
+const WorkExperienceCard_ = ({ experience, onClick }) => {
   const { t } = useTranslation();
-  const borderColor = index === 0 ? "border-[#ffcd72]" : "border-[#ff8e8e]";
+  const isCurrent = experience.isCurrent;
 
   return (
-    <div className="relative z-10 flex items-start gap-4 mb-6 ml-[-5.5px]">
+    <div className="relative z-10 mb-3 ml-[-5.5px] flex items-start gap-3 last:mb-2">
       <div
-        className={`w-4 h-4 rounded-full bg-card border-[3px] mt-4 z-10 shrink-0 ${borderColor}`}
+        className={`mt-4 h-4 w-4 shrink-0 rounded-full border-[3px] bg-card ${
+          isCurrent ? "border-porto-btn" : "border-porto-border"
+        }`}
       ></div>
       <button
         type="button"
         onClick={onClick}
         aria-label={`View details for ${experience.roleDefaultText} at ${experience.company}`}
-        className="flex-1 bg-card border border-porto-border rounded-xl p-3 flex flex-col sm:flex-row sm:items-center gap-3 shadow-sm text-left transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-btn focus:border-transparent group cursor-pointer"
+        className={`group flex-1 cursor-pointer rounded-2xl border p-2.5 text-left shadow-sm transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-btn focus:border-transparent ${
+          isCurrent
+            ? "border-porto-btn/80 bg-background/70"
+            : "border-porto-border/80 bg-background/45"
+        }`}
       >
-        {experience.logo && (
-          <div className="w-10 h-10 rounded-full border border-porto-border overflow-hidden shrink-0 flex items-center justify-center bg-popover p-1 group-hover:scale-105 transition-transform">
-            <img
-              src={experience.logo}
-              alt={`${experience.company} Logo`}
-              className="w-full h-full object-contain"
-              loading="lazy"
-            />
-          </div>
-        )}
-        <div className="flex-1">
-          <div className="flex items-start justify-between gap-2">
-            <div>
-              <p className="text-sm font-bold text-foreground leading-tight group-hover:text-porto-btn transition-colors">
-                {t(experience.roleKey, experience.roleDefaultText)}
-              </p>
-              <p className="text-xs text-muted-foreground mt-0.5 font-medium">
-                {experience.employmentTypeKey &&
-                  `${t(experience.employmentTypeKey, experience.employmentTypeDefaultText)} • `}
-                {experience.company}
-              </p>
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
+          {experience.logo && (
+            <div className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-porto-border bg-popover p-1 transition-transform group-hover:scale-105">
+              <img
+                src={experience.logo}
+                alt={`${experience.company} Logo`}
+                className="h-full w-full object-contain"
+                loading="lazy"
+              />
             </div>
-            {experience.isCurrent && (
-              <span className="bg-porto-btn/10 text-porto-btn text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0">
-                {t("CurrentRole", "Current")}
-              </span>
-            )}
-          </div>
+          )}
+          <div className="min-w-0 flex-1">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <p
+                  className={`font-bold leading-tight text-foreground transition-colors group-hover:text-porto-btn ${
+                    isCurrent ? "text-base" : "text-sm"
+                  }`}
+                >
+                  {t(experience.roleKey, experience.roleDefaultText)}
+                </p>
+                <p className="mt-0.5 text-xs font-medium text-muted-foreground">
+                  {experience.employmentTypeKey &&
+                    `${t(
+                      experience.employmentTypeKey,
+                      experience.employmentTypeDefaultText,
+                    )} • `}
+                  {experience.company}
+                </p>
+              </div>
+              {isCurrent && (
+                <span className="shrink-0 rounded-full bg-porto-btn/10 px-2 py-0.5 text-[10px] font-bold text-porto-btn">
+                  {t("CurrentRole", "Current")}
+                </span>
+              )}
+            </div>
 
-          <div className="flex items-center gap-1.5 mt-2 text-[11px] font-medium text-foreground bg-muted w-max px-2 py-1 rounded-md">
-            <Icon icon="solar:calendar-linear" className="w-3 h-3" />
-            {experience.period}
-          </div>
+            <div className="mt-2.5 flex w-max items-center gap-1.5 rounded-md bg-muted/80 px-2 py-1 text-[11px] font-medium text-foreground">
+              <Icon icon="solar:calendar-linear" className="h-3 w-3" />
+              {experience.period}
+            </div>
 
-          <p className="text-xs text-muted-foreground mt-2 line-clamp-2">
-            {t(experience.shortSummaryKey, experience.shortSummaryDefaultText)}
-          </p>
+            <p
+              className={`mt-2 text-xs leading-relaxed text-muted-foreground ${
+                isCurrent ? "" : "line-clamp-2"
+              }`}
+            >
+              {t(experience.shortSummaryKey, experience.shortSummaryDefaultText)}
+            </p>
+          </div>
         </div>
       </button>
     </div>

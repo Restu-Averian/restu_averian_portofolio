@@ -33,6 +33,7 @@ const MobileDrawer_ = ({
         <DrawerTitle className="sr-only">Detail Project</DrawerTitle>
 
         <button
+          aria-label="Close"
           onClick={onClose}
           className="absolute top-4 right-4 z-50 flex h-8 w-8 items-center justify-center rounded-full border border-porto-border bg-transparent text-porto-text hover:bg-black/5 hover:text-porto-btn transition-all"
         >

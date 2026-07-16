@@ -25,7 +25,7 @@ export const WORK_EXPERIENCES = [
     employmentTypeKey: "InternEmploymentType",
     employmentTypeDefaultText: "Internship",
     company: "PT. Indodev Niaga Internet",
-    period: "2023–2024",
+    period: "August 2022 – February 2023",
     isCurrent: false,
     shortSummaryKey: "InternSummary",
     shortSummaryDefaultText:
@@ -55,7 +55,7 @@ export const WORK_EXPERIENCES = [
     employmentTypeKey: "StaffEmploymentType",
     employmentTypeDefaultText: "Staff",
     company: "PT. Indodev Niaga Internet",
-    period: "2024–Present",
+    period: "February 2023 – Present",
     isCurrent: true,
     shortSummaryKey: "FrontendStaffSummary",
     shortSummaryDefaultText:

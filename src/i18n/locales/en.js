@@ -22,6 +22,7 @@ export const en = {
   // Featured Projects
   FeaturedProjects: "Featured Projects",
   FeaturedProjectsDesc: "Selected public work and technical experiments.",
+  FeaturedProjectLabel: "Featured",
   ViewProject: "View Project",
   SourceCode: "Source Code",
   ComingSoon: "Coming Soon",
@@ -31,6 +32,7 @@ export const en = {
 
   // Work Journey
   WorkJourney: "Work Journey",
+  WorkJourneyDescription: "My professional path and impact.",
   WorkJourneyStart: "Start",
   WorkJourneyNext: "Next",
   PresentPeriod: "Present",

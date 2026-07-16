@@ -2,136 +2,143 @@ import { Icon } from "@iconify/react";
 import { memo, useRef, useState } from "react";
 import ModalDetailProject from "../modal/detail-project";
 import { PROJECTS } from "@/constants";
-import ArtShelf from "./ArtShelf";
 import { useTranslation } from "@/i18n";
 
-function ProjectCard({ title, desc, descKey, descDefault, tags, thumb, githubUrl, onClick }) {
+const FEATURED_PROJECT_TITLE = "Package Rich Texteditor";
+
+function ProjectCard({
+  title,
+  desc,
+  descKey,
+  descDefault,
+  tags,
+  thumb,
+  githubUrl,
+  onClick,
+  featured = false,
+}) {
   const { t } = useTranslation();
   return (
-    <div className="shrink-0 w-75 sm:w-100 lg:w-112.5 snap-center">
-      <div
-        className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm cursor-pointer group transition-all hover:border-porto-btn hover:shadow-md"
+    <article
+      className={`flex flex-col gap-3 rounded-2xl border bg-background/55 p-2.5 shadow-sm transition-all hover:border-porto-btn hover:shadow-md sm:flex-row ${
+        featured
+          ? "border-porto-btn bg-background/75"
+          : "border-porto-border/80"
+      }`}
+    >
+      <button
+        type="button"
+        className="group relative h-44 w-full overflow-hidden rounded-xl bg-muted text-left sm:h-auto sm:min-h-34 sm:w-[40%] sm:shrink-0"
         onClick={onClick}
+        aria-label={`${t("ViewProject", "View Project")}: ${title}`}
       >
-        {/* Left: Image (or top on mobile) */}
-        <div className="w-full sm:w-2/5 h-40 sm:h-auto overflow-hidden rounded-xl bg-muted shrink-0">
-          <img
-            src={thumb}
-            alt={title}
-            className="w-full h-full object-cover transition-transform group-hover:scale-105"
-            loading="lazy"
-          />
+        {featured && (
+          <span className="absolute left-2 top-2 z-10 inline-flex items-center gap-1 rounded-md bg-porto-btn px-2 py-1 text-[10px] font-bold text-porto-btn-text shadow-sm">
+            <Icon icon="solar:star-bold" className="h-3 w-3" />
+            {t("FeaturedProjectLabel", "Featured")}
+          </span>
+        )}
+        <img
+          src={thumb}
+          alt={title}
+          className="h-full w-full object-cover transition-transform group-hover:scale-105"
+          loading="lazy"
+        />
+      </button>
+
+      <div className="flex min-w-0 flex-1 flex-col">
+        <h3
+          className={`font-bold leading-tight text-foreground ${
+            featured ? "text-base lg:text-lg" : "text-base"
+          }`}
+        >
+          {title}
+        </h3>
+        <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+          {descKey ? t(descKey, descDefault || desc) : desc}
+        </p>
+
+        <div className="mt-2.5 flex flex-wrap gap-1.5">
+          {tags?.map((tag, idx) => (
+            <span
+              key={`${tag?.icon}-${idx}`}
+              className="inline-flex items-center gap-1 rounded-md bg-muted/70 px-2 py-0.5 text-[10px] font-medium text-muted-foreground"
+            >
+              <Icon icon={tag?.icon} className="h-3 w-3" />
+              {tag?.label}
+            </span>
+          ))}
         </div>
 
-        {/* Right: Details */}
-        <div className="flex flex-col flex-1">
-          <h3 className="text-base font-bold text-foreground transition-colors group-hover:text-porto-btn">{title}</h3>
-          <p className="mt-1 text-xs text-muted-foreground line-clamp-3">
-            {descKey ? t(descKey, descDefault || desc) : desc}
-          </p>
-
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {tags?.map((tag, idx) => (
-              <span
-                key={`${tag?.icon}-${idx}`}
-                className="inline-flex items-center gap-1 rounded-md bg-muted px-2 py-0.5 text-[10px] font-medium text-foreground"
-              >
-                <Icon icon={tag?.icon} className="h-3 w-3" />
-                {tag?.label}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-auto pt-4 flex gap-2">
-            <button
-              type="button"
-              className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-porto-btn-text rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity"
-            >
-              <Icon icon="mdi:eye" className="w-3 h-3" /> {t("ViewProject", "View Project")}
-            </button>
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="flex-1 flex items-center justify-center gap-1 border border-porto-border rounded-full py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-colors"
-            >
-              <Icon icon="mdi:code-tags" className="w-3 h-3" /> {t("SourceCode", "Source Code")}
-            </a>
-          </div>
+        <div className="mt-auto flex gap-2 pt-3">
+          <button
+            type="button"
+            onClick={onClick}
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-porto-btn px-3 py-1.5 text-xs font-bold text-porto-btn-text transition-colors hover:bg-porto-btn-hover"
+          >
+            <Icon icon="mdi:eye" className="h-3.5 w-3.5" />{" "}
+            {t("ViewProject", "View Project")}
+          </button>
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="flex flex-1 items-center justify-center gap-1.5 rounded-lg border border-porto-border px-3 py-1.5 text-xs font-bold text-foreground transition-colors hover:bg-muted"
+          >
+            <Icon icon="mdi:code-tags" className="h-3.5 w-3.5" />{" "}
+            {t("SourceCode", "Source Code")}
+          </a>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
 const Projects_ = () => {
   const [showModalDetail, setShowModalDetail] = useState(false);
   const detailProjectRef = useRef({});
-  const featuredScrollRef = useRef(null);
   const { t } = useTranslation();
-
-  const scroll = (ref, dir) => {
-    if (ref.current) {
-      ref.current.scrollBy({
-        left: dir === "left" ? -300 : 300,
-        behavior: "smooth",
-      });
-    }
-  };
+  const orderedProjects = [...PROJECTS].sort((a, b) => {
+    if (a.title === FEATURED_PROJECT_TITLE) return -1;
+    if (b.title === FEATURED_PROJECT_TITLE) return 1;
+    return 0;
+  });
 
   return (
-    <section className="flex flex-col gap-1 md:gap-2">
-      {/* Featured Projects */}
-      <div className="bg-background rounded-3xl p-6 relative">
-        <div className="flex flex-col items-start md:flex-row md:items-center gap-1 md:gap-3 mb-4">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
-            <Icon
-              icon="solar:stars-minimalistic-bold"
-              className="text-yellow-400 h-5 w-5"
-            />
+    <section className="rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">
+      <div className="mb-3 flex items-start gap-3">
+        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-porto-accent text-porto-btn">
+          <Icon
+            icon="solar:stars-minimalistic-bold"
+            className="h-4 w-4"
+          />
+        </span>
+        <div>
+          <h2 className="text-lg font-bold leading-tight text-foreground">
             {t("FeaturedProjects", "Featured Projects")}
           </h2>
-          <span className="text-xs text-muted-foreground">
-            {t("FeaturedProjectsDesc", "Selected public work and technical experiments.")}
-          </span>
-        </div>
-
-        {/* Scroll Buttons */}
-        <button
-          onClick={() => scroll(featuredScrollRef, "left")}
-          aria-label={t("PreviousSlide", "Previous slide")}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
-        >
-          <Icon icon="lucide:chevron-left" />
-        </button>
-        <button
-          onClick={() => scroll(featuredScrollRef, "right")}
-          aria-label={t("NextSlide", "Next slide")}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
-        >
-          <Icon icon="lucide:chevron-right" />
-        </button>
-
-        <div
-          ref={featuredScrollRef}
-          className="flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-4"
-        >
-          {PROJECTS.map((project, i) => (
-            <ProjectCard
-              key={project.id ?? i}
-              {...project}
-              onClick={() => {
-                detailProjectRef.current = project;
-                setShowModalDetail(true);
-              }}
-            />
-          ))}
+          <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+            {t(
+              "FeaturedProjectsDesc",
+              "Selected public work and technical experiments.",
+            )}
+          </p>
         </div>
       </div>
 
-      {/* Art Shelf */}
-      <ArtShelf />
+      <div className="grid gap-3">
+        {orderedProjects.map((project, i) => (
+          <ProjectCard
+            key={project.id ?? i}
+            {...project}
+            featured={project.title === FEATURED_PROJECT_TITLE}
+            onClick={() => {
+              detailProjectRef.current = project;
+              setShowModalDetail(true);
+            }}
+          />
+        ))}
+      </div>
 
       <ModalDetailProject
         open={showModalDetail}

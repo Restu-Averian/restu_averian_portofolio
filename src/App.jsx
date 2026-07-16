@@ -4,6 +4,7 @@ import Profile from "./components/page/Profile";
 import Projects from "./components/page/Projects";
 import WorkExperience from "./components/page/work-experience";
 import Footer from "./components/page/Footer";
+import ArtShelf from "./components/page/ArtShelf";
 
 export default function App() {
   return (
@@ -12,12 +13,15 @@ export default function App() {
 
       <Profile />
 
-      <main className="px-4 md:px-10 pb-6 grow">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2 space-y-6 my-6">
+      <main className="grow px-4 pb-5 md:px-10">
+        <div className="mx-auto grid w-full max-w-[1500px] grid-cols-1 gap-4 py-4 lg:grid-cols-[0.9fr_1.35fr_1fr]">
+          <div className="order-3 lg:order-1">
+            <ArtShelf />
+          </div>
+          <div className="order-1 lg:order-2">
             <Projects />
           </div>
-          <div className="lg:col-span-1 my-6">
+          <div className="order-2 lg:order-3">
             <WorkExperience />
           </div>
         </div>
