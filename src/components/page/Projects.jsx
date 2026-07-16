@@ -105,8 +105,8 @@ const Projects_ = () => {
   });
 
   return (
-    <section className="rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">
-      <div className="mb-3 flex items-start gap-3">
+    <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">
+      <div className="mb-3 flex shrink-0 items-start gap-3">
         <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-porto-accent text-porto-btn">
           <Icon
             icon="solar:stars-minimalistic-bold"
@@ -126,7 +126,7 @@ const Projects_ = () => {
         </div>
       </div>
 
-      <div className="grid gap-3">
+      <div className="porto-scrollbar grid gap-3 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1">
         {orderedProjects.map((project, i) => (
           <ProjectCard
             key={project.id ?? i}

@@ -11,7 +11,7 @@ const Profile_ = () => {
   const isDark = useIsDark();
   const { t } = useTranslation();
   return (
-    <section className="w-full px-4 md:px-10 mt-1">
+    <section className="w-full px-4 md:px-10 mt-1 lg:shrink-0">
       <div className="relative mx-auto w-full max-w-375">
         {/* ── BANNER ── */}
         <div className="h-28 w-full overflow-hidden rounded-[1.75rem] sm:h-36 md:h-44 lg:h-48">
