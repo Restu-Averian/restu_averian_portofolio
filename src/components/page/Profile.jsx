@@ -27,7 +27,7 @@ const Profile_ = () => {
         <div className="relative mx-auto -mt-10 max-w-[94%] md:-mt-12 lg:-mt-18 lg:max-w-[84%] xl:-mt-20">
           <div className="bg-card/95 rounded-3xl p-4 shadow-sm border border-porto-border/80 backdrop-blur flex flex-col md:flex-row items-center md:items-center text-center md:text-left relative gap-4 md:p-5 lg:gap-8">
             {/* Left: Avatar */}
-            <div className="relative shrink-0 -mt-10 md:mt-0">
+            <div className="relative shrink-0 -mt-10 md:mt-0 flex flex-col items-center gap-2">
               <div className="h-24 w-24 md:h-28 md:w-28 lg:h-30 lg:w-30 overflow-hidden rounded-full border-4 border-background bg-card shadow-sm relative">
                 <img
                   src={isDark ? FotoProfileDark : FotoProfileLight}
@@ -36,6 +36,14 @@ const Profile_ = () => {
                   loading="eager"
                   fetchPriority="high"
                 />
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 bg-transparent px-2 py-0.5 text-[11px] sm:text-xs font-medium text-foreground">
+                <span className="relative flex h-2 w-2 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                {t("AvailableForWork", "Available for new opportunities")}
               </div>
             </div>
 
@@ -59,14 +67,25 @@ const Profile_ = () => {
                 )}
               </p>
 
-              <div className="mt-4 flex flex-wrap items-center justify-center md:justify-start gap-2">
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-porto-border bg-transparent px-3 py-1.5 text-xs font-medium text-foreground">
-                  <Icon icon="solar:map-point-linear" className="h-4 w-4" />
-                  {t("Location", "Tangerang, Indonesia")}
+              <div className="mt-4 inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-porto-border bg-transparent px-3 py-1.5 text-xs font-medium text-foreground md:justify-start">
+                <span className="inline-flex min-w-0 items-center gap-1.5 whitespace-nowrap">
+                  <Icon
+                    icon="solar:map-point-linear"
+                    className="h-4 w-4 shrink-0"
+                  />
+                  <span className="truncate">
+                    {t("Location", "Tangerang, Indonesia")}
+                  </span>
                 </span>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-porto-border bg-transparent px-3 py-1.5 text-xs font-medium text-foreground">
-                  <Icon icon="solar:case-round-linear" className="h-4 w-4" />
-                  {t("ExperienceLabel", "3+ Years of Experience")}
+                <span className="h-4 w-px shrink-0 bg-porto-divider" />
+                <span className="inline-flex min-w-0 items-center gap-1.5 whitespace-nowrap">
+                  <Icon
+                    icon="solar:case-round-linear"
+                    className="h-4 w-4 shrink-0"
+                  />
+                  <span className="truncate">
+                    {t("ExperienceLabel", "3+ Years of Experience")}
+                  </span>
                 </span>
               </div>
             </div>
@@ -76,11 +95,6 @@ const Profile_ = () => {
 
             {/* Right: Actions */}
             <div className="shrink-0 flex w-full flex-col items-center gap-3 md:w-64 md:items-stretch">
-              <div className="inline-flex items-center gap-2 rounded-lg border border-porto-border bg-transparent px-3 py-2 text-xs font-medium text-foreground">
-                <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                {t("AvailableForWork", "Available for new opportunities")}
-              </div>
-
               <a
                 href="/resume/Restu-Averian-Putra-Resume.pdf"
                 target="_blank"
@@ -94,6 +108,9 @@ const Profile_ = () => {
                 <Icon icon="solar:export-linear" className="h-5 w-5" />
                 {t("ViewResume", "View Resume")}
               </a>
+
+              {/* Horizontal Divider */}
+              <div className="w-full border-t-2 border-dashed border-porto-border my-2 md:hidden" />
 
               <div className="flex flex-col items-center gap-2 w-full md:items-start">
                 <span className="text-xs font-medium text-foreground">
