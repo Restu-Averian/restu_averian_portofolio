@@ -12,7 +12,7 @@ export function translate(locale, key, defaultText, params) {
   // 2. English locale translation when available
   // 3. defaultText passed to t()
   // 4. Empty string
-  
+
   let translatedText;
 
   const localeDict = dictionaries[locale];
@@ -23,7 +23,11 @@ export function translate(locale, key, defaultText, params) {
   }
 
   // Use defaultText if no translation is found
-  if (translatedText === undefined || translatedText === null || translatedText === "") {
+  if (
+    translatedText === undefined ||
+    translatedText === null ||
+    translatedText === ""
+  ) {
     translatedText = defaultText;
   }
 

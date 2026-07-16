@@ -63,7 +63,7 @@ const Profile_ = () => {
               <p className="mt-2 text-sm text-muted-foreground max-w-md leading-relaxed">
                 {t(
                   "PortfolioTagline",
-                  "I build scalable React applications, configurable internal tools, and performance-focused UI systems.",
+                  "Frontend Engineer building scalable React applications, configurable internal tools, and performance-critical UI systems.",
                 )}
               </p>
 
@@ -74,7 +74,7 @@ const Profile_ = () => {
                     className="h-4 w-4 shrink-0"
                   />
                   <span className="truncate">
-                    {t("Location", "Tangerang, Indonesia")}
+                    {t("Location", "South Tangerang, Indonesia")}
                   </span>
                 </span>
                 <span className="h-4 w-px shrink-0 bg-porto-divider" />

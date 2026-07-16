@@ -9,7 +9,7 @@ const TECHNICAL_HIGHLIGHTS = [
     titleDefaultText: "Configurable UI Systems",
     descriptionKey: "TechnicalHighlightConfigurableDescription",
     descriptionDefaultText:
-      "Built configurable page-building and form interfaces with dynamic fields, validation, and reusable patterns.",
+      "Built page-building and form-customizer systems with reusable architecture, dynamic fields, validation, and responsive configuration.",
     proofPoints: [
       {
         textKey: "TechnicalHighlightConfigurableProofPoint",
@@ -29,6 +29,10 @@ const TECHNICAL_HIGHLIGHTS = [
         labelKey: "TechnicalHighlightTagCraft",
         labelDefaultText: "Craft.js",
       },
+      {
+        labelKey: "TechnicalHighlightTagAntDesign",
+        labelDefaultText: "Ant Design",
+      },
     ],
   },
   {
@@ -37,15 +41,19 @@ const TECHNICAL_HIGHLIGHTS = [
     titleDefaultText: "Performance at Scale",
     descriptionKey: "TechnicalHighlightPerformanceDescription",
     descriptionDefaultText:
-      "Optimized data-heavy interfaces while maintaining responsive interactions across large datasets.",
+      "Optimized the Chatbot Widget and Ant Design Transfer interactions for stable, responsive large-data workflows.",
     proofPoints: [
       {
         textKey: "TechnicalHighlightPerformanceProofBundle",
         textDefaultText: "90% bundle reduction",
       },
       {
+        textKey: "TechnicalHighlightPerformanceProofBundleSize",
+        textDefaultText: "2.5 MB to 244 KB",
+      },
+      {
         textKey: "TechnicalHighlightPerformanceProofRecords",
-        textDefaultText: "80K+ interactive records",
+        textDefaultText: "80K+ records",
       },
     ],
     tags: [
@@ -57,6 +65,10 @@ const TECHNICAL_HIGHLIGHTS = [
         labelKey: "TechnicalHighlightTagMapSet",
         labelDefaultText: "Map & Set",
       },
+      {
+        labelKey: "TechnicalHighlightTagChromeDevTools",
+        labelDefaultText: "Chrome DevTools",
+      },
     ],
   },
   {
@@ -65,7 +77,7 @@ const TECHNICAL_HIGHLIGHTS = [
     titleDefaultText: "Editor & Developer Tooling",
     descriptionKey: "TechnicalHighlightEditorDescription",
     descriptionDefaultText:
-      "Built rich-text and Markdown editor experiences with cursor preservation and native undo/redo.",
+      "Migrated rich-text editors to Tiptap and ProseMirror, then built Markdown tooling with JSX rendering, cursor preservation, and native undo/redo.",
     tags: [
       {
         labelKey: "TechnicalHighlightTagTiptap",

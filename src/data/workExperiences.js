@@ -14,6 +14,7 @@ import DataOnThumb from "@/assets/work-experiences/image-removebg-preview.png";
  * @property {string} [employmentTypeKey]
  * @property {string} [employmentTypeDefaultText]
  * @property {string} company
+ * @property {string} [location]
  * @property {string} period
  * @property {boolean} isCurrent
  * @property {string} shortSummaryKey
@@ -36,41 +37,36 @@ export const WORK_EXPERIENCES = [
     employmentTypeKey: "InternEmploymentType",
     employmentTypeDefaultText: "Internship",
     company: "PT. Indodev Niaga Internet",
+    location: "South Tangerang, Indonesia",
     period: "August 2022 – February 2023",
     isCurrent: false,
     shortSummaryKey: "InternSummary",
     shortSummaryDefaultText:
-      "Frontend foundations, responsive implementation, and reusable component development.",
+      "Frontend foundations, table usability improvements, legacy React refactoring, and reusable component development.",
     overviewKey: "InternOverview",
     overviewDefaultText:
-      "Contributed to production frontend development while learning the team’s engineering workflow, component patterns, and delivery process.",
+      "Contributed to frontend foundations through table usability improvements, legacy React refactoring, and reusable component development.",
     contributions: [
       {
         key: "InternContrib1",
         defaultText:
-          "Implemented responsive user interfaces based on product requirements and existing design guidelines.",
+          "Improved Ant Design table sorting for clearer and more consistent data presentation.",
       },
       {
         key: "InternContrib2",
-        defaultText: "Developed and maintained reusable frontend components.",
+        defaultText: "Refactored legacy React class components into functional components.",
       },
       {
         key: "InternContrib3",
-        defaultText:
-          "Resolved frontend bugs and improved visual and behavioral consistency.",
-      },
-      {
-        key: "InternContrib4",
-        defaultText:
-          "Collaborated through Git-based workflows, code reviews, and team development processes.",
+        defaultText: "Improved page performance by approximately 10%.",
       },
     ],
     scope: [
       "Frontend Development",
-      "Responsive UI",
+      "Ant Design",
+      "Legacy React Refactoring",
       "Reusable Components",
-      "Bug Fixing",
-      "Team Collaboration",
+      "Performance Improvement",
     ],
     logo: DataOnThumb,
   },
@@ -81,59 +77,83 @@ export const WORK_EXPERIENCES = [
     employmentTypeKey: "StaffEmploymentType",
     employmentTypeDefaultText: "Staff",
     company: "PT. Indodev Niaga Internet",
+    location: "South Tangerang, Indonesia",
     period: "February 2023 – Present",
     isCurrent: true,
     shortSummaryKey: "FrontendStaffSummary",
     shortSummaryDefaultText:
-      "Reusable UI Systems, configurable forms, page-building interfaces, and frontend tooling.",
+      "Configurable internal tools, reusable UI systems, page-building interfaces, editor tooling, and frontend performance optimization.",
     overviewKey: "StaffOverview",
     overviewDefaultText:
-      "Contributing to internal frontend platforms and reusable systems used across multiple development needs.",
+      "Building scalable React applications, configurable internal tools, reusable UI systems, and performance-critical frontend experiences.",
     contributions: [
       {
         key: "StaffContrib1",
         defaultText:
-          "Developed reusable frontend components that can be adopted across multiple internal projects and development flows.",
+          "Built a configurable Page Builder from scratch using React and Craft.js.",
       },
       {
         key: "StaffContrib2",
         defaultText:
-          "Delivered end-to-end frontend implementation for complex configurable form experiences.",
+          "Supported drag-and-drop composition, nested layouts, responsive settings, live preview, component configuration, undo/redo, and API-based save/load.",
       },
       {
         key: "StaffContrib3",
         defaultText:
-          "Built frontend functionality for configurable page-building interfaces.",
+          "Integrated internal framework components and Ant Design v4 components.",
       },
       {
         key: "StaffContrib4",
         defaultText:
-          "Implemented dynamic fields, validation behavior, conditional interface states, and reusable interaction patterns.",
+          "Rebuilt an internal React Chatbot Widget and reduced its bundle size by approximately 90%, from 2.5 MB to 244 KB.",
       },
       {
         key: "StaffContrib5",
         defaultText:
-          "Improved navigation usability through searchable menu experiences and persistent URL-based interface state.",
+          "Added offline handling and automatic reconnection to the Chatbot Widget.",
       },
       {
         key: "StaffContrib6",
         defaultText:
-          "Improved component maintainability by refining component structure and frontend documentation.",
+          "Extended Ant Design Transfer v4 with drag-select, shift-click, and double-click actions, using Map and Set to keep interactions responsive across more than 80,000 records.",
       },
       {
         key: "StaffContrib7",
         defaultText:
-          "Supported frontend build improvements, including build-tool configuration and alignment with the Docker build workflow.",
+          "Built a GUI-based Form Customizer supporting more than 20 field types and improved input responsiveness by replacing broad Form.useWatch subscriptions with localized React state.",
+      },
+      {
+        key: "StaffContrib8",
+        defaultText:
+          "Migrated Quill and SunEditor implementations to Tiptap and ProseMirror.",
+      },
+      {
+        key: "StaffContrib9",
+        defaultText:
+          "Developed a dependency-free Markdown Editor with consistent JSX rendering, cursor preservation, and native undo/redo.",
+      },
+      {
+        key: "StaffContrib10",
+        defaultText:
+          "Delivered 6 JavaScript and React training sessions for groups of 3-7 participants.",
+      },
+      {
+        key: "StaffContrib11",
+        defaultText:
+          "Used agentic AI workflows for requirements analysis, planning, implementation, debugging, review, and documentation while retaining ownership of technical decisions.",
       },
     ],
     scope: [
       "React",
+      "TypeScript",
       "Reusable UI Systems",
-      "Complex Forms",
+      "Craft.js",
+      "Ant Design",
+      "Form Customizer",
       "Page Builder Interfaces",
-      "Frontend Architecture",
-      "Component Documentation",
-      "Build Tooling",
+      "Tiptap",
+      "ProseMirror",
+      "Performance Optimization",
     ],
     confidentialityNoteKey: "ConfidentialityNote",
     confidentialityNoteDefaultText:
