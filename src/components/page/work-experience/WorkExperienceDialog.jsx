@@ -13,7 +13,7 @@ import { WorkExperienceDetail } from "./WorkExperienceDetail";
  * @param {{
  *   isOpen: boolean,
  *   onClose: (open: boolean) => void,
- *   experience: import("@/data/workExperiences").WorkExperience | null
+ *   experience: import("@/constants").WorkExperience | null
  * }} props
  */
 const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {

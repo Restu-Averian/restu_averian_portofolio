@@ -3,7 +3,7 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "@/i18n";
 
 /**
- * @param {{ experience: import("@/data/workExperiences").WorkExperience }} props
+ * @param {{ experience: import("@/constants").WorkExperience }} props
  */
 const WorkExperienceDetail_ = ({ experience }) => {
   const { t } = useTranslation();
@@ -42,7 +42,7 @@ const WorkExperienceDetail_ = ({ experience }) => {
             <span>•</span>
             <div className="flex items-center gap-1">
               <Icon icon="solar:calendar-linear" className="w-4 h-4" />
-              {experience.period}
+              {t(experience.periodKey, experience.periodDefaultText)}
             </div>
           </div>
         </div>
@@ -58,10 +58,10 @@ const WorkExperienceDetail_ = ({ experience }) => {
         <div className="flex flex-wrap gap-1.5 mt-2">
           {experience.scope.map((tag) => (
             <span
-              key={tag}
+              key={tag.key}
               className="text-xs font-medium px-2.5 py-1 bg-secondary text-secondary-foreground rounded-md"
             >
-              {tag}
+              {t(tag.key, tag.defaultText)}
             </span>
           ))}
         </div>

@@ -15,7 +15,8 @@ export const id = {
   // Profile
   AvailableForWork: "Terbuka untuk peluang baru",
   ProfileRole: "Frontend Engineer",
-  PortfolioTagline: "Frontend Engineer yang membangun aplikasi React berskala besar, internal tools yang dapat dikonfigurasi, dan sistem UI yang berfokus pada performa.",
+  PortfolioTagline:
+    "Frontend Engineer yang membangun aplikasi React berskala besar, internal tools yang dapat dikonfigurasi, dan sistem UI yang berfokus pada performa.",
   Location: "South Tangerang, Indonesia",
   ExperienceLabel: "3+ Tahun Pengalaman",
   FindMeOn: "Temukan saya di:",
@@ -46,37 +47,75 @@ export const id = {
   Technologies: "Teknologi",
   LiveDemo: "Demo Langsung",
   ViewSourceCode: "Lihat Kode Sumber",
+  InProgress: "Sedang Dikerjakan",
+  TechStack: "Tech Stack",
+  ViewOnGithub: "Lihat di Github",
   Close: "Tutup",
   Expand: "Perluas",
   PreviousProject: "Proyek Sebelumnya",
   NextProject: "Proyek Berikutnya",
+  ViewWorkExperience: "Lihat pengalaman kerja",
 
   // Work roles
   FrontendEngineerRole: "Frontend Engineer",
   StaffEmploymentType: "Staf",
-  FrontendStaffSummary: "Internal tools yang dapat dikonfigurasi, sistem UI reusable, page builder, tooling editor, dan optimasi performa frontend.",
+  StaffPeriod: "Februari 2023 - Sekarang",
+  FrontendStaffSummary:
+    "Internal tools yang dapat dikonfigurasi, sistem UI reusable, page builder, tooling editor, dan optimasi performa frontend.",
 
   InternRole: "Frontend Engineer Intern",
   InternEmploymentType: "Magang",
-  InternSummary: "Fondasi frontend, peningkatan usability tabel, refactor legacy React, dan pengembangan komponen reusable.",
-  InternOverview: "Berkontribusi pada fondasi frontend melalui peningkatan usability tabel, refactor legacy React, dan pengembangan komponen reusable.",
-  InternContrib1: "Meningkatkan sorting tabel Ant Design agar penyajian data lebih jelas dan konsisten.",
-  InternContrib2: "Merefaktor legacy React class components menjadi functional components.",
+  InternPeriod: "Agustus 2022 - Februari 2023",
+  InternSummary:
+    "Fondasi frontend, peningkatan usability tabel, refactor legacy React, dan pengembangan komponen reusable.",
+  InternOverview:
+    "Berkontribusi pada fondasi frontend melalui peningkatan usability tabel, refactor legacy React, dan pengembangan komponen reusable.",
+  InternContrib1:
+    "Meningkatkan sorting tabel Ant Design agar penyajian data lebih jelas dan konsisten.",
+  InternContrib2:
+    "Merefaktor legacy React class components menjadi functional components.",
   InternContrib3: "Meningkatkan performa halaman sekitar 10%.",
 
-  StaffOverview: "Membangun aplikasi React berskala besar, internal tools yang dapat dikonfigurasi, sistem UI reusable, dan pengalaman frontend yang berfokus pada performa.",
-  StaffContrib1: "Membangun Page Builder yang dapat dikonfigurasi dari awal menggunakan React dan Craft.js.",
-  StaffContrib2: "Mendukung komposisi drag-and-drop, nested layout, pengaturan responsif, live preview, konfigurasi komponen, undo/redo, serta save/load berbasis API.",
-  StaffContrib3: "Mengintegrasikan komponen framework internal dan komponen Ant Design v4.",
-  StaffContrib4: "Membangun ulang React Chatbot Widget internal dan mengurangi ukuran bundle sekitar 90%, dari 2.5 MB menjadi 244 KB.",
-  StaffContrib5: "Menambahkan penanganan offline dan rekoneksi otomatis pada Chatbot Widget.",
-  StaffContrib6: "Mengembangkan Ant Design Transfer v4 dengan aksi drag-select, shift-click, dan double-click, menggunakan Map dan Set agar interaksi tetap responsif pada lebih dari 80.000 record.",
-  StaffContrib7: "Membangun Form Customizer berbasis GUI yang mendukung lebih dari 20 tipe field dan meningkatkan respons input dengan mengganti subscription Form.useWatch yang luas menjadi state React lokal.",
-  StaffContrib8: "Memigrasikan implementasi Quill dan SunEditor ke Tiptap dan ProseMirror.",
-  StaffContrib9: "Mengembangkan Markdown Editor tanpa dependency dengan rendering JSX yang konsisten, preservasi cursor, dan undo/redo native.",
-  StaffContrib10: "Membawakan 6 sesi pelatihan JavaScript dan React untuk grup berisi 3-7 peserta.",
-  StaffContrib11: "Menggunakan workflow agentic AI untuk analisis requirement, perencanaan, implementasi, debugging, review, dan dokumentasi sambil tetap memegang keputusan teknis.",
-  ConfidentialityNote: "Nama produk tertentu, informasi klien, tangkapan layar, kode sumber, aturan bisnis, dan alur kerja internal sengaja dihilangkan karena kewajiban kerahasiaan.",
+  StaffOverview:
+    "Membangun aplikasi React berskala besar, internal tools yang dapat dikonfigurasi, sistem UI reusable, dan pengalaman frontend yang berfokus pada performa.",
+  StaffContrib1:
+    "Membangun Page Builder yang dapat dikonfigurasi dari awal menggunakan React dan Craft.js.",
+  StaffContrib2:
+    "Mendukung komposisi drag-and-drop, nested layout, pengaturan responsif, live preview, konfigurasi komponen, undo/redo, serta save/load berbasis API.",
+  StaffContrib3:
+    "Mengintegrasikan komponen framework internal dan komponen Ant Design v4.",
+  StaffContrib4:
+    "Membangun ulang React Chatbot Widget internal dan mengurangi ukuran bundle sekitar 90%, dari 2.5 MB menjadi 244 KB.",
+  StaffContrib5:
+    "Menambahkan penanganan offline dan rekoneksi otomatis pada Chatbot Widget.",
+  StaffContrib6:
+    "Mengembangkan Ant Design Transfer v4 dengan aksi drag-select, shift-click, dan double-click, menggunakan Map dan Set agar interaksi tetap responsif pada lebih dari 80.000 record.",
+  StaffContrib7:
+    "Membangun Form Customizer berbasis GUI yang mendukung lebih dari 20 tipe field dan meningkatkan respons input dengan mengganti subscription Form.useWatch yang luas menjadi state React lokal.",
+  StaffContrib8:
+    "Memigrasikan implementasi Quill dan SunEditor ke Tiptap dan ProseMirror.",
+  StaffContrib9:
+    "Mengembangkan Markdown Editor tanpa dependency dengan rendering JSX yang konsisten, preservasi cursor, dan undo/redo native.",
+  StaffContrib10:
+    "Membawakan 6 sesi pelatihan JavaScript dan React untuk grup berisi 3-7 peserta.",
+  StaffContrib11:
+    "Menggunakan workflow agentic AI untuk analisis requirement, perencanaan, implementasi, debugging, review, dan dokumentasi sambil tetap memegang keputusan teknis.",
+  ConfidentialityNote:
+    "Nama produk tertentu, informasi klien, tangkapan layar, kode sumber, aturan bisnis, dan alur kerja internal sengaja dihilangkan karena kewajiban kerahasiaan.",
+  ScopeFrontendDevelopment: "Pengembangan Frontend",
+  ScopeAntDesign: "Ant Design",
+  ScopeLegacyReactRefactoring: "Refactor Legacy React",
+  ScopeReusableComponents: "Komponen Reusable",
+  ScopePerformanceImprovement: "Peningkatan Performa",
+  ScopeReact: "React",
+  ScopeTypeScript: "TypeScript",
+  ScopeReusableUiSystems: "Sistem UI Reusable",
+  ScopeCraftJs: "Craft.js",
+  ScopeFormCustomizer: "Form Customizer",
+  ScopePageBuilderInterfaces: "Antarmuka Page Builder",
+  ScopeTiptap: "Tiptap",
+  ScopeProseMirror: "ProseMirror",
+  ScopePerformanceOptimization: "Optimasi Performa",
 
   // Art Shelf
   ArtShelf: "Eksperimen Visual",
@@ -87,17 +126,21 @@ export const id = {
   PreviousArtwork: "Karya sebelumnya",
   NextArtwork: "Karya berikutnya",
   TechnicalHighlights: "Sorotan Teknis",
-  TechnicalHighlightsDescription: "Kekuatan utama yang terbukti melalui pekerjaan frontend produksi.",
+  TechnicalHighlightsDescription:
+    "Kekuatan utama yang terbukti melalui pekerjaan frontend produksi.",
   TechnicalHighlightConfigurableTitle: "Sistem UI yang Dapat Dikonfigurasi",
-  TechnicalHighlightConfigurableDescription: "Membangun sistem page builder dan form customizer dengan arsitektur reusable, field dinamis, validasi, dan konfigurasi responsif.",
+  TechnicalHighlightConfigurableDescription:
+    "Membangun sistem page builder dan form customizer dengan arsitektur reusable, field dinamis, validasi, dan konfigurasi responsif.",
   TechnicalHighlightConfigurableProofPoint: "20+ tipe field",
   TechnicalHighlightPerformanceTitle: "Performa Skala Besar",
-  TechnicalHighlightPerformanceDescription: "Mengoptimalkan Chatbot Widget dan interaksi Ant Design Transfer agar workflow data besar tetap stabil dan responsif.",
+  TechnicalHighlightPerformanceDescription:
+    "Mengoptimalkan Chatbot Widget dan interaksi Ant Design Transfer agar workflow data besar tetap stabil dan responsif.",
   TechnicalHighlightPerformanceProofBundle: "90% reduksi bundle",
   TechnicalHighlightPerformanceProofBundleSize: "2.5 MB ke 244 KB",
   TechnicalHighlightPerformanceProofRecords: "80K+ record",
   TechnicalHighlightEditorTitle: "Editor & Tooling Developer",
-  TechnicalHighlightEditorDescription: "Memigrasikan rich-text editor ke Tiptap dan ProseMirror, lalu membangun tooling Markdown dengan rendering JSX, preservasi cursor, dan undo/redo native.",
+  TechnicalHighlightEditorDescription:
+    "Memigrasikan rich-text editor ke Tiptap dan ProseMirror, lalu membangun tooling Markdown dengan rendering JSX, preservasi cursor, dan undo/redo native.",
   TechnicalHighlightTagReact: "React",
   TechnicalHighlightTagTypeScript: "TypeScript",
   TechnicalHighlightTagCraft: "Craft.js",
@@ -110,12 +153,18 @@ export const id = {
   TechnicalHighlightTagMarkdown: "Markdown",
 
   // Projects
-  NisoraDesc: "Aplikasi pelacak buku yang bersih dan menenangkan untuk mengatur progres membaca, koleksi pribadi, dan catatan buku.",
-  NisoraDescDetail: "Membangun aplikasi pelacak buku responsif dengan autentikasi, manajemen pustaka pribadi, status membaca, dan antarmuka bersih yang dirancang agar melacak buku terasa sederhana dan menyenangkan.",
-  TextEditorDesc: "Rich text editor minimalis yang menggabungkan fleksibilitas Tiptap dengan UI yang bersih dan mudah diakses.",
-  TextEditorDescDetail: "Mengembangkan paket rich text editor yang dapat digunakan kembali, dirancang agar mudah dikonfigurasi, ramah seluler, dan lebih mudah disesuaikan dengan kebutuhan produk yang berbeda.",
+  NisoraDesc:
+    "Aplikasi pelacak buku yang bersih dan menenangkan untuk mengatur progres membaca, koleksi pribadi, dan catatan buku.",
+  NisoraDescDetail:
+    "Membangun aplikasi pelacak buku responsif dengan autentikasi, manajemen pustaka pribadi, status membaca, dan antarmuka bersih yang dirancang agar melacak buku terasa sederhana dan menyenangkan.",
+  TextEditorDesc:
+    "Rich text editor minimalis yang menggabungkan fleksibilitas Tiptap dengan UI yang bersih dan mudah diakses.",
+  TextEditorDescDetail:
+    "Mengembangkan paket rich text editor yang dapat digunakan kembali, dirancang agar mudah dikonfigurasi, ramah seluler, dan lebih mudah disesuaikan dengan kebutuhan produk yang berbeda.",
 
   // Footer
-  ThanksForStoppingBy: "Terima kasih sudah berkunjung! Mari bangun hal-hal indah bersama-sama.",
-  Copyright: "© {{year}} Restu Averian Putra. Hak cipta dilindungi undang-undang.",
+  ThanksForStoppingBy:
+    "Terima kasih sudah berkunjung! Mari bangun hal-hal indah bersama-sama.",
+  Copyright:
+    "© {{year}} Restu Averian Putra. Hak cipta dilindungi undang-undang.",
 };
