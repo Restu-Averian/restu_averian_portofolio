@@ -84,16 +84,16 @@ const TECHNICAL_HIGHLIGHTS = [
 ];
 
 const TechnicalHighlightCard = ({ highlight, t }) => (
-  <article className="flex h-full flex-col rounded-2xl border border-porto-border bg-card p-4 shadow-sm">
-    <div className="flex items-start gap-3">
-      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-porto-accent text-porto-btn">
-        <Icon icon={highlight.icon} className="h-4 w-4" />
+  <article className="flex h-full flex-col rounded-xl border border-dashed border-porto-border bg-transparent p-3 shadow-none transition-colors hover:bg-card/30">
+    <div className="flex items-start gap-2.5">
+      <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-porto-accent text-porto-btn">
+        <Icon icon={highlight.icon} className="h-3.5 w-3.5" />
       </span>
       <div className="min-w-0">
-        <h3 className="text-sm font-bold leading-tight text-foreground">
+        <h3 className="text-[13px] font-semibold leading-tight text-foreground">
           {t(highlight.titleKey, highlight.titleDefaultText)}
         </h3>
-        <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+        <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground/80">
           {t(highlight.descriptionKey, highlight.descriptionDefaultText)}
         </p>
       </div>
@@ -109,7 +109,7 @@ const TechnicalHighlightCard = ({ highlight, t }) => (
           {highlight.proofPoints.map((proofPoint) => (
             <p
               key={proofPoint.textKey}
-              className="flex w-full items-center justify-center text-center rounded-xl border border-porto-border bg-porto-surface-elevated px-3 py-2 text-xs font-bold leading-tight text-porto-btn"
+              className="flex w-full items-center justify-center text-center rounded-lg border border-dashed border-porto-border bg-transparent px-2 py-1.5 text-[10px] font-semibold leading-tight text-porto-btn"
             >
               {t(proofPoint.textKey, proofPoint.textDefaultText)}
             </p>
@@ -121,7 +121,7 @@ const TechnicalHighlightCard = ({ highlight, t }) => (
         {highlight.tags.map((tag) => (
           <span
             key={tag.labelKey}
-            className="rounded-md border border-porto-chip-border bg-porto-chip px-2 py-0.5 text-[10px] font-medium text-porto-chip-text"
+            className="rounded-md border border-porto-border bg-transparent px-1.5 py-0.5 text-[9px] font-medium text-muted-foreground"
           >
             {t(tag.labelKey, tag.labelDefaultText)}
           </span>

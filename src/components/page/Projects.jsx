@@ -81,7 +81,7 @@ const Projects_ = () => {
   };
 
   return (
-    <section className="flex flex-col gap-6">
+    <section className="flex flex-col gap-1 md:gap-2">
       {/* Featured Projects */}
       <div className="bg-background rounded-3xl p-6 relative">
         <div className="flex flex-col items-start md:flex-row md:items-center gap-1 md:gap-3 mb-4">
