@@ -47,7 +47,7 @@ const WorkExperience_ = () => {
 
         {/* Next Badge */}
         <div className="relative z-10 flex items-center -ml-4 mt-2">
-          <span className="bg-porto-success text-porto-btn-text text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+          <span className="bg-[#b8c99a] text-foreground text-xs font-bold px-3 py-1 rounded-full shadow-sm">
             {t("WorkJourneyNext", "Next")}
           </span>
         </div>

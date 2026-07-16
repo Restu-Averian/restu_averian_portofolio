@@ -8,14 +8,14 @@ export default function ProjectActionButton({
   disabled = false,
 }) {
   const baseClass =
-    "flex w-full items-center justify-center gap-3 rounded-full py-3 text-[20px] font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-porto-focus focus:ring-offset-2 focus:ring-offset-porto-bg";
+    "flex w-full items-center justify-center gap-3 rounded-full py-3 text-[20px] font-semibold transition-all duration-200";
 
   const variantClass = {
     outline: disabled
-      ? "border-[3px] border-porto-border bg-muted text-muted-foreground cursor-not-allowed opacity-80"
-      : "border-[3px] border-porto-border bg-transparent text-porto-text hover:border-porto-btn hover:bg-porto-accent/40 hover:text-porto-btn active:scale-[0.99]",
+      ? "border-[3px] border-porto-btn/25 bg-porto-btn/8 text-porto-btn/55 cursor-not-allowed opacity-90"
+      : "border-[3px] border-porto-btn/70 bg-transparent text-porto-btn hover:bg-porto-btn/8 hover:scale-[1.01] active:scale-[0.99]",
     solid: disabled
-      ? "bg-muted text-muted-foreground cursor-not-allowed opacity-80"
+      ? "bg-porto-btn/30 text-porto-btn-text/70 cursor-not-allowed opacity-90"
       : "bg-porto-btn text-porto-btn-text hover:bg-porto-btn-hover active:scale-[0.99]",
   };
 

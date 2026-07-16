@@ -11,8 +11,7 @@ import { useTranslation } from "@/i18n";
  */
 const WorkExperienceCard_ = ({ experience, onClick, index }) => {
   const { t } = useTranslation();
-  const borderColor = index === 0 ? "border-porto-gold" : "border-porto-btn";
-  const role = t(experience.roleKey, experience.roleDefaultText);
+  const borderColor = index === 0 ? "border-[#ffcd72]" : "border-[#ff8e8e]";
 
   return (
     <div className="relative z-10 flex items-start gap-4 mb-6 ml-[-5.5px]">
@@ -22,12 +21,8 @@ const WorkExperienceCard_ = ({ experience, onClick, index }) => {
       <button
         type="button"
         onClick={onClick}
-        aria-label={t(
-          "ViewExperienceDetails",
-          "View details for {{role}} at {{company}}",
-          { role, company: experience.company },
-        )}
-        className="flex-1 bg-card border border-porto-border rounded-xl p-3 flex flex-col sm:flex-row sm:items-center gap-3 shadow-sm text-left transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-focus focus:border-transparent group cursor-pointer"
+        aria-label={`View details for ${experience.roleDefaultText} at ${experience.company}`}
+        className="flex-1 bg-card border border-porto-border rounded-xl p-3 flex flex-col sm:flex-row sm:items-center gap-3 shadow-sm text-left transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-btn focus:border-transparent group cursor-pointer"
       >
         {experience.logo && (
           <div className="w-10 h-10 rounded-full border border-porto-border overflow-hidden shrink-0 flex items-center justify-center bg-popover p-1 group-hover:scale-105 transition-transform">
@@ -42,8 +37,8 @@ const WorkExperienceCard_ = ({ experience, onClick, index }) => {
         <div className="flex-1">
           <div className="flex items-start justify-between gap-2">
             <div>
-              <p className="text-sm font-bold text-foreground leading-tight">
-                {role}
+              <p className="text-sm font-bold text-foreground leading-tight group-hover:text-porto-btn transition-colors">
+                {t(experience.roleKey, experience.roleDefaultText)}
               </p>
               <p className="text-xs text-muted-foreground mt-0.5 font-medium">
                 {experience.employmentTypeKey &&
@@ -60,7 +55,7 @@ const WorkExperienceCard_ = ({ experience, onClick, index }) => {
 
           <div className="flex items-center gap-1.5 mt-2 text-[11px] font-medium text-foreground bg-muted w-max px-2 py-1 rounded-md">
             <Icon icon="solar:calendar-linear" className="w-3 h-3" />
-            {t(experience.periodKey, experience.periodDefaultText)}
+            {experience.period}
           </div>
 
           <p className="text-xs text-muted-foreground mt-2 line-clamp-2">

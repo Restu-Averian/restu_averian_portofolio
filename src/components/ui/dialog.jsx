@@ -53,15 +53,12 @@ function DialogContent({
         )}
         {...props}
       >
-        <DialogPrimitive.Description className="sr-only">
-          Dialog content
-        </DialogPrimitive.Description>
         {children}
         {showCloseButton && (
           <DialogPrimitive.Close data-slot="dialog-close" asChild>
             <Button
               variant="ghost"
-              className="absolute top-5 right-5 cursor-pointer rounded-full text-porto-text hover:bg-porto-accent/40 hover:text-porto-btn focus-visible:ring-porto-focus"
+              className="absolute top-5 right-5 hover:bg-transparent cursor-pointer"
               size="icon-sm"
             >
               <XIcon />

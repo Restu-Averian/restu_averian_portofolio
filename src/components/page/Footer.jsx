@@ -19,13 +19,10 @@ const Footer_ = () => {
             />
           </div>
           <p className="text-xs md:text-sm font-medium text-foreground flex items-center justify-center gap-1">
-            {t(
-              "ThanksForStoppingBy",
-              "Thanks for stopping by! Let's build beautiful, cozy things together.",
-            )}
+            {t("ThanksForStoppingBy", "Thanks for stopping by! Let's build beautiful, cozy things together.")}
             <Icon
               icon="solar:stars-minimalistic-bold"
-              className="text-porto-gold h-4 w-4"
+              className="text-yellow-500 h-4 w-4"
             />
           </p>
         </div>
@@ -41,11 +38,7 @@ const Footer_ = () => {
 
         {/* Right Side: Copyright */}
         <div className="text-xs md:text-sm font-medium text-foreground w-full md:w-auto text-center md:text-right">
-          {t(
-            "Copyright",
-            "© {{year}} Restu Averian Putra. All rights reserved.",
-            { year: new Date().getFullYear() },
-          )}
+          {t("Copyright", "© {{year}} Restu Averian Putra. All rights reserved.", { year: new Date().getFullYear() })}
         </div>
       </div>
     </footer>

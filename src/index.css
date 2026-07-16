@@ -8,98 +8,84 @@
 
 :root {
   --background: #fff4e0;
-  --foreground: #4f463f;
-  --card: #f7e8dc;
-  --card-foreground: #4f463f;
-  --popover: #fff8ec;
-  --popover-foreground: #4f463f;
-  --primary: #e8a08f;
-  --primary-foreground: #2a2321;
-  --secondary: #eadbd2;
-  --secondary-foreground: #4f463f;
-  --muted: #eadbd2;
-  --muted-foreground: #75695f;
-  --accent: #f0d6cb;
-  --accent-foreground: #4f463f;
-  --border: #d5bfb6;
-  --input: #d5bfb6;
-  --ring: #b86f63;
-  --chart-1: #e8a08f;
-  --chart-2: #d9ac45;
-  --chart-3: #a9c47f;
-  --chart-4: #d5bfb6;
-  --chart-5: #4f463f;
-  --tags: #eadbd2;
+  --foreground: #5c554d;
+  --card: #f3e5dd;
+  --card-foreground: #5c554d;
+  --popover: #f3e5dd;
+  --popover-foreground: #5c554d;
+  --primary: #be919c;
+  --primary-foreground: #fff8f6;
+  --secondary: #f3e5dd;
+  --secondary-foreground: #5c554d;
+  --muted: #e6d9d3;
+  --muted-foreground: #8c847a;
+  --accent: #e5d1d0;
+  --accent-foreground: #5c554d;
+  --border: #d8c7c3;
+  --input: #d8c7c3;
+  --ring: #be919c;
+  --chart-1: #be919c;
+  --chart-2: #e5d1d0;
+  --chart-3: #e6d9d3;
+  --chart-4: #d8c7c3;
+  --chart-5: #5c554d;
+  --tags: #e5d1d0;
   --radius: 1.25rem;
-  --sidebar: #f7e8dc;
-  --sidebar-foreground: #4f463f;
-  --sidebar-primary: #e8a08f;
-  --sidebar-primary-foreground: #2a2321;
-  --sidebar-accent: #eadbd2;
-  --sidebar-accent-foreground: #4f463f;
-  --sidebar-border: #d5bfb6;
-  --sidebar-ring: #b86f63;
+  --sidebar: #f3e5dd;
+  --sidebar-foreground: #5c554d;
+  --sidebar-primary: #be919c;
+  --sidebar-primary-foreground: #fff8f6;
+  --sidebar-accent: #e5d1d0;
+  --sidebar-accent-foreground: #5c554d;
+  --sidebar-border: #d8c7c3;
+  --sidebar-ring: #be919c;
 
-  --color-border-image: #d5bfb6;
+  --color-border-image: #ead8c8;
   --color-porto-bg: #fff4e0;
-  --color-porto-surface: #f7e8dc;
-  --color-porto-surface-elevated: #fff8ec;
-  --color-porto-border: #d5bfb6;
-  --color-porto-divider: #d9cac3;
-  --color-porto-text: #4f463f;
-  --color-porto-muted: #75695f;
-  --color-porto-btn: #e8a08f;
-  --color-porto-btn-hover: #f0b09f;
-  --color-porto-btn-text: #2a2321;
-  --color-porto-accent: #f0d6cb;
-  --color-porto-chip: #eadbd2;
-  --color-porto-chip-border: #d5bfb6;
-  --color-porto-chip-text: #5f554d;
-  --color-porto-gold: #b88416;
-  --color-porto-success: #789a55;
-  --color-porto-focus: #b86f63;
-  --color-overlay: #2a2321;
+  --color-porto-surface: #f3e5dd;
+  --color-porto-border: #d8c7c3;
+  --color-porto-divider: #e6d9d3;
+  --color-porto-text: #5c554d;
+  --color-porto-muted: #8c847a;
+  --color-porto-btn: #be919c;
+  --color-porto-btn-hover: #a97885;
+  --color-porto-btn-text: #fff8f6;
+  --color-porto-accent: #e5d1d0;
+  --color-overlay: #f3e5dd;
 }
 
 .dark {
-  --background: #1d1918;
-  --foreground: #f4e2c2;
-  --card: #2a2321;
-  --card-foreground: #f4e2c2;
-  --popover: #332927;
-  --popover-foreground: #f4e2c2;
-  --primary: #e8a08f;
-  --primary-foreground: #1d1918;
-  --secondary: #3d332f;
-  --secondary-foreground: #f4e2c2;
-  --muted: #3d332f;
-  --muted-foreground: #c9ae91;
-  --accent: #5b3d38;
-  --accent-foreground: #f4e2c2;
+  --background: #39302D;
+  --foreground: #F3D6AC;
+  --card: #302A27;
+  --card-foreground: #F3D6AC;
+  --popover: #302A27;
+  --popover-foreground: #F3D6AC;
+  --primary: #E0A18F;
+  --primary-foreground: #171817;
+  --secondary: #927356;
+  --secondary-foreground: #171817;
+  --muted: #302A27;
+  --muted-foreground: #E0B391;
+  --accent: #C2945B;
+  --accent-foreground: #171817;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #6b5548;
-  --input: #6b5548;
-  --ring: #e8a08f;
+  --border: #927356;
+  --input: #927356;
+  --ring: #E3C9A1;
 
-  --color-border-image: #6b5548;
-  --color-porto-bg: #1d1918;
-  --color-porto-surface: #2a2321;
-  --color-porto-surface-elevated: #332927;
-  --color-porto-border: #6b5548;
-  --color-porto-divider: #6b5548;
-  --color-porto-text: #f4e2c2;
-  --color-porto-muted: #c9ae91;
-  --color-porto-btn: #e8a08f;
-  --color-porto-btn-hover: #f0b09f;
-  --color-porto-btn-text: #1d1918;
-  --color-porto-accent: #5b3d38;
-  --color-porto-chip: #3d332f;
-  --color-porto-chip-border: #6b5548;
-  --color-porto-chip-text: #c9ae91;
-  --color-porto-gold: #d9ac45;
-  --color-porto-success: #a9c47f;
-  --color-porto-focus: #e8a08f;
-  --color-overlay: #1d1918;
+  --color-border-image: #171817;
+  --color-porto-bg: #39302D;
+  --color-porto-surface: #302A27;
+  --color-porto-border: #927356;
+  --color-porto-divider: #927356;
+  --color-porto-text: #F3D6AC;
+  --color-porto-muted: #E0B391;
+  --color-porto-btn: #E0A18F;
+  --color-porto-btn-hover: #E3C9A1;
+  --color-porto-btn-text: #171817;
+  --color-porto-accent: #C2945B;
+  --color-overlay: #171817;
 }
 
 @theme inline {
@@ -126,7 +112,6 @@
 
   --color-porto-bg: var(--color-porto-bg);
   --color-porto-surface: var(--color-porto-surface);
-  --color-porto-surface-elevated: var(--color-porto-surface-elevated);
   --color-porto-border: var(--color-porto-border);
   --color-porto-divider: var(--color-porto-divider);
   --color-porto-text: var(--color-porto-text);
@@ -135,12 +120,6 @@
   --color-porto-btn-hover: var(--color-porto-btn-hover);
   --color-porto-btn-text: var(--color-porto-btn-text);
   --color-porto-accent: var(--color-porto-accent);
-  --color-porto-chip: var(--color-porto-chip);
-  --color-porto-chip-border: var(--color-porto-chip-border);
-  --color-porto-chip-text: var(--color-porto-chip-text);
-  --color-porto-gold: var(--color-porto-gold);
-  --color-porto-success: var(--color-porto-success);
-  --color-porto-focus: var(--color-porto-focus);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -163,7 +142,7 @@
   }
 
   :where(button, a):focus-visible {
-    outline: 3px solid var(--color-porto-focus);
+    outline: 3px solid var(--ring);
     outline-offset: 3px;
   }
 }

@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { memo, useState, useEffect, useMemo } from "react";
-import { useTheme, useIsDark } from "@/hooks/useTheme";
+import { useTheme } from "@/hooks/useTheme";
 import { useTranslation } from "@/i18n";
 import {
   Select,
@@ -40,7 +40,6 @@ const TopBar_ = () => {
   const [now, setNow] = useState(() => new Date());
   const [openSelect, setOpenSelect] = useState(null);
   const { theme, setTheme } = useTheme();
-  const isDark = useIsDark();
   const { t, locale, setLocale } = useTranslation();
 
   const greeting = (() => {
@@ -91,7 +90,7 @@ const TopBar_ = () => {
     const target = e.detail.originalEvent.target;
     const trigger =
       target instanceof Element
-        ? target.closest("button[data-topbar-select]")
+        ? target.closest('button[data-topbar-select]')
         : null;
     if (trigger) {
       setTimeout(() => setOpenSelect(trigger.dataset.topbarSelect), 0);
@@ -100,16 +99,9 @@ const TopBar_ = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-between px-4 py-3.5 md:px-10 flex-wrap">
-      <span className="flex-1 flex items-center gap-2 text-xs font-medium text-foreground md:text-base">
-        <img
-          src={isDark ? "/logo-dark.png" : "/logo.png"}
-          alt="Logo"
-          className="h-6 w-auto object-contain md:h-8"
-        />
-        <span className="flex items-center gap-1.5">
-          {greeting}
-          <Icon icon="solar:sun-linear" className="h-4 w-4 md:h-5 md:w-5" />
-        </span>
+      <span className="flex-1 flex items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
+        {greeting}
+        <Icon icon="solar:sun-linear" className="h-4 w-4 md:h-5 md:w-5" />
       </span>
       <span className="flex-1 flex justify-center items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
         <Icon
@@ -135,7 +127,7 @@ const TopBar_ = () => {
                 : t("SwitchToEnglish", "Switch language to English")
             }
             title={t("LanguageSelector", "Language selector")}
-            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-porto-focus"
+            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
           >
             <SelectValue />
           </SelectTrigger>
@@ -167,7 +159,7 @@ const TopBar_ = () => {
             data-topbar-select="theme"
             aria-label={`Theme: ${theme}. Activate to switch theme.`}
             title={`Theme: ${theme}. Click to switch.`}
-            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:outline-none focus-visible:ring-2 focus-visible:ring-porto-focus"
+            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
           >
             <SelectValue />
           </SelectTrigger>

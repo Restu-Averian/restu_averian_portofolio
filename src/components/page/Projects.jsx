@@ -5,21 +5,12 @@ import { PROJECTS } from "@/constants";
 import ArtShelf from "./ArtShelf";
 import { useTranslation } from "@/i18n";
 
-function ProjectCard({
-  title,
-  desc,
-  descKey,
-  descDefault,
-  tags,
-  thumb,
-  githubUrl,
-  onClick,
-}) {
+function ProjectCard({ title, desc, descKey, descDefault, tags, thumb, githubUrl, onClick }) {
   const { t } = useTranslation();
   return (
     <div className="shrink-0 w-75 sm:w-100 lg:w-112.5 snap-center">
       <div
-        className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm cursor-pointer group transition-all hover:border-porto-btn hover:shadow-md focus-within:border-porto-btn"
+        className="flex flex-col sm:flex-row h-full rounded-2xl bg-card p-4 gap-4 border border-porto-border shadow-sm cursor-pointer group transition-all hover:border-porto-btn hover:shadow-md"
         onClick={onClick}
       >
         {/* Left: Image (or top on mobile) */}
@@ -34,7 +25,7 @@ function ProjectCard({
 
         {/* Right: Details */}
         <div className="flex flex-col flex-1">
-          <h3 className="text-base font-bold text-foreground">{title}</h3>
+          <h3 className="text-base font-bold text-foreground transition-colors group-hover:text-porto-btn">{title}</h3>
           <p className="mt-1 text-xs text-muted-foreground line-clamp-3">
             {descKey ? t(descKey, descDefault || desc) : desc}
           </p>
@@ -43,7 +34,7 @@ function ProjectCard({
             {tags?.map((tag, idx) => (
               <span
                 key={`${tag?.icon}-${idx}`}
-                className="inline-flex items-center gap-1 rounded-md border border-porto-chip-border bg-porto-chip px-2 py-0.5 text-[10px] font-medium text-porto-chip-text"
+                className="inline-flex items-center gap-1 rounded-md bg-muted px-2 py-0.5 text-[10px] font-medium text-foreground"
               >
                 <Icon icon={tag?.icon} className="h-3 w-3" />
                 {tag?.label}
@@ -54,20 +45,18 @@ function ProjectCard({
           <div className="mt-auto pt-4 flex gap-2">
             <button
               type="button"
-              className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-porto-btn-text rounded-full py-1.5 text-xs font-semibold hover:bg-porto-btn-hover transition-colors active:scale-[0.98] cursor-pointer"
+              className="flex-1 flex items-center justify-center gap-1 bg-porto-btn text-porto-btn-text rounded-full py-1.5 text-xs font-medium hover:opacity-90 transition-opacity"
             >
-              <Icon icon="mdi:eye" className="w-3 h-3" />{" "}
-              {t("ViewProject", "View Project")}
+              <Icon icon="mdi:eye" className="w-3 h-3" /> {t("ViewProject", "View Project")}
             </button>
             <a
               href={githubUrl}
               target="_blank"
               rel="noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="flex-1 flex items-center justify-center gap-1 border border-porto-border rounded-full py-1.5 text-xs font-medium text-foreground hover:border-porto-btn hover:bg-porto-accent/40 transition-colors"
+              className="flex-1 flex items-center justify-center gap-1 border border-porto-border rounded-full py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-colors"
             >
-              <Icon icon="mdi:github" className="w-3 h-3" />{" "}
-              {t("GitHub", "GitHub")}
+              <Icon icon="mdi:code-tags" className="w-3 h-3" /> {t("SourceCode", "Source Code")}
             </a>
           </div>
         </div>
@@ -99,15 +88,12 @@ const Projects_ = () => {
           <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
             <Icon
               icon="solar:stars-minimalistic-bold"
-              className="text-porto-gold h-5 w-5"
+              className="text-yellow-400 h-5 w-5"
             />
             {t("FeaturedProjects", "Featured Projects")}
           </h2>
           <span className="text-xs text-muted-foreground">
-            {t(
-              "FeaturedProjectsDesc",
-              "Selected public work and technical experiments.",
-            )}
+            {t("FeaturedProjectsDesc", "Selected public work and technical experiments.")}
           </span>
         </div>
 

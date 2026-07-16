@@ -5,7 +5,7 @@ import ProjectActionButton from "./ProjectActionButton";
 
 const TechChip = ({ tag }) => {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-porto-chip-border bg-porto-chip px-4 py-1.5 text-sm font-medium text-porto-chip-text">
+    <span className="inline-flex items-center gap-2 rounded-full bg-porto-accent/70 px-4 py-1.5 text-sm font-medium text-porto-text">
       <Icon icon={tag?.icon} className="h-4 w-4" />
       {tag?.label}
     </span>
@@ -58,7 +58,7 @@ const InfoSection_ = ({ project }) => {
           }
           label={project?.demoUrl ? "Live Demo" : "In Progress"}
           disabled={!project?.demoUrl}
-          variant="solid"
+          variant="outline"
         />
 
         <ProjectActionButton
@@ -70,9 +70,9 @@ const InfoSection_ = ({ project }) => {
               <Icon icon="lucide:hammer" className="h-6 w-6" />
             )
           }
-          label={project?.githubUrl ? "GitHub" : "GitHub unavailable"}
+          label={project?.githubUrl ? "View on Github " : "Live Demo"}
           disabled={!project?.githubUrl}
-          variant={project?.demoUrl ? "outline" : "solid"}
+          variant="solid"
         />
       </div>
     </div>
