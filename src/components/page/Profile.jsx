@@ -24,7 +24,7 @@ const Profile_ = () => {
         </div>
 
         {/* ── PROFILE ROW ── */}
-        <div className="relative mx-auto -mt-10 max-w-[94%] md:-mt-12 lg:max-w-[84%]">
+        <div className="relative mx-auto -mt-10 max-w-[94%] md:-mt-12 lg:-mt-18 lg:max-w-[84%] xl:-mt-20">
           <div className="bg-card/95 rounded-3xl p-4 shadow-sm border border-porto-border/80 backdrop-blur flex flex-col md:flex-row items-center md:items-center text-center md:text-left relative gap-4 md:p-5 lg:gap-8">
             {/* Left: Avatar */}
             <div className="relative shrink-0 -mt-10 md:mt-0">
