@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { memo, useState, useEffect, useMemo } from "react";
-import { useTheme } from "@/hooks/useTheme";
+import { useTheme, useIsDark } from "@/hooks/useTheme";
 import { useTranslation } from "@/i18n";
 import {
   Select,
@@ -40,6 +40,7 @@ const TopBar_ = () => {
   const [now, setNow] = useState(() => new Date());
   const [openSelect, setOpenSelect] = useState(null);
   const { theme, setTheme } = useTheme();
+  const isDark = useIsDark();
   const { t, locale, setLocale } = useTranslation();
 
   const greeting = (() => {
@@ -99,9 +100,16 @@ const TopBar_ = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-between px-4 py-3.5 md:px-10 flex-wrap">
-      <span className="flex-1 flex items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
-        {greeting}
-        <Icon icon="solar:sun-linear" className="h-4 w-4 md:h-5 md:w-5" />
+      <span className="flex-1 flex items-center gap-2 text-xs font-medium text-foreground md:text-base">
+        <img
+          src={isDark ? "/logo-dark.png" : "/logo.png"}
+          alt="Logo"
+          className="h-6 w-auto object-contain md:h-8"
+        />
+        <span className="flex items-center gap-1.5">
+          {greeting}
+          <Icon icon="solar:sun-linear" className="h-4 w-4 md:h-5 md:w-5" />
+        </span>
       </span>
       <span className="flex-1 flex justify-center items-center gap-1.5 text-xs font-medium text-foreground md:text-base">
         <Icon
