@@ -3,10 +3,9 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "@/i18n";
 
 /**
- * @param {{
- *   experience: import("@/data/workExperiences").WorkExperience,
- *   onClick: () => void,
- * }} props
+ * @param {Object} props
+ * @param {import("@/data/workExperiences").WorkExperience} props.experience
+ * @param {() => void} props.onClick
  */
 const WorkExperienceCard_ = ({ experience, onClick }) => {
   const { t } = useTranslation();
@@ -15,10 +14,12 @@ const WorkExperienceCard_ = ({ experience, onClick }) => {
   return (
     <div className="relative z-10 mb-3 ml-[-5.5px] flex items-start gap-3 last:mb-2">
       <div
-        className={`mt-4 h-4 w-4 shrink-0 rounded-full border-[3px] bg-card ${
-          isCurrent ? "border-porto-btn" : "border-porto-border"
+        className={`mt-4 h-4 w-4 shrink-0 rounded-full border-[3px] ${
+          isCurrent
+            ? "border-porto-btn bg-porto-btn"
+            : "border-porto-border bg-card"
         }`}
-      ></div>
+      />
       <button
         type="button"
         onClick={onClick}
@@ -76,7 +77,10 @@ const WorkExperienceCard_ = ({ experience, onClick }) => {
                 isCurrent ? "" : "line-clamp-2"
               }`}
             >
-              {t(experience.shortSummaryKey, experience.shortSummaryDefaultText)}
+              {t(
+                experience.shortSummaryKey,
+                experience.shortSummaryDefaultText,
+              )}
             </p>
           </div>
         </div>
