@@ -22,6 +22,7 @@ export const id = {
   // Featured Projects
   FeaturedProjects: "Proyek Unggulan",
   FeaturedProjectsDesc: "Kumpulan karya publik dan eksperimen teknis pilihan.",
+  FeaturedProjectLabel: "Unggulan",
   ViewProject: "Lihat Proyek",
   SourceCode: "Kode Sumber",
   ComingSoon: "Segera Hadir",
@@ -31,6 +32,7 @@ export const id = {
 
   // Work Journey
   WorkJourney: "Perjalanan Karier",
+  WorkJourneyDescription: "Perjalanan profesional dan dampak pekerjaan saya.",
   WorkJourneyStart: "Mulai",
   WorkJourneyNext: "Selanjutnya",
   PresentPeriod: "Sekarang",

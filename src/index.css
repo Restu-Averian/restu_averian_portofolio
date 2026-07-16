@@ -7,29 +7,29 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #fff4e0;
-  --foreground: #5c554d;
-  --card: #f3e5dd;
-  --card-foreground: #5c554d;
-  --popover: #f3e5dd;
-  --popover-foreground: #5c554d;
-  --primary: #be919c;
-  --primary-foreground: #fff8f6;
-  --secondary: #f3e5dd;
-  --secondary-foreground: #5c554d;
-  --muted: #e6d9d3;
-  --muted-foreground: #8c847a;
-  --accent: #e5d1d0;
-  --accent-foreground: #5c554d;
-  --border: #d8c7c3;
-  --input: #d8c7c3;
-  --ring: #be919c;
-  --chart-1: #be919c;
-  --chart-2: #e5d1d0;
-  --chart-3: #e6d9d3;
-  --chart-4: #d8c7c3;
-  --chart-5: #5c554d;
-  --tags: #e5d1d0;
+  --background: #fff7e8;
+  --foreground: #3f3126;
+  --card: #fffaf1;
+  --card-foreground: #3f3126;
+  --popover: #fffaf1;
+  --popover-foreground: #3f3126;
+  --primary: #8a5c2e;
+  --primary-foreground: #fffaf1;
+  --secondary: #f2e4d0;
+  --secondary-foreground: #3f3126;
+  --muted: #efe3d3;
+  --muted-foreground: #75675a;
+  --accent: #ead3a5;
+  --accent-foreground: #3f3126;
+  --border: #ddcbb7;
+  --input: #ddcbb7;
+  --ring: #8a5c2e;
+  --chart-1: #8a5c2e;
+  --chart-2: #c4934f;
+  --chart-3: #ded0ba;
+  --chart-4: #a9b88c;
+  --chart-5: #3f3126;
+  --tags: #efe3d3;
   --radius: 1.25rem;
   --sidebar: #f3e5dd;
   --sidebar-foreground: #5c554d;
@@ -41,50 +41,50 @@
   --sidebar-ring: #be919c;
 
   --color-border-image: #ead8c8;
-  --color-porto-bg: #fff4e0;
-  --color-porto-surface: #f3e5dd;
-  --color-porto-border: #d8c7c3;
-  --color-porto-divider: #e6d9d3;
-  --color-porto-text: #5c554d;
-  --color-porto-muted: #8c847a;
-  --color-porto-btn: #be919c;
-  --color-porto-btn-hover: #a97885;
-  --color-porto-btn-text: #fff8f6;
-  --color-porto-accent: #e5d1d0;
-  --color-overlay: #f3e5dd;
+  --color-porto-bg: #fff7e8;
+  --color-porto-surface: #fffaf1;
+  --color-porto-border: #ddcbb7;
+  --color-porto-divider: #e7d8c4;
+  --color-porto-text: #3f3126;
+  --color-porto-muted: #75675a;
+  --color-porto-btn: #8a5c2e;
+  --color-porto-btn-hover: #6f4723;
+  --color-porto-btn-text: #fffaf1;
+  --color-porto-accent: #ead3a5;
+  --color-overlay: #fffaf1;
 }
 
 .dark {
-  --background: #39302D;
-  --foreground: #F3D6AC;
-  --card: #302A27;
-  --card-foreground: #F3D6AC;
-  --popover: #302A27;
-  --popover-foreground: #F3D6AC;
-  --primary: #E0A18F;
-  --primary-foreground: #171817;
-  --secondary: #927356;
-  --secondary-foreground: #171817;
-  --muted: #302A27;
-  --muted-foreground: #E0B391;
-  --accent: #C2945B;
-  --accent-foreground: #171817;
+  --background: #241c18;
+  --foreground: #f5dec2;
+  --card: #302821;
+  --card-foreground: #f5dec2;
+  --popover: #302821;
+  --popover-foreground: #f5dec2;
+  --primary: #d2a66c;
+  --primary-foreground: #241c18;
+  --secondary: #46382d;
+  --secondary-foreground: #f5dec2;
+  --muted: #3a3028;
+  --muted-foreground: #c6ad91;
+  --accent: #74552e;
+  --accent-foreground: #f5dec2;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: #927356;
-  --input: #927356;
-  --ring: #E3C9A1;
+  --border: #594638;
+  --input: #594638;
+  --ring: #d2a66c;
 
   --color-border-image: #171817;
-  --color-porto-bg: #39302D;
-  --color-porto-surface: #302A27;
-  --color-porto-border: #927356;
-  --color-porto-divider: #927356;
-  --color-porto-text: #F3D6AC;
-  --color-porto-muted: #E0B391;
-  --color-porto-btn: #E0A18F;
-  --color-porto-btn-hover: #E3C9A1;
-  --color-porto-btn-text: #171817;
-  --color-porto-accent: #C2945B;
+  --color-porto-bg: #241c18;
+  --color-porto-surface: #302821;
+  --color-porto-border: #594638;
+  --color-porto-divider: #46382d;
+  --color-porto-text: #f5dec2;
+  --color-porto-muted: #c6ad91;
+  --color-porto-btn: #d2a66c;
+  --color-porto-btn-hover: #f0c987;
+  --color-porto-btn-text: #241c18;
+  --color-porto-accent: #74552e;
   --color-overlay: #171817;
 }
 
@@ -152,4 +152,30 @@
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.porto-scrollbar {
+  scrollbar-color: color-mix(in srgb, var(--color-porto-btn) 64%, transparent)
+    transparent;
+  scrollbar-width: thin;
+}
+
+.porto-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.porto-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.porto-scrollbar::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-porto-btn) 58%, transparent);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: content-box;
+}
+
+.porto-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-porto-btn) 78%, transparent);
+  background-clip: content-box;
 }

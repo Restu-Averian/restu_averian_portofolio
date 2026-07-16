@@ -6,8 +6,8 @@ import { useTranslation } from "@/i18n";
 const Footer_ = () => {
   const { t } = useTranslation();
   return (
-    <footer className="w-full px-4 md:px-10 pb-6">
-      <div className="bg-card rounded-full px-4 md:px-6 py-3 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0 relative">
+    <footer className="w-full px-4 pb-6 md:px-10 lg:shrink-0 lg:pb-3">
+      <div className="bg-card rounded-full px-4 md:px-6 py-3 lg:py-2.5 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-0 relative">
         {/* Left Side: Avatar + Text */}
         <div className="flex flex-col md:flex-row items-center gap-3 w-full md:w-auto text-center md:text-left">
           <div className="w-10 h-10 bg-popover rounded-full flex items-center justify-center shrink-0 border-2 border-card shadow-sm overflow-hidden">

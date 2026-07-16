@@ -1,4 +1,5 @@
 import { memo, useState } from "react";
+import { Icon } from "@iconify/react";
 import { WORK_EXPERIENCES } from "@/data/workExperiences";
 import { WorkExperienceCard } from "./WorkExperienceCard";
 import { WorkExperienceDialog } from "./WorkExperienceDialog";
@@ -7,6 +8,9 @@ import { useTranslation } from "@/i18n";
 const WorkExperience_ = () => {
   const [selectedExperience, setSelectedExperience] = useState(null);
   const { t } = useTranslation();
+  const orderedExperiences = [...WORK_EXPERIENCES].sort(
+    (a, b) => Number(b.isCurrent) - Number(a.isCurrent),
+  );
 
   const handleClose = (isOpen) => {
     if (!isOpen) {
@@ -15,39 +19,49 @@ const WorkExperience_ = () => {
   };
 
   return (
-    <section className="rounded-3xl px-6 relative">
+    <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">
       {/* Header */}
-      <div className="flex justify-between items-start mb-4">
-        <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
-          {t("WorkJourney", "Work Journey")}
-        </h2>
+      <div className="mb-3 flex shrink-0 items-start gap-3">
+        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-porto-btn text-porto-btn-text">
+          <Icon icon="solar:calendar-linear" className="h-4 w-4" />
+        </span>
+        <div>
+          <h2 className="text-lg font-bold leading-tight text-foreground">
+            {t("WorkJourney", "Work Journey")}
+          </h2>
+          <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+            {t(
+              "WorkJourneyDescription",
+              "My professional path and impact.",
+            )}
+          </p>
+        </div>
       </div>
 
       {/* Timeline */}
-      <div className="relative pl-8 pr-2 py-2">
+      <div className="porto-scrollbar relative pl-7 pr-1 py-0.5 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pb-1">
         {/* Vertical Line - Dashed or Dotted per requirement */}
-        <div className="absolute left-9.75 top-6 bottom-6 w-[2px] border-l-2 border-dashed border-porto-divider z-0"></div>
+        <div className="absolute left-[1.95rem] top-5 bottom-5 w-px bg-porto-divider z-0"></div>
 
         {/* Start Badge */}
-        <div className="relative z-10 flex items-center mb-6 -ml-4">
-          <span className="bg-porto-btn text-porto-btn-text text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+        <div className="relative z-10 flex items-center mb-4 -ml-3">
+          <span className="bg-porto-btn text-porto-btn-text text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm">
             {t("WorkJourneyStart", "Start")}
           </span>
         </div>
 
         {/* Roles */}
-        {WORK_EXPERIENCES.map((experience, index) => (
+        {orderedExperiences.map((experience) => (
           <WorkExperienceCard
             key={experience.id}
             experience={experience}
-            index={index}
             onClick={() => setSelectedExperience(experience)}
           />
         ))}
 
         {/* Next Badge */}
-        <div className="relative z-10 flex items-center -ml-4 mt-2">
-          <span className="bg-[#b8c99a] text-foreground text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+        <div className="relative z-10 flex items-center -ml-3 mt-1">
+          <span className="bg-emerald-200 text-foreground text-[10px] font-bold px-2.5 py-1 rounded-full shadow-sm dark:bg-emerald-700/70 dark:text-foreground">
             {t("WorkJourneyNext", "Next")}
           </span>
         </div>

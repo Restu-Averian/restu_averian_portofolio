@@ -1,102 +1,186 @@
 import { Icon } from "@iconify/react";
-import { memo, useRef, useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { memo } from "react";
 import { useTranslation } from "@/i18n";
 
-const VISUAL_EXPERIMENTS = [];
+const TECHNICAL_HIGHLIGHTS = [
+  {
+    icon: "solar:widget-2-linear",
+    titleKey: "TechnicalHighlightConfigurableTitle",
+    titleDefaultText: "Configurable UI Systems",
+    descriptionKey: "TechnicalHighlightConfigurableDescription",
+    descriptionDefaultText:
+      "Built configurable page-building and form interfaces with dynamic fields, validation, and reusable patterns.",
+    proofPoints: [
+      {
+        textKey: "TechnicalHighlightConfigurableProofPoint",
+        textDefaultText: "20+ field types",
+      },
+    ],
+    tags: [
+      {
+        labelKey: "TechnicalHighlightTagReact",
+        labelDefaultText: "React",
+      },
+      {
+        labelKey: "TechnicalHighlightTagTypeScript",
+        labelDefaultText: "TypeScript",
+      },
+      {
+        labelKey: "TechnicalHighlightTagCraft",
+        labelDefaultText: "Craft.js",
+      },
+    ],
+  },
+  {
+    icon: "solar:bolt-linear",
+    titleKey: "TechnicalHighlightPerformanceTitle",
+    titleDefaultText: "Performance at Scale",
+    descriptionKey: "TechnicalHighlightPerformanceDescription",
+    descriptionDefaultText:
+      "Optimized data-heavy interfaces while maintaining responsive interactions across large datasets.",
+    proofPoints: [
+      {
+        textKey: "TechnicalHighlightPerformanceProofBundle",
+        textDefaultText: "90% bundle reduction",
+      },
+      {
+        textKey: "TechnicalHighlightPerformanceProofRecords",
+        textDefaultText: "80K+ interactive records",
+      },
+    ],
+    tags: [
+      {
+        labelKey: "TechnicalHighlightTagPerformance",
+        labelDefaultText: "Performance",
+      },
+      {
+        labelKey: "TechnicalHighlightTagMapSet",
+        labelDefaultText: "Map & Set",
+      },
+    ],
+  },
+  {
+    icon: "solar:pen-new-square-linear",
+    titleKey: "TechnicalHighlightEditorTitle",
+    titleDefaultText: "Editor & Developer Tooling",
+    descriptionKey: "TechnicalHighlightEditorDescription",
+    descriptionDefaultText:
+      "Built rich-text and Markdown editor experiences with cursor preservation and native undo/redo.",
+    tags: [
+      {
+        labelKey: "TechnicalHighlightTagTiptap",
+        labelDefaultText: "Tiptap",
+      },
+      {
+        labelKey: "TechnicalHighlightTagProseMirror",
+        labelDefaultText: "ProseMirror",
+      },
+      {
+        labelKey: "TechnicalHighlightTagMarkdown",
+        labelDefaultText: "Markdown",
+      },
+    ],
+  },
+];
 
-const ArtShelf_ = () => {
-  const artScrollRef = useRef(null);
-  const [expandedImg, setExpandedImg] = useState(null);
-  const { t } = useTranslation();
+const splitProofPoint = (text) => {
+  const [metric, ...rest] = text.split(" ");
+  return { metric, label: rest.join(" ") };
+};
 
-  const scroll = (ref, dir) => {
-    if (ref.current) {
-      ref.current.scrollBy({
-        left: dir === "left" ? -300 : 300,
-        behavior: "smooth",
-      });
-    }
-  };
+const ProofPoint = ({ proofPoint, t }) => {
+  const text = t(proofPoint.textKey, proofPoint.textDefaultText);
+  const { metric, label } = splitProofPoint(text);
 
   return (
-    <div className="rounded-3xl p-6 relative">
-      <div className="flex flex-col items-start md:flex-row md:items-center gap-1 md:gap-3 mb-4">
-        <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
-          <Icon
-            icon="solar:stars-minimalistic-bold"
-            className="text-yellow-400 h-5 w-5"
-          />
-          {t("ArtShelf", "Visual Experiments")}
-        </h2>
-        <span className="text-xs text-muted-foreground">
-          {t("ArtShelfDescription", "A small archive of UI studies and visual edits.")}
+    <span
+      className="rounded-lg border border-porto-border bg-porto-accent/45 px-2 py-1 text-right leading-none text-porto-btn"
+      title={text}
+    >
+      <span className="block text-sm font-bold">{metric}</span>
+      {label && (
+        <span className="mt-0.5 block text-[9px] font-semibold leading-tight">
+          {label}
         </span>
+      )}
+    </span>
+  );
+};
+
+const TechnicalHighlightCard = ({ highlight, t }) => (
+  <article className="rounded-xl border border-porto-border/80 bg-background/45 p-2.5 transition-colors hover:bg-background/70">
+    <div className="flex items-start gap-2.5">
+      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-porto-accent/65 text-porto-btn">
+        <Icon icon={highlight.icon} className="h-4 w-4" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-2">
+          <h3 className="text-[13px] font-bold leading-tight text-foreground">
+            {t(highlight.titleKey, highlight.titleDefaultText)}
+          </h3>
+          {!!highlight.proofPoints?.length && (
+            <div className="flex shrink-0 flex-col items-end gap-1">
+              {highlight.proofPoints.map((proofPoint) => (
+                <ProofPoint
+                  key={proofPoint.textKey}
+                  proofPoint={proofPoint}
+                  t={t}
+                />
+              ))}
+            </div>
+          )}
+        </div>
+        <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
+          {t(highlight.descriptionKey, highlight.descriptionDefaultText)}
+        </p>
+
+        <div className="mt-2 flex flex-wrap gap-1.5">
+          {highlight.tags.map((tag) => (
+            <span
+              key={tag.labelKey}
+              className="rounded-md bg-muted/70 px-2 py-0.5 text-[9px] font-medium text-muted-foreground"
+            >
+              {t(tag.labelKey, tag.labelDefaultText)}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </article>
+);
+
+const ArtShelf_ = () => {
+  const { t } = useTranslation();
+
+  return (
+    <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">
+      <div className="mb-3 flex shrink-0 items-start gap-3">
+        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-porto-btn text-porto-btn-text">
+          <Icon icon="solar:code-square-linear" className="h-4 w-4" />
+        </span>
+        <div>
+          <h2 className="text-lg font-bold leading-tight text-foreground">
+            {t("TechnicalHighlights", "Technical Highlights")}
+          </h2>
+          <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+            {t(
+              "TechnicalHighlightsDescription",
+              "Selected strengths demonstrated through production frontend work.",
+            )}
+          </p>
+        </div>
       </div>
 
-      {VISUAL_EXPERIMENTS.length > 0 ? (
-        <>
-          <button
-            type="button"
-            aria-label={t("PreviousArtwork", "Previous artwork")}
-            onClick={() => scroll(artScrollRef, "left")}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
-          >
-            <Icon icon="lucide:chevron-left" />
-          </button>
-          <button
-            type="button"
-            aria-label={t("NextArtwork", "Next artwork")}
-            onClick={() => scroll(artScrollRef, "right")}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-popover/90 backdrop-blur-sm border border-porto-border shadow-sm text-foreground hover:border-porto-btn hover:text-porto-btn transition-all active:scale-95 cursor-pointer"
-          >
-            <Icon icon="lucide:chevron-right" />
-          </button>
-          <div
-            ref={artScrollRef}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-2"
-          >
-            {VISUAL_EXPERIMENTS.map((img, i) => (
-              <div
-                key={img}
-                onClick={() => setExpandedImg(img)}
-                className="shrink-0 w-64 h-40 snap-center rounded-2xl overflow-hidden border border-porto-border cursor-pointer"
-              >
-                <img
-                  src={img}
-                  alt={`Visual experiment ${i + 1}`}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-        </>
-      ) : (
-        <p className="rounded-2xl border border-dashed border-porto-border bg-card/40 px-4 py-3 text-xs text-muted-foreground">
-          {t("EmptyArtShelf", "Will be filled with original visual works.")}
-        </p>
-      )}
-
-      {/* Expanded Image Modal */}
-      <Dialog
-        open={!!expandedImg}
-        onOpenChange={(open) => !open && setExpandedImg(null)}
-      >
-        <DialogContent
-          className="p-2 sm:p-2 bg-transparent border-none shadow-none w-fit sm:max-w-fit xl:max-w-fit sm:h-fit xl:h-fit"
-          showCloseButton={false}
-        >
-          {expandedImg && (
-            <img
-              src={expandedImg}
-              alt="Expanded Art"
-              className="max-w-[90vw] max-h-[90vh] rounded-xl object-contain shadow-2xl"
-            />
-          )}
-        </DialogContent>
-      </Dialog>
-    </div>
+      <div className="porto-scrollbar grid grid-cols-1 gap-2 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1">
+        {TECHNICAL_HIGHLIGHTS.map((highlight) => (
+          <TechnicalHighlightCard
+            key={highlight.titleKey}
+            highlight={highlight}
+            t={t}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
 
