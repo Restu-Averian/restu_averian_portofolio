@@ -121,7 +121,7 @@ const ProofPoint = ({ proofPoint, t, compact = false }) => {
 
   return (
     <span
-      className={`flex items-center rounded-[1.35rem] border border-porto-border/80 bg-background/35 text-porto-btn ${
+      className={`flex items-center rounded-[1.35rem] bg-background/40 text-porto-btn ${
         compact
           ? "min-w-24 justify-center px-3 py-2 text-center"
           : "min-h-14 gap-2.5 px-3 py-2"
@@ -167,7 +167,7 @@ const TechnicalHighlightCard = ({ highlight, t }) => {
           {t(highlight.descriptionKey, highlight.descriptionDefaultText)}
         </p>
         {!!highlight.proofPoints?.length && (
-          <div className="grid gap-1.5">
+          <div className="flex flex-wrap gap-1.5">
             {highlight.proofPoints.map((proofPoint) => (
               <ProofPoint
                 key={proofPoint.textKey}
@@ -223,21 +223,6 @@ const ArtShelf_ = () => {
             t={t}
           />
         ))}
-        <div className="flex items-center gap-2 rounded-xl border border-porto-border/80 bg-background/35 px-3 py-2">
-          <img
-            src={MascottSticker}
-            alt=""
-            className="h-8 w-8 shrink-0 object-contain"
-            aria-hidden="true"
-          />
-          <p className="flex-1 text-[11px] font-medium leading-snug text-foreground">
-            {t(
-              "ThanksForStoppingBy",
-              "Thanks for stopping by! Let's build beautiful, cozy things together.",
-            )}
-          </p>
-          <Sparkles className="h-4 w-4 shrink-0 text-porto-btn" />
-        </div>
       </div>
     </section>
   );

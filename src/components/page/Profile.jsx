@@ -60,14 +60,14 @@ const Profile_ = () => {
                 />
               </p>
 
-              <p className="mt-2 text-sm text-muted-foreground max-w-md leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground max-w-md w-full wrap-break-word leading-relaxed text-center md:text-left">
                 {t(
                   "PortfolioTagline",
                   "Frontend Engineer building scalable React applications, configurable internal tools, and performance-critical UI systems.",
                 )}
               </p>
 
-              <div className="mt-4 inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-porto-border bg-transparent px-3 py-1.5 text-xs font-medium text-foreground md:justify-start">
+              <div className="mt-4 inline-flex max-w-full flex-wrap items-center justify-center gap-2 rounded-[2rem] border border-porto-border bg-transparent px-3 py-1.5 text-xs font-medium text-foreground md:justify-start">
                 <span className="inline-flex min-w-0 items-center gap-1.5 whitespace-nowrap">
                   <Icon
                     icon="solar:map-point-linear"
