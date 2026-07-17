@@ -6,12 +6,6 @@ import NisoraThumb2 from "./assets/projects/nisora/pic2.webp";
 import NisoraThumb3 from "./assets/projects/nisora/pic3.webp";
 import DataOnThumb from "./assets/work-experiences/image-removebg-preview.png";
 
-export const THUMB =
-  "https://i.pinimg.com/236x/f7/9e/52/f79e5203f41bdaaf1a5b4176f98a8736.jpg";
-
-export const THUMB2 =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOc1D7KFRX9rRA9RMJzPZGs8sCcF-8Zw0k3w&s";
-
 export const PROJECTS = [
   {
     id: 1,
@@ -163,9 +157,15 @@ export const WORK_EXPERIENCES = [
     scope: [
       { key: "ScopeFrontendDevelopment", defaultText: "Frontend Development" },
       { key: "ScopeAntDesign", defaultText: "Ant Design" },
-      { key: "ScopeLegacyReactRefactoring", defaultText: "Legacy React Refactoring" },
+      {
+        key: "ScopeLegacyReactRefactoring",
+        defaultText: "Legacy React Refactoring",
+      },
       { key: "ScopeReusableComponents", defaultText: "Reusable Components" },
-      { key: "ScopePerformanceImprovement", defaultText: "Performance Improvement" },
+      {
+        key: "ScopePerformanceImprovement",
+        defaultText: "Performance Improvement",
+      },
     ],
     logo: DataOnThumb,
   },
@@ -250,10 +250,16 @@ export const WORK_EXPERIENCES = [
       { key: "ScopeCraftJs", defaultText: "Craft.js" },
       { key: "ScopeAntDesign", defaultText: "Ant Design" },
       { key: "ScopeFormCustomizer", defaultText: "Form Customizer" },
-      { key: "ScopePageBuilderInterfaces", defaultText: "Page Builder Interfaces" },
+      {
+        key: "ScopePageBuilderInterfaces",
+        defaultText: "Page Builder Interfaces",
+      },
       { key: "ScopeTiptap", defaultText: "Tiptap" },
       { key: "ScopeProseMirror", defaultText: "ProseMirror" },
-      { key: "ScopePerformanceOptimization", defaultText: "Performance Optimization" },
+      {
+        key: "ScopePerformanceOptimization",
+        defaultText: "Performance Optimization",
+      },
     ],
     confidentialityNoteKey: "ConfidentialityNote",
     confidentialityNoteDefaultText:

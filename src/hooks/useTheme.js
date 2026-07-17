@@ -18,7 +18,7 @@ function applyTheme(theme) {
   const favicon = document.querySelector('link[rel="icon"]');
   if (favicon) {
     favicon.type = "image/png";
-    favicon.href = dark ? "/logo-dark.png" : "/logo.png";
+    favicon.href = dark ? "/logo-web-dark.png" : "/logo-web.png";
   }
 }
 

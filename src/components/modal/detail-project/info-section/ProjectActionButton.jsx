@@ -8,7 +8,7 @@ export default function ProjectActionButton({
   disabled = false,
 }) {
   const baseClass =
-    "flex w-full items-center justify-center gap-3 rounded-full py-3 text-[20px] font-semibold transition-all duration-200";
+    "flex w-full items-center justify-center gap-2 md:gap-3 rounded-full py-2.5 md:py-3 text-[15px] md:text-[18px] font-semibold transition-all duration-200";
 
   const variantClass = {
     outline: disabled
