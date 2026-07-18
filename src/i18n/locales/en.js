@@ -71,35 +71,30 @@ export const en = {
   InternOverview:
     "Contributed to frontend foundations through table usability improvements, legacy React refactoring, and reusable component development.",
   InternContrib1:
-    "Improved Ant Design table sorting for clearer and more consistent data presentation.",
+    "Improved Ant Design table sorting to provide clearer and more consistent data presentation.",
   InternContrib2:
-    "Refactored legacy React class components into functional components.",
-  InternContrib3: "Improved page performance by approximately 10%.",
+    "Refactored legacy React class components into functional components, improving page performance by approximately 10%.",
 
   StaffOverview:
     "Building scalable React applications, configurable internal tools, reusable UI systems, and performance-critical frontend experiences.",
   StaffContrib1:
-    "Built a configurable Page Builder from scratch using React and Craft.js.",
+    "Built a configurable Page Builder from scratch with React and Craft.js, supporting drag-and-drop composition, nested layouts, responsive settings, live preview, component configuration, undo/redo, and API-based save/load workflows.",
   StaffContrib2:
-    "Supported drag-and-drop composition, nested layouts, responsive settings, live preview, component configuration, undo/redo, and API-based save/load.",
+    "Integrated internal framework components and a broad set of Ant Design v4 components into the Page Builder, working with backend and design teams so implementation teams could configure client-facing pages without writing custom frontend code.",
   StaffContrib3:
-    "Integrated internal framework components and Ant Design v4 components.",
+    "Rebuilt an internal Chatbot Widget in React, reducing its bundle size by approximately 90%, from 2.5 MB to 244 KB, while adding offline handling and automatic reconnection.",
   StaffContrib4:
-    "Rebuilt an internal React Chatbot Widget and reduced its bundle size by approximately 90%, from 2.5 MB to 244 KB.",
+    "Extended Ant Design Transfer v4 using React and TypeScript with drag-select, shift-click, and double-click interactions. Optimized lookups with Map and Set to keep the interface responsive when handling more than 80,000 records.",
   StaffContrib5:
-    "Added offline handling and automatic reconnection to the Chatbot Widget.",
+    "Built a GUI-based Form Customizer for more than 20 field types, reducing repetitive frontend changes and improving input responsiveness by replacing broad Form.useWatch subscriptions with localized React state.",
   StaffContrib6:
-    "Extended Ant Design Transfer v4 with drag-select, shift-click, and double-click actions, using Map and Set to keep interactions responsive across more than 80,000 records.",
+    "Migrated legacy Quill and SunEditor implementations to a custom Tiptap editor built on ProseMirror. Also developed a dependency-free Markdown Editor with stable JSX rendering, cursor preservation, and native undo/redo.",
   StaffContrib7:
-    "Built a GUI-based Form Customizer supporting more than 20 field types and improved input responsiveness by replacing broad Form.useWatch subscriptions with localized React state.",
+    "Designed and delivered 6 practical JavaScript and React training sessions for groups of 3–7 new hires and interns across development and implementation teams, using live coding, exercises, and guided data-fetching projects.",
   StaffContrib8:
-    "Migrated Quill and SunEditor implementations to Tiptap and ProseMirror.",
+    "Used agentic AI throughout the development workflow to clarify requirements, explore technical approaches, speed up implementation, troubleshoot errors, review code changes, and improve documentation while retaining responsibility for technical decisions and production readiness.",
   StaffContrib9:
-    "Developed a dependency-free Markdown Editor with consistent JSX rendering, cursor preservation, and native undo/redo.",
-  StaffContrib10:
-    "Delivered 6 JavaScript and React training sessions for groups of 3-7 participants.",
-  StaffContrib11:
-    "Used agentic AI workflows for requirements analysis, planning, implementation, debugging, review, and documentation while retaining ownership of technical decisions.",
+    "Used AI-assisted design exploration for smaller UI/UX requirements when a full design handoff was unnecessary, creating interface references and refining usability while keeping the result aligned with existing product requirements and design systems.",
   ConfidentialityNote:
     "Specific product names, client information, screenshots, source code, business rules, and internal workflows are intentionally omitted due to confidentiality obligations.",
   ScopeFrontendDevelopment: "Frontend Development",

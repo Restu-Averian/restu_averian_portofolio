@@ -71,35 +71,30 @@ export const id = {
   InternOverview:
     "Berkontribusi pada fondasi frontend melalui peningkatan usability tabel, refactor legacy React, dan pengembangan komponen reusable.",
   InternContrib1:
-    "Meningkatkan sorting tabel Ant Design agar penyajian data lebih jelas dan konsisten.",
+    "Meningkatkan pengurutan tabel Ant Design untuk memberikan penyajian data yang lebih jelas dan konsisten.",
   InternContrib2:
-    "Merefaktor legacy React class components menjadi functional components.",
-  InternContrib3: "Meningkatkan performa halaman sekitar 10%.",
+    "Merefaktor komponen class React lama menjadi komponen fungsional, meningkatkan performa halaman sekitar 10%.",
 
   StaffOverview:
     "Membangun aplikasi React berskala besar, internal tools yang dapat dikonfigurasi, sistem UI reusable, dan pengalaman frontend yang berfokus pada performa.",
   StaffContrib1:
-    "Membangun Page Builder yang dapat dikonfigurasi dari awal menggunakan React dan Craft.js.",
+    "Membangun Page Builder yang dapat dikonfigurasi dari awal menggunakan React dan Craft.js, mendukung komposisi drag-and-drop, tata letak bersarang, pengaturan responsif, live preview, konfigurasi komponen, undo/redo, serta alur penyimpanan/pemuatan berbasis API.",
   StaffContrib2:
-    "Mendukung komposisi drag-and-drop, nested layout, pengaturan responsif, live preview, konfigurasi komponen, undo/redo, serta save/load berbasis API.",
+    "Mengintegrasikan komponen framework internal dan berbagai komponen Ant Design v4 ke dalam Page Builder, bekerja sama dengan tim backend dan desain agar tim implementasi dapat mengonfigurasi halaman klien tanpa harus menulis kode frontend khusus.",
   StaffContrib3:
-    "Mengintegrasikan komponen framework internal dan komponen Ant Design v4.",
+    "Membangun ulang Chatbot Widget internal dengan React, mengurangi ukuran bundlenya sekitar 90%, dari 2.5 MB menjadi 244 KB, sekaligus menambahkan penanganan offline dan rekoneksi otomatis.",
   StaffContrib4:
-    "Membangun ulang React Chatbot Widget internal dan mengurangi ukuran bundle sekitar 90%, dari 2.5 MB menjadi 244 KB.",
+    "Memperluas Ant Design Transfer v4 menggunakan React dan TypeScript dengan interaksi drag-select, shift-click, dan double-click. Mengoptimalkan pencarian data dengan Map dan Set agar antarmuka tetap responsif saat menangani lebih dari 80.000 data.",
   StaffContrib5:
-    "Menambahkan penanganan offline dan rekoneksi otomatis pada Chatbot Widget.",
+    "Membangun Form Customizer berbasis GUI untuk lebih dari 20 jenis input, mengurangi perubahan frontend yang berulang dan meningkatkan responsivitas input dengan mengganti langganan Form.useWatch yang luas dengan state React lokal.",
   StaffContrib6:
-    "Mengembangkan Ant Design Transfer v4 dengan aksi drag-select, shift-click, dan double-click, menggunakan Map dan Set agar interaksi tetap responsif pada lebih dari 80.000 record.",
+    "Memigrasikan implementasi Quill dan SunEditor lama ke editor Tiptap kustom yang dibangun di atas ProseMirror. Juga mengembangkan Markdown Editor tanpa dependensi dengan rendering JSX yang stabil, pelestarian kursor, dan undo/redo bawaan.",
   StaffContrib7:
-    "Membangun Form Customizer berbasis GUI yang mendukung lebih dari 20 tipe field dan meningkatkan respons input dengan mengganti subscription Form.useWatch yang luas menjadi state React lokal.",
+    "Merancang dan menyampaikan 6 sesi pelatihan JavaScript dan React praktis untuk kelompok berisi 3–7 karyawan baru dan peserta magang dari tim pengembangan dan implementasi, menggunakan live coding, latihan, dan proyek pengambilan data terpandu.",
   StaffContrib8:
-    "Memigrasikan implementasi Quill dan SunEditor ke Tiptap dan ProseMirror.",
+    "Menggunakan agentic AI di seluruh alur pengembangan untuk memperjelas kebutuhan sistem, mengeksplorasi pendekatan teknis, mempercepat implementasi, memperbaiki error, meninjau perubahan kode, dan meningkatkan dokumentasi, dengan tetap memegang tanggung jawab atas keputusan teknis dan kesiapan produksi.",
   StaffContrib9:
-    "Mengembangkan Markdown Editor tanpa dependency dengan rendering JSX yang konsisten, preservasi cursor, dan undo/redo native.",
-  StaffContrib10:
-    "Membawakan 6 sesi pelatihan JavaScript dan React untuk grup berisi 3-7 peserta.",
-  StaffContrib11:
-    "Menggunakan workflow agentic AI untuk analisis requirement, perencanaan, implementasi, debugging, review, dan dokumentasi sambil tetap memegang keputusan teknis.",
+    "Memanfaatkan eksplorasi desain berbantuan AI untuk kebutuhan UI/UX yang lebih kecil ketika proses desain penuh tidak diperlukan, menciptakan referensi antarmuka dan menyempurnakan kegunaan, sambil tetap menjaga agar hasilnya selaras dengan kebutuhan produk dan sistem desain yang ada.",
   ConfidentialityNote:
     "Nama produk tertentu, informasi klien, tangkapan layar, kode sumber, aturan bisnis, dan alur kerja internal sengaja dihilangkan karena kewajiban kerahasiaan.",
   ScopeFrontendDevelopment: "Pengembangan Frontend",
