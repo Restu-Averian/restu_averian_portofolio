@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { useTranslation } from "@/i18n";
 import { getSocialLinks } from "@/constants";
+import { useMemo } from "react";
 
 export const ProfileAction = () => {
   const { t, locale } = useTranslation();
