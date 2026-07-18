@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import ModalDetailProject from "../modal/detail-project";
 import { PROJECTS } from "@/constants";
 import ProjectCard from "./projects/project-card";

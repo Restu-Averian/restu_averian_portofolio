@@ -191,7 +191,7 @@ const TechnicalHighlightCard = ({ highlight, t }) => {
   );
 };
 
-const ArtShelf_ = () => {
+const TechnicalHighlights_ = () => {
   const { t } = useTranslation();
 
   return (
@@ -226,5 +226,5 @@ const ArtShelf_ = () => {
   );
 };
 
-const ArtShelf = memo(ArtShelf_);
-export default ArtShelf;
+const TechnicalHighlights = memo(TechnicalHighlights_);
+export default TechnicalHighlights;
