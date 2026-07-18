@@ -24,7 +24,6 @@ export const ProfileAction = () => {
         {t("ViewResume", "View Resume")}
       </a>
 
-      {/* Horizontal Divider */}
       <div className="w-full border-t-2 border-dashed border-porto-border my-2 md:hidden" />
 
       <div className="flex flex-col items-center gap-2 w-full md:items-start">
