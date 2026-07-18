@@ -161,4 +161,16 @@ export const en = {
   ThanksForStoppingBy:
     "Thanks for stopping by! Let's build beautiful, cozy things together.",
   Copyright: "© {{year}} Restu Averian Putra. All rights reserved.",
+  WhatsAppPrefilledMessage: `Hi Restu, I came across your portfolio and would like to discuss a frontend role or collaboration opportunity.
+
+Would you be available for a brief conversation this week?
+
+Here is some context from my side:
+
+Name / Company:
+Topic or requirement:
+Preferred timeline:
+Relevant references or links:
+
+Thank you.`,
 };

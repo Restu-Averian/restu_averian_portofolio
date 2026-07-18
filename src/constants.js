@@ -5,6 +5,7 @@ import NisoraThumb1 from "./assets/projects/nisora/pic1.webp";
 import NisoraThumb2 from "./assets/projects/nisora/pic2.webp";
 import NisoraThumb3 from "./assets/projects/nisora/pic3.webp";
 import DataOnThumb from "./assets/work-experiences/image-removebg-preview.png";
+import { translate } from "@/i18n";
 
 export const PROJECTS = [
   {
@@ -254,7 +255,12 @@ export const WORK_EXPERIENCES = [
   },
 ];
 
-export const SOCIAL_LINKS = [
+export const buildWhatsAppUrl = (language) => {
+  const message = translate(language, "WhatsAppPrefilledMessage");
+  return `https://api.whatsapp.com/send?phone=6282391365098&text=${encodeURIComponent(message)}`;
+};
+
+export const getSocialLinks = (language) => [
   {
     label: "Instagram",
     icon: "mdi:instagram",
@@ -278,6 +284,6 @@ export const SOCIAL_LINKS = [
   {
     label: "WhatsApp",
     icon: "mdi:whatsapp",
-    href: "https://api.whatsapp.com/send?phone=6282391365098&text=Hi!%F0%9F%91%8B%20Aku%20lihat%20portofolio%20kamu%20dan%20tertarik%20ngobrol%20soal%20project%20frontend%20web.%20Kalau%20kamu%20oke%2C%20kita%20bisa%20call%20bentar%20(%C2%B115%E2%80%9320%20menit)%20minggu%20ini.%20Biar%20aku%20bisa%20siapin%20gambaran%20solusi%20%26%20estimasi%2C%20boleh%20isi%20singkat%3A%201)%20Tujuan%20project%202)%20Fitur%20utama%203)%20Deadline%2Ftarget%20rilis",
+    href: buildWhatsAppUrl(language),
   },
 ];

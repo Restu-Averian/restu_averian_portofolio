@@ -162,4 +162,16 @@ export const id = {
     "Terima kasih sudah berkunjung! Mari bangun hal-hal indah bersama-sama.",
   Copyright:
     "© {{year}} Restu Averian Putra. Hak cipta dilindungi undang-undang.",
+  WhatsAppPrefilledMessage: `Halo Restu, saya melihat portofolio Anda dan tertarik untuk berdiskusi mengenai peluang kerja atau kolaborasi frontend.
+
+Apakah Anda tersedia untuk berbincang singkat minggu ini?
+
+Berikut konteks singkat dari saya:
+
+Nama / Perusahaan:
+Topik atau kebutuhan:
+Target waktu:
+Referensi atau tautan pendukung:
+
+Terima kasih.`,
 };

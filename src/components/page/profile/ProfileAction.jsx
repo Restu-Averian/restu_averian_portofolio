@@ -1,9 +1,12 @@
 import { Icon } from "@iconify/react";
 import { useTranslation } from "@/i18n";
-import { SOCIAL_LINKS } from "@/constants";
+import { getSocialLinks } from "@/constants";
 
 export const ProfileAction = () => {
-  const { t } = useTranslation();
+  const { t, locale } = useTranslation();
+
+  const socialLinks = useMemo(() => getSocialLinks(locale), [locale]);
+
   return (
     <div className="shrink-0 flex w-full flex-col items-center gap-3 md:w-64 md:items-stretch">
       <a
@@ -28,7 +31,7 @@ export const ProfileAction = () => {
           {t("FindMeOn", "Find me on:")}
         </span>
         <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
-          {SOCIAL_LINKS.map(({ label, icon, href }) => (
+          {socialLinks?.map(({ label, icon, href }) => (
             <a
               key={label}
               href={href}
