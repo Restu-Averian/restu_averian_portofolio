@@ -1,5 +1,5 @@
-import FotoProfileLight from "@/assets/foto-profile-light.png";
-import FotoProfileDark from "@/assets/foto-profile-dark.png";
+import FotoProfileLight from "@/assets/foto-profile-light.webp";
+import FotoProfileDark from "@/assets/foto-profile-dark.webp";
 import { useIsDark } from "@/hooks/useTheme";
 
 export const ProfileAvatar = () => {
