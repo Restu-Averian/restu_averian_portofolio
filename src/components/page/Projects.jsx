@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import ModalDetailProject from "../modal/detail-project";
 import { PROJECTS } from "@/constants";
 import ProjectCard from "./projects/project-card";
@@ -9,18 +9,23 @@ const FEATURED_PROJECT_TITLE = "Package Rich Texteditor";
 const Projects_ = () => {
   const [showModalDetail, setShowModalDetail] = useState(false);
   const detailProjectRef = useRef({});
-  const orderedProjects = [...PROJECTS].sort((a, b) => {
-    if (a.title === FEATURED_PROJECT_TITLE) return -1;
-    if (b.title === FEATURED_PROJECT_TITLE) return 1;
-    return 0;
-  });
+
+  const orderedProjects = useMemo(() => {
+    return [...PROJECTS].sort((a, b) => {
+      if (a.title === FEATURED_PROJECT_TITLE) return -1;
+      if (b.title === FEATURED_PROJECT_TITLE) return 1;
+      return 0;
+    });
+  }, []);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const p = params.get("p");
     if (p && p.startsWith("project-")) {
       const projectId = p.replace("project-", "");
-      const foundProject = PROJECTS.find((proj) => String(proj.id) === projectId);
+      const foundProject = PROJECTS.find(
+        (proj) => String(proj.id) === projectId,
+      );
       if (foundProject) {
         detailProjectRef.current = foundProject;
         setShowModalDetail(true);
@@ -56,7 +61,11 @@ const Projects_ = () => {
           const newUrl = new URL(window.location);
           if (newUrl.searchParams.has("p")) {
             newUrl.searchParams.delete("p");
-            window.history.replaceState(null, "", window.location.pathname + newUrl.search);
+            window.history.replaceState(
+              null,
+              "",
+              window.location.pathname + newUrl.search,
+            );
           }
         }}
         project={detailProjectRef?.current}

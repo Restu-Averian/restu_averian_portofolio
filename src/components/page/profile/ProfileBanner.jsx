@@ -1,5 +1,5 @@
-import FotoSampul from "@/assets/foto-sampul.png";
-import FotoSampulDark from "@/assets/foto-sampul-dark.png";
+import FotoSampul from "@/assets/foto-sampul.webp";
+import FotoSampulDark from "@/assets/foto-sampul-dark.webp";
 import { useIsDark } from "@/hooks/useTheme";
 
 export const ProfileBanner = () => {

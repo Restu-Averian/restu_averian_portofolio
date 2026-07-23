@@ -5,6 +5,7 @@ import NisoraThumb1 from "./assets/projects/nisora/pic1.webp";
 import NisoraThumb2 from "./assets/projects/nisora/pic2.webp";
 import NisoraThumb3 from "./assets/projects/nisora/pic3.webp";
 import DataOnThumb from "./assets/work-experiences/image-removebg-preview.png";
+import { translate } from "@/i18n";
 
 export const PROJECTS = [
   {
@@ -142,16 +143,12 @@ export const WORK_EXPERIENCES = [
       {
         key: "InternContrib1",
         defaultText:
-          "Improved Ant Design table sorting for clearer and more consistent data presentation.",
+          "Improved Ant Design table sorting to provide clearer and more consistent data presentation.",
       },
       {
         key: "InternContrib2",
         defaultText:
-          "Refactored legacy React class components into functional components.",
-      },
-      {
-        key: "InternContrib3",
-        defaultText: "Improved page performance by approximately 10%.",
+          "Refactored legacy React class components into functional components, improving page performance by approximately 10%.",
       },
     ],
     scope: [
@@ -190,57 +187,47 @@ export const WORK_EXPERIENCES = [
       {
         key: "StaffContrib1",
         defaultText:
-          "Built a configurable Page Builder from scratch using React and Craft.js.",
+          "Built a configurable Page Builder from scratch with React and Craft.js, supporting drag-and-drop composition, nested layouts, responsive settings, live preview, component configuration, undo/redo, and API-based save/load workflows.",
       },
       {
         key: "StaffContrib2",
         defaultText:
-          "Supported drag-and-drop composition, nested layouts, responsive settings, live preview, component configuration, undo/redo, and API-based save/load.",
+          "Integrated internal framework components and a broad set of Ant Design v4 components into the Page Builder, working with backend and design teams so implementation teams could configure client-facing pages without writing custom frontend code.",
       },
       {
         key: "StaffContrib3",
         defaultText:
-          "Integrated internal framework components and Ant Design v4 components.",
+          "Rebuilt an internal Chatbot Widget in React, reducing its bundle size by approximately 90%, from 2.5 MB to 244 KB, while adding offline handling and automatic reconnection.",
       },
       {
         key: "StaffContrib4",
         defaultText:
-          "Rebuilt an internal React Chatbot Widget and reduced its bundle size by approximately 90%, from 2.5 MB to 244 KB.",
+          "Extended Ant Design Transfer v4 using React and TypeScript with drag-select, shift-click, and double-click interactions. Optimized lookups with Map and Set to keep the interface responsive when handling more than 80,000 records.",
       },
       {
         key: "StaffContrib5",
         defaultText:
-          "Added offline handling and automatic reconnection to the Chatbot Widget.",
+          "Built a GUI-based Form Customizer for more than 20 field types, reducing repetitive frontend changes and improving input responsiveness by replacing broad Form.useWatch subscriptions with localized React state.",
       },
       {
         key: "StaffContrib6",
         defaultText:
-          "Extended Ant Design Transfer v4 with drag-select, shift-click, and double-click actions, using Map and Set to keep interactions responsive across more than 80,000 records.",
+          "Migrated legacy Quill and SunEditor implementations to a custom Tiptap editor built on ProseMirror. Also developed a dependency-free Markdown Editor with stable JSX rendering, cursor preservation, and native undo/redo.",
       },
       {
         key: "StaffContrib7",
         defaultText:
-          "Built a GUI-based Form Customizer supporting more than 20 field types and improved input responsiveness by replacing broad Form.useWatch subscriptions with localized React state.",
+          "Designed and delivered 6 practical JavaScript and React training sessions for groups of 3–7 new hires and interns across development and implementation teams, using live coding, exercises, and guided data-fetching projects.",
       },
       {
         key: "StaffContrib8",
         defaultText:
-          "Migrated Quill and SunEditor implementations to Tiptap and ProseMirror.",
+          "Used agentic AI throughout the development workflow to clarify requirements, explore technical approaches, speed up implementation, troubleshoot errors, review code changes, and improve documentation while retaining responsibility for technical decisions and production readiness.",
       },
       {
         key: "StaffContrib9",
         defaultText:
-          "Developed a dependency-free Markdown Editor with consistent JSX rendering, cursor preservation, and native undo/redo.",
-      },
-      {
-        key: "StaffContrib10",
-        defaultText:
-          "Delivered 6 JavaScript and React training sessions for groups of 3-7 participants.",
-      },
-      {
-        key: "StaffContrib11",
-        defaultText:
-          "Used agentic AI workflows for requirements analysis, planning, implementation, debugging, review, and documentation while retaining ownership of technical decisions.",
+          "Used AI-assisted design exploration for smaller UI/UX requirements when a full design handoff was unnecessary, creating interface references and refining usability while keeping the result aligned with existing product requirements and design systems.",
       },
     ],
     scope: [
@@ -268,7 +255,12 @@ export const WORK_EXPERIENCES = [
   },
 ];
 
-export const SOCIAL_LINKS = [
+export const buildWhatsAppUrl = (language) => {
+  const message = translate(language, "WhatsAppPrefilledMessage");
+  return `https://api.whatsapp.com/send?phone=6282391365098&text=${encodeURIComponent(message)}`;
+};
+
+export const getSocialLinks = (language) => [
   {
     label: "Instagram",
     icon: "mdi:instagram",
@@ -276,7 +268,7 @@ export const SOCIAL_LINKS = [
   },
   {
     label: "LinkedIn",
-    icon: "line-md:linkedin",
+    icon: "circum:linkedin",
     href: "https://www.linkedin.com/in/restu-averian-putra/",
   },
   {
@@ -286,12 +278,12 @@ export const SOCIAL_LINKS = [
   },
   {
     label: "npm",
-    icon: "mdi:npm",
+    icon: "gg:npm",
     href: "https://www.npmjs.com/~restu_averian_putra",
   },
   {
     label: "WhatsApp",
     icon: "mdi:whatsapp",
-    href: "https://api.whatsapp.com/send?phone=6282391365098&text=Hi!%F0%9F%91%8B%20Aku%20lihat%20portofolio%20kamu%20dan%20tertarik%20ngobrol%20soal%20project%20frontend%20web.%20Kalau%20kamu%20oke%2C%20kita%20bisa%20call%20bentar%20(%C2%B115%E2%80%9320%20menit)%20minggu%20ini.%20Biar%20aku%20bisa%20siapin%20gambaran%20solusi%20%26%20estimasi%2C%20boleh%20isi%20singkat%3A%201)%20Tujuan%20project%202)%20Fitur%20utama%203)%20Deadline%2Ftarget%20rilis",
+    href: buildWhatsAppUrl(language),
   },
 ];
