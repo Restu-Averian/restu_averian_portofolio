@@ -4,11 +4,13 @@ import {
   FileText,
   LayoutGrid,
   PencilLine,
+  Server,
   TrendingUp,
   Zap,
 } from "lucide-react";
-import { memo } from "react";
+import { memo, useRef } from "react";
 import { useTranslation } from "@/i18n";
+import ScrollAffordance from "@/components/ui/ScrollAffordance";
 
 const TECHNICAL_HIGHLIGHTS = [
   {
@@ -105,6 +107,43 @@ const TECHNICAL_HIGHLIGHTS = [
       },
     ],
   },
+  {
+    icon: Server,
+    titleKey: "TechnicalHighlightFullStackTitle",
+    titleDefaultText: "Full-Stack Development",
+    descriptionKey: "TechnicalHighlightFullStackDescription",
+    descriptionDefaultText:
+      "Expanding beyond frontend through hands-on development with Node.js, TypeScript, Express, PostgreSQL, and REST APIs.",
+    proofPoints: [
+      {
+        icon: TrendingUp,
+        textKey: "TechnicalHighlightFullStackStatus",
+        textDefaultText: "Currently expanding",
+      },
+    ],
+    tags: [
+      {
+        labelKey: "TechnicalHighlightTagNodeJs",
+        labelDefaultText: "Node.js",
+      },
+      {
+        labelKey: "TechnicalHighlightTagTypeScript",
+        labelDefaultText: "TypeScript",
+      },
+      {
+        labelKey: "TechnicalHighlightTagExpress",
+        labelDefaultText: "Express",
+      },
+      {
+        labelKey: "TechnicalHighlightTagPostgreSQL",
+        labelDefaultText: "PostgreSQL",
+      },
+      {
+        labelKey: "TechnicalHighlightTagRESTAPI",
+        labelDefaultText: "REST API",
+      },
+    ],
+  },
 ];
 
 const splitProofPoint = (text) => {
@@ -193,9 +232,10 @@ const TechnicalHighlightCard = ({ highlight, t }) => {
 
 const TechnicalHighlights_ = () => {
   const { t } = useTranslation();
+  const scrollRef = useRef(null);
 
   return (
-    <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">
+    <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm relative">
       <div className="mb-3 flex shrink-0 items-start gap-3">
         <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-porto-btn text-porto-btn-text">
           <CodeXml className="h-4 w-4" />
@@ -213,7 +253,7 @@ const TechnicalHighlights_ = () => {
         </div>
       </div>
 
-      <div className="porto-scrollbar grid grid-cols-1 gap-2 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1">
+      <div className="porto-scrollbar grid grid-cols-1 gap-2 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1" ref={scrollRef}>
         {TECHNICAL_HIGHLIGHTS.map((highlight) => (
           <TechnicalHighlightCard
             key={highlight.titleKey}
@@ -222,6 +262,7 @@ const TechnicalHighlights_ = () => {
           />
         ))}
       </div>
+      <ScrollAffordance containerRef={scrollRef} />
     </section>
   );
 };

@@ -247,6 +247,7 @@ export const WORK_EXPERIENCES = [
         key: "ScopePerformanceOptimization",
         defaultText: "Performance Optimization",
       },
+      { key: "ScopeRestApi", defaultText: "REST API Integration" },
     ],
     confidentialityNoteKey: "ConfidentialityNote",
     confidentialityNoteDefaultText:

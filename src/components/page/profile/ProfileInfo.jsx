@@ -8,7 +8,7 @@ export const ProfileInfo = () => {
       <h1 className="text-2xl sm:text-3xl lg:text-[2.35rem] lg:leading-tight font-bold text-foreground">
         Restu Averian Putra
       </h1>
-      <p className="mt-1 flex items-center gap-1.5 text-base lg:text-lg font-semibold text-porto-btn">
+      <p className="mt-1 flex flex-wrap justify-center md:justify-start items-center gap-1.5 text-base lg:text-lg font-semibold text-porto-btn text-center md:text-left">
         {t("ProfileRole", "Frontend Engineer")}
         <Icon
           icon="solar:stars-minimalistic-bold"

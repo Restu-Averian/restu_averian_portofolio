@@ -13,10 +13,10 @@ export const en = {
   ThemeSystem: "System",
 
   // Profile
-  AvailableForWork: "Available for new opportunities",
-  ProfileRole: "Frontend Engineer",
+  AvailableForWork: "Open to Frontend, Full Stack & Software Engineer roles",
+  ProfileRole: "Frontend Engineer | Full-Stack JavaScript/TypeScript",
   PortfolioTagline:
-    "Frontend Engineer building scalable React applications, configurable internal tools, and performance-critical UI systems.",
+    "Frontend Engineer with 3+ years of experience building production React applications, now expanding into full-stack development with Node.js, Express, PostgreSQL, and REST APIs.",
   Location: "South Tangerang, Indonesia",
   ExperienceLabel: "3+ Years of Experience",
   FindMeOn: "Find me on:",
@@ -26,6 +26,7 @@ export const en = {
   // Featured Projects
   FeaturedProjects: "Featured Projects",
   FeaturedProjectsDesc: "Selected public work and technical experiments.",
+  ScrollMore: "More",
   FeaturedProjectLabel: "Featured",
   ViewProject: "View Project",
   SourceCode: "Source Code",
@@ -111,6 +112,7 @@ export const en = {
   ScopeTiptap: "Tiptap",
   ScopeProseMirror: "ProseMirror",
   ScopePerformanceOptimization: "Performance Optimization",
+  ScopeRestApi: "REST API Integration",
 
   // Art Shelf
   ArtShelf: "Visual Experiments",
@@ -136,6 +138,10 @@ export const en = {
   TechnicalHighlightEditorTitle: "Editor & Developer Tooling",
   TechnicalHighlightEditorDescription:
     "Migrated rich-text editors to Tiptap and ProseMirror, then built Markdown tooling with JSX rendering, cursor preservation, and native undo/redo.",
+  TechnicalHighlightFullStackTitle: "Full-Stack Development",
+  TechnicalHighlightFullStackStatus: "Currently expanding",
+  TechnicalHighlightFullStackDescription:
+    "Expanding beyond frontend through hands-on development with Node.js, TypeScript, Express, PostgreSQL, and REST APIs.",
   TechnicalHighlightTagReact: "React",
   TechnicalHighlightTagTypeScript: "TypeScript",
   TechnicalHighlightTagCraft: "Craft.js",
@@ -146,6 +152,10 @@ export const en = {
   TechnicalHighlightTagTiptap: "Tiptap",
   TechnicalHighlightTagProseMirror: "ProseMirror",
   TechnicalHighlightTagMarkdown: "Markdown",
+  TechnicalHighlightTagNodeJs: "Node.js",
+  TechnicalHighlightTagExpress: "Express",
+  TechnicalHighlightTagPostgreSQL: "PostgreSQL",
+  TechnicalHighlightTagRESTAPI: "REST API",
 
   // Projects
   NisoraDesc:
@@ -161,14 +171,14 @@ export const en = {
   ThanksForStoppingBy:
     "Thanks for stopping by! Let's build beautiful, cozy things together.",
   Copyright: "© {{year}} Restu Averian Putra. All rights reserved.",
-  WhatsAppPrefilledMessage: `Hi Restu, I came across your portfolio and would like to discuss a frontend role or collaboration opportunity.
+  WhatsAppPrefilledMessage: `Hi Restu, I came across your portfolio and would like to discuss a Frontend, Full Stack, or Software Engineering opportunity.
 
 Would you be available for a brief conversation this week?
 
 Here is some context from my side:
 
 Name / Company:
-Topic or requirement:
+Role or opportunity:
 Preferred timeline:
 Relevant references or links:
 

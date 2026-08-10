@@ -3,6 +3,7 @@ import ModalDetailProject from "../modal/detail-project";
 import { PROJECTS } from "@/constants";
 import ProjectCard from "./projects/project-card";
 import ProjectsTitle from "./projects/ProjectsTitle";
+import ScrollAffordance from "@/components/ui/ScrollAffordance";
 
 const FEATURED_PROJECT_TITLE = "Package Rich Texteditor";
 
@@ -33,13 +34,15 @@ const Projects_ = () => {
     }
   }, []);
 
+  const scrollRef = useRef(null);
+
   return (
-    <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">
+    <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm relative">
       <div className="mb-3 flex shrink-0 items-start gap-3">
         <ProjectsTitle />
       </div>
 
-      <div className="porto-scrollbar grid gap-3 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1">
+      <div className="porto-scrollbar grid gap-3 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1" ref={scrollRef}>
         {orderedProjects.map((project, i) => (
           <ProjectCard
             key={project.id ?? i}
@@ -52,6 +55,7 @@ const Projects_ = () => {
           />
         ))}
       </div>
+      <ScrollAffordance containerRef={scrollRef} />
 
       <ModalDetailProject
         open={showModalDetail}
