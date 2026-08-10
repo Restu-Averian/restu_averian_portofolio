@@ -1,9 +1,10 @@
-import { memo, useState, useEffect } from "react";
+import { memo, useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { WORK_EXPERIENCES } from "@/constants";
 import { WorkExperienceCard } from "./WorkExperienceCard";
 import { WorkExperienceDialog } from "./WorkExperienceDialog";
 import { useTranslation } from "@/i18n";
+import ScrollAffordance from "@/components/ui/ScrollAffordance";
 
 const WorkExperience_ = () => {
   const [selectedExperience, setSelectedExperience] = useState(null);
@@ -43,8 +44,10 @@ const WorkExperience_ = () => {
     }
   }, [selectedExperience]);
 
+  const scrollRef = useRef(null);
+
   return (
-    <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm">
+    <section className="flex h-full min-h-0 flex-col rounded-3xl border border-porto-border/80 bg-card/80 p-3.5 shadow-sm relative">
       {/* Header */}
       <div className="mb-3 flex shrink-0 items-start gap-3">
         <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-porto-btn text-porto-btn-text">
@@ -61,7 +64,7 @@ const WorkExperience_ = () => {
       </div>
 
       {/* Timeline */}
-      <div className="porto-scrollbar relative pl-7 pr-1 py-0.5 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pb-1">
+      <div className="porto-scrollbar relative pl-7 pr-1 py-0.5 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pb-1" ref={scrollRef}>
         {/* Vertical Line - Dashed or Dotted per requirement */}
         <div className="absolute left-[1.95rem] top-5 bottom-5 w-px bg-porto-divider z-0"></div>
 
@@ -74,6 +77,7 @@ const WorkExperience_ = () => {
           />
         ))}
       </div>
+      <ScrollAffordance containerRef={scrollRef} />
 
       {/* Detail Dialog / Drawer */}
       <WorkExperienceDialog

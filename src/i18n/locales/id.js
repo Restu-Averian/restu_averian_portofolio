@@ -13,10 +13,10 @@ export const id = {
   ThemeSystem: "Sistem",
 
   // Profile
-  AvailableForWork: "Terbuka untuk peluang baru",
-  ProfileRole: "Frontend Engineer",
+  AvailableForWork: "Terbuka untuk posisi Frontend, Full Stack & Software Engineer",
+  ProfileRole: "Frontend Engineer | Full-Stack JavaScript/TypeScript",
   PortfolioTagline:
-    "Frontend Engineer yang membangun aplikasi React berskala besar, internal tools yang dapat dikonfigurasi, dan sistem UI yang berfokus pada performa.",
+    "Frontend Engineer dengan 3+ tahun pengalaman membangun aplikasi React untuk production, kini memperluas kemampuan ke full-stack development menggunakan Node.js, Express, PostgreSQL, dan REST API.",
   Location: "South Tangerang, Indonesia",
   ExperienceLabel: "3+ Tahun Pengalaman",
   FindMeOn: "Temukan saya di:",
@@ -26,6 +26,7 @@ export const id = {
   // Featured Projects
   FeaturedProjects: "Proyek Unggulan",
   FeaturedProjectsDesc: "Kumpulan karya publik dan eksperimen teknis pilihan.",
+  ScrollMore: "Selengkapnya",
   FeaturedProjectLabel: "Unggulan",
   ViewProject: "Lihat Proyek",
   SourceCode: "Kode Sumber",
@@ -111,6 +112,7 @@ export const id = {
   ScopeTiptap: "Tiptap",
   ScopeProseMirror: "ProseMirror",
   ScopePerformanceOptimization: "Optimasi Performa",
+  ScopeRestApi: "Integrasi REST API",
 
   // Art Shelf
   ArtShelf: "Eksperimen Visual",
@@ -136,6 +138,10 @@ export const id = {
   TechnicalHighlightEditorTitle: "Editor & Tooling Developer",
   TechnicalHighlightEditorDescription:
     "Memigrasikan rich-text editor ke Tiptap dan ProseMirror, lalu membangun tooling Markdown dengan rendering JSX, preservasi cursor, dan undo/redo native.",
+  TechnicalHighlightFullStackTitle: "Pengembangan Full-Stack",
+  TechnicalHighlightFullStackStatus: "Sedang dikembangkan",
+  TechnicalHighlightFullStackDescription:
+    "Memperluas kemampuan di luar frontend melalui praktik langsung menggunakan Node.js, TypeScript, Express, PostgreSQL, dan REST API.",
   TechnicalHighlightTagReact: "React",
   TechnicalHighlightTagTypeScript: "TypeScript",
   TechnicalHighlightTagCraft: "Craft.js",
@@ -146,6 +152,10 @@ export const id = {
   TechnicalHighlightTagTiptap: "Tiptap",
   TechnicalHighlightTagProseMirror: "ProseMirror",
   TechnicalHighlightTagMarkdown: "Markdown",
+  TechnicalHighlightTagNodeJs: "Node.js",
+  TechnicalHighlightTagExpress: "Express",
+  TechnicalHighlightTagPostgreSQL: "PostgreSQL",
+  TechnicalHighlightTagRESTAPI: "REST API",
 
   // Projects
   NisoraDesc:
@@ -162,14 +172,14 @@ export const id = {
     "Terima kasih sudah berkunjung! Mari bangun hal-hal indah bersama-sama.",
   Copyright:
     "© {{year}} Restu Averian Putra. Hak cipta dilindungi undang-undang.",
-  WhatsAppPrefilledMessage: `Halo Restu, saya melihat portofolio Anda dan tertarik untuk berdiskusi mengenai peluang kerja atau kolaborasi frontend.
+  WhatsAppPrefilledMessage: `Halo Restu, saya melihat portofolio Anda dan tertarik untuk berdiskusi mengenai peluang sebagai Frontend, Full Stack, atau Software Engineer.
 
 Apakah Anda tersedia untuk berbincang singkat minggu ini?
 
-Berikut konteks singkat dari saya:
+Berikut sedikit konteks dari saya:
 
 Nama / Perusahaan:
-Topik atau kebutuhan:
+Posisi atau peluang:
 Target waktu:
 Referensi atau tautan pendukung:
 
