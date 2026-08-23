@@ -167,6 +167,71 @@ export const id = {
   TextEditorDescDetail:
     "Mengembangkan paket rich text editor yang dapat digunakan kembali, dirancang agar mudah dikonfigurasi, ramah seluler, dan lebih mudah disesuaikan dengan kebutuhan produk yang berbeda.",
 
+  // Case study section labels
+  CaseProblem: "Masalah",
+  CaseOwnership: "Kepemilikan",
+  EngineeringDecisions: "Keputusan Teknis",
+  ChallengesSolutions: "Tantangan & Solusi",
+  CaseOutcome: "Hasil",
+  ChallengeLabel: "Tantangan",
+  SolutionLabel: "Solusi",
+  CaseDecisionCloudflareTitle: "Infrastruktur berbasis Cloudflare",
+  CaseDecisionDownloadsTitle: "Unduhan via Worker",
+
+  // Resaeni
+  ResaeniDesc:
+    "Platform gratis tanpa iklan untuk menemukan, streaming, dan mengunduh animasi Korea (Aeni), dengan katalog yang terfokus dan terkurasi.",
+  ResaeniDescDetail:
+    "Gratis ditonton. Tanpa iklan. Fokus ke Aeni. Platform streaming dan unduhan animasi Korea dengan katalog terkurasi yang dirawat secara end-to-end.",
+  ResaeniOverview1:
+    "Resaeni adalah platform gratis tanpa iklan untuk menemukan, streaming, dan mengunduh animasi Korea (Aeni), dibangun di sekitar katalog yang fokus dan terkurasi.",
+  ResaeniOverview2:
+    "Produk ini tayang di production sejak 19 Agustus 2026 dan saat ini menyajikan 7 judul Aeni terkurasi dengan sekitar 60 episode yang bisa ditonton.",
+  ResaeniProblem1:
+    "Platform anime umum mengejar ukuran katalog, tetapi produk yang dirawat hampir sendirian tidak mampu mengkurasi, memverifikasi, dan merawat katalog Jepang atau Tiongkok yang masif secara end-to-end dengan konsistensi yang diinginkan.",
+  ResaeniProblem2:
+    "Animasi Korea menawarkan cakupan yang lebih fokus secara sengaja: niche yang jelas, cukup materi ber-subtitle Inggris, dan katalog yang cukup kecil agar metadata, aset, media, dan pengalaman pengguna tetap mudah dijaga konsistensinya.",
+  ResaeniOwnership:
+    "Kepemilikan end-to-end mulai dari arah produk, frontend, backend, operasi konten, infrastruktur, deployment, hingga perawatan berkelanjutan.",
+  ResaeniContrib1:
+    "Membangun pengalaman discovery, katalog, detail judul, streaming, dan unduhan.",
+  ResaeniContrib2:
+    "Membangun dan menyempurnakan admin tooling untuk operasi konten, termasuk pengisian metadata terbantu yang nilainya tetap bisa dikoreksi manual sebelum disimpan.",
+  ResaeniContrib3:
+    "Mengembangkan backend Hono di atas Cloudflare Workers dengan Turso (libSQL) sebagai lapisan data.",
+  ResaeniContrib4:
+    "Mengkonsolidasikan penyajian media dan artwork ke ekosistem Cloudflare, menggantikan hosting pihak ketiga yang terfragmentasi.",
+  ResaeniContrib5:
+    "Menerapkan UI responsif berorientasi mobile dengan loading state, placeholder gambar, dan fallback behavior.",
+  ResaeniContrib6:
+    "Menambahkan alur Report an Issue sederhana agar pengguna bisa melaporkan masalah langsung dari aplikasi.",
+  ResaeniDecisionReactDesc:
+    "Pilihan pragmatis berbasis keahlian yang sudah ada; membuat produk ini lebih cepat dan aman dirawat oleh satu orang.",
+  ResaeniDecisionCloudflareDesc:
+    "Workers, Hono, dan R2 menjaga deployment, API, dan penyajian media dalam satu ekosistem dengan manajemen domain yang kohesif dan biaya yang hemat.",
+  ResaeniDecisionTursoDesc:
+    "Model serverless dan free tier-nya lebih cocok dengan volume data, gaya deployment, dan batasan biaya proyek ini dibanding alternatif yang dievaluasi saat itu.",
+  ResaeniDecisionDownloadsDesc:
+    "Unduhan dilayani lewat endpoint Worker dengan header Content-Disposition, menjaga kendali cara file sampai ke pengguna tanpa infrastruktur penyimpanan terpisah.",
+  ResaeniChallenge1C:
+    "Input metadata katalog secara manual repetitif dan memakan waktu.",
+  ResaeniChallenge1S:
+    "Membangun admin tool dengan alur inisialisasi terbantu: masukkan identifier, ambil metadata, isi field otomatis yang tetap dapat diedit, lalu koreksi nilai hasil scraping yang tidak akurat sebelum disimpan. Input data episode juga terotomatisasi sebagian dengan cara yang sama.",
+  ResaeniChallenge2C:
+    "Artwork awalnya di-host di Cloudinary sementara bagian lain dari stack berkumpul di Cloudflare, memecah operasional media ke beberapa provider.",
+  ResaeniChallenge2S:
+    "Media dikonsolidasikan ke R2 dalam ekosistem Cloudflare untuk mengurangi fragmentasi, menyederhanakan manajemen domain, dan menekan biaya operasional — keputusan berbasis kesesuaian constraint, bukan penilaian atas Cloudinary itu sendiri.",
+  ResaeniChallenge3C:
+    "Fitur eksperimental Anime Finder (trace.moe) dieksplorasi sebagai pembeda, tetapi hasil pencocokannya tidak andal untuk animasi Korea.",
+  ResaeniChallenge3S:
+    "Fitur diprioritaskan ulang setelah pengujian alih-alih dipaksakan tayang; fokus kembali ke discovery, library, informasi judul, streaming, dan dukungan.",
+  ResaeniOutcome1:
+    "Tayang di production sejak 19 Agustus 2026 dengan 7 judul Aeni terkurasi dan sekitar 60 episode yang bisa ditonton.",
+  ResaeniOutcome2:
+    "Alur kerja konten end-to-end berjalan, didukung admin tooling yang mengurangi input metadata berulang.",
+  ResaeniOutcome3:
+    "Infrastruktur terkonsolidasi dengan kompleksitas operasional lebih rendah, dirawat sebagai proyek production yang terus berevolusi dengan pengecekan rutin dan siklus review dependensi bulanan.",
+
   // Footer
   ThanksForStoppingBy:
     "Terima kasih sudah berkunjung! Mari bangun hal-hal indah bersama-sama.",

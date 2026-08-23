@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { memo } from "react";
 import { useTranslation } from "@/i18n";
+import ProjectCaseStudy from "../ProjectCaseStudy";
 import ProjectActionButton from "./ProjectActionButton";
 
 const TechChip = ({ tag }) => {
@@ -31,6 +32,8 @@ const InfoSection_ = ({ project }) => {
             ? t(project.descDetailKey, project.descDetail)
             : project?.descDetail || ""}
         </p>
+
+        <ProjectCaseStudy project={project} />
 
         <div className="space-y-4 pt-6">
           <div className="flex items-center gap-2 md:gap-3 text-porto-text">

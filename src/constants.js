@@ -5,9 +5,84 @@ import NisoraThumb1 from "./assets/projects/nisora/pic1.webp";
 import NisoraThumb2 from "./assets/projects/nisora/pic2.webp";
 import NisoraThumb3 from "./assets/projects/nisora/pic3.webp";
 import DataOnThumb from "./assets/work-experiences/image-removebg-preview.png";
+// TODO: Replace temporary image with Resaeni portfolio screenshots.
+import ResaeniPlaceholderThumb from "./assets/projects/nisora/pic4.webp";
 import { translate } from "@/i18n";
 
 export const PROJECTS = [
+  {
+    id: 3,
+    title: "Resaeni",
+    desc: "A free, ad-free platform for discovering, streaming, and downloading Korean animation (Aeni), built around a curated catalogue.",
+    descKey: "ResaeniDesc",
+    descDetail: "",
+    descDetailKey: "",
+    tags: [
+      { icon: "mdi:react", label: "React" },
+      { icon: "simple-icons:vite", label: "Vite" },
+      { icon: "simple-icons:hono", label: "Hono" },
+      { icon: "simple-icons:cloudflare", label: "Cloudflare Workers" },
+      { icon: "lucide:database", label: "Cloudflare R2" },
+      { icon: "simple-icons:turso", label: "Turso" },
+    ],
+    demoUrl: "https://resaeni.cc",
+    githubUrl: "https://github.com/Restu-Averian/resaeni",
+    thumb: ResaeniPlaceholderThumb,
+    images: [ResaeniPlaceholderThumb],
+    isFinished: true,
+    caseStudy: {
+      overview: [{ key: "ResaeniOverview1" }, { key: "ResaeniOverview2" }],
+      problem: [{ key: "ResaeniProblem1" }, { key: "ResaeniProblem2" }],
+      ownership: { key: "ResaeniOwnership" },
+      contributions: [
+        { key: "ResaeniContrib1" },
+        { key: "ResaeniContrib2" },
+        { key: "ResaeniContrib3" },
+        { key: "ResaeniContrib4" },
+        { key: "ResaeniContrib5" },
+        { key: "ResaeniContrib6" },
+      ],
+      decisions: [
+        {
+          title: "React",
+          descKey: "ResaeniDecisionReactDesc",
+        },
+        {
+          title: "Cloudflare-oriented infrastructure",
+          titleKey: "CaseDecisionCloudflareTitle",
+          descKey: "ResaeniDecisionCloudflareDesc",
+        },
+        {
+          title: "Turso / libSQL",
+          descKey: "ResaeniDecisionTursoDesc",
+        },
+        {
+          title: "Worker-proxied downloads",
+          titleKey: "CaseDecisionDownloadsTitle",
+          descKey: "ResaeniDecisionDownloadsDesc",
+        },
+      ],
+      challenges: [
+        {
+          challengeKey: "ResaeniChallenge1C",
+          solutionKey: "ResaeniChallenge1S",
+        },
+        {
+          challengeKey: "ResaeniChallenge2C",
+          solutionKey: "ResaeniChallenge2S",
+        },
+        {
+          challengeKey: "ResaeniChallenge3C",
+          solutionKey: "ResaeniChallenge3S",
+        },
+      ],
+      outcome: [
+        { key: "ResaeniOutcome1" },
+        { key: "ResaeniOutcome2" },
+        { key: "ResaeniOutcome3" },
+      ],
+    },
+  },
   {
     id: 1,
     title: "Nisora",

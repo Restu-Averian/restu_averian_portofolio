@@ -5,7 +5,7 @@ import ProjectCard from "./projects/project-card";
 import ProjectsTitle from "./projects/ProjectsTitle";
 import ScrollAffordance from "@/components/ui/ScrollAffordance";
 
-const FEATURED_PROJECT_TITLE = "Package Rich Texteditor";
+const FEATURED_PROJECT_TITLE = "Resaeni";
 
 const Projects_ = () => {
   const [showModalDetail, setShowModalDetail] = useState(false);

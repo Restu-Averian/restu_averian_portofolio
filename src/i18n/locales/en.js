@@ -167,6 +167,72 @@ export const en = {
   TextEditorDescDetail:
     "Developed a reusable rich text editor package designed to be configurable, mobile-friendly, and easier to fit into different product requirements.",
 
+  // Case study section labels
+  CaseProblem: "Problem",
+  CaseOwnership: "Ownership",
+  EngineeringDecisions: "Engineering Decisions",
+  ChallengesSolutions: "Challenges & Solutions",
+  CaseOutcome: "Outcome",
+  ChallengeLabel: "Challenge",
+  SolutionLabel: "Solution",
+  CaseDecisionCloudflareTitle: "Cloudflare-oriented infrastructure",
+  CaseDecisionDownloadsTitle: "Worker-proxied downloads",
+
+  // Resaeni
+  ResaeniDesc:
+    "A free, ad-free platform for discovering, streaming, and downloading Korean animation (Aeni), built around a curated catalogue.",
+  ResaeniDescDetail:
+    "Free to watch. No ads. Just Aeni. A focused streaming and download platform for Korean animation with a curated catalogue maintained end-to-end.",
+  ResaeniOverview1:
+    "Resaeni is a free, ad-free platform for discovering, streaming, and downloading Korean animation (Aeni), built around a focused and curated catalogue.",
+  ResaeniOverview2:
+    "It went live in production on 19 August 2026 and currently serves 7 curated Aeni titles with roughly 60 watchable episodes.",
+  ResaeniProblem1:
+    "General anime platforms chase catalogue size, but a solo-maintained product cannot curate, verify, and maintain a massive Japanese or Chinese catalogue end-to-end at a consistent quality level.",
+  ResaeniProblem2:
+    "Korean animation offered a deliberately narrower scope: a focused niche, enough English-subtitled material, and a small enough catalogue to keep metadata, assets, media, and user experience consistent under near-solo ownership.",
+  ResaeniOwnership:
+    "End-to-end ownership across product direction, frontend, backend, content operations, infrastructure, deployment, and ongoing maintenance.",
+  ResaeniContrib1:
+    "Built the discovery, catalogue, title-detail, streaming, and download experience.",
+  ResaeniContrib2:
+    "Built and iterated admin tooling for content operations, including assisted metadata population that keeps scraped values editable before saving.",
+  ResaeniContrib3:
+    "Developed the Hono backend on Cloudflare Workers with Turso (libSQL) as the data layer.",
+  ResaeniContrib4:
+    "Consolidated media and artwork delivery into the Cloudflare ecosystem, replacing fragmented third-party hosting.",
+  ResaeniContrib5:
+    "Implemented a responsive, mobile-focused UI with loading states, image placeholders, and fallback behavior.",
+  ResaeniContrib6:
+    "Added a simple Report an Issue flow so users can report problems directly from the app.",
+  ResaeniDecisionReactDesc:
+    "A pragmatic choice based on existing proficiency; it keeps maintenance faster and safer for a solo-owned product.",
+  ResaeniDecisionCloudflareDesc:
+    "Workers, Hono, and R2 keep deployment, API, and media delivery under one ecosystem with cohesive domain management and cost-conscious operation.",
+  ResaeniDecisionTursoDesc:
+    "Its serverless model and free tier matched this project's data volume, deployment style, and cost constraints better than the alternatives evaluated at the time.",
+  ResaeniDecisionDownloadsDesc:
+    "Downloads are served through a Worker endpoint applying Content-Disposition headers, keeping control of how files reach users without separate storage infrastructure.",
+  ResaeniChallenge1C:
+    "Entering catalogue metadata manually was repetitive and time-expensive.",
+  ResaeniChallenge1S:
+    "Built an admin tool with an assisted initialization flow: enter an identifier, fetch metadata, auto-populate editable fields, then correct inaccurate scraped values before saving. Episode data entry is partially automated the same way.",
+  ResaeniChallenge2C:
+    "Artwork lived on Cloudinary while the rest of the stack converged on Cloudflare, splitting media operations across providers.",
+  ResaeniChallenge2S:
+    "Consolidated media into R2 within the Cloudflare ecosystem to reduce fragmentation, simplify domain management, and lower operating cost — a fit-for-constraints decision, not a judgment on Cloudinary itself.",
+  ResaeniChallenge3C:
+    "An experimental Anime Finder (trace.moe) was explored as a differentiator, but matching proved unreliable for Korean animation.",
+  ResaeniChallenge3S:
+    "Deprioritized the feature after testing instead of shipping an inconsistent experience, returning focus to discovery, library, title information, streaming, and support.",
+  ResaeniOutcome1:
+    "Shipped to production on 19 August 2026 with 7 curated Aeni titles and roughly 60 watchable episodes.",
+  ResaeniOutcome2:
+    "Operational end-to-end content workflow supported by admin tooling that reduces repetitive metadata entry.",
+  ResaeniOutcome3:
+    "Infrastructure consolidated for lower operational complexity, maintained as an evolving production project with regular checks and a monthly dependency-review cycle.",
+
+
   // Footer
   ThanksForStoppingBy:
     "Thanks for stopping by! Let's build beautiful, cozy things together.",
