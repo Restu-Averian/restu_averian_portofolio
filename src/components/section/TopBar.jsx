@@ -2,13 +2,7 @@ import { Icon } from "@iconify/react";
 import { memo, useState, useEffect, useMemo } from "react";
 import { useIsDark, useTheme } from "@/hooks/useTheme";
 import { useTranslation } from "@/i18n";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import SelectField from "@/components/ui/select/select-field";
 
 const LOCALES = [
   { value: "en", label: "EN", flag: "🇬🇧" },
@@ -128,73 +122,51 @@ const TopBar_ = () => {
           />
           {dateStr}
         </span>
-        <Select
+
+        <SelectField
           value={locale}
           open={openSelect === "language"}
           onOpenChange={(open) => setOpenSelect(open ? "language" : null)}
           onValueChange={setLocale}
-        >
-          <SelectTrigger
-            data-topbar-select="language"
-            aria-label={
+          onPointerDownOutside={handlePointerDownOutside}
+          triggerProps={{
+            "data-topbar-select": "language",
+            "aria-label":
               locale === "en"
                 ? t("SwitchToIndonesian", "Switch language to Indonesian")
-                : t("SwitchToEnglish", "Switch language to English")
-            }
-            title={t("LanguageSelector", "Language selector")}
-            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
-          >
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent
-            position="popper"
-            align="end"
-            onPointerDownOutside={handlePointerDownOutside}
-          >
-            {LOCALES.map(({ value, label, flag }) => (
-              <SelectItem key={value} value={value}>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-[12px]">{flag}</span>
-                  <span className="text-[10px] font-bold uppercase">
-                    {label}
-                  </span>
-                </div>
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+                : t("SwitchToEnglish", "Switch language to English"),
+            title: t("LanguageSelector", "Language selector"),
+          }}
+          items={LOCALES}
+          renderItem={({ label, flag }) => (
+            <div className="flex items-center gap-1.5">
+              <span className="text-[12px]">{flag}</span>
+              <span className="text-[10px] font-bold uppercase">{label}</span>
+            </div>
+          )}
+        />
 
-        <Select
+        <SelectField
           value={theme}
           open={openSelect === "theme"}
           onOpenChange={(open) => setOpenSelect(open ? "theme" : null)}
           onValueChange={setTheme}
-        >
-          <SelectTrigger
-            data-topbar-select="theme"
-            aria-label={`Theme: ${theme}. Activate to switch theme.`}
-            title={`Theme: ${theme}. Click to switch.`}
-            className="ml-1 h-[26px] cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none"
-          >
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent
-            position="popper"
-            align="end"
-            onPointerDownOutside={handlePointerDownOutside}
-          >
-            {THEMES.map(({ value, icon, labelKey, defaultLabel }) => (
-              <SelectItem key={value} value={value}>
-                <div className="flex items-center gap-1.5">
-                  <Icon icon={icon} className="h-4 w-4" aria-hidden="true" />
-                  <span className="text-[10px] capitalize">
-                    {t(labelKey, defaultLabel)}
-                  </span>
-                </div>
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+          onPointerDownOutside={handlePointerDownOutside}
+          triggerProps={{
+            "data-topbar-select": "theme",
+            "aria-label": `Theme: ${theme}. Activate to switch theme.`,
+            title: `Theme: ${theme}. Click to switch.`,
+          }}
+          items={THEMES}
+          renderItem={({ icon, labelKey, defaultLabel }) => (
+            <div className="flex items-center gap-1.5">
+              <Icon icon={icon} className="h-4 w-4" aria-hidden="true" />
+              <span className="text-[10px] capitalize">
+                {t(labelKey, defaultLabel)}
+              </span>
+            </div>
+          )}
+        />
       </span>
     </header>
   );
