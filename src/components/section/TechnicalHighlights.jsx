@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { memo, useRef } from "react";
 import { useTranslation } from "@/i18n";
-import ScrollAffordance from "@/components/ui/ScrollAffordance";
+import ScrollAffordance from "@/components/ui/scroll-affordance";
 
 const TECHNICAL_HIGHLIGHTS = [
   {
@@ -253,7 +253,10 @@ const TechnicalHighlights_ = () => {
         </div>
       </div>
 
-      <div className="porto-scrollbar grid grid-cols-1 gap-2 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1" ref={scrollRef}>
+      <div
+        className="porto-scrollbar grid grid-cols-1 gap-2 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1"
+        ref={scrollRef}
+      >
         {TECHNICAL_HIGHLIGHTS.map((highlight) => (
           <TechnicalHighlightCard
             key={highlight.titleKey}

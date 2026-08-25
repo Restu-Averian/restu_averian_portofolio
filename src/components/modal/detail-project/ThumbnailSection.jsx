@@ -5,10 +5,11 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 const ThumbnailSection_ = ({ images = [] }) => {
   const [activeImage, setActiveImage] = useState(images[0]);
   const [isExpanded, setIsExpanded] = useState(false);
+  const firstImage = images[0];
 
   useEffect(() => {
-    setActiveImage(images?.[0]);
-  }, [JSON.stringify(images)]);
+    setActiveImage(firstImage);
+  }, [firstImage]);
 
   return (
     <div className="flex h-full flex-col gap-6">

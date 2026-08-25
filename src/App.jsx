@@ -1,10 +1,9 @@
-// src/App.jsx
 import TopBar from "./components/section/TopBar";
 import Profile from "./components/section/Profile";
-import Projects from "./components/section/Projects";
 import WorkExperience from "./components/section/work-experience";
 import Footer from "./components/section/Footer";
 import TechnicalHighlights from "./components/section/TechnicalHighlights";
+import Projects from "./components/section/projects";
 
 export default function App() {
   return (

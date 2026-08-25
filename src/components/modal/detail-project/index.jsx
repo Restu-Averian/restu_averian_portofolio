@@ -9,7 +9,7 @@ const ModalDetailProject = ({ open, onClose, project }) => {
     if (!project?.id) return 0;
     const found = PROJECTS.findIndex((item) => item.id === project.id);
     return found === -1 ? 0 : found;
-  }, [project, open]);
+  }, [project]);
 
   const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
@@ -17,7 +17,7 @@ const ModalDetailProject = ({ open, onClose, project }) => {
 
   const currentProject = useMemo(
     () => PROJECTS[currentIndex] || PROJECTS[0],
-    [currentIndex, open],
+    [currentIndex],
   );
 
   const goPrev = () => {
@@ -42,7 +42,11 @@ const ModalDetailProject = ({ open, onClose, project }) => {
     if (open && currentProject?.id) {
       const newUrl = new URL(window.location);
       newUrl.searchParams.set("p", `project-${currentProject.id}`);
-      window.history.replaceState(null, "", window.location.pathname + newUrl.search);
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + newUrl.search,
+      );
     }
   }, [open, currentProject]);
 

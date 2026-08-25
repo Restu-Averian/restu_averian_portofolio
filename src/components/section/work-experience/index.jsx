@@ -4,7 +4,7 @@ import { WORK_EXPERIENCES } from "@/constants";
 import { WorkExperienceCard } from "./WorkExperienceCard";
 import { WorkExperienceDialog } from "./WorkExperienceDialog";
 import { useTranslation } from "@/i18n";
-import ScrollAffordance from "@/components/ui/ScrollAffordance";
+import ScrollAffordance from "@/components/ui/scroll-affordance";
 
 const WorkExperience_ = () => {
   const [selectedExperience, setSelectedExperience] = useState(null);
@@ -19,7 +19,11 @@ const WorkExperience_ = () => {
       const newUrl = new URL(window.location);
       if (newUrl.searchParams.has("w")) {
         newUrl.searchParams.delete("w");
-        window.history.replaceState(null, "", window.location.pathname + newUrl.search);
+        window.history.replaceState(
+          null,
+          "",
+          window.location.pathname + newUrl.search,
+        );
       }
     }
   };
@@ -40,7 +44,11 @@ const WorkExperience_ = () => {
     if (selectedExperience?.id) {
       const newUrl = new URL(window.location);
       newUrl.searchParams.set("w", `work-${selectedExperience.id}`);
-      window.history.replaceState(null, "", window.location.pathname + newUrl.search);
+      window.history.replaceState(
+        null,
+        "",
+        window.location.pathname + newUrl.search,
+      );
     }
   }, [selectedExperience]);
 
@@ -64,7 +72,10 @@ const WorkExperience_ = () => {
       </div>
 
       {/* Timeline */}
-      <div className="porto-scrollbar relative pl-7 pr-1 py-0.5 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pb-1" ref={scrollRef}>
+      <div
+        className="porto-scrollbar relative pl-7 pr-1 py-0.5 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pb-1"
+        ref={scrollRef}
+      >
         {/* Vertical Line - Dashed or Dotted per requirement */}
         <div className="absolute left-[1.95rem] top-5 bottom-5 w-px bg-porto-divider z-0"></div>
 

@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { translate } from "./translate";
 
 export const TranslationContext = createContext(undefined);
@@ -13,7 +13,7 @@ function getInitialLocale() {
     if (persisted === "id" || persisted === "en") {
       return persisted;
     }
-  } catch (e) {
+  } catch {
     // Ignore localStorage errors (e.g., in privacy modes)
   }
 
@@ -37,7 +37,7 @@ export function TranslationProvider({ children }) {
     // Persist to localStorage
     try {
       localStorage.setItem(LOCALE_STORAGE_KEY, locale);
-    } catch (e) {
+    } catch {
       // Ignore errors
     }
   }, [locale]);
