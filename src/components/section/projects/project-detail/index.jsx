@@ -1,10 +1,15 @@
-import { useEffect, useMemo, useState } from "react";
+import { memo, useEffect, useMemo, useState } from "react";
 import MobileDrawer from "./MobileDrawer";
 import DesktopDialog from "./DesktopDialog";
 import useIsMobile from "@/hooks/useIsMobile";
 import { PROJECTS } from "@/constants";
+import { useProjectsContext } from "@/context/ProjectsCtxProvider";
 
-const ModalDetailProject = ({ open, onClose, project }) => {
+const ProjectDetail_ = () => {
+  const { showModalDetail, handleCloseModal, detailProjectRef } =
+    useProjectsContext();
+  const project = detailProjectRef?.current;
+
   const initialIndex = useMemo(() => {
     if (!project?.id) return 0;
     const found = PROJECTS.findIndex((item) => item.id === project.id);
@@ -30,31 +35,36 @@ const ModalDetailProject = ({ open, onClose, project }) => {
 
   const prevProject =
     PROJECTS[(currentIndex - 1 + PROJECTS.length) % PROJECTS.length];
+
   const nextProject = PROJECTS[(currentIndex + 1) % PROJECTS.length];
 
-  useEffect(() => {
-    if (open === true) {
-      setCurrentIndex(initialIndex);
-    }
-  }, [open, initialIndex]);
+  const updateProjectUrlParam = (projectId) => {
+    const newUrl = new URL(window.location);
+    newUrl.searchParams.set("p", `project-${projectId}`);
+    window.history.replaceState(
+      null,
+      "",
+      window.location.pathname + newUrl.search,
+    );
+  };
 
   useEffect(() => {
-    if (open && currentProject?.id) {
-      const newUrl = new URL(window.location);
-      newUrl.searchParams.set("p", `project-${currentProject.id}`);
-      window.history.replaceState(
-        null,
-        "",
-        window.location.pathname + newUrl.search,
-      );
+    if (showModalDetail === true) {
+      setCurrentIndex(initialIndex);
     }
-  }, [open, currentProject]);
+  }, [showModalDetail, initialIndex]);
+
+  useEffect(() => {
+    if (showModalDetail && currentProject?.id) {
+      updateProjectUrlParam(currentProject.id);
+    }
+  }, [showModalDetail, currentProject]);
 
   if (isMobile) {
     return (
       <MobileDrawer
-        open={open}
-        onClose={onClose}
+        open={showModalDetail}
+        onClose={handleCloseModal}
         prevProject={prevProject}
         nextProject={nextProject}
         goPrev={goPrev}
@@ -67,8 +77,8 @@ const ModalDetailProject = ({ open, onClose, project }) => {
 
   return (
     <DesktopDialog
-      open={open}
-      onClose={onClose}
+      open={showModalDetail}
+      onClose={handleCloseModal}
       prevProject={prevProject}
       nextProject={nextProject}
       goPrev={goPrev}
@@ -78,4 +88,5 @@ const ModalDetailProject = ({ open, onClose, project }) => {
   );
 };
 
-export default ModalDetailProject;
+const ProjectDetail = memo(ProjectDetail_);
+export default ProjectDetail;

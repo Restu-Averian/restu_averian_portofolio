@@ -1,7 +1,7 @@
 import { memo } from "react";
 import ProjectCard from "./project-card";
 import ProjectsTitle from "./ProjectsTitle";
-import ProjectsModalDetail from "./ProjectsModalDetail";
+import ProjectDetail from "./project-detail";
 import ScrollAffordance from "@/components/ui/scroll-affordance";
 import { useProjectsContext } from "@/context/ProjectsCtxProvider";
 
@@ -25,7 +25,7 @@ const ProjectsContent_ = () => {
 
       <ScrollAffordance containerRef={scrollRef} />
 
-      <ProjectsModalDetail />
+      <ProjectDetail />
     </section>
   );
 };

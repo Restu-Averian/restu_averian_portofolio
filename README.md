@@ -88,10 +88,8 @@ A reusable and mobile-friendly rich-text editor package built with Tiptap for co
 src/
 ├── assets/                  # Portfolio images, branding, project previews, and resume
 ├── components/
-│   ├── modal/detail-project # Responsive project-detail dialog and drawer
-│   ├── page/                # Profile, projects, experience, navigation, and footer
+│   ├── section/             # Profile, projects, experience, top bar, and footer
 │   └── ui/                  # Reusable UI primitives
-├── data/                    # Work-experience data
 ├── hooks/                   # Theme and responsive hooks
 ├── i18n/                    # Translation provider, locales, and helpers
 ├── App.jsx
