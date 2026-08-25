@@ -1,8 +1,4 @@
-import {
-  Drawer,
-  DrawerContent,
-  DrawerTitle,
-} from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import { Icon } from "@iconify/react";
 import {
   ArrowLeft,
@@ -21,6 +17,7 @@ import { PROJECTS } from "@/constants";
 import { useTranslation } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { memo, useEffect, useMemo, useState } from "react";
+import { useProjectsContext } from "@/context/ProjectsCtxProvider";
 
 const CASE_TABS = [
   { value: "overview", label: "Overview", icon: Home },
@@ -167,16 +164,17 @@ const CasePanel = ({ activeTab, project }) => {
   ));
 };
 
-const MobileDrawer_ = ({
-  open,
-  onClose,
-  prevProject,
-  nextProject,
-  goPrev,
-  goNext,
-  currentProject,
-  currentIndex,
-}) => {
+const MobileDrawer_ = () => {
+  const {
+    showModalDetail: open,
+    handleCloseModal: onClose,
+    prevProject,
+    nextProject,
+    goPrev,
+    goNext,
+    currentProject,
+    currentIndex,
+  } = useProjectsContext();
   const { t } = useTranslation();
   const projectMeta = getProjectMeta(currentProject);
   const availableTabs = useMemo(

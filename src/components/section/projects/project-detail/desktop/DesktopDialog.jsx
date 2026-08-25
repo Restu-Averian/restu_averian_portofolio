@@ -27,6 +27,7 @@ import {
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "@/i18n";
 import { cn } from "@/lib/utils";
+import { useProjectsContext } from "@/context/ProjectsCtxProvider";
 
 const TAB_ICON_CLASS = "h-5 w-5 shrink-0";
 
@@ -168,15 +169,16 @@ const ProjectLink = ({ href, children, variant = "outline" }) => {
   );
 };
 
-const DesktopDialog_ = ({
-  open,
-  onClose,
-  prevProject,
-  nextProject,
-  goPrev,
-  goNext,
-  currentProject,
-}) => {
+const DesktopDialog_ = () => {
+  const {
+    showModalDetail: open,
+    handleCloseModal: onClose,
+    prevProject,
+    nextProject,
+    goPrev,
+    goNext,
+    currentProject,
+  } = useProjectsContext();
   const { t } = useTranslation();
   const contentRef = useRef(null);
   const projectMeta = getProjectMeta(currentProject);
@@ -207,7 +209,8 @@ const DesktopDialog_ = ({
     if (!sections.length) return;
 
     const atBottom =
-      container.scrollTop + container.clientHeight >= container.scrollHeight - 2;
+      container.scrollTop + container.clientHeight >=
+      container.scrollHeight - 2;
 
     const current = atBottom
       ? sections.at(-1)
