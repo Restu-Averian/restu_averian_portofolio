@@ -1,3 +1,4 @@
+import { CASE_TABS } from "@/constants/projects";
 import {
   Dialog,
   DialogContent,
@@ -30,17 +31,6 @@ import { cn } from "@/lib/utils";
 import { useProjectsContext } from "@/context/ProjectsCtxProvider";
 
 const TAB_ICON_CLASS = "h-5 w-5 shrink-0";
-
-const CASE_TABS = [
-  { value: "overview", label: "Overview", icon: Home },
-  { value: "problem", label: "Problem", icon: CircleAlert },
-  { value: "ownership", label: "Ownership", icon: UserCheck },
-  { value: "contributions", label: "Contributions", icon: ListChecks },
-  { value: "decisions", label: "Engineering Decisions", icon: GitBranch },
-  { value: "challenges", label: "Challenges & Solutions", icon: Wrench },
-  { value: "outcome", label: "Outcome", icon: Target },
-  { value: "tech", label: "Tech Stack", icon: Route },
-];
 
 const getProjectMeta = (project) => ({
   launched: project?.title === "Resaeni" ? "19 Aug 2026" : "Completed",
@@ -240,7 +230,7 @@ const DesktopDialog_ = () => {
     <Dialog open={open} onOpenChange={(value) => !value && onClose?.()}>
       <DialogContent
         showCloseButton={false}
-        className="hidden h-[92vh]! w-[94vw] max-w-[1500px] grid-rows-[auto_minmax(0,1fr)_auto] gap-5 overflow-hidden! rounded-[1.9rem] border border-porto-border/80 bg-porto-bg/95 p-7 shadow-2xl xl:grid"
+        className="hidden h-[92vh]! w-[94vw] max-w-375 grid-rows-[auto_minmax(0,1fr)_auto] gap-5 overflow-hidden! rounded-[1.9rem] border border-porto-border/80 bg-porto-bg/95 p-7 shadow-2xl xl:grid"
       >
         <DialogTitle className="sr-only">
           {currentProject?.title || "Detail Project"}

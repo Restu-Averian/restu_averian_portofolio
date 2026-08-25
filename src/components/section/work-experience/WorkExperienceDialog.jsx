@@ -6,7 +6,7 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
+import { DrawerWrapper } from "@/components/ui/drawer/drawer-wrapper";
 import { WorkExperienceDetail } from "./WorkExperienceDetail";
 
 /**
@@ -23,16 +23,15 @@ const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
 
   if (isMobile) {
     return (
-      <Drawer open={isOpen} onOpenChange={onClose}>
-        <DrawerContent className="px-6 pb-8 pt-4 rounded-t-[32px] flex flex-col max-h-[85vh] overflow-hidden">
-          <DrawerTitle className="sr-only" id="experience-detail-title">
-            {experience.roleDefaultText} Detail
-          </DrawerTitle>
-          <div className="flex flex-col flex-1 min-h-0 pt-4">
-            <WorkExperienceDetail experience={experience} />
-          </div>
-        </DrawerContent>
-      </Drawer>
+      <DrawerWrapper
+        open={isOpen}
+        onOpenChange={onClose}
+        title={`${experience.roleDefaultText} Detail`}
+      >
+        <div className="flex-1 overflow-y-auto porto-scrollbar px-5 pt-8 pb-5">
+          <WorkExperienceDetail experience={experience} />
+        </div>
+      </DrawerWrapper>
     );
   }
 

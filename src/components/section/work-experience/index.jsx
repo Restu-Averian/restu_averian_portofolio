@@ -1,6 +1,6 @@
 import { memo, useState, useEffect, useRef } from "react";
 import { Icon } from "@iconify/react";
-import { WORK_EXPERIENCES } from "@/constants";
+import { WORK_EXPERIENCES } from "@/constants/work-experiences";
 import { WorkExperienceCard } from "./WorkExperienceCard";
 import { WorkExperienceDialog } from "./WorkExperienceDialog";
 import { useTranslation } from "@/i18n";

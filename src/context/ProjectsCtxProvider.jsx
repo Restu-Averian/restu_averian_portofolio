@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { PROJECTS } from "@/constants";
+import { PROJECTS } from "@/constants/projects";
 
 export const ProjectsContext = createContext(null);
 

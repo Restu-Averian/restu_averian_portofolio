@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useTranslation } from "@/i18n";
-import { getSocialLinks } from "@/constants";
+import { getSocialLinks } from "@/constants/social-links";
 import { useMemo } from "react";
 
 export const ProfileAction = () => {
