@@ -1,0 +1,14 @@
+import { ProjectDetailCaseSection } from "../ProjectDetailCaseSection";
+import { CaseDefault } from "../../mobile/project-detail-case-panel/CaseDefault";
+import { Target } from "lucide-react";
+
+export const CaseOutcome = ({ project }) => {
+  const caseStudy = project?.caseStudy;
+  if (!caseStudy?.outcome?.length) return null;
+
+  return (
+    <ProjectDetailCaseSection id="outcome" icon={Target} title="Outcome">
+      <CaseDefault project={project} activeTab="outcome" />
+    </ProjectDetailCaseSection>
+  );
+};
