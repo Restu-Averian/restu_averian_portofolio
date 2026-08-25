@@ -2,7 +2,7 @@ import { TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const TAB_ICON_CLASS = "h-5 w-5 shrink-0";
 
-export const ProjectDetailTabs = ({ tabs, scrollToSection }) => {
+export const ProjectDetailTabs = ({ tabs }) => {
   return (
     <TabsList
       variant="line"
@@ -12,7 +12,6 @@ export const ProjectDetailTabs = ({ tabs, scrollToSection }) => {
         <TabsTrigger
           key={value}
           value={value}
-          onClick={() => scrollToSection(value)}
           className="h-auto justify-start gap-4 rounded-none border-b border-porto-border/45 px-2 py-4 text-left text-[14px] font-medium normal-case tracking-normal text-porto-text/85 uppercase-none data-[state=active]:text-porto-btn [&:after]:-left-4 [&:after]:right-auto [&:after]:w-0.5 [&:after]:bg-porto-btn data-[state=active]:after:opacity-100"
         >
           <IconCmp className={TAB_ICON_CLASS} />

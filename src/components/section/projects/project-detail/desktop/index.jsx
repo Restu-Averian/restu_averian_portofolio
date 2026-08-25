@@ -10,6 +10,8 @@ import { ProjectDetailTabs } from "./ProjectDetailTabs";
 import { ProjectDetailCasePanel } from "./project-detail-case-panel";
 import { ProjectDetailFooter } from "./ProjectDetailFooter";
 
+const ACTIVE_SECTION_SCROLL_RATIO = 0.35;
+
 const DesktopDialog_ = () => {
   const {
     showModalDetail: open,
@@ -48,12 +50,13 @@ const DesktopDialog_ = () => {
       container.scrollTop + container.clientHeight >=
       container.scrollHeight - 2;
 
+    const activationPoint =
+      container.scrollTop + container.clientHeight * ACTIVE_SECTION_SCROLL_RATIO;
+
     const current = atBottom
       ? sections.at(-1)
       : sections.reduce((active, section) => {
-          return section.offsetTop <= container.scrollTop + 24
-            ? section
-            : active;
+          return section.offsetTop <= activationPoint ? section : active;
         }, sections[0]);
 
     setActiveSection(current.dataset.caseSection.split("-")[0]);
@@ -67,8 +70,10 @@ const DesktopDialog_ = () => {
 
     setActiveSection(value);
     container.scrollTo({
-      top: Math.max(section.offsetTop - 16, 0),
-      behavior: "smooth",
+      top: Math.max(
+        section.offsetTop - container.clientHeight * ACTIVE_SECTION_SCROLL_RATIO + 16,
+        0,
+      ),
     });
   }, []);
 
@@ -97,13 +102,13 @@ const DesktopDialog_ = () => {
             title={currentProject?.title}
           />
 
-          <ProjectDetailTabs tabs={tabs} scrollToSection={scrollToSection} />
+          <ProjectDetailTabs tabs={tabs} />
 
           <div
             ref={contentRef}
             data-case-scroll
             onScroll={syncActiveSection}
-            className="min-h-0 space-y-4 overflow-y-auto rounded-[1.45rem] border border-porto-border/70 bg-background/20 p-4 porto-scrollbar"
+            className="min-h-0 space-y-4 overflow-y-auto rounded-[1.45rem] border border-porto-border/70 bg-background/20 p-4 pb-[22rem] porto-scrollbar"
           >
             {tabs.map((tab) => (
               <ProjectDetailCasePanel
