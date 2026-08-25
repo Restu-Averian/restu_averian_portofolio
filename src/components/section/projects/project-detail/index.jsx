@@ -1,6 +1,6 @@
 import { memo } from "react";
 import MobileDrawer from "./mobile";
-import DesktopDialog from "./desktop/DesktopDialog";
+import DesktopDialog from "./desktop";
 import useIsMobile from "@/hooks/useIsMobile";
 
 const ProjectDetail_ = () => {
