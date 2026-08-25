@@ -159,9 +159,61 @@ export const en = {
 
   // Projects
   NisoraDesc:
-    "A clean and calming book tracker app for organizing reading progress, personal collections, and book notes.",
+    "An authenticated personal reading library for tracking books across devices, with cloud persistence and OpenLibrary-assisted metadata.",
   NisoraDescDetail:
     "Built a responsive book tracking web app with authentication, personal library management, reading status, and a clean interface designed to make tracking books feel simple and enjoyable.",
+  NisoraOverview1:
+    "Nisora is an authenticated personal reading library for organizing books that are currently being read or have already been completed, with persistent data that is no longer tied to a single browser.",
+  NisoraOverview2:
+    "It is a major evolution of my earlier My Pustaka project, replacing localStorage-only persistence with Supabase-backed authentication, database storage, book-cover storage, and OpenLibrary-assisted metadata. Nisora went live on 1 July 2026.",
+  NisoraProblem1:
+    "The earlier My Pustaka project stored its entire library in localStorage. The core CRUD experience worked, but every collection remained tied to one browser and there was no authenticated ownership of the data.",
+  NisoraProblem2:
+    "I wanted the concept to grow into a personal library that could persist beyond one device, give each user their own collection, and support richer book data without introducing unnecessary infrastructure or hosting cost.",
+  NisoraOwnership:
+    "Solo ownership across product direction, UI implementation, frontend architecture, authentication flows, Supabase integration, external book-data integration, deployment, and ongoing iteration.",
+  NisoraContrib1:
+    "Rebuilt an earlier localStorage-based book tracker into an authenticated cloud-backed personal library.",
+  NisoraContrib2:
+    "Implemented passwordless email authentication with Supabase Auth, including customized authentication email templates.",
+  NisoraContrib3:
+    "Integrated Supabase-backed persistence so book collections are associated with authenticated users rather than a single browser.",
+  NisoraContrib4:
+    "Integrated OpenLibrary search to prefill available book metadata including title, author, publication year, cover, and descriptive information.",
+  NisoraContrib5:
+    "Preserved manual and editable book entry so incomplete or unavailable external metadata does not prevent users from maintaining their library.",
+  NisoraContrib6:
+    "Built responsive book-management flows with schema-based form validation and deployed the production frontend through Cloudflare Pages.",
+  NisoraDecisionSupabaseTitle: "Supabase as backend services",
+  NisoraDecisionSupabaseDesc:
+    "Supabase provided authentication, relational persistence, and file storage in one service with a practical free tier, allowing Nisora to move beyond browser-only data without introducing a separately operated backend.",
+  NisoraDecisionAuthTitle: "Passwordless email authentication",
+  NisoraDecisionAuthDesc:
+    "Google authentication was explored first, but passwordless email produced a simpler flow for the product's needs. Supabase magic links removed password management while customizable email templates kept the authentication experience aligned with the product.",
+  NisoraDecisionOpenLibraryTitle: "OpenLibrary as an assistive source",
+  NisoraDecisionOpenLibraryDesc:
+    "External metadata accelerates book entry but is not reliable enough to become the only source of truth. OpenLibrary can prefill available information while every value remains editable and manual entry stays available.",
+  NisoraDecisionArchitectureTitle: "Direct client-to-Supabase architecture",
+  NisoraDecisionArchitectureDesc:
+    "The current version intentionally avoids a custom API layer because Supabase already covers the project's authentication, persistence, and storage needs. This kept the architecture small and cost-conscious while leaving room for a dedicated API if future business logic requires one.",
+  NisoraChallenge1C:
+    "The original My Pustaka implementation stored collections only in localStorage, making the data dependent on one browser and preventing authenticated personal libraries.",
+  NisoraChallenge1S:
+    "Reworked persistence around Supabase and authenticated user identity so book data can belong to individual accounts instead of a single browser session or device.",
+  NisoraChallenge2C:
+    "Authentication became more complex than simply sending a sign-in link: the initial Google-auth approach introduced unnecessary friction, while email magic links also required expired-link and redirect behavior to be handled correctly.",
+  NisoraChallenge2S:
+    "Simplified authentication to passwordless email and aligned Supabase redirect/base URL configuration with frontend handling for invalid or expired authentication links.",
+  NisoraChallenge3C:
+    "OpenLibrary does not provide complete metadata for every book, so making external search mandatory would prevent some titles from being added correctly.",
+  NisoraChallenge3S:
+    "Treated OpenLibrary as an optional accelerator: available metadata prefills the form, missing values can remain empty, and users can freely edit or manually enter book information.",
+  NisoraOutcome1:
+    "Evolved a browser-only CRUD prototype into an authenticated cloud-backed personal library that can persist independently of a single device.",
+  NisoraOutcome2:
+    "Combined passwordless authentication, persistent book data, cover storage, and external metadata assistance in a deployed production application.",
+  NisoraOutcome3:
+    "Expanded the project from frontend-only state management into practical experience with authentication, persistence, storage, third-party services, and broader application architecture.",
   TextEditorDesc:
     "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
   TextEditorDescDetail:

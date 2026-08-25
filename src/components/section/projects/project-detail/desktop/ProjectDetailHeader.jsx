@@ -3,17 +3,14 @@ import { useTranslation } from "@/i18n";
 import { DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useMemo } from "react";
 import { useProjectsContext } from "@/context/ProjectsCtxProvider";
+import { getProjectMeta } from "@/constants/projects";
 
 export const ProjectDetailHeader = ({ onClose }) => {
   const { t } = useTranslation();
   const { currentProject } = useProjectsContext();
 
   const projectMeta = useMemo(
-    () => ({
-      launched:
-        currentProject?.title === "Resaeni" ? "19 Aug 2026" : "Completed",
-      platform: currentProject?.demoUrl ? "Web" : "Package",
-    }),
+    () => getProjectMeta(currentProject),
     [currentProject],
   );
 

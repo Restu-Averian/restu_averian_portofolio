@@ -159,9 +159,62 @@ export const id = {
 
   // Projects
   NisoraDesc:
-    "Aplikasi pelacak buku yang bersih dan menenangkan untuk mengatur progres membaca, koleksi pribadi, dan catatan buku.",
+    "Pustaka membaca pribadi dengan autentikasi untuk melacak buku lintas perangkat, didukung penyimpanan cloud dan metadata terbantu dari OpenLibrary.",
   NisoraDescDetail:
     "Membangun aplikasi pelacak buku responsif dengan autentikasi, manajemen pustaka pribadi, status membaca, dan antarmuka bersih yang dirancang agar melacak buku terasa sederhana dan menyenangkan.",
+  NisoraOverview1:
+    "Nisora adalah pustaka membaca pribadi dengan autentikasi untuk mengatur buku yang sedang dibaca maupun telah selesai, dengan data persisten yang tidak lagi terikat pada satu browser.",
+  NisoraOverview2:
+    "Proyek ini merupakan pengembangan besar dari My Pustaka, menggantikan penyimpanan berbasis localStorage dengan autentikasi, database, penyimpanan cover melalui Supabase, serta pengisian metadata terbantu dari OpenLibrary. Nisora mulai digunakan di production pada 1 Juli 2026.",
+  NisoraProblem1:
+    "Proyek My Pustaka sebelumnya menyimpan seluruh pustaka melalui localStorage. Pengalaman CRUD dasarnya berjalan, tetapi setiap koleksi tetap terikat pada satu browser dan belum memiliki kepemilikan data berdasarkan pengguna yang terautentikasi.",
+  NisoraProblem2:
+    "Saya ingin konsep tersebut berkembang menjadi pustaka pribadi yang datanya dapat bertahan lintas perangkat, memberikan setiap pengguna koleksi mereka sendiri, dan mendukung data buku yang lebih kaya tanpa menambah infrastruktur maupun biaya hosting yang tidak diperlukan.",
+  NisoraOwnership:
+    "Dikerjakan secara mandiri mulai dari arah produk, implementasi UI, arsitektur frontend, alur autentikasi, integrasi Supabase, integrasi data buku eksternal, deployment, hingga iterasi lanjutan.",
+  NisoraContrib1:
+    "Membangun ulang book tracker berbasis localStorage menjadi pustaka pribadi dengan autentikasi dan penyimpanan cloud.",
+  NisoraContrib2:
+    "Menerapkan autentikasi email tanpa password melalui Supabase Auth, termasuk template email autentikasi yang dikustomisasi.",
+  NisoraContrib3:
+    "Mengintegrasikan penyimpanan persisten berbasis Supabase agar koleksi buku terhubung dengan pengguna terautentikasi, bukan satu browser saja.",
+  NisoraContrib4:
+    "Mengintegrasikan pencarian OpenLibrary untuk mengisi metadata buku yang tersedia seperti judul, penulis, tahun terbit, cover, dan informasi deskriptif.",
+  NisoraContrib5:
+    "Mempertahankan input buku manual dan field yang tetap dapat diedit agar metadata eksternal yang tidak lengkap tidak menghalangi pengguna mengelola pustaka mereka.",
+  NisoraContrib6:
+    "Membangun alur pengelolaan buku yang responsif dengan validasi form berbasis schema dan melakukan deployment frontend production melalui Cloudflare Pages.",
+  NisoraDecisionSupabaseTitle: "Supabase sebagai layanan backend",
+  NisoraDecisionSupabaseDesc:
+    "Supabase menyediakan autentikasi, penyimpanan data relasional, dan file storage dalam satu layanan dengan free tier yang sesuai, sehingga Nisora dapat berkembang dari data berbasis browser tanpa perlu langsung mengoperasikan backend terpisah.",
+  NisoraDecisionAuthTitle: "Autentikasi email tanpa password",
+  NisoraDecisionAuthDesc:
+    "Autentikasi Google sempat dieksplorasi lebih dulu, tetapi email tanpa password menghasilkan alur yang lebih sederhana untuk kebutuhan produk. Magic link Supabase menghilangkan kebutuhan pengelolaan password sekaligus memungkinkan template email disesuaikan dengan pengalaman produk.",
+  NisoraDecisionOpenLibraryTitle: "OpenLibrary sebagai sumber pendukung",
+  NisoraDecisionOpenLibraryDesc:
+    "Metadata eksternal mempercepat input buku tetapi tidak cukup konsisten untuk menjadi satu-satunya sumber data. OpenLibrary digunakan untuk mengisi informasi yang tersedia, sementara nilainya tetap dapat diedit dan input manual tetap didukung.",
+  NisoraDecisionArchitectureTitle:
+    "Arsitektur langsung dari client ke Supabase",
+  NisoraDecisionArchitectureDesc:
+    "Versi saat ini sengaja belum menggunakan lapisan API khusus karena Supabase sudah memenuhi kebutuhan autentikasi, persistensi, dan penyimpanan proyek. Pendekatan ini menjaga arsitektur tetap ringan dan hemat biaya, dengan ruang untuk API khusus apabila business logic di masa depan membutuhkannya.",
+  NisoraChallenge1C:
+    "Implementasi My Pustaka sebelumnya hanya menyimpan koleksi melalui localStorage sehingga data bergantung pada satu browser dan belum dapat menjadi pustaka pribadi berbasis akun.",
+  NisoraChallenge1S:
+    "Mengubah persistensi menggunakan Supabase dan identitas pengguna terautentikasi agar data buku dapat menjadi milik akun masing-masing, bukan hanya satu browser atau perangkat.",
+  NisoraChallenge2C:
+    "Autentikasi ternyata lebih kompleks daripada sekadar mengirim link masuk: pendekatan awal menggunakan Google menambah kompleksitas yang tidak diperlukan, sementara magic link email juga membutuhkan penanganan redirect dan link kedaluwarsa yang benar.",
+  NisoraChallenge2S:
+    "Menyederhanakan autentikasi menjadi email tanpa password serta menyelaraskan konfigurasi redirect/base URL Supabase dengan penanganan frontend untuk link autentikasi yang tidak valid atau telah kedaluwarsa.",
+  NisoraChallenge3C:
+    "OpenLibrary tidak menyediakan metadata lengkap untuk setiap buku, sehingga menjadikan pencarian eksternal sebagai kewajiban justru dapat menghalangi beberapa judul untuk ditambahkan dengan benar.",
+  NisoraChallenge3S:
+    "Menjadikan OpenLibrary sebagai bantuan opsional: metadata yang tersedia mengisi form secara otomatis, data yang tidak tersedia dapat dibiarkan kosong, dan pengguna tetap bebas mengedit maupun memasukkan informasi buku secara manual.",
+  NisoraOutcome1:
+    "Mengembangkan prototipe CRUD yang sebelumnya hanya hidup di browser menjadi pustaka pribadi dengan autentikasi dan penyimpanan cloud yang tidak bergantung pada satu perangkat.",
+  NisoraOutcome2:
+    "Menggabungkan autentikasi tanpa password, data buku persisten, penyimpanan cover, dan bantuan metadata eksternal dalam aplikasi yang telah di-deploy ke production.",
+  NisoraOutcome3:
+    "Memperluas proyek dari pengelolaan state frontend saja menjadi pengalaman praktis dengan autentikasi, persistensi, storage, layanan pihak ketiga, dan arsitektur aplikasi yang lebih luas.",
   TextEditorDesc:
     "Rich text editor minimalis yang menggabungkan fleksibilitas Tiptap dengan UI yang bersih dan mudah diakses.",
   TextEditorDescDetail:

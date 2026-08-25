@@ -49,6 +49,10 @@ export const PROJECTS = [
     thumb: ResaeniPlaceholderThumb,
     images: [ResaeniPlaceholderThumb],
     isFinished: true,
+    meta: {
+      launched: "19 Aug 2026",
+      platform: "Web",
+    },
     caseStudy: {
       overview: [{ key: "ResaeniOverview1" }, { key: "ResaeniOverview2" }],
       problem: [{ key: "ResaeniProblem1" }, { key: "ResaeniProblem2" }],
@@ -105,7 +109,7 @@ export const PROJECTS = [
   {
     id: 1,
     title: "Nisora",
-    desc: "A clean and calming book tracker app for organizing reading progress, personal collections, and book notes.",
+    desc: "An authenticated personal reading library for tracking books across devices, with cloud persistence and OpenLibrary-assisted metadata.",
     descKey: "NisoraDesc",
     descDetail:
       "Built a responsive book tracking web app with authentication, personal library management, reading status, and a clean interface designed to make tracking books feel simple and enjoyable.",
@@ -121,6 +125,60 @@ export const PROJECTS = [
     thumb: NisoraThumb1,
     images: [NisoraThumb1, NisoraThumb2, NisoraThumb3],
     isFinished: true,
+    meta: {
+      launched: "1 Jul 2026",
+      platform: "Web",
+    },
+    caseStudy: {
+      overview: [{ key: "NisoraOverview1" }, { key: "NisoraOverview2" }],
+      problem: [{ key: "NisoraProblem1" }, { key: "NisoraProblem2" }],
+      ownership: { key: "NisoraOwnership" },
+      contributions: [
+        { key: "NisoraContrib1" },
+        { key: "NisoraContrib2" },
+        { key: "NisoraContrib3" },
+        { key: "NisoraContrib4" },
+        { key: "NisoraContrib5" },
+        { key: "NisoraContrib6" },
+      ],
+      decisions: [
+        {
+          titleKey: "NisoraDecisionSupabaseTitle",
+          descKey: "NisoraDecisionSupabaseDesc",
+        },
+        {
+          titleKey: "NisoraDecisionAuthTitle",
+          descKey: "NisoraDecisionAuthDesc",
+        },
+        {
+          titleKey: "NisoraDecisionOpenLibraryTitle",
+          descKey: "NisoraDecisionOpenLibraryDesc",
+        },
+        {
+          titleKey: "NisoraDecisionArchitectureTitle",
+          descKey: "NisoraDecisionArchitectureDesc",
+        },
+      ],
+      challenges: [
+        {
+          challengeKey: "NisoraChallenge1C",
+          solutionKey: "NisoraChallenge1S",
+        },
+        {
+          challengeKey: "NisoraChallenge2C",
+          solutionKey: "NisoraChallenge2S",
+        },
+        {
+          challengeKey: "NisoraChallenge3C",
+          solutionKey: "NisoraChallenge3S",
+        },
+      ],
+      outcome: [
+        { key: "NisoraOutcome1" },
+        { key: "NisoraOutcome2" },
+        { key: "NisoraOutcome3" },
+      ],
+    },
   },
   {
     id: 2,
@@ -143,3 +201,8 @@ export const PROJECTS = [
     isFinished: true,
   },
 ];
+
+export const getProjectMeta = (project) => ({
+  launched: project?.meta?.launched ?? "Completed",
+  platform: project?.meta?.platform ?? (project?.demoUrl ? "Web" : "Package"),
+});

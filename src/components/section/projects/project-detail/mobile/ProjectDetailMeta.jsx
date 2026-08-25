@@ -1,16 +1,13 @@
 import { CalendarDays, Layers } from "lucide-react";
 import { useProjectsContext } from "@/context/ProjectsCtxProvider";
 import { useMemo } from "react";
+import { getProjectMeta } from "@/constants/projects";
 
 export const ProjectDetailMeta = () => {
   const { currentProject } = useProjectsContext();
 
   const projectMeta = useMemo(() => {
-    return {
-      launched:
-        currentProject?.title === "Resaeni" ? "19 Aug 2026" : "Completed",
-      platform: currentProject?.demoUrl ? "Web" : "Package",
-    };
+    return getProjectMeta(currentProject);
   }, [currentProject]);
 
   return (
