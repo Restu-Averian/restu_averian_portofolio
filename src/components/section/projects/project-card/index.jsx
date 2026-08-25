@@ -5,7 +5,6 @@ import {
 } from "@/context/ProjectsCtxProvider";
 import ProjectCardTagFeatured from "./components/ProjectCardTagFeatured";
 import ProjectCardTagsTech from "./components/ProjectCardTagsTech";
-import ProjectCardActions from "./components/ProjectCardActions";
 
 export default function ProjectCard({ project }) {
   const { t } = useTranslation();
@@ -13,23 +12,22 @@ export default function ProjectCard({ project }) {
 
   const isFeatured = project?.title === FEATURED_PROJECT_TITLE;
 
-  const handleClick = () => handleSelectProject(project);
-
   return (
     <article
-      className={`flex flex-col gap-3 rounded-2xl border bg-background/55 p-2.5 shadow-sm transition-all hover:border-porto-btn hover:shadow-md sm:flex-row ${
+      className={`flex flex-col gap-3 rounded-2xl border bg-background/55 p-2.5 shadow-sm transition-all hover:border-porto-btn hover:shadow-md sm:flex-row cursor-pointer ${
         isFeatured
           ? "border-porto-btn bg-background/75"
           : "border-porto-border/80"
       }`}
+      onClick={() => handleSelectProject(project)}
     >
       <button
         type="button"
         className="group relative h-44 w-full overflow-hidden rounded-xl bg-muted text-left sm:h-auto sm:min-h-34 sm:w-[40%] sm:shrink-0"
-        onClick={handleClick}
         aria-label={`${t("ViewProject", "View Project")}: ${project?.title}`}
       >
         <ProjectCardTagFeatured isFeatured={isFeatured} />
+
         <img
           src={project?.thumb}
           alt={project?.title}
@@ -54,11 +52,6 @@ export default function ProjectCard({ project }) {
         </p>
 
         <ProjectCardTagsTech tags={project?.tags} />
-
-        <ProjectCardActions
-          onClick={handleClick}
-          githubUrl={project?.githubUrl}
-        />
       </div>
     </article>
   );
