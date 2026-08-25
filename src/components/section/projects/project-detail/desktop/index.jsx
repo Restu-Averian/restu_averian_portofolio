@@ -81,7 +81,7 @@ const DesktopDialog_ = () => {
     <Dialog open={open} onOpenChange={(value) => !value && onClose?.()}>
       <DialogContent
         showCloseButton={false}
-        className="hidden h-[92vh]! w-[98vw] grid-rows-[auto_minmax(0,1fr)_auto] gap-5 overflow-hidden! rounded-[1.9rem] border border-porto-border/80 bg-porto-bg/95 p-7 shadow-2xl xl:grid"
+        className="hidden h-[92vh]! w-[96vw] max-w-[96vw]! grid-rows-[auto_minmax(0,1fr)_auto] gap-5 overflow-hidden! rounded-[1.9rem] border border-porto-border/80 bg-porto-bg/95 p-7 shadow-2xl xl:grid"
       >
         <ProjectDetailHeader onClose={onClose} />
 
