@@ -19,7 +19,7 @@ const Projects_ = () => {
     });
   }, []);
 
-  useEffect(() => {
+  const handleInitialUrlParam = () => {
     const params = new URLSearchParams(window.location.search);
     const p = params.get("p");
     if (p && p.startsWith("project-")) {
@@ -32,6 +32,10 @@ const Projects_ = () => {
         setShowModalDetail(true);
       }
     }
+  };
+
+  useEffect(() => {
+    handleInitialUrlParam();
   }, []);
 
   const scrollRef = useRef(null);
@@ -42,7 +46,10 @@ const Projects_ = () => {
         <ProjectsTitle />
       </div>
 
-      <div className="porto-scrollbar grid gap-3 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1" ref={scrollRef}>
+      <div
+        className="porto-scrollbar grid gap-3 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1"
+        ref={scrollRef}
+      >
         {orderedProjects.map((project, i) => (
           <ProjectCard
             key={project.id ?? i}
@@ -55,6 +62,7 @@ const Projects_ = () => {
           />
         ))}
       </div>
+
       <ScrollAffordance containerRef={scrollRef} />
 
       <ModalDetailProject

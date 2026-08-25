@@ -1,10 +1,10 @@
 // src/App.jsx
-import TopBar from "./components/page/TopBar";
-import Profile from "./components/page/Profile";
-import Projects from "./components/page/Projects";
-import WorkExperience from "./components/page/work-experience";
-import Footer from "./components/page/Footer";
-import TechnicalHighlights from "./components/page/TechnicalHighlights";
+import TopBar from "./components/section/TopBar";
+import Profile from "./components/section/Profile";
+import Projects from "./components/section/Projects";
+import WorkExperience from "./components/section/work-experience";
+import Footer from "./components/section/Footer";
+import TechnicalHighlights from "./components/section/TechnicalHighlights";
 
 export default function App() {
   return (
@@ -14,7 +14,7 @@ export default function App() {
       <Profile />
 
       <main className="min-h-0 grow px-4 pb-5 md:px-10 lg:pb-3">
-        <div className="mx-auto grid w-full max-w-[1500px] grid-cols-1 gap-4 py-4 lg:h-full lg:min-h-0 lg:grid-cols-[0.9fr_1.35fr_1fr] lg:py-3">
+        <div className="mx-auto grid w-full max-w-375 grid-cols-1 gap-4 py-4 lg:h-full lg:min-h-0 lg:grid-cols-[0.9fr_1.35fr_1fr] lg:py-3">
           <div className="order-3 lg:order-1 lg:min-h-0">
             <TechnicalHighlights />
           </div>
