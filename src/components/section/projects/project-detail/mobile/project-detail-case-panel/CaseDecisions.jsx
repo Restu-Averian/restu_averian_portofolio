@@ -1,5 +1,3 @@
-import { ProjectDetailCaseSection } from "../ProjectDetailCaseSection";
-import { GitBranch } from "lucide-react";
 import { useTranslation } from "@/i18n";
 
 export const CaseDecisions = ({ project }) => {
@@ -9,15 +7,15 @@ export const CaseDecisions = ({ project }) => {
   if (!caseStudy?.decisions?.length) return null;
 
   return (
-    <ProjectDetailCaseSection id="decisions" icon={GitBranch} title="Decisions">
+    <div className="space-y-4">
       {caseStudy.decisions.map((item, index) => (
-        <div key={item.descKey ?? index} className="space-y-2">
+        <div key={item.descKey ?? index} className="space-y-1">
           <h4 className="font-semibold text-porto-text">
             {item.titleKey ? t(item.titleKey, item.title) : item.title}
           </h4>
           <p>{t(item.descKey, item.defaultDesc)}</p>
         </div>
       ))}
-    </ProjectDetailCaseSection>
+    </div>
   );
 };

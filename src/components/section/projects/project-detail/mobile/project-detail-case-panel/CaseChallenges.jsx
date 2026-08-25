@@ -1,5 +1,3 @@
-import { ProjectDetailCaseSection } from "../ProjectDetailCaseSection";
-import { Wrench } from "lucide-react";
 import { useTranslation } from "@/i18n";
 
 export const CaseChallenges = ({ project }) => {
@@ -9,9 +7,9 @@ export const CaseChallenges = ({ project }) => {
   if (!caseStudy?.challenges?.length) return null;
 
   return (
-    <ProjectDetailCaseSection id="challenges" icon={Wrench} title="Challenges">
+    <div className="space-y-4">
       {caseStudy.challenges.map((item, index) => (
-        <div key={item.challengeKey ?? index} className="space-y-2">
+        <div key={item.challengeKey ?? index} className="space-y-1">
           <h4 className="font-semibold text-porto-text">
             Challenge {index + 1}
           </h4>
@@ -25,6 +23,6 @@ export const CaseChallenges = ({ project }) => {
           </p>
         </div>
       ))}
-    </ProjectDetailCaseSection>
+    </div>
   );
 };

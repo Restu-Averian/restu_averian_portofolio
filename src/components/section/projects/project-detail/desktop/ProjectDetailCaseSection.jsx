@@ -1,4 +1,9 @@
-export const ProjectDetailCaseSection = ({ icon: IconCmp, id, title, children }) => (
+export const ProjectDetailCaseSection = ({
+  icon: IconCmp,
+  id,
+  title,
+  children,
+}) => (
   <section
     id={`case-${id}`}
     data-case-section={id}
@@ -6,6 +11,7 @@ export const ProjectDetailCaseSection = ({ icon: IconCmp, id, title, children })
   >
     <div className="mb-4 flex items-center gap-4 text-porto-text">
       <IconCmp className="h-6 w-6 shrink-0" />
+
       <h3 className="text-[25px] font-semibold leading-none">{title}</h3>
     </div>
     <div className="space-y-4 text-[15px] leading-[1.8] text-porto-muted">
