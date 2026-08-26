@@ -98,7 +98,7 @@ const DesktopDialog_ = () => {
           value={activeSection}
           onValueChange={scrollToSection}
           orientation="vertical"
-          className="grid min-h-0 grid-cols-[0.9fr_180px_1fr] gap-5"
+          className="grid h-full min-h-0 grid-cols-[0.9fr_180px_1fr] gap-5"
         >
           <ProjectDetailImages
             images={currentProject?.images}

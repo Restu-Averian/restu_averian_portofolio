@@ -12,13 +12,13 @@ export const ProjectDetailImages = ({ images = [], title }) => {
   }, [images]);
 
   return (
-    <aside className="flex min-h-0 w-full min-w-0 flex-col rounded-[1.45rem] border border-porto-border/60 bg-porto-surface/50 p-6">
+    <aside className="flex h-full min-h-0 w-full min-w-0 flex-col rounded-[1.45rem] border border-porto-border/60 bg-porto-surface/50 p-6 overflow-y-auto porto-scrollbar">
       <div className="mb-4 flex items-center gap-2 text-[15px] font-medium text-porto-text">
         <Box className="h-4.5 w-4.5 text-porto-btn" />
         {t("ProductPreview", "Product Preview")}
       </div>
 
-      <div className="grid min-h-0 flex-1 content-start gap-5">
+      <div className="grid shrink-0 content-start gap-8">
         <div className="aspect-[1.35/0.86] w-full max-w-full overflow-hidden rounded-[1.35rem] bg-background/90 p-4 shadow-[0_18px_44px_rgba(0,0,0,0.18)]">
           <img
             src={activeImage}
