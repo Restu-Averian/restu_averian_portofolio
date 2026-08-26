@@ -56,18 +56,23 @@ export const ProjectDetailFooter = ({
       </button>
 
       <div className="flex items-center gap-6">
-        <ProjectLink href={currentProject?.demoUrl}>
+        <ProjectLink href={currentProject?.githubUrl}>
+          <Icon icon="mdi:github" className="h-5 w-5" />
+
+          {t("ViewOnGithub", "View on Github")}
+        </ProjectLink>
+
+        <ProjectLink href={currentProject?.demoUrl} variant="solid">
           <Globe2 className="h-5 w-5" />
+
           {t("LiveDemo", "Live Demo")}
           <ExternalLink className="h-4 w-4" />
         </ProjectLink>
-        <ProjectLink href={currentProject?.githubUrl} variant="solid">
-          <Icon icon="mdi:github" className="h-5 w-5" />
-          {t("ViewOnGithub", "View on Github")}
-        </ProjectLink>
+
         {currentProject?.packageUrl ? (
           <ProjectLink href={currentProject.packageUrl}>
             <Icon icon="simple-icons:npm" className="h-5 w-5" />
+
             {t("NpmPackage", "npm Package")}
             <ExternalLink className="h-4 w-4" />
           </ProjectLink>

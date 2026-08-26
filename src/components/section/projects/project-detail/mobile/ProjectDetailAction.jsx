@@ -33,19 +33,22 @@ export const ProjectDetailAction = ({ currentProject }) => {
 
   return (
     <div className="flex gap-2.5">
-      <ProjectAction href={currentProject?.demoUrl}>
-        <Globe2 className="h-5 w-5" />
-        <span className="truncate">{t("LiveDemo", "Live Demo")}</span>
+      <ProjectAction href={currentProject?.githubUrl}>
+        <Icon icon="mdi:github" className="h-5 w-5" />
+
+        <span className="truncate">{t("ViewOnGithub", "View on Github")}</span>
       </ProjectAction>
 
-      <ProjectAction href={currentProject?.githubUrl} variant="solid">
-        <Icon icon="mdi:github" className="h-5 w-5" />
-        <span className="truncate">{t("ViewOnGithub", "View on Github")}</span>
+      <ProjectAction href={currentProject?.demoUrl} variant="solid">
+        <Globe2 className="h-5 w-5" />
+
+        <span className="truncate">{t("LiveDemo", "Live Demo")}</span>
       </ProjectAction>
 
       {currentProject?.packageUrl ? (
         <ProjectAction href={currentProject.packageUrl}>
           <Icon icon="simple-icons:npm" className="h-5 w-5" />
+
           <span className="truncate">{t("NpmPackage", "npm Package")}</span>
         </ProjectAction>
       ) : null}
