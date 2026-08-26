@@ -136,9 +136,11 @@ const TopBar_ = () => {
           }}
           items={LOCALES}
           renderItem={({ label, flag }) => (
-            <div className="flex items-center gap-1.5">
-              <span className="text-[12px]">{flag}</span>
-              <span className="text-[10px] font-bold uppercase">{label}</span>
+            <div className="flex items-center gap-1.5 md:gap-1.5">
+              <span className="text-[14px] md:text-[12px]">{flag}</span>
+              <span className="text-[11px] md:text-[10px] font-bold uppercase">
+                {label}
+              </span>
             </div>
           )}
         />
@@ -165,9 +167,13 @@ const TopBar_ = () => {
           }}
           items={THEMES}
           renderItem={({ icon, labelKey, defaultLabel }) => (
-            <div className="flex items-center gap-1.5">
-              <Icon icon={icon} className="h-4 w-4" aria-hidden="true" />
-              <span className="text-[10px] capitalize">
+            <div className="flex items-center gap-1.5 md:gap-1.5">
+              <Icon
+                icon={icon}
+                className="h-4.5 w-4.5 md:h-4 md:w-4"
+                aria-hidden="true"
+              />
+              <span className="text-[11px] md:text-[10px] capitalize">
                 {t(labelKey, defaultLabel)}
               </span>
             </div>

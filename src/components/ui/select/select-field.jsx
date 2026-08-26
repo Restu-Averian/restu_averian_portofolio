@@ -63,7 +63,7 @@ const SelectField_ = ({
         <button
           type="button"
           className={cn(
-            "pointer-events-auto ml-1 h-6.5 cursor-pointer rounded-full border border-porto-border bg-card px-2 py-1 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none flex w-fit items-center justify-between gap-1.5 text-sm",
+            "pointer-events-auto ml-1 h-8 cursor-pointer rounded-full border border-porto-border bg-card px-3 py-1.5 text-foreground transition-colors hover:border-porto-btn hover:text-porto-btn focus:ring-0 focus-visible:ring-0 focus:outline-none flex w-fit items-center justify-between gap-1.5 text-sm",
             triggerClassName,
           )}
           {...triggerProps}
@@ -80,10 +80,10 @@ const SelectField_ = ({
           open={open}
           onOpenChange={onOpenChange}
           placement="bottom"
-          contentClassName={cn("px-4 pb-4 pt-2", contentClassName)}
+          contentClassName={cn("px-4 pb-4 pt-2 min-h-[35vh]", contentClassName)}
           dismissible={true}
         >
-          <div className="flex flex-col gap-1 mt-2">
+          <div className="flex flex-col gap-2 mt-4">
             {children ??
               items.map((item, index) => {
                 const itemValue = typeof item === "object" ? item.value : item;
@@ -95,7 +95,8 @@ const SelectField_ = ({
                     key={itemKey}
                     type="button"
                     className={cn(
-                      "flex w-full items-center justify-between rounded-md px-3 py-3 text-sm font-medium transition-colors",
+                      "cursor-pointer flex w-full items-center justify-between rounded-lg px-4 py-4 text-base font-medium transition-colors",
+                      "[&_span]:text-base! [&_svg]:h-5! [&_svg]:w-5!",
                       isSelected
                         ? "bg-porto-btn/10 text-porto-btn"
                         : "text-foreground hover:bg-muted",
@@ -112,7 +113,7 @@ const SelectField_ = ({
                           ? item.label
                           : item}
                     </span>
-                    {isSelected && <Check className="h-4 w-4" />}
+                    {isSelected && <Check className="h-5 w-5" />}
                   </button>
                 );
               })}
