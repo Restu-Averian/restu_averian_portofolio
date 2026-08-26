@@ -34,9 +34,9 @@ const TechnicalHighlights_ = () => {
         className="porto-scrollbar grid grid-cols-1 gap-2 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1"
         ref={scrollRef}
       >
-        {TECHNICAL_HIGHLIGHTS.map((highlight) => (
+        {TECHNICAL_HIGHLIGHTS.map((highlight, index) => (
           <TechnicalHighlightCard
-            key={highlight.titleKey}
+            key={highlight.title?.key || highlight.title || index}
             highlight={highlight}
             t={t}
           />

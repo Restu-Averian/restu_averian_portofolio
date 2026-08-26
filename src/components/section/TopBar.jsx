@@ -42,7 +42,9 @@ const TopBar_ = () => {
 
   const currentThemeLabel = useMemo(() => {
     const currentTheme = THEMES.find((item) => item.value === theme);
-    return t(currentTheme?.labelKey, currentTheme?.defaultLabel ?? theme);
+    return currentTheme?.label?.__i18n
+      ? t(currentTheme.label.key, currentTheme.label.default)
+      : (currentTheme?.label ?? theme);
   }, [t, theme]);
 
   useEffect(() => {
@@ -141,7 +143,7 @@ const TopBar_ = () => {
             }),
           }}
           items={THEMES}
-          renderItem={({ icon, labelKey, defaultLabel }) => (
+          renderItem={({ icon, label }) => (
             <div className="flex items-center gap-1.5 md:gap-1.5">
               <Icon
                 icon={icon}
@@ -149,7 +151,7 @@ const TopBar_ = () => {
                 aria-hidden="true"
               />
               <span className="text-[11px] md:text-[10px] capitalize">
-                {t(labelKey, defaultLabel)}
+                {label?.__i18n ? t(label.key, label.default) : label}
               </span>
             </div>
           )}

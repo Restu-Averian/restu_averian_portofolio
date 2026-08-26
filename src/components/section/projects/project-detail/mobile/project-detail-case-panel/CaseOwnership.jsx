@@ -6,5 +6,11 @@ export const CaseOwnership = ({ project }) => {
 
   if (!ownership) return null;
 
-  return <p>{t(ownership.key, ownership.defaultText)}</p>;
+  return (
+    <p>
+      {ownership?.__i18n
+        ? t(ownership.key, ownership.default)
+        : ownership}
+    </p>
+  );
 };

@@ -81,9 +81,9 @@ const MobileDrawer_ = () => {
                 <ActiveIcon className="h-5.5 w-5.5 shrink-0" />
 
                 <h3 className="text-[21px] font-semibold leading-none">
-                  {activeTabConfig?.labelKey
-                    ? t(activeTabConfig.labelKey, activeTabConfig.label)
-                    : t("Overview", "Overview")}
+                  {activeTabConfig?.label?.__i18n
+                    ? t(activeTabConfig.label.key, activeTabConfig.label.default)
+                    : (activeTabConfig?.label || t("Overview", "Overview"))}
                 </h3>
               </div>
 

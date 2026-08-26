@@ -1,3 +1,4 @@
+import { tr } from "@/i18n";
 import {
   Database,
   FileText,
@@ -11,132 +12,118 @@ import {
 export const TECHNICAL_HIGHLIGHTS = [
   {
     icon: LayoutGrid,
-    titleKey: "TechnicalHighlightConfigurableTitle",
-    titleDefaultText: "Configurable UI Systems",
-    descriptionKey: "TechnicalHighlightConfigurableDescription",
-    descriptionDefaultText:
+    title: tr("TechnicalHighlightConfigurableTitle", "Configurable UI Systems"),
+    description: tr(
+      "TechnicalHighlightConfigurableDescription",
       "Built page-building and form-customizer systems with reusable architecture, dynamic fields, validation, and responsive configuration.",
+    ),
     proofPoints: [
       {
         icon: LayoutGrid,
-        textKey: "TechnicalHighlightConfigurableProofPoint",
-        textDefaultText: "20+ field types",
+        text: tr("TechnicalHighlightConfigurableProofPoint", "20+ field types"),
       },
     ],
     tags: [
       {
-        labelKey: "TechnicalHighlightTagReact",
-        labelDefaultText: "React",
+        label: tr("TechnicalHighlightTagReact", "React"),
       },
       {
-        labelKey: "TechnicalHighlightTagTypeScript",
-        labelDefaultText: "TypeScript",
+        label: tr("TechnicalHighlightTagTypeScript", "TypeScript"),
       },
       {
-        labelKey: "TechnicalHighlightTagCraft",
-        labelDefaultText: "Craft.js",
+        label: tr("TechnicalHighlightTagCraft", "Craft.js"),
       },
       {
-        labelKey: "TechnicalHighlightTagAntDesign",
-        labelDefaultText: "Ant Design",
+        label: tr("TechnicalHighlightTagAntDesign", "Ant Design"),
       },
     ],
   },
   {
     icon: Zap,
-    titleKey: "TechnicalHighlightPerformanceTitle",
-    titleDefaultText: "Performance at Scale",
-    descriptionKey: "TechnicalHighlightPerformanceDescription",
-    descriptionDefaultText:
+    title: tr("TechnicalHighlightPerformanceTitle", "Performance at Scale"),
+    description: tr(
+      "TechnicalHighlightPerformanceDescription",
       "Optimized the Chatbot Widget and Ant Design Transfer interactions for stable, responsive large-data workflows.",
+    ),
     proofPoints: [
       {
         icon: TrendingUp,
-        textKey: "TechnicalHighlightPerformanceProofBundle",
-        textDefaultText: "90% bundle reduction",
+        text: tr(
+          "TechnicalHighlightPerformanceProofBundle",
+          "90% bundle reduction",
+        ),
       },
       {
         icon: FileText,
-        textKey: "TechnicalHighlightPerformanceProofBundleSize",
-        textDefaultText: "2.5 MB to 244 KB",
+        text: tr(
+          "TechnicalHighlightPerformanceProofBundleSize",
+          "2.5 MB to 244 KB",
+        ),
       },
       {
         icon: Database,
-        textKey: "TechnicalHighlightPerformanceProofRecords",
-        textDefaultText: "80K+ records",
+        text: tr("TechnicalHighlightPerformanceProofRecords", "80K+ records"),
       },
     ],
     tags: [
       {
-        labelKey: "TechnicalHighlightTagPerformance",
-        labelDefaultText: "Performance",
+        label: tr("TechnicalHighlightTagPerformance", "Performance"),
       },
       {
-        labelKey: "TechnicalHighlightTagMapSet",
-        labelDefaultText: "Map & Set",
+        label: tr("TechnicalHighlightTagMapSet", "Map & Set"),
       },
       {
-        labelKey: "TechnicalHighlightTagChromeDevTools",
-        labelDefaultText: "Chrome DevTools",
+        label: tr("TechnicalHighlightTagChromeDevTools", "Chrome DevTools"),
       },
     ],
   },
   {
     icon: PencilLine,
-    titleKey: "TechnicalHighlightEditorTitle",
-    titleDefaultText: "Editor & Developer Tooling",
-    descriptionKey: "TechnicalHighlightEditorDescription",
-    descriptionDefaultText:
+    title: tr("TechnicalHighlightEditorTitle", "Editor & Developer Tooling"),
+    description: tr(
+      "TechnicalHighlightEditorDescription",
       "Migrated rich-text editors to Tiptap and ProseMirror, then built Markdown tooling with JSX rendering, cursor preservation, and native undo/redo.",
+    ),
     tags: [
       {
-        labelKey: "TechnicalHighlightTagTiptap",
-        labelDefaultText: "Tiptap",
+        label: tr("TechnicalHighlightTagTiptap", "Tiptap"),
       },
       {
-        labelKey: "TechnicalHighlightTagProseMirror",
-        labelDefaultText: "ProseMirror",
+        label: tr("TechnicalHighlightTagProseMirror", "ProseMirror"),
       },
       {
-        labelKey: "TechnicalHighlightTagMarkdown",
-        labelDefaultText: "Markdown",
+        label: tr("TechnicalHighlightTagMarkdown", "Markdown"),
       },
     ],
   },
   {
     icon: Server,
-    titleKey: "TechnicalHighlightFullStackTitle",
-    titleDefaultText: "Full-Stack Development",
-    descriptionKey: "TechnicalHighlightFullStackDescription",
-    descriptionDefaultText:
+    title: tr("TechnicalHighlightFullStackTitle", "Full-Stack Development"),
+    description: tr(
+      "TechnicalHighlightFullStackDescription",
       "Expanding beyond frontend through hands-on development with Node.js, TypeScript, Express, PostgreSQL, and REST APIs.",
+    ),
     proofPoints: [
       {
         icon: TrendingUp,
-        textKey: "TechnicalHighlightFullStackStatus",
-        textDefaultText: "Currently expanding",
+        text: tr("TechnicalHighlightFullStackStatus", "Currently expanding"),
       },
     ],
     tags: [
       {
-        labelKey: "TechnicalHighlightTagNodeJs",
-        labelDefaultText: "Node.js",
+        label: tr("TechnicalHighlightTagNodeJs", "Node.js"),
       },
       {
-        labelKey: "TechnicalHighlightTagTypeScript",
-        labelDefaultText: "TypeScript",
+        label: tr("TechnicalHighlightTagTypeScript", "TypeScript"),
       },
       {
-        labelKey: "TechnicalHighlightTagExpress",
-        labelDefaultText: "Express",
+        label: tr("TechnicalHighlightTagExpress", "Express"),
       },
       {
-        labelKey: "TechnicalHighlightTagPostgreSQL",
-        labelDefaultText: "PostgreSQL",
+        label: tr("TechnicalHighlightTagPostgreSQL", "PostgreSQL"),
       },
       {
-        labelKey: "TechnicalHighlightTagRESTAPI",
-        labelDefaultText: "REST API",
+        label: tr("TechnicalHighlightTagRESTAPI", "REST API"),
       },
     ],
   },

@@ -10,7 +10,7 @@ export const ProjectDetailTabs = ({
 
   return (
     <div className="grid grid-cols-5 overflow-hidden bg-porto-surface/40">
-      {availableTabs.map(({ value, label, labelKey, icon: IconCmp }) => {
+      {availableTabs.map(({ value, label, icon: IconCmp }) => {
         const active = activeTab === value;
 
         return (
@@ -25,7 +25,7 @@ export const ProjectDetailTabs = ({
             )}
           >
             <IconCmp className="h-5 w-5" />
-            <span>{labelKey ? t(labelKey, label) : label}</span>
+            <span>{label?.__i18n ? t(label.key, label.default) : label}</span>
           </button>
         );
       })}

@@ -10,10 +10,14 @@ export const CaseContributions = ({ project }) => {
   return (
     <ul className="space-y-2.5">
       {items.map((item, index) => (
-        <li key={item.key ?? index} className="flex gap-2.5">
+        <li key={item?.key || index} className="flex gap-2.5">
           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-porto-btn" />
 
-          <span>{t(item.key, item.defaultText)}</span>
+          <span>
+            {item?.__i18n
+              ? t(item.key, item.default)
+              : item}
+          </span>
         </li>
       ))}
     </ul>

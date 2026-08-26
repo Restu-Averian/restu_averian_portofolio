@@ -46,12 +46,10 @@ export default function ProjectCard({ project }) {
         </h3>
 
         <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-          {project?.descKey
-            ? t(project.descKey, project.descDefault || project.desc)
-            : project?.desc}
+          {project?.desc?.__i18n
+            ? t(project.desc.key, project.desc.default)
+            : (project?.desc ?? "")}
         </p>
-
-        <ProjectCardTagsTech tags={project?.tags} />
       </div>
     </article>
   );

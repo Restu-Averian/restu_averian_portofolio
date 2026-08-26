@@ -3,11 +3,34 @@ import { Icon } from "@iconify/react";
 import { useTranslation } from "@/i18n";
 
 /**
- * @param {{ experience: import("@/constants").WorkExperience }} props
+ * @param {{ experience: import("@/constants/work-experiences").WorkExperience }} props
  */
 const WorkExperienceDetail_ = ({ experience }) => {
   const { t } = useTranslation();
   if (!experience) return null;
+
+  const role = experience.role?.__i18n
+    ? t(experience.role.key, experience.role.default)
+    : (experience.role ?? "");
+
+  const employmentType = experience.employmentType?.__i18n
+    ? t(experience.employmentType.key, experience.employmentType.default)
+    : experience.employmentType;
+
+  const period = experience.period?.__i18n
+    ? t(experience.period.key, experience.period.default)
+    : (experience.period ?? "");
+
+  const overview = experience.overview?.__i18n
+    ? t(experience.overview.key, experience.overview.default)
+    : (experience.overview ?? "");
+
+  const confidentialityNote = experience.confidentialityNote?.__i18n
+    ? t(
+        experience.confidentialityNote.key,
+        experience.confidentialityNote.default,
+      )
+    : experience.confidentialityNote;
 
   return (
     <div className="flex flex-col h-full flex-1 min-h-0">
@@ -29,10 +52,10 @@ const WorkExperienceDetail_ = ({ experience }) => {
               id="experience-detail-title"
               className="text-lg md:text-xl font-bold text-foreground leading-tight"
             >
-              {t(experience.roleKey, experience.roleDefaultText)}
-              {experience.employmentTypeKey && (
+              {role}
+              {employmentType && (
                 <span className="ml-2 text-xs font-medium text-muted-foreground bg-muted px-2 py-0.5 rounded-full align-middle whitespace-nowrap">
-                  {t(experience.employmentTypeKey, experience.employmentTypeDefaultText)}
+                  {employmentType}
                 </span>
               )}
             </h2>
@@ -43,7 +66,7 @@ const WorkExperienceDetail_ = ({ experience }) => {
               <span>•</span>
               <div className="flex items-center gap-1">
                 <Icon icon="solar:calendar-linear" className="w-4 h-4" />
-                {t(experience.periodKey, experience.periodDefaultText)}
+                {period}
               </div>
             </div>
           </div>
@@ -51,18 +74,18 @@ const WorkExperienceDetail_ = ({ experience }) => {
 
         {/* Overview */}
         <div className="text-sm leading-relaxed text-foreground bg-card border border-border p-3 rounded-xl shadow-sm">
-          {t(experience.overviewKey, experience.overviewDefaultText)}
+          {overview}
         </div>
 
         {/* Scope */}
         {experience.scope && experience.scope.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mt-2">
-            {experience.scope.map((tag) => (
+            {experience.scope.map((tag, idx) => (
               <span
-                key={tag.key}
+                key={tag?.key || tag || idx}
                 className="text-xs font-medium px-2.5 py-1 bg-secondary text-secondary-foreground rounded-md"
               >
-                {t(tag.key, tag.defaultText)}
+                {tag?.__i18n ? t(tag.key, tag.default) : tag}
               </span>
             ))}
           </div>
@@ -81,12 +104,19 @@ const WorkExperienceDetail_ = ({ experience }) => {
           </h3>
           <ul className="space-y-2.5 text-sm leading-relaxed text-muted-foreground">
             {experience.contributions.map((contribution, idx) => (
-              <li key={idx} className="flex items-start gap-2.5">
+              <li
+                key={contribution?.key || idx}
+                className="flex items-start gap-2.5"
+              >
                 <Icon
                   icon="solar:check-circle-bold"
                   className="w-4 h-4 text-green-500/80 shrink-0 mt-0.5"
                 />
-                <span className="flex-1">{t(contribution.key, contribution.defaultText)}</span>
+                <span className="flex-1">
+                  {contribution?.__i18n
+                    ? t(contribution.key, contribution.default)
+                    : (contribution ?? "")}
+                </span>
               </li>
             ))}
           </ul>
@@ -94,13 +124,13 @@ const WorkExperienceDetail_ = ({ experience }) => {
       )}
 
       {/* Confidentiality Note */}
-      {experience.confidentialityNoteKey && (
+      {confidentialityNote && (
         <div className="shrink-0 mt-4 text-xs leading-relaxed text-muted-foreground/80 flex items-start gap-2 bg-muted/50 p-3 rounded-lg border border-border/50">
           <Icon
             icon="solar:shield-warning-linear"
             className="w-4 h-4 shrink-0 mt-0.5"
           />
-          <p>{t(experience.confidentialityNoteKey, experience.confidentialityNoteDefaultText)}</p>
+          <p>{confidentialityNote}</p>
         </div>
       )}
     </div>

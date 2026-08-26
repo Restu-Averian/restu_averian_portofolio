@@ -14,12 +14,25 @@ export const ProjectDetailHeader = ({ onClose }) => {
     [currentProject],
   );
 
+  const desc = currentProject?.desc?.__i18n
+    ? t(currentProject.desc.key, currentProject.desc.default)
+    : (currentProject?.desc ?? "");
+
+  const launched = projectMeta?.launched?.__i18n
+    ? t(projectMeta.launched.key, projectMeta.launched.default)
+    : (projectMeta?.launched ?? "");
+
+  const platform = projectMeta?.platform?.__i18n
+    ? t(projectMeta.platform.key, projectMeta.platform.default)
+    : (projectMeta?.platform ?? "");
+
   return (
     <>
       <DialogTitle className="sr-only">
         {currentProject?.title ||
           t("ProjectDetailFallbackTitle", "Project Detail")}
       </DialogTitle>
+
       <DialogDescription className="sr-only">
         {t(
           "ProjectDetailSrDescription",
@@ -32,16 +45,16 @@ export const ProjectDetailHeader = ({ onClose }) => {
           <div className="flex h-17 w-17 shrink-0 items-center justify-center rounded-2xl border border-porto-btn/50 bg-porto-btn text-[42px] font-bold leading-none text-porto-btn-text shadow-[0_14px_34px_rgba(0,0,0,0.2)]">
             {currentProject?.title?.[0] || "P"}
           </div>
+
           <div className="min-w-0">
             <div className="flex items-center gap-7">
               <h2 className="truncate text-[52px] font-bold leading-[0.95] text-porto-text">
                 {currentProject?.title}
               </h2>
             </div>
+
             <p className="mt-4 max-w-220 text-[15px] leading-relaxed text-porto-text">
-              {currentProject?.descKey
-                ? t(currentProject.descKey, currentProject.desc)
-                : currentProject?.desc}
+              {desc}
             </p>
           </div>
         </div>
@@ -49,11 +62,10 @@ export const ProjectDetailHeader = ({ onClose }) => {
         <div className="flex items-start gap-8 pr-16">
           <div className="flex items-start gap-4">
             <CalendarDays className="mt-1 h-5 w-5 text-porto-btn" />
+
             <div className="space-y-1 text-[15px] text-porto-text">
               <p>{t("ProjectLaunched", "Launched")}</p>
-              <p className="font-medium">
-                {t(projectMeta.launchedKey, projectMeta.launched)}
-              </p>
+              <p className="font-medium">{launched}</p>
             </div>
           </div>
           <div className="h-16 w-px bg-porto-border/60" />
@@ -61,9 +73,7 @@ export const ProjectDetailHeader = ({ onClose }) => {
             <Layers className="mt-1 h-5 w-5 text-porto-btn" />
             <div className="space-y-1 text-[15px] text-porto-text">
               <p>{t("ProjectPlatform", "Platform")}</p>
-              <p className="font-medium">
-                {t(projectMeta.platformKey, projectMeta.platform)}
-              </p>
+              <p className="font-medium">{platform}</p>
             </div>
           </div>
         </div>

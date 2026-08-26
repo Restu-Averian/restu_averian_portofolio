@@ -12,7 +12,9 @@ export const ProjectDetailTitle = ({ project }) => {
       </div>
 
       <p className="text-[16px] leading-snug text-porto-text">
-        {project?.descKey ? t(project.descKey, project.desc) : project?.desc}
+        {project?.desc?.__i18n
+          ? t(project.desc.key, project.desc.default)
+          : (project?.desc ?? "")}
       </p>
     </>
   );

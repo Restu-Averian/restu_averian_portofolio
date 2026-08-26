@@ -229,13 +229,13 @@ export const id = {
   NisoraOutcome3:
     "Memperluas proyek dari pengelolaan state frontend saja menjadi pengalaman praktis dengan autentikasi, persistensi, storage, layanan pihak ketiga, dan arsitektur aplikasi yang lebih luas.",
   TextEditorDesc:
-    "Paket rich-text editor React yang menyediakan Tiptap dengan kontrol formatting siap pakai, pengalaman editing responsif, mode sumber HTML, dan visibilitas toolbar yang dapat dikonfigurasi.",
+    "Package rich-text editor React yang menyediakan Tiptap dengan kontrol formatting siap pakai, pengalaman editing responsif, mode sumber HTML, dan visibilitas toolbar yang dapat dikonfigurasi.",
   TextEditorDescDetail:
-    "Mengembangkan paket npm reusable yang mengurangi setup Tiptap berulang dengan menyediakan kontrol formatting, editing mobile yang responsif, mode sumber HTML, lokalisasi, styling hooks, dan API aplikasi yang sederhana.",
+    "Mengembangkan package npm reusable yang mengurangi setup Tiptap berulang dengan menyediakan kontrol formatting, editing mobile yang responsif, mode sumber HTML, lokalisasi, styling hooks, dan API aplikasi yang sederhana.",
   TextEditorOverview1:
-    "ResuAve TextEditor adalah paket npm reusable untuk React yang menyediakan lapisan siap pakai di atas Tiptap dengan menggabungkan formatting rich-text umum, editing responsif, mode sumber HTML, lokalisasi, dan event handling untuk aplikasi dalam satu komponen.",
+    "ResuAve TextEditor adalah package npm reusable untuk React yang menyediakan lapisan siap pakai di atas Tiptap dengan menggabungkan formatting rich-text umum, editing responsif, mode sumber HTML, lokalisasi, dan event handling untuk aplikasi dalam satu komponen.",
   TextEditorOverview2:
-    "Ide proyek ini berkembang dari permasalahan rich-text editing yang saya temui dalam pekerjaan profesional, tetapi paket publiknya diimplementasikan ulang secara independen dari awal tanpa menggunakan source code proprietary, aset internal, business logic, atau detail implementasi rahasia. Paket ini dirilis secara publik pada Juli 2026.",
+    "Ide proyek ini berkembang dari permasalahan rich-text editing yang saya temui dalam pekerjaan profesional, tetapi paket publiknya diimplementasikan ulang secara independen dari awal tanpa menggunakan source code proprietary, aset internal, business logic, atau detail implementasi rahasia. Package ini dirilis secara publik pada Juli 2026.",
   TextEditorProblem1:
     "Tiptap memberikan fleksibilitas yang tinggi, tetapi menggunakannya untuk kebutuhan produk umum tetap dapat membutuhkan setup extension, toolbar, editor events, styling, responsive behavior, dan fitur pendukung secara berulang sebelum editor siap digunakan.",
   TextEditorProblem2:
@@ -324,7 +324,7 @@ export const id = {
   ResaeniOverview1:
     "Resaeni adalah platform gratis tanpa iklan untuk menemukan, streaming, dan mengunduh animasi Korea (Aeni), dibangun di sekitar katalog yang fokus dan terkurasi.",
   ResaeniOverview2:
-    "Produk ini tayang di production sejak 19 Agustus 2026 dan saat ini menyajikan 7 judul Aeni terkurasi dengan sekitar 60 episode yang bisa ditonton.",
+    "Produk ini launching di production sejak 19 Agustus 2026 dan saat ini menyajikan 7 judul Aeni terkurasi dengan sekitar 60 episode yang bisa ditonton.",
   ResaeniProblem1:
     "Platform anime umum mengejar ukuran katalog, tetapi produk yang dirawat hampir sendirian tidak mampu mengkurasi, memverifikasi, dan merawat katalog Jepang atau Tiongkok yang masif secara end-to-end dengan konsistensi yang diinginkan.",
   ResaeniProblem2:

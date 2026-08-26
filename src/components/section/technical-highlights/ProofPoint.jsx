@@ -4,9 +4,11 @@ const splitProofPoint = (text) => {
 };
 
 export const ProofPoint = ({ proofPoint, t, compact = false }) => {
-  const text = t(proofPoint.textKey, proofPoint.textDefaultText);
+  const text = proofPoint?.text?.__i18n
+    ? t(proofPoint.text.key, proofPoint.text.default)
+    : (proofPoint?.text ?? "");
   const { metric, label } = splitProofPoint(text);
-  const ProofIcon = proofPoint.icon;
+  const ProofIcon = proofPoint?.icon;
 
   return (
     <span

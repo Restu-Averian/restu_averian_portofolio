@@ -14,7 +14,7 @@ import { useTranslation } from "@/i18n";
  * @param {{
  *   isOpen: boolean,
  *   onClose: (open: boolean) => void,
- *   experience: import("@/constants").WorkExperience | null
+ *   experience: import("@/constants/work-experiences").WorkExperience | null
  * }} props
  */
 const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
@@ -23,7 +23,10 @@ const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
 
   if (!experience) return null;
 
-  const role = t(experience.roleKey, experience.roleDefaultText);
+  const role = experience.role?.__i18n
+    ? t(experience.role.key, experience.role.default)
+    : (experience.role ?? "");
+
   const title = t("WorkExperienceDetailTitle", "{{role}} Detail", { role });
 
   if (isMobile) {

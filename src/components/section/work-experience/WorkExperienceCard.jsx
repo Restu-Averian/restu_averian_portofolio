@@ -4,12 +4,28 @@ import { useTranslation } from "@/i18n";
 
 /**
  * @param {Object} props
- * @param {import("@/constants").WorkExperience} props.experience
+ * @param {import("@/constants/work-experiences").WorkExperience} props.experience
  * @param {() => void} props.onClick
  */
 const WorkExperienceCard_ = ({ experience, onClick }) => {
   const { t } = useTranslation();
   const isCurrent = experience.isCurrent;
+
+  const role = experience.role?.__i18n
+    ? t(experience.role.key, experience.role.default)
+    : (experience.role ?? "");
+
+  const employmentType = experience.employmentType?.__i18n
+    ? t(experience.employmentType.key, experience.employmentType.default)
+    : experience.employmentType;
+
+  const period = experience.period?.__i18n
+    ? t(experience.period.key, experience.period.default)
+    : (experience.period ?? "");
+
+  const shortSummary = experience.shortSummary?.__i18n
+    ? t(experience.shortSummary.key, experience.shortSummary.default)
+    : (experience.shortSummary ?? "");
 
   return (
     <div className="relative z-10 mb-3 ml-[-5.5px] flex items-start gap-3 last:mb-2">
@@ -23,10 +39,7 @@ const WorkExperienceCard_ = ({ experience, onClick }) => {
       <button
         type="button"
         onClick={onClick}
-        aria-label={`${t("ViewWorkExperience", "View work experience")}: ${t(
-          experience.roleKey,
-          experience.roleDefaultText,
-        )} at ${experience.company}`}
+        aria-label={`${t("ViewWorkExperience", "View work experience")}: ${role} at ${experience.company}`}
         className={`group flex-1 cursor-pointer rounded-2xl border p-2.5 text-left shadow-sm transition-all hover:border-porto-btn hover:shadow-md focus:outline-none focus:ring-2 focus:ring-porto-btn focus:border-transparent ${
           isCurrent
             ? "border-porto-btn/80 bg-background/70"
@@ -52,14 +65,10 @@ const WorkExperienceCard_ = ({ experience, onClick }) => {
                     isCurrent ? "text-base" : "text-sm"
                   }`}
                 >
-                  {t(experience.roleKey, experience.roleDefaultText)}
+                  {role}
                 </p>
                 <p className="mt-0.5 text-xs font-medium text-muted-foreground">
-                  {experience.employmentTypeKey &&
-                    `${t(
-                      experience.employmentTypeKey,
-                      experience.employmentTypeDefaultText,
-                    )} • `}
+                  {employmentType && `${employmentType} • `}
                   {experience.company}
                 </p>
               </div>
@@ -72,7 +81,7 @@ const WorkExperienceCard_ = ({ experience, onClick }) => {
 
             <div className="mt-2.5 flex w-max items-center gap-1.5 rounded-md bg-muted/80 px-2 py-1 text-[11px] font-medium text-foreground">
               <Icon icon="solar:calendar-linear" className="h-3 w-3" />
-              {t(experience.periodKey, experience.periodDefaultText)}
+              {period}
             </div>
 
             <p
@@ -80,10 +89,7 @@ const WorkExperienceCard_ = ({ experience, onClick }) => {
                 isCurrent ? "" : "line-clamp-2"
               }`}
             >
-              {t(
-                experience.shortSummaryKey,
-                experience.shortSummaryDefaultText,
-              )}
+              {shortSummary}
             </p>
           </div>
         </div>

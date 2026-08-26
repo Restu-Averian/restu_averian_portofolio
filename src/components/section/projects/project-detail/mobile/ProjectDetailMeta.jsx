@@ -12,6 +12,14 @@ export const ProjectDetailMeta = () => {
     return getProjectMeta(currentProject);
   }, [currentProject]);
 
+  const launched = projectMeta?.launched?.__i18n
+    ? t(projectMeta.launched.key, projectMeta.launched.default)
+    : (projectMeta?.launched ?? "");
+
+  const platform = projectMeta?.platform?.__i18n
+    ? t(projectMeta.platform.key, projectMeta.platform.default)
+    : (projectMeta?.platform ?? "");
+
   return (
     <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-5 pt-1">
       <div className="flex items-center justify-center gap-3 text-porto-text">
@@ -20,9 +28,7 @@ export const ProjectDetailMeta = () => {
         <div className="space-y-0.5 text-[14px]">
           <p>{t("ProjectLaunched", "Launched")}</p>
 
-          <p className="font-medium">
-            {t(projectMeta.launchedKey, projectMeta.launched)}
-          </p>
+          <p className="font-medium">{launched}</p>
         </div>
       </div>
 
@@ -34,9 +40,7 @@ export const ProjectDetailMeta = () => {
         <div className="space-y-0.5 text-[14px]">
           <p>{t("ProjectPlatform", "Platform")}</p>
 
-          <p className="font-medium">
-            {t(projectMeta.platformKey, projectMeta.platform)}
-          </p>
+          <p className="font-medium">{platform}</p>
         </div>
       </div>
     </div>
