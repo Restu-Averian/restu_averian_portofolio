@@ -24,7 +24,6 @@ export const MobileCarousel = forwardRef(
       trackClassName = "",
       viewportClassName = "",
       showArrows = false,
-      hai = false,
     },
     ref,
   ) => {

@@ -34,7 +34,6 @@ export const ProjectDetailImages = ({ images = [], title }) => {
           viewportClassName="overflow-x-auto porto-scrollbar pb-2"
           trackClassName="flex shrink-0 gap-4"
           showArrows
-          hai
         >
           {images?.map((image, index) => {
             const active = activeImage === image;
