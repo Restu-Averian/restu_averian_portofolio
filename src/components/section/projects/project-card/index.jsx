@@ -22,7 +22,7 @@ export default function ProjectCard({ project, className = "" }) {
     >
       <button
         type="button"
-        className="group relative h-44 w-full overflow-hidden rounded-xl bg-muted text-left sm:h-auto sm:min-h-34 sm:w-[40%] sm:shrink-0"
+        className="group cursor-pointer relative h-44 w-full overflow-hidden rounded-xl bg-muted text-left sm:h-auto sm:min-h-34 sm:w-[40%] sm:shrink-0"
         aria-label={`${t("ViewProject", "View Project")}: ${project?.title}`}
       >
         <ProjectCardTagFeatured isFeatured={isFeatured} />

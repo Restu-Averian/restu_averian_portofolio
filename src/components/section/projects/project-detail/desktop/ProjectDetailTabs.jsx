@@ -15,7 +15,7 @@ export const ProjectDetailTabs = ({ tabs }) => {
         <TabsTrigger
           key={value}
           value={value}
-          className="h-auto justify-start gap-4 rounded-none border-b border-porto-border/45 px-2 py-4 text-left text-[14px] font-medium normal-case tracking-normal text-porto-text/85 uppercase-none data-[state=active]:text-porto-btn [&:after]:-left-4 [&:after]:right-auto [&:after]:w-0.5 [&:after]:bg-porto-btn data-[state=active]:after:opacity-100"
+          className="cursor-pointer h-auto justify-start gap-4 rounded-none border-b border-porto-border/45 px-2 py-4 text-left text-[14px] font-medium normal-case tracking-normal text-porto-text/85 uppercase-none data-[state=active]:text-porto-btn [&:after]:-left-4 [&:after]:right-auto [&:after]:w-0.5 [&:after]:bg-porto-btn data-[state=active]:after:opacity-100"
         >
           <IconCmp className={TAB_ICON_CLASS} />
 
