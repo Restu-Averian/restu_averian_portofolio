@@ -18,7 +18,7 @@ export const ProjectDetailImages = ({ images = [], title }) => {
         />
       </div>
 
-      <div className="mt-3 overflow-x-auto porto-scrollbar pb-2">
+      <div className="mt-8 overflow-x-auto porto-scrollbar pb-2">
         <div className="flex justify-center gap-2.5">
           {images?.map((image, index) => {
             const active = activeImage === image;
