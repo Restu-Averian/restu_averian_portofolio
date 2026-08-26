@@ -4,7 +4,7 @@ import DesktopDialog from "./desktop";
 import useIsMobile from "@/hooks/useIsMobile";
 
 const ProjectDetail_ = () => {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(1279);
 
   if (isMobile) {
     return <MobileDrawer />;

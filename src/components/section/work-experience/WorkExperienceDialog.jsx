@@ -42,7 +42,7 @@ const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent
-        className="max-w-2xl rounded-[32px] border border-porto-border bg-background p-6 sm:p-8 md:p-10 shadow-xl flex flex-col max-h-[85vh] overflow-hidden"
+        className="max-w-2xl rounded-4xl border border-porto-border bg-background p-6 sm:p-8 md:p-10 shadow-xl flex flex-col max-h-[85vh] overflow-hidden"
         aria-labelledby="experience-detail-title"
       >
         <DialogTitle className="sr-only">{title}</DialogTitle>
