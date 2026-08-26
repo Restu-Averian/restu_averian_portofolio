@@ -6,6 +6,12 @@ export const id = {
   SwitchToEnglish: "Ganti bahasa ke Inggris",
   SwitchToIndonesian: "Ganti bahasa ke Indonesia",
   LanguageSelector: "Pemilih bahasa",
+  DocumentTitle:
+    "Restu Averian Putra — Frontend Engineer | React, TypeScript & Node.js",
+  DocumentDescription:
+    "Portofolio Restu Averian Putra, Frontend Engineer dengan 3+ tahun pengalaman React, kini memperluas kemampuan full-stack JavaScript dan TypeScript dengan Node.js, Express, PostgreSQL, dan REST API.",
+  DocumentOgDescription:
+    "Frontend Engineer dengan 3+ tahun pengalaman React, kini memperluas kemampuan ke engineering full-stack JavaScript dan TypeScript.",
 
   // Themes
   ThemeLight: "Terang",
@@ -13,7 +19,8 @@ export const id = {
   ThemeSystem: "Sistem",
 
   // Profile
-  AvailableForWork: "Terbuka untuk posisi Frontend, Full Stack & Software Engineer",
+  AvailableForWork:
+    "Terbuka untuk posisi Frontend, Full Stack & Software Engineer",
   ProfileRole: "Frontend Engineer | Full-Stack JavaScript/TypeScript",
   PortfolioTagline:
     "Frontend Engineer dengan 3+ tahun pengalaman membangun aplikasi React untuk production, kini memperluas kemampuan ke full-stack development menggunakan Node.js, Express, PostgreSQL, dan REST API.",
@@ -55,7 +62,10 @@ export const id = {
   Expand: "Perluas",
   PreviousProject: "Proyek Sebelumnya",
   NextProject: "Proyek Berikutnya",
+  NpmPackage: "Package npm",
   ViewWorkExperience: "Lihat pengalaman kerja",
+  ThemeAriaLabel: "Tema: {{theme}}. Aktifkan untuk mengganti tema.",
+  ThemeTitle: "Tema: {{theme}}. Klik untuk mengganti.",
 
   // Work roles
   FrontendEngineerRole: "Frontend Engineer",
@@ -98,6 +108,9 @@ export const id = {
     "Memanfaatkan eksplorasi desain berbantuan AI untuk kebutuhan UI/UX yang lebih kecil ketika proses desain penuh tidak diperlukan, menciptakan referensi antarmuka dan menyempurnakan kegunaan, sambil tetap menjaga agar hasilnya selaras dengan kebutuhan produk dan sistem desain yang ada.",
   ConfidentialityNote:
     "Nama produk tertentu, informasi klien, tangkapan layar, kode sumber, aturan bisnis, dan alur kerja internal sengaja dihilangkan karena kewajiban kerahasiaan.",
+  WorkExperienceDetailTitle: "Detail {{role}}",
+  WorkExperienceSrDescription:
+    "Ringkasan pengalaman kerja, cakupan, dan kontribusi utama.",
   ScopeFrontendDevelopment: "Pengembangan Frontend",
   ScopeAntDesign: "Ant Design",
   ScopeLegacyReactRefactoring: "Refactor Legacy React",
@@ -159,13 +172,203 @@ export const id = {
 
   // Projects
   NisoraDesc:
-    "Aplikasi pelacak buku yang bersih dan menenangkan untuk mengatur progres membaca, koleksi pribadi, dan catatan buku.",
+    "Pustaka membaca pribadi dengan autentikasi untuk melacak buku lintas perangkat, didukung penyimpanan cloud dan metadata terbantu dari OpenLibrary.",
   NisoraDescDetail:
     "Membangun aplikasi pelacak buku responsif dengan autentikasi, manajemen pustaka pribadi, status membaca, dan antarmuka bersih yang dirancang agar melacak buku terasa sederhana dan menyenangkan.",
+  NisoraOverview1:
+    "Nisora adalah pustaka membaca pribadi dengan autentikasi untuk mengatur buku yang sedang dibaca maupun telah selesai, dengan data persisten yang tidak lagi terikat pada satu browser.",
+  NisoraOverview2:
+    "Proyek ini merupakan pengembangan besar dari My Pustaka, menggantikan penyimpanan berbasis localStorage dengan autentikasi, database, penyimpanan cover melalui Supabase, serta pengisian metadata terbantu dari OpenLibrary. Nisora mulai digunakan di production pada 1 Juli 2026.",
+  NisoraProblem1:
+    "Proyek My Pustaka sebelumnya menyimpan seluruh pustaka melalui localStorage. Pengalaman CRUD dasarnya berjalan, tetapi setiap koleksi tetap terikat pada satu browser dan belum memiliki kepemilikan data berdasarkan pengguna yang terautentikasi.",
+  NisoraProblem2:
+    "Saya ingin konsep tersebut berkembang menjadi pustaka pribadi yang datanya dapat bertahan lintas perangkat, memberikan setiap pengguna koleksi mereka sendiri, dan mendukung data buku yang lebih kaya tanpa menambah infrastruktur maupun biaya hosting yang tidak diperlukan.",
+  NisoraOwnership:
+    "Dikerjakan secara mandiri mulai dari arah produk, implementasi UI, arsitektur frontend, alur autentikasi, integrasi Supabase, integrasi data buku eksternal, deployment, hingga iterasi lanjutan.",
+  NisoraContrib1:
+    "Membangun ulang book tracker berbasis localStorage menjadi pustaka pribadi dengan autentikasi dan penyimpanan cloud.",
+  NisoraContrib2:
+    "Menerapkan autentikasi email tanpa password melalui Supabase Auth, termasuk template email autentikasi yang dikustomisasi.",
+  NisoraContrib3:
+    "Mengintegrasikan penyimpanan persisten berbasis Supabase agar koleksi buku terhubung dengan pengguna terautentikasi, bukan satu browser saja.",
+  NisoraContrib4:
+    "Mengintegrasikan pencarian OpenLibrary untuk mengisi metadata buku yang tersedia seperti judul, penulis, tahun terbit, cover, dan informasi deskriptif.",
+  NisoraContrib5:
+    "Mempertahankan input buku manual dan field yang tetap dapat diedit agar metadata eksternal yang tidak lengkap tidak menghalangi pengguna mengelola pustaka mereka.",
+  NisoraContrib6:
+    "Membangun alur pengelolaan buku yang responsif dengan validasi form berbasis schema dan melakukan deployment frontend production melalui Cloudflare Pages.",
+  NisoraDecisionSupabaseTitle: "Supabase sebagai layanan backend",
+  NisoraDecisionSupabaseDesc:
+    "Supabase menyediakan autentikasi, penyimpanan data relasional, dan file storage dalam satu layanan dengan free tier yang sesuai, sehingga Nisora dapat berkembang dari data berbasis browser tanpa perlu langsung mengoperasikan backend terpisah.",
+  NisoraDecisionAuthTitle: "Autentikasi email tanpa password",
+  NisoraDecisionAuthDesc:
+    "Autentikasi Google sempat dieksplorasi lebih dulu, tetapi email tanpa password menghasilkan alur yang lebih sederhana untuk kebutuhan produk. Magic link Supabase menghilangkan kebutuhan pengelolaan password sekaligus memungkinkan template email disesuaikan dengan pengalaman produk.",
+  NisoraDecisionOpenLibraryTitle: "OpenLibrary sebagai sumber pendukung",
+  NisoraDecisionOpenLibraryDesc:
+    "Metadata eksternal mempercepat input buku tetapi tidak cukup konsisten untuk menjadi satu-satunya sumber data. OpenLibrary digunakan untuk mengisi informasi yang tersedia, sementara nilainya tetap dapat diedit dan input manual tetap didukung.",
+  NisoraDecisionArchitectureTitle:
+    "Arsitektur langsung dari client ke Supabase",
+  NisoraDecisionArchitectureDesc:
+    "Versi saat ini sengaja belum menggunakan lapisan API khusus karena Supabase sudah memenuhi kebutuhan autentikasi, persistensi, dan penyimpanan proyek. Pendekatan ini menjaga arsitektur tetap ringan dan hemat biaya, dengan ruang untuk API khusus apabila business logic di masa depan membutuhkannya.",
+  NisoraChallenge1C:
+    "Implementasi My Pustaka sebelumnya hanya menyimpan koleksi melalui localStorage sehingga data bergantung pada satu browser dan belum dapat menjadi pustaka pribadi berbasis akun.",
+  NisoraChallenge1S:
+    "Mengubah persistensi menggunakan Supabase dan identitas pengguna terautentikasi agar data buku dapat menjadi milik akun masing-masing, bukan hanya satu browser atau perangkat.",
+  NisoraChallenge2C:
+    "Autentikasi ternyata lebih kompleks daripada sekadar mengirim link masuk: pendekatan awal menggunakan Google menambah kompleksitas yang tidak diperlukan, sementara magic link email juga membutuhkan penanganan redirect dan link kedaluwarsa yang benar.",
+  NisoraChallenge2S:
+    "Menyederhanakan autentikasi menjadi email tanpa password serta menyelaraskan konfigurasi redirect/base URL Supabase dengan penanganan frontend untuk link autentikasi yang tidak valid atau telah kedaluwarsa.",
+  NisoraChallenge3C:
+    "OpenLibrary tidak menyediakan metadata lengkap untuk setiap buku, sehingga menjadikan pencarian eksternal sebagai kewajiban justru dapat menghalangi beberapa judul untuk ditambahkan dengan benar.",
+  NisoraChallenge3S:
+    "Menjadikan OpenLibrary sebagai bantuan opsional: metadata yang tersedia mengisi form secara otomatis, data yang tidak tersedia dapat dibiarkan kosong, dan pengguna tetap bebas mengedit maupun memasukkan informasi buku secara manual.",
+  NisoraOutcome1:
+    "Mengembangkan prototipe CRUD yang sebelumnya hanya hidup di browser menjadi pustaka pribadi dengan autentikasi dan penyimpanan cloud yang tidak bergantung pada satu perangkat.",
+  NisoraOutcome2:
+    "Menggabungkan autentikasi tanpa password, data buku persisten, penyimpanan cover, dan bantuan metadata eksternal dalam aplikasi yang telah di-deploy ke production.",
+  NisoraOutcome3:
+    "Memperluas proyek dari pengelolaan state frontend saja menjadi pengalaman praktis dengan autentikasi, persistensi, storage, layanan pihak ketiga, dan arsitektur aplikasi yang lebih luas.",
   TextEditorDesc:
-    "Rich text editor minimalis yang menggabungkan fleksibilitas Tiptap dengan UI yang bersih dan mudah diakses.",
+    "Package rich-text editor React yang menyediakan Tiptap dengan kontrol formatting siap pakai, pengalaman editing responsif, mode sumber HTML, dan visibilitas toolbar yang dapat dikonfigurasi.",
   TextEditorDescDetail:
-    "Mengembangkan paket rich text editor yang dapat digunakan kembali, dirancang agar mudah dikonfigurasi, ramah seluler, dan lebih mudah disesuaikan dengan kebutuhan produk yang berbeda.",
+    "Mengembangkan package npm reusable yang mengurangi setup Tiptap berulang dengan menyediakan kontrol formatting, editing mobile yang responsif, mode sumber HTML, lokalisasi, styling hooks, dan API aplikasi yang sederhana.",
+  TextEditorOverview1:
+    "ResuAve TextEditor adalah package npm reusable untuk React yang menyediakan lapisan siap pakai di atas Tiptap dengan menggabungkan formatting rich-text umum, editing responsif, mode sumber HTML, lokalisasi, dan event handling untuk aplikasi dalam satu komponen.",
+  TextEditorOverview2:
+    "Ide proyek ini berkembang dari permasalahan rich-text editing yang saya temui dalam pekerjaan profesional, tetapi paket publiknya diimplementasikan ulang secara independen dari awal tanpa menggunakan source code proprietary, aset internal, business logic, atau detail implementasi rahasia. Package ini dirilis secara publik pada Juli 2026.",
+  TextEditorProblem1:
+    "Tiptap memberikan fleksibilitas yang tinggi, tetapi menggunakannya untuk kebutuhan produk umum tetap dapat membutuhkan setup extension, toolbar, editor events, styling, responsive behavior, dan fitur pendukung secara berulang sebelum editor siap digunakan.",
+  TextEditorProblem2:
+    "Saya ingin menyediakan titik awal yang lebih cepat untuk proyek React: install package, hubungkan editor dengan state aplikasi, lalu dapatkan pengalaman editing desktop dan mobile yang praktis tanpa membangun fondasi yang sama dari awal setiap kali.",
+  TextEditorOwnership:
+    "Dikerjakan secara mandiri mulai dari reimplementasi publik yang independen, desain komponen dan API, perilaku toolbar, pengalaman editing responsif, integrasi mode sumber HTML, lokalisasi, build dan distribusi package, dokumentasi demo, deployment, hingga iterasi lanjutan.",
+  TextEditorContrib1:
+    "Membangun paket rich-text editor React reusable di atas Tiptap dengan formatting umum, kontrol structured content, link, history actions, dan output aplikasi berbasis HTML.",
+  TextEditorContrib2:
+    "Mendesain API aplikasi yang sederhana dengan value dan callback editor events, read-only behavior, lokalisasi, translation override, dan styling hooks.",
+  TextEditorContrib3:
+    "Menambahkan konfigurasi visibilitas toolbar pada level group dan item agar aplikasi dapat menyembunyikan kontrol yang tidak dibutuhkan tanpa membangun ulang toolbar.",
+  TextEditorContrib4:
+    "Membangun pengalaman editing fullscreen khusus mobile daripada sekadar mengecilkan toolbar desktop ke layout ponsel yang terbatas.",
+  TextEditorContrib5:
+    "Mengintegrasikan CodeMirror sebagai editor sumber HTML dan menyinkronkan konten ketika berpindah antara mode WYSIWYG dan source editing.",
+  TextEditorContrib6:
+    "Menyiapkan editor untuk distribusi publik melalui npm dengan entry point ESM dan CommonJS, CSS export, React peer dependencies, serta situs demo dan dokumentasi terpisah.",
+  TextEditorDecisionTiptapTitle: "Tiptap sebagai fondasi editor",
+  TextEditorDecisionTiptapDesc:
+    "Tiptap memberikan kontrol yang lebih besar terhadap formatting, extension, implementasi toolbar, dan UI editor dibandingkan editor siap pakai yang lebih opinionated, sehingga lebih sesuai sebagai fondasi komponen reusable yang dirancang untuk terus berkembang.",
+  TextEditorDecisionSetupTitle:
+    "Setup siap pakai dibanding inisialisasi berulang",
+  TextEditorDecisionSetupDesc:
+    "Package ini sengaja menggabungkan setup editor dan keputusan UX yang umum agar aplikasi dapat memulai dari baseline yang siap digunakan tanpa membangun ulang extension, perilaku toolbar, responsive handling, source mode, dan styling pada setiap implementasi.",
+  TextEditorDecisionMobileTitle: "Pengalaman editing khusus mobile",
+  TextEditorDecisionMobileDesc:
+    "Daripada memadatkan toolbar desktop ke viewport ponsel, layar kecil menggunakan alur editing fullscreen yang terinspirasi aplikasi catatan dan dokumen mobile sehingga editor memiliki ruang yang lebih nyaman saat keyboard layar tampil.",
+  TextEditorDecisionSourceTitle: "CodeMirror untuk editing sumber HTML",
+  TextEditorDecisionSourceDesc:
+    "WYSIWYG dan editing HTML mentah memiliki kebutuhan interaksi yang berbeda, sehingga CodeMirror digunakan sebagai source editor khusus sementara Tiptap tetap menangani visual editing. Konten disinkronkan ketika pengguna berpindah di antara kedua mode tersebut.",
+  TextEditorChallenge1C:
+    "Toolbar rich-text yang nyaman di desktop menjadi terlalu padat di ponsel, sementara keyboard layar semakin mengurangi ruang editing yang tersedia.",
+  TextEditorChallenge1S:
+    "Membuat alur editing fullscreen khusus mobile dengan state preview yang lebih ringkas, sehingga editor dan toolbar dapat menggunakan ruang layar secara lebih efektif tanpa memaksakan layout desktop ke mobile.",
+  TextEditorChallenge2C:
+    "Tiptap dan CodeMirror merupakan dua interface editing berbeda untuk konten HTML yang sama, sehingga perpindahan mode tanpa kehilangan atau menggunakan data lama membutuhkan batas sinkronisasi yang jelas.",
+  TextEditorChallenge2S:
+    "Memindahkan HTML terkini dari Tiptap ke source editor saat memasuki source mode, lalu menerapkan kembali HTML yang telah diedit ke Tiptap ketika kembali ke mode WYSIWYG.",
+  TextEditorChallenge3C:
+    "Komponen yang berjalan di satu aplikasi belum otomatis siap digunakan kembali karena pengguna package juga membutuhkan export yang jelas, stylesheet, batas dependency, serta build yang dapat digunakan di berbagai aplikasi React.",
+  TextEditorChallenge3S:
+    "Menambahkan library build khusus dengan export ESM dan CommonJS, stylesheet terpisah, React sebagai peer dependency, packaging npm publik, serta validasi build/package sebelum publish.",
+  TextEditorOutcome1:
+    "Mempublikasikan `@resuave/texteditor` sebagai package npm yang dapat di-install lengkap dengan situs demo dan dokumentasi publik.",
+  TextEditorOutcome2:
+    "Mengubah setup rich-text editor yang berulang menjadi komponen reusable yang sudah menyediakan responsive behavior desktop/mobile, konfigurasi visibilitas toolbar, dan editing sumber HTML.",
+  TextEditorOutcome3:
+    "Memperluas proyek dari pekerjaan UI aplikasi menjadi pengalaman dalam desain API library publik, distribusi package, dependency boundaries, dan reusable developer tooling.",
+
+  // Case study section labels
+  CaseContributions: "Kontribusi",
+  CaseChallenges: "Tantangan",
+  CaseProblem: "Masalah",
+  CaseOwnership: "Kepemilikan",
+  EngineeringDecisions: "Keputusan Teknis",
+  ChallengesSolutions: "Tantangan & Solusi",
+  CaseOutcome: "Hasil",
+  ChallengeNumber: "Tantangan {{number}}",
+  ChallengeLabel: "Tantangan",
+  SolutionLabel: "Solusi",
+  CaseDecisionCloudflareTitle: "Infrastruktur berbasis Cloudflare",
+  CaseDecisionDownloadsTitle: "Unduhan via Worker",
+  Project: "Proyek",
+  ProjectLaunched: "Diluncurkan",
+  ProjectPlatform: "Platform",
+  ProjectDetailFallbackTitle: "Detail Proyek",
+  ProjectDetailSrDescription:
+    "Screenshot proyek, deskripsi, teknologi, dan tautan.",
+  ProductPreview: "Pratinjau Produk",
+  ProjectPreviewAlt: "Pratinjau {{title}}",
+  ProjectPreviewAltNumber: "Pratinjau {{title}} {{number}}",
+  ProjectMetaCompleted: "Selesai",
+  ProjectMetaPackage: "Package",
+  ProjectMetaWeb: "Web",
+  ProjectMetaNpmPackage: "Package npm",
+  NisoraLaunched: "1 Jul 2026",
+  TextEditorLaunched: "Jul 2026",
+  ResaeniLaunched: "19 Agu 2026",
+
+  // Resaeni
+  ResaeniDesc:
+    "Platform gratis tanpa iklan untuk menemukan, streaming, dan mengunduh animasi Korea (Aeni), dengan katalog yang terfokus dan terkurasi.",
+  ResaeniDescDetail:
+    "Gratis ditonton. Tanpa iklan. Fokus ke Aeni. Platform streaming dan unduhan animasi Korea dengan katalog terkurasi yang dirawat secara end-to-end.",
+  ResaeniOverview1:
+    "Resaeni adalah platform gratis tanpa iklan untuk menemukan, streaming, dan mengunduh animasi Korea (Aeni), dibangun di sekitar katalog yang fokus dan terkurasi.",
+  ResaeniOverview2:
+    "Produk ini launching di production sejak 19 Agustus 2026 dan saat ini menyajikan 7 judul Aeni terkurasi dengan sekitar 60 episode yang bisa ditonton.",
+  ResaeniProblem1:
+    "Platform anime umum mengejar ukuran katalog, tetapi produk yang dirawat hampir sendirian tidak mampu mengkurasi, memverifikasi, dan merawat katalog Jepang atau Tiongkok yang masif secara end-to-end dengan konsistensi yang diinginkan.",
+  ResaeniProblem2:
+    "Animasi Korea menawarkan cakupan yang lebih fokus secara sengaja: niche yang jelas, cukup materi ber-subtitle Inggris, dan katalog yang cukup kecil agar metadata, aset, media, dan pengalaman pengguna tetap mudah dijaga konsistensinya.",
+  ResaeniOwnership:
+    "Kepemilikan end-to-end mulai dari arah produk, frontend, backend, operasi konten, infrastruktur, deployment, hingga perawatan berkelanjutan.",
+  ResaeniContrib1:
+    "Membangun pengalaman discovery, katalog, detail judul, streaming, dan unduhan.",
+  ResaeniContrib2:
+    "Membangun dan menyempurnakan admin tooling untuk operasi konten, termasuk pengisian metadata terbantu yang nilainya tetap bisa dikoreksi manual sebelum disimpan.",
+  ResaeniContrib3:
+    "Mengembangkan backend Hono di atas Cloudflare Workers dengan Turso (libSQL) sebagai lapisan data.",
+  ResaeniContrib4:
+    "Mengkonsolidasikan penyajian media dan artwork ke ekosistem Cloudflare, menggantikan hosting pihak ketiga yang terfragmentasi.",
+  ResaeniContrib5:
+    "Menerapkan UI responsif berorientasi mobile dengan loading state, placeholder gambar, dan fallback behavior.",
+  ResaeniContrib6:
+    "Menambahkan alur Report an Issue sederhana agar pengguna bisa melaporkan masalah langsung dari aplikasi.",
+  ResaeniDecisionReactDesc:
+    "Pilihan pragmatis berbasis keahlian yang sudah ada; membuat produk ini lebih cepat dan aman dirawat oleh satu orang.",
+  ResaeniDecisionCloudflareDesc:
+    "Workers, Hono, dan R2 menjaga deployment, API, dan penyajian media dalam satu ekosistem dengan manajemen domain yang kohesif dan biaya yang hemat.",
+  ResaeniDecisionTursoDesc:
+    "Model serverless dan free tier-nya lebih cocok dengan volume data, gaya deployment, dan batasan biaya proyek ini dibanding alternatif yang dievaluasi saat itu.",
+  ResaeniDecisionDownloadsDesc:
+    "Unduhan dilayani lewat endpoint Worker dengan header Content-Disposition, menjaga kendali cara file sampai ke pengguna tanpa infrastruktur penyimpanan terpisah.",
+  ResaeniChallenge1C:
+    "Input metadata katalog secara manual repetitif dan memakan waktu.",
+  ResaeniChallenge1S:
+    "Membangun admin tool dengan alur inisialisasi terbantu: masukkan identifier, ambil metadata, isi field otomatis yang tetap dapat diedit, lalu koreksi nilai hasil scraping yang tidak akurat sebelum disimpan. Input data episode juga terotomatisasi sebagian dengan cara yang sama.",
+  ResaeniChallenge2C:
+    "Artwork awalnya di-host di Cloudinary sementara bagian lain dari stack berkumpul di Cloudflare, memecah operasional media ke beberapa provider.",
+  ResaeniChallenge2S:
+    "Media dikonsolidasikan ke R2 dalam ekosistem Cloudflare untuk mengurangi fragmentasi, menyederhanakan manajemen domain, dan menekan biaya operasional — keputusan berbasis kesesuaian constraint, bukan penilaian atas Cloudinary itu sendiri.",
+  ResaeniChallenge3C:
+    "Fitur eksperimental Anime Finder (trace.moe) dieksplorasi sebagai pembeda, tetapi hasil pencocokannya tidak andal untuk animasi Korea.",
+  ResaeniChallenge3S:
+    "Fitur diprioritaskan ulang setelah pengujian alih-alih dipaksakan tayang; fokus kembali ke discovery, library, informasi judul, streaming, dan dukungan.",
+  ResaeniOutcome1:
+    "Tayang di production sejak 19 Agustus 2026 dengan 7 judul Aeni terkurasi dan sekitar 60 episode yang bisa ditonton.",
+  ResaeniOutcome2:
+    "Alur kerja konten end-to-end berjalan, didukung admin tooling yang mengurangi input metadata berulang.",
+  ResaeniOutcome3:
+    "Infrastruktur terkonsolidasi dengan kompleksitas operasional lebih rendah, dirawat sebagai proyek production yang terus berevolusi dengan pengecekan rutin dan siklus review dependensi bulanan.",
 
   // Footer
   ThanksForStoppingBy:

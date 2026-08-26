@@ -1,9 +1,14 @@
-import React, { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { translate } from "./translate";
 
 export const TranslationContext = createContext(undefined);
 
 const LOCALE_STORAGE_KEY = "portfolio-locale";
+const DOCUMENT_META = [
+  ['meta[name="description"]', "DocumentDescription"],
+  ['meta[property="og:title"]', "DocumentTitle"],
+  ['meta[property="og:description"]', "DocumentOgDescription"],
+];
 
 function getInitialLocale() {
   if (typeof window === "undefined") return "en";
@@ -13,7 +18,7 @@ function getInitialLocale() {
     if (persisted === "id" || persisted === "en") {
       return persisted;
     }
-  } catch (e) {
+  } catch {
     // Ignore localStorage errors (e.g., in privacy modes)
   }
 
@@ -32,12 +37,21 @@ export function TranslationProvider({ children }) {
     // Update HTML lang attribute on change
     if (typeof document !== "undefined") {
       document.documentElement.lang = locale;
+
+      document.title = translate(locale, "DocumentTitle");
+
+      DOCUMENT_META.forEach(([selector, key]) => {
+        const meta = document.querySelector(selector);
+        if (meta) {
+          meta.setAttribute("content", translate(locale, key));
+        }
+      });
     }
 
     // Persist to localStorage
     try {
       localStorage.setItem(LOCALE_STORAGE_KEY, locale);
-    } catch (e) {
+    } catch {
       // Ignore errors
     }
   }, [locale]);

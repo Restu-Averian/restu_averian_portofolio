@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-const useIsMobile = () => {
+const useIsMobile = (breakpoint = 767) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
+    const mq = window.matchMedia(`(max-width: ${breakpoint}px)`);
 
     setIsMobile(mq.matches);
 
@@ -12,7 +12,7 @@ const useIsMobile = () => {
 
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
-  }, []);
+  }, [breakpoint]);
 
   return isMobile;
 };

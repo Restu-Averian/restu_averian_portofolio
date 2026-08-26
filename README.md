@@ -47,6 +47,14 @@ The portfolio highlights selected public projects, professional experience, tech
 
 ## Featured Projects
 
+### Resaeni
+
+A free, ad-free platform for discovering, streaming, and downloading Korean animation (Aeni), built around a curated catalogue.
+
+**Stack:** React, Vite, Hono, Cloudflare Workers, Cloudflare R2, Turso
+
+[Live Demo](https://resaeni.cc) · [Source Code](https://github.com/Restu-Averian/resaeni)
+
 ### Nisora
 
 A responsive book-tracking application for managing reading progress, personal collections, and book notes.
@@ -80,10 +88,8 @@ A reusable and mobile-friendly rich-text editor package built with Tiptap for co
 src/
 ├── assets/                  # Portfolio images, branding, project previews, and resume
 ├── components/
-│   ├── modal/detail-project # Responsive project-detail dialog and drawer
-│   ├── page/                # Profile, projects, experience, navigation, and footer
+│   ├── section/             # Profile, projects, experience, top bar, and footer
 │   └── ui/                  # Reusable UI primitives
-├── data/                    # Work-experience data
 ├── hooks/                   # Theme and responsive hooks
 ├── i18n/                    # Translation provider, locales, and helpers
 ├── App.jsx
