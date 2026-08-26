@@ -14,7 +14,6 @@ import DataOnThumb from "@/assets/work-experiences/image-removebg-preview.png";
  * @property {LocalizedString|string} role
  * @property {LocalizedString|string} [employmentType]
  * @property {string} company
- * @property {string} [location]
  * @property {LocalizedString|string} period
  * @property {boolean} isCurrent
  * @property {LocalizedString|string} shortSummary
@@ -32,7 +31,6 @@ export const WORK_EXPERIENCES = [
     role: tr("InternRole", "Frontend Engineer Intern"),
     employmentType: tr("InternEmploymentType", "Internship"),
     company: "PT. Indodev Niaga Internet",
-    location: "South Tangerang, Indonesia",
     period: tr("InternPeriod", "August 2022 - February 2023"),
     isCurrent: false,
     shortSummary: tr(
@@ -67,7 +65,6 @@ export const WORK_EXPERIENCES = [
     role: tr("FrontendEngineerRole", "Frontend Engineer"),
     employmentType: tr("StaffEmploymentType", "Staff"),
     company: "PT. Indodev Niaga Internet",
-    location: "South Tangerang, Indonesia",
     period: tr("StaffPeriod", "February 2023 - Present"),
     isCurrent: true,
     shortSummary: tr(

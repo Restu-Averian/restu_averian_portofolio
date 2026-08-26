@@ -5,8 +5,6 @@ import ResuAveTextEditor3 from "@/assets/projects/texteditor/pic3.webp";
 import NisoraThumb1 from "@/assets/projects/nisora/pic1.webp";
 import NisoraThumb2 from "@/assets/projects/nisora/pic2.webp";
 import NisoraThumb3 from "@/assets/projects/nisora/pic3.webp";
-import NisoraThumb4 from "@/assets/projects/nisora/pic4.webp";
-import NisoraThumb5 from "@/assets/projects/nisora/pic5.webp";
 import ResaeniThumb1 from "@/assets/projects/resaeni/pic1.webp";
 import ResaeniThumb2 from "@/assets/projects/resaeni/pic2.webp";
 import ResaeniThumb3 from "@/assets/projects/resaeni/pic3.webp";
@@ -94,7 +92,6 @@ export const PROJECTS = [
     logo: ResaeniLogo,
     thumb: ResaeniThumb1,
     images: [ResaeniThumb1, ResaeniThumb2, ResaeniThumb3],
-    isFinished: true,
     meta: {
       launched: tr("ResaeniLaunched", "19 Aug 2026"),
       platform: tr("ProjectMetaWeb", "Web"),
@@ -252,14 +249,7 @@ export const PROJECTS = [
     githubUrl: "https://github.com/Restu-Averian/nisora",
     logo: NisoraLogo,
     thumb: NisoraThumb1,
-    images: [
-      NisoraThumb1,
-      NisoraThumb2,
-      NisoraThumb3,
-      NisoraThumb4,
-      NisoraThumb5,
-    ],
-    isFinished: true,
+    images: [NisoraThumb1, NisoraThumb2, NisoraThumb3],
     meta: {
       launched: tr("NisoraLaunched", "1 Jul 2026"),
       platform: tr("ProjectMetaWeb", "Web"),
@@ -427,7 +417,6 @@ export const PROJECTS = [
     packageUrl: "https://www.npmjs.com/package/@resuave/texteditor",
     thumb: ResuAveTextEditor1,
     images: [ResuAveTextEditor1, ResuAveTextEditor2, ResuAveTextEditor3],
-    isFinished: true,
     meta: {
       launched: tr("TextEditorLaunched", "Jul 2026"),
       platform: tr("ProjectMetaNpmPackage", "npm Package"),

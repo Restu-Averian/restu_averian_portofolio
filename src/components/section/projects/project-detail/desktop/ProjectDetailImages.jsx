@@ -19,7 +19,7 @@ export const ProjectDetailImages = ({ images = [], title }) => {
       </div>
 
       <div className="grid min-h-0 flex-1 content-start gap-5">
-        <div className="aspect-[1.35/0.86] w-114.75 max-w-full overflow-hidden rounded-[1.35rem] bg-background/90 p-4 shadow-[0_18px_44px_rgba(0,0,0,0.18)]">
+        <div className="aspect-[1.35/0.86] w-full max-w-full overflow-hidden rounded-[1.35rem] bg-background/90 p-4 shadow-[0_18px_44px_rgba(0,0,0,0.18)]">
           <img
             src={activeImage}
             alt={t("ProjectPreviewAlt", "{{title}} preview", {
@@ -29,37 +29,39 @@ export const ProjectDetailImages = ({ images = [], title }) => {
           />
         </div>
 
-        <div className="flex shrink-0 gap-4 overflow-x-auto porto-scrollbar pb-2">
-          {images?.map((image, index) => {
-            const active = activeImage === image;
+        <div className="overflow-x-auto porto-scrollbar pb-2">
+          <div className="flex shrink-0 justify-center gap-4">
+            {images?.map((image, index) => {
+              const active = activeImage === image;
 
-            return (
-              <button
-                key={`${image}-${index}`}
-                type="button"
-                onClick={() => setActiveImage(image)}
-                className={cn(
-                  "w-[calc((100%-2rem)/3)] shrink-0 aspect-[1.28/1] overflow-hidden rounded-xl border bg-background/80 p-1 transition cursor-pointer",
-                  active
-                    ? "border-porto-btn shadow-[0_0_0_2px_rgba(210,166,108,0.2)]"
-                    : "border-porto-border/60 opacity-65 hover:opacity-100",
-                )}
-              >
-                <img
-                  src={image}
-                  alt={t(
-                    "ProjectPreviewAltNumber",
-                    "{{title}} preview {{number}}",
-                    {
-                      title: title || t("Project", "Project"),
-                      number: index + 1,
-                    },
+              return (
+                <button
+                  key={`${image}-${index}`}
+                  type="button"
+                  onClick={() => setActiveImage(image)}
+                  className={cn(
+                    "w-[14vh] max-w-[calc((100%-3rem)/4)] shrink-0 aspect-[1.28/1] overflow-hidden rounded-xl border bg-background/80 p-1 transition cursor-pointer",
+                    active
+                      ? "border-porto-btn shadow-[0_0_0_2px_rgba(210,166,108,0.2)]"
+                      : "border-porto-border/60 opacity-65 hover:opacity-100",
                   )}
-                  className="h-full w-full rounded-lg object-cover"
-                />
-              </button>
-            );
-          })}
+                >
+                  <img
+                    src={image}
+                    alt={t(
+                      "ProjectPreviewAltNumber",
+                      "{{title}} preview {{number}}",
+                      {
+                        title: title || t("Project", "Project"),
+                        number: index + 1,
+                      },
+                    )}
+                    className="h-full w-full rounded-lg object-cover"
+                  />
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
     </aside>

@@ -18,30 +18,32 @@ export const ProjectDetailImages = ({ images = [], title }) => {
         />
       </div>
 
-      <div className="mt-3 flex gap-2.5 overflow-x-auto porto-scrollbar pb-2">
-        {images?.map((image, index) => {
-          const active = activeImage === image;
+      <div className="mt-3 overflow-x-auto porto-scrollbar pb-2">
+        <div className="flex justify-center gap-2.5">
+          {images?.map((image, index) => {
+            const active = activeImage === image;
 
-          return (
-            <button
-              key={`${image}-${index}`}
-              type="button"
-              onClick={() => setActiveImage(image)}
-              className={cn(
-                "w-[calc((100%-1.25rem)/3)] shrink-0 overflow-hidden rounded-xl border bg-background/50 p-1 transition",
-                active
-                  ? "border-porto-btn shadow-[0_0_0_1px_rgba(210,166,108,0.35)]"
-                  : "border-porto-border/60 opacity-65",
-              )}
-            >
-              <img
-                src={image}
-                alt={`${title || "Project"} preview ${index + 1}`}
-                className="aspect-[1.25/0.82] w-full rounded-lg object-cover"
-              />
-            </button>
-          );
-        })}
+            return (
+              <button
+                key={`${image}-${index}`}
+                type="button"
+                onClick={() => setActiveImage(image)}
+                className={cn(
+                  "w-[calc((100%-1.25rem)/3)] shrink-0 overflow-hidden rounded-xl border bg-background/50 p-1 transition",
+                  active
+                    ? "border-porto-btn shadow-[0_0_0_1px_rgba(210,166,108,0.35)]"
+                    : "border-porto-border/60 opacity-65",
+                )}
+              >
+                <img
+                  src={image}
+                  alt={`${title || "Project"} preview ${index + 1}`}
+                  className="aspect-[1.25/0.82] w-full rounded-lg object-cover"
+                />
+              </button>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

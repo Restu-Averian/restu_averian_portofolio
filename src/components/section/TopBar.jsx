@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { memo, useState, useEffect, useMemo } from "react";
-import { useIsDark, useTheme } from "@/hooks/useTheme";
+import { useTheme } from "@/hooks/useTheme";
 import { useTranslation } from "@/i18n";
 import SelectField from "@/components/ui/select/select-field";
 import { LOCALES, THEMES } from "@/constants/top-bar";
@@ -10,8 +10,6 @@ const TopBar_ = () => {
   const [openSelect, setOpenSelect] = useState(null);
   const { theme, setTheme } = useTheme();
   const { t, locale, setLocale } = useTranslation();
-
-  const isDark = useIsDark();
 
   const greeting = (() => {
     const hour = now.getHours();
@@ -66,12 +64,7 @@ const TopBar_ = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-between px-4 py-3.5 md:px-10 flex-wrap gap-y-2">
-      <span className="flex-1 flex items-center gap-2 md:gap-3 text-xs font-medium text-foreground md:text-base">
-        <img
-          src={isDark ? "/logo-dark.webp" : "/logo.webp"}
-          alt="Logo"
-          className="h-8 w-8 md:h-10 md:w-10 object-contain"
-        />
+      <span className="flex-1 flex items-center text-xs font-medium text-foreground md:text-base">
         <span className="flex items-center gap-1.5">
           {greeting}
           <Icon icon="solar:sun-linear" className="h-4 w-4 md:h-5 md:w-5" />

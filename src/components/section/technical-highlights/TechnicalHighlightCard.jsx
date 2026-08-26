@@ -1,11 +1,15 @@
 import { ProofPoint } from "./ProofPoint";
+import { useTranslation } from "@/i18n";
 
-export const TechnicalHighlightCard = ({ highlight, t }) => {
+export const TechnicalHighlightCard = ({ highlight, className = "" }) => {
+  const { t } = useTranslation();
   const HighlightIcon = highlight.icon;
   const description = highlight.description ?? highlight.desc;
 
   return (
-    <article className="rounded-xl border border-porto-border/80 bg-background/30 p-2.5">
+    <article
+      className={`${className} rounded-xl border border-porto-border/80 bg-background/30 p-2.5`}
+    >
       <div className="flex items-center gap-2.5">
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-porto-accent/75 text-porto-btn">
           <HighlightIcon className="h-4 w-4" />

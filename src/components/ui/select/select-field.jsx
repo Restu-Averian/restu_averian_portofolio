@@ -81,7 +81,7 @@ const SelectField_ = ({
           onOpenChange={onOpenChange}
           placement="bottom"
           contentClassName={cn("px-4 pb-4 pt-2 min-h-[35vh]", contentClassName)}
-          dismissible={true}
+          dismissible
         >
           <div className="flex flex-col gap-2 mt-4">
             {children ??

@@ -2,6 +2,7 @@ import { CodeXml } from "lucide-react";
 import { memo, useRef } from "react";
 import { useTranslation } from "@/i18n";
 import ScrollAffordance from "@/components/ui/scroll-affordance";
+import { MobileCarousel } from "@/components/ui/mobile-carousel/index";
 import { TECHNICAL_HIGHLIGHTS } from "@/constants/technical-highlights";
 import { TechnicalHighlightCard } from "./TechnicalHighlightCard";
 
@@ -30,18 +31,20 @@ const TechnicalHighlights_ = () => {
         </div>
       </div>
 
-      <div
-        className="porto-scrollbar grid grid-cols-1 gap-2 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1"
+      <MobileCarousel
+        viewportClassName="porto-scrollbar lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1"
+        trackClassName="max-lg:gap-2 lg:grid lg:grid-cols-1 lg:gap-2"
         ref={scrollRef}
+        showArrows
       >
         {TECHNICAL_HIGHLIGHTS.map((highlight, index) => (
           <TechnicalHighlightCard
             key={highlight.title?.key || highlight.title || index}
             highlight={highlight}
-            t={t}
+            className="max-lg:min-w-0 max-lg:shrink-0 max-lg:grow-0 max-lg:basis-[87%]"
           />
         ))}
-      </div>
+      </MobileCarousel>
 
       <ScrollAffordance containerRef={scrollRef} />
     </section>

@@ -5,7 +5,7 @@ import {
 } from "@/context/ProjectsCtxProvider";
 import ProjectCardTagFeatured from "./components/ProjectCardTagFeatured";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, className = "" }) {
   const { t } = useTranslation();
   const { handleSelectProject } = useProjectsContext();
 
@@ -13,7 +13,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <article
-      className={`flex flex-col gap-3 rounded-2xl border bg-background/55 p-2.5 shadow-sm transition-all hover:border-porto-btn hover:shadow-md sm:flex-row cursor-pointer ${
+      className={`${className} flex flex-col gap-3 rounded-2xl border bg-background/55 p-2.5 shadow-sm transition-all hover:border-porto-btn hover:shadow-md sm:flex-row cursor-pointer ${
         isFeatured
           ? "border-porto-btn bg-background/75"
           : "border-porto-border/80"
@@ -22,7 +22,7 @@ export default function ProjectCard({ project }) {
     >
       <button
         type="button"
-        className="group relative h-44 w-full overflow-hidden rounded-xl bg-muted text-left sm:h-auto sm:min-h-34 sm:w-[40%] sm:shrink-0"
+        className="group cursor-pointer relative h-44 w-full overflow-hidden rounded-xl bg-muted text-left sm:h-auto sm:min-h-34 sm:w-[40%] sm:shrink-0"
         aria-label={`${t("ViewProject", "View Project")}: ${project?.title}`}
       >
         <ProjectCardTagFeatured isFeatured={isFeatured} />
