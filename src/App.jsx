@@ -2,7 +2,7 @@ import TopBar from "./components/section/TopBar";
 import Profile from "./components/section/Profile";
 import WorkExperience from "./components/section/work-experience";
 import Footer from "./components/section/Footer";
-import TechnicalHighlights from "./components/section/TechnicalHighlights";
+import TechnicalHighlights from "./components/section/technical-highlights";
 import Projects from "./components/section/projects";
 
 export default function App() {
@@ -17,9 +17,11 @@ export default function App() {
           <div className="order-3 lg:order-1 lg:min-h-0">
             <TechnicalHighlights />
           </div>
+
           <div className="order-1 lg:order-2 lg:min-h-0">
             <Projects />
           </div>
+
           <div className="order-2 lg:order-3 lg:min-h-0">
             <WorkExperience />
           </div>

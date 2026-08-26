@@ -3,32 +3,7 @@ import { memo, useState, useEffect, useMemo } from "react";
 import { useIsDark, useTheme } from "@/hooks/useTheme";
 import { useTranslation } from "@/i18n";
 import SelectField from "@/components/ui/select/select-field";
-
-const LOCALES = [
-  { value: "en", label: "EN", flag: "🇬🇧" },
-  { value: "id", label: "ID", flag: "🇮🇩" },
-];
-
-const THEMES = [
-  {
-    value: "light",
-    icon: "solar:sun-linear",
-    labelKey: "ThemeLight",
-    defaultLabel: "Light",
-  },
-  {
-    value: "dark",
-    icon: "solar:moon-linear",
-    labelKey: "ThemeDark",
-    defaultLabel: "Dark",
-  },
-  {
-    value: "system",
-    icon: "solar:monitor-linear",
-    labelKey: "ThemeSystem",
-    defaultLabel: "System",
-  },
-];
+import { LOCALES, THEMES } from "@/constants/top-bar";
 
 const TopBar_ = () => {
   const [now, setNow] = useState(() => new Date());
