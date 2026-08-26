@@ -10,6 +10,8 @@ import NisoraThumb5 from "@/assets/projects/nisora/pic5.webp";
 import ResaeniThumb1 from "@/assets/projects/resaeni/pic1.webp";
 import ResaeniThumb2 from "@/assets/projects/resaeni/pic2.webp";
 import ResaeniThumb3 from "@/assets/projects/resaeni/pic3.webp";
+import NisoraLogo from "@/assets/projects/nisora/logo.webp";
+import ResaeniLogo from "@/assets/projects/resaeni/logo.webp";
 import {
   CircleAlert,
   GitBranch,
@@ -89,6 +91,7 @@ export const PROJECTS = [
     ],
     demoUrl: "https://resaeni.cc",
     githubUrl: "https://github.com/Restu-Averian/resaeni",
+    logo: ResaeniLogo,
     thumb: ResaeniThumb1,
     images: [ResaeniThumb1, ResaeniThumb2, ResaeniThumb3],
     isFinished: true,
@@ -247,6 +250,7 @@ export const PROJECTS = [
     ],
     demoUrl: "https://nisora.pages.dev",
     githubUrl: "https://github.com/Restu-Averian/nisora",
+    logo: NisoraLogo,
     thumb: NisoraThumb1,
     images: [
       NisoraThumb1,

@@ -42,8 +42,16 @@ export const ProjectDetailHeader = ({ onClose }) => {
 
       <header className="grid grid-cols-[1fr_auto] gap-8">
         <div className="flex min-w-0 items-start gap-7">
-          <div className="flex h-17 w-17 shrink-0 items-center justify-center rounded-2xl border border-porto-btn/50 bg-porto-btn text-[42px] font-bold leading-none text-porto-btn-text shadow-[0_14px_34px_rgba(0,0,0,0.2)]">
-            {currentProject?.title?.[0] || "P"}
+          <div className="flex h-17 w-17 shrink-0 overflow-hidden items-center justify-center rounded-2xl border border-[#46382d] bg-[#241c18] text-[42px] font-bold leading-none text-[#f5dec2] shadow-[0_14px_34px_rgba(0,0,0,0.2)]">
+            {currentProject?.logo ? (
+              <img
+                src={currentProject.logo}
+                alt={`${currentProject.title} logo`}
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              currentProject?.title?.[0] || "P"
+            )}
           </div>
 
           <div className="min-w-0">

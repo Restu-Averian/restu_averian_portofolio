@@ -46,12 +46,14 @@ const WorkExperienceDialog_ = ({ isOpen, onClose, experience }) => {
         aria-labelledby="experience-detail-title"
       >
         <DialogTitle className="sr-only">{title}</DialogTitle>
+
         <DialogDescription className="sr-only">
           {t(
             "WorkExperienceSrDescription",
             "Work experience overview, scope, and key contributions.",
           )}
         </DialogDescription>
+
         <div className="flex flex-col flex-1 min-h-0">
           <WorkExperienceDetail experience={experience} />
         </div>
