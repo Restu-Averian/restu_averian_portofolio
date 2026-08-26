@@ -55,6 +55,7 @@ export const en = {
   Expand: "Expand",
   PreviousProject: "Previous Project",
   NextProject: "Next Project",
+  NpmPackage: "npm Package",
   ViewWorkExperience: "View work experience",
 
   // Work roles
@@ -215,9 +216,62 @@ export const en = {
   NisoraOutcome3:
     "Expanded the project from frontend-only state management into practical experience with authentication, persistence, storage, third-party services, and broader application architecture.",
   TextEditorDesc:
-    "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
+    "A reusable React rich-text editor package that provides Tiptap with ready-to-use formatting controls, responsive editing, HTML source mode, and configurable toolbar visibility.",
   TextEditorDescDetail:
-    "Developed a reusable rich text editor package designed to be configurable, mobile-friendly, and easier to fit into different product requirements.",
+    "Developed a reusable npm package that reduces repeated Tiptap setup by providing formatting controls, responsive mobile editing, HTML source mode, localization, styling hooks, and a straightforward application API.",
+  TextEditorOverview1:
+    "ResuAve TextEditor is a reusable npm package for React that provides an opinionated layer on top of Tiptap, combining common rich-text formatting, responsive editing, HTML source mode, localization, and application-facing event handling in one ready-to-use component.",
+  TextEditorOverview2:
+    "The idea grew from rich-text editing problems I encountered in professional work, but the public package was independently reimplemented from scratch without reusing proprietary source code, internal assets, business logic, or confidential implementation details. The package was publicly released in July 2026.",
+  TextEditorProblem1:
+    "Tiptap provides significant flexibility, but adopting it for common product requirements can still mean repeatedly assembling extensions, toolbar controls, editor events, styling, responsive behavior, and supporting features before the editor is ready to use.",
+  TextEditorProblem2:
+    "I wanted a faster starting point for React projects: install a package, connect the editor to application state, and get a practical desktop and mobile editing experience without rebuilding the same foundation every time.",
+  TextEditorOwnership:
+    "Solo ownership across the independent public reimplementation, component and API design, toolbar behavior, responsive editing experience, HTML source-mode integration, localization, package build and distribution, demo documentation, deployment, and ongoing iteration.",
+  TextEditorContrib1:
+    "Built a reusable React rich-text editor package on top of Tiptap with common formatting, structured content controls, links, history actions, and HTML-based application output.",
+  TextEditorContrib2:
+    "Designed a simple application-facing API with value and editor-event callbacks, read-only behavior, localization, translation overrides, and styling hooks.",
+  TextEditorContrib3:
+    "Added group- and item-level toolbar visibility configuration so applications can hide controls they do not need without rebuilding the toolbar.",
+  TextEditorContrib4:
+    "Built a dedicated fullscreen mobile editing experience instead of shrinking the desktop toolbar into a constrained phone layout.",
+  TextEditorContrib5:
+    "Integrated CodeMirror as an HTML source editor and synchronized content when moving between WYSIWYG and source-editing modes.",
+  TextEditorContrib6:
+    "Packaged the editor for public npm distribution with ESM and CommonJS entry points, exported CSS, React peer dependencies, and a separate live demo/documentation site.",
+  TextEditorDecisionTiptapTitle: "Tiptap as the editing foundation",
+  TextEditorDecisionTiptapDesc:
+    "Tiptap offered more control over formatting behavior, extensions, toolbar implementation, and editor UI than more opinionated ready-made editors, making it a better foundation for a reusable component that is intended to evolve over time.",
+  TextEditorDecisionSetupTitle:
+    "Opinionated setup over repeated initialization",
+  TextEditorDecisionSetupDesc:
+    "The package deliberately bundles common editor setup and UX decisions so applications can start from a usable baseline instead of rebuilding extensions, toolbar behavior, responsive handling, source mode, and styling for every implementation.",
+  TextEditorDecisionMobileTitle: "Dedicated mobile editing experience",
+  TextEditorDecisionMobileDesc:
+    "Rather than compressing the desktop toolbar into a phone-sized viewport, small screens use a fullscreen editing flow inspired by mobile note-taking and document applications, giving the editor more room alongside the on-screen keyboard.",
+  TextEditorDecisionSourceTitle: "CodeMirror for HTML source editing",
+  TextEditorDecisionSourceDesc:
+    "WYSIWYG and raw HTML editing have different interaction needs, so CodeMirror is used as a dedicated source editor while Tiptap remains responsible for visual editing. Content is synchronized when switching between the two modes.",
+  TextEditorChallenge1C:
+    "A rich toolbar that works comfortably on desktop becomes cramped on a phone, while the software keyboard further reduces the usable editing viewport.",
+  TextEditorChallenge1S:
+    "Created a separate fullscreen mobile editing flow with a compact entry/preview state, allowing the editor and toolbar to use the available screen more effectively instead of forcing the desktop layout onto mobile.",
+  TextEditorChallenge2C:
+    "Tiptap and CodeMirror represent two different editing interfaces for the same HTML content, so switching modes without losing or using stale content requires an explicit synchronization boundary.",
+  TextEditorChallenge2S:
+    "Transfer the current Tiptap HTML into the source editor when entering source mode and apply the edited HTML back into Tiptap when returning to WYSIWYG mode.",
+  TextEditorChallenge3C:
+    "A component that works inside one application is not automatically suitable for reuse: package consumers also need predictable exports, styles, dependency boundaries, and a build that works across React applications.",
+  TextEditorChallenge3S:
+    "Added a dedicated library build with ESM and CommonJS exports, a separately exported stylesheet, React peer dependencies, public npm packaging, and pre-publish build/package validation.",
+  TextEditorOutcome1:
+    "Published `@resuave/texteditor` as an installable npm package with a public demo and documentation site.",
+  TextEditorOutcome2:
+    "Turned repeated rich-text editor setup into a reusable component that already includes responsive desktop/mobile behavior, configurable toolbar visibility, and HTML source editing.",
+  TextEditorOutcome3:
+    "Expanded the project beyond application UI work into public library API design, package distribution, dependency boundaries, and reusable developer tooling.",
 
   // Case study section labels
   CaseProblem: "Problem",

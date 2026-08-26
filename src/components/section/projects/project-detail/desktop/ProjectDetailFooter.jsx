@@ -1,6 +1,7 @@
 import { ArrowLeft, ArrowRight, ExternalLink, Globe2 } from "lucide-react";
 import { Icon } from "@iconify/react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/i18n";
 
 const ProjectLink = ({ href, children, variant = "outline" }) => {
   const disabled = !href;
@@ -34,6 +35,8 @@ export const ProjectDetailFooter = ({
   nextProject,
   currentProject,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <footer className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 rounded-[1.35rem] border-t border-porto-border/50 bg-porto-surface/35 px-7 py-3">
       <button
@@ -60,6 +63,13 @@ export const ProjectDetailFooter = ({
           <Icon icon="mdi:github" className="h-5 w-5" />
           View on GitHub
         </ProjectLink>
+        {currentProject?.packageUrl ? (
+          <ProjectLink href={currentProject.packageUrl}>
+            <Icon icon="simple-icons:npm" className="h-5 w-5" />
+            {t("NpmPackage", "npm Package")}
+            <ExternalLink className="h-4 w-4" />
+          </ProjectLink>
+        ) : null}
       </div>
 
       <button

@@ -182,23 +182,78 @@ export const PROJECTS = [
   },
   {
     id: 2,
-    title: "Package Rich Texteditor",
-    desc: "A minimalist rich text editor combining Tiptap's flexibility with clean, accessible UI.",
+    title: "ResuAve TextEditor",
+    desc: "A reusable React rich-text editor package that provides Tiptap with ready-to-use formatting controls, responsive editing, HTML source mode, and configurable toolbar visibility.",
     descKey: "TextEditorDesc",
     descDetail:
-      "Developed a reusable rich text editor package designed to be configurable, mobile-friendly, and easier to fit into different product requirements.",
+      "Developed a reusable npm package that reduces repeated Tiptap setup by providing formatting controls, responsive mobile editing, HTML source mode, localization, styling hooks, and a straightforward application API.",
     descDetailKey: "TextEditorDescDetail",
     tags: [
       { icon: "mdi:react", label: "React" },
       { icon: "simple-icons:tiptap", label: "Tiptap" },
-      { icon: "simple-icons:prosemirror", label: "ProseMirror" },
-      { icon: "bxl:shadcn-ui", label: "Shadcn-ui" },
+      { icon: "simple-icons:codemirror", label: "CodeMirror" },
+      { icon: "bxl:shadcn-ui", label: "Shadcn/ui" },
     ],
     demoUrl: "https://resuave-texteditor.pages.dev/",
     githubUrl: "https://github.com/Restu-Averian/-resuave-texteditor",
+    packageUrl: "https://www.npmjs.com/package/@resuave/texteditor",
     thumb: ResuAveTextEditor1,
     images: [ResuAveTextEditor1, ResuAveTextEditor2, ResuAveTextEditor3],
     isFinished: true,
+    meta: {
+      launched: "Jul 2026",
+      platform: "npm Package",
+    },
+    caseStudy: {
+      overview: [{ key: "TextEditorOverview1" }, { key: "TextEditorOverview2" }],
+      problem: [{ key: "TextEditorProblem1" }, { key: "TextEditorProblem2" }],
+      ownership: { key: "TextEditorOwnership" },
+      contributions: [
+        { key: "TextEditorContrib1" },
+        { key: "TextEditorContrib2" },
+        { key: "TextEditorContrib3" },
+        { key: "TextEditorContrib4" },
+        { key: "TextEditorContrib5" },
+        { key: "TextEditorContrib6" },
+      ],
+      decisions: [
+        {
+          titleKey: "TextEditorDecisionTiptapTitle",
+          descKey: "TextEditorDecisionTiptapDesc",
+        },
+        {
+          titleKey: "TextEditorDecisionSetupTitle",
+          descKey: "TextEditorDecisionSetupDesc",
+        },
+        {
+          titleKey: "TextEditorDecisionMobileTitle",
+          descKey: "TextEditorDecisionMobileDesc",
+        },
+        {
+          titleKey: "TextEditorDecisionSourceTitle",
+          descKey: "TextEditorDecisionSourceDesc",
+        },
+      ],
+      challenges: [
+        {
+          challengeKey: "TextEditorChallenge1C",
+          solutionKey: "TextEditorChallenge1S",
+        },
+        {
+          challengeKey: "TextEditorChallenge2C",
+          solutionKey: "TextEditorChallenge2S",
+        },
+        {
+          challengeKey: "TextEditorChallenge3C",
+          solutionKey: "TextEditorChallenge3S",
+        },
+      ],
+      outcome: [
+        { key: "TextEditorOutcome1" },
+        { key: "TextEditorOutcome2" },
+        { key: "TextEditorOutcome3" },
+      ],
+    },
   },
 ];
 

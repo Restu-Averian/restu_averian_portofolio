@@ -42,6 +42,13 @@ export const ProjectDetailAction = ({ currentProject }) => {
         <Icon icon="mdi:github" className="h-5 w-5" />
         <span className="truncate">{t("ViewOnGithub", "View on Github")}</span>
       </ProjectAction>
+
+      {currentProject?.packageUrl ? (
+        <ProjectAction href={currentProject.packageUrl}>
+          <Icon icon="simple-icons:npm" className="h-5 w-5" />
+          <span className="truncate">{t("NpmPackage", "npm Package")}</span>
+        </ProjectAction>
+      ) : null}
     </div>
   );
 };

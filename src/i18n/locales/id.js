@@ -55,6 +55,7 @@ export const id = {
   Expand: "Perluas",
   PreviousProject: "Proyek Sebelumnya",
   NextProject: "Proyek Berikutnya",
+  NpmPackage: "Package npm",
   ViewWorkExperience: "Lihat pengalaman kerja",
 
   // Work roles
@@ -216,9 +217,62 @@ export const id = {
   NisoraOutcome3:
     "Memperluas proyek dari pengelolaan state frontend saja menjadi pengalaman praktis dengan autentikasi, persistensi, storage, layanan pihak ketiga, dan arsitektur aplikasi yang lebih luas.",
   TextEditorDesc:
-    "Rich text editor minimalis yang menggabungkan fleksibilitas Tiptap dengan UI yang bersih dan mudah diakses.",
+    "Paket rich-text editor React yang menyediakan Tiptap dengan kontrol formatting siap pakai, pengalaman editing responsif, mode sumber HTML, dan visibilitas toolbar yang dapat dikonfigurasi.",
   TextEditorDescDetail:
-    "Mengembangkan paket rich text editor yang dapat digunakan kembali, dirancang agar mudah dikonfigurasi, ramah seluler, dan lebih mudah disesuaikan dengan kebutuhan produk yang berbeda.",
+    "Mengembangkan paket npm reusable yang mengurangi setup Tiptap berulang dengan menyediakan kontrol formatting, editing mobile yang responsif, mode sumber HTML, lokalisasi, styling hooks, dan API aplikasi yang sederhana.",
+  TextEditorOverview1:
+    "ResuAve TextEditor adalah paket npm reusable untuk React yang menyediakan lapisan siap pakai di atas Tiptap dengan menggabungkan formatting rich-text umum, editing responsif, mode sumber HTML, lokalisasi, dan event handling untuk aplikasi dalam satu komponen.",
+  TextEditorOverview2:
+    "Ide proyek ini berkembang dari permasalahan rich-text editing yang saya temui dalam pekerjaan profesional, tetapi paket publiknya diimplementasikan ulang secara independen dari awal tanpa menggunakan source code proprietary, aset internal, business logic, atau detail implementasi rahasia. Paket ini dirilis secara publik pada Juli 2026.",
+  TextEditorProblem1:
+    "Tiptap memberikan fleksibilitas yang tinggi, tetapi menggunakannya untuk kebutuhan produk umum tetap dapat membutuhkan setup extension, toolbar, editor events, styling, responsive behavior, dan fitur pendukung secara berulang sebelum editor siap digunakan.",
+  TextEditorProblem2:
+    "Saya ingin menyediakan titik awal yang lebih cepat untuk proyek React: install package, hubungkan editor dengan state aplikasi, lalu dapatkan pengalaman editing desktop dan mobile yang praktis tanpa membangun fondasi yang sama dari awal setiap kali.",
+  TextEditorOwnership:
+    "Dikerjakan secara mandiri mulai dari reimplementasi publik yang independen, desain komponen dan API, perilaku toolbar, pengalaman editing responsif, integrasi mode sumber HTML, lokalisasi, build dan distribusi package, dokumentasi demo, deployment, hingga iterasi lanjutan.",
+  TextEditorContrib1:
+    "Membangun paket rich-text editor React reusable di atas Tiptap dengan formatting umum, kontrol structured content, link, history actions, dan output aplikasi berbasis HTML.",
+  TextEditorContrib2:
+    "Mendesain API aplikasi yang sederhana dengan value dan callback editor events, read-only behavior, lokalisasi, translation override, dan styling hooks.",
+  TextEditorContrib3:
+    "Menambahkan konfigurasi visibilitas toolbar pada level group dan item agar aplikasi dapat menyembunyikan kontrol yang tidak dibutuhkan tanpa membangun ulang toolbar.",
+  TextEditorContrib4:
+    "Membangun pengalaman editing fullscreen khusus mobile daripada sekadar mengecilkan toolbar desktop ke layout ponsel yang terbatas.",
+  TextEditorContrib5:
+    "Mengintegrasikan CodeMirror sebagai editor sumber HTML dan menyinkronkan konten ketika berpindah antara mode WYSIWYG dan source editing.",
+  TextEditorContrib6:
+    "Menyiapkan editor untuk distribusi publik melalui npm dengan entry point ESM dan CommonJS, CSS export, React peer dependencies, serta situs demo dan dokumentasi terpisah.",
+  TextEditorDecisionTiptapTitle: "Tiptap sebagai fondasi editor",
+  TextEditorDecisionTiptapDesc:
+    "Tiptap memberikan kontrol yang lebih besar terhadap formatting, extension, implementasi toolbar, dan UI editor dibandingkan editor siap pakai yang lebih opinionated, sehingga lebih sesuai sebagai fondasi komponen reusable yang dirancang untuk terus berkembang.",
+  TextEditorDecisionSetupTitle:
+    "Setup siap pakai dibanding inisialisasi berulang",
+  TextEditorDecisionSetupDesc:
+    "Package ini sengaja menggabungkan setup editor dan keputusan UX yang umum agar aplikasi dapat memulai dari baseline yang siap digunakan tanpa membangun ulang extension, perilaku toolbar, responsive handling, source mode, dan styling pada setiap implementasi.",
+  TextEditorDecisionMobileTitle: "Pengalaman editing khusus mobile",
+  TextEditorDecisionMobileDesc:
+    "Daripada memadatkan toolbar desktop ke viewport ponsel, layar kecil menggunakan alur editing fullscreen yang terinspirasi aplikasi catatan dan dokumen mobile sehingga editor memiliki ruang yang lebih nyaman saat keyboard layar tampil.",
+  TextEditorDecisionSourceTitle: "CodeMirror untuk editing sumber HTML",
+  TextEditorDecisionSourceDesc:
+    "WYSIWYG dan editing HTML mentah memiliki kebutuhan interaksi yang berbeda, sehingga CodeMirror digunakan sebagai source editor khusus sementara Tiptap tetap menangani visual editing. Konten disinkronkan ketika pengguna berpindah di antara kedua mode tersebut.",
+  TextEditorChallenge1C:
+    "Toolbar rich-text yang nyaman di desktop menjadi terlalu padat di ponsel, sementara keyboard layar semakin mengurangi ruang editing yang tersedia.",
+  TextEditorChallenge1S:
+    "Membuat alur editing fullscreen khusus mobile dengan state preview yang lebih ringkas, sehingga editor dan toolbar dapat menggunakan ruang layar secara lebih efektif tanpa memaksakan layout desktop ke mobile.",
+  TextEditorChallenge2C:
+    "Tiptap dan CodeMirror merupakan dua interface editing berbeda untuk konten HTML yang sama, sehingga perpindahan mode tanpa kehilangan atau menggunakan data lama membutuhkan batas sinkronisasi yang jelas.",
+  TextEditorChallenge2S:
+    "Memindahkan HTML terkini dari Tiptap ke source editor saat memasuki source mode, lalu menerapkan kembali HTML yang telah diedit ke Tiptap ketika kembali ke mode WYSIWYG.",
+  TextEditorChallenge3C:
+    "Komponen yang berjalan di satu aplikasi belum otomatis siap digunakan kembali karena pengguna package juga membutuhkan export yang jelas, stylesheet, batas dependency, serta build yang dapat digunakan di berbagai aplikasi React.",
+  TextEditorChallenge3S:
+    "Menambahkan library build khusus dengan export ESM dan CommonJS, stylesheet terpisah, React sebagai peer dependency, packaging npm publik, serta validasi build/package sebelum publish.",
+  TextEditorOutcome1:
+    "Mempublikasikan `@resuave/texteditor` sebagai package npm yang dapat di-install lengkap dengan situs demo dan dokumentasi publik.",
+  TextEditorOutcome2:
+    "Mengubah setup rich-text editor yang berulang menjadi komponen reusable yang sudah menyediakan responsive behavior desktop/mobile, konfigurasi visibilitas toolbar, dan editing sumber HTML.",
+  TextEditorOutcome3:
+    "Memperluas proyek dari pekerjaan UI aplikasi menjadi pengalaman dalam desain API library publik, distribusi package, dependency boundaries, dan reusable developer tooling.",
 
   // Case study section labels
   CaseProblem: "Masalah",
