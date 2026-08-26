@@ -5,6 +5,8 @@ import ResuAveTextEditor3 from "@/assets/projects/texteditor/pic3.webp";
 import NisoraThumb1 from "@/assets/projects/nisora/pic1.webp";
 import NisoraThumb2 from "@/assets/projects/nisora/pic2.webp";
 import NisoraThumb3 from "@/assets/projects/nisora/pic3.webp";
+import NisoraThumb4 from "@/assets/projects/nisora/pic4.webp";
+import NisoraThumb5 from "@/assets/projects/nisora/pic5.webp";
 import ResaeniThumb1 from "@/assets/projects/resaeni/pic1.webp";
 import ResaeniThumb2 from "@/assets/projects/resaeni/pic2.webp";
 import ResaeniThumb3 from "@/assets/projects/resaeni/pic3.webp";
@@ -246,7 +248,13 @@ export const PROJECTS = [
     demoUrl: "https://nisora.pages.dev",
     githubUrl: "https://github.com/Restu-Averian/nisora",
     thumb: NisoraThumb1,
-    images: [NisoraThumb1, NisoraThumb2, NisoraThumb3],
+    images: [
+      NisoraThumb1,
+      NisoraThumb2,
+      NisoraThumb3,
+      NisoraThumb4,
+      NisoraThumb5,
+    ],
     isFinished: true,
     meta: {
       launched: tr("NisoraLaunched", "1 Jul 2026"),

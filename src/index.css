@@ -162,6 +162,7 @@
 
 .porto-scrollbar::-webkit-scrollbar {
   width: 8px;
+  height: 2px;
 }
 
 .porto-scrollbar::-webkit-scrollbar-track {

@@ -4,7 +4,6 @@ import {
   useProjectsContext,
 } from "@/context/ProjectsCtxProvider";
 import ProjectCardTagFeatured from "./components/ProjectCardTagFeatured";
-import ProjectCardTagsTech from "./components/ProjectCardTagsTech";
 
 export default function ProjectCard({ project }) {
   const { t } = useTranslation();

@@ -29,8 +29,8 @@ export const ProjectDetailImages = ({ images = [], title }) => {
           />
         </div>
 
-        <div className="grid shrink-0 grid-cols-3 gap-4">
-          {images.slice(0, 3).map((image, index) => {
+        <div className="flex shrink-0 gap-4 overflow-x-auto porto-scrollbar pb-2">
+          {images?.map((image, index) => {
             const active = activeImage === image;
 
             return (
@@ -39,7 +39,7 @@ export const ProjectDetailImages = ({ images = [], title }) => {
                 type="button"
                 onClick={() => setActiveImage(image)}
                 className={cn(
-                  "aspect-[1.28/1] overflow-hidden rounded-xl border bg-background/80 p-1 transition cursor-pointer",
+                  "w-[calc((100%-2rem)/3)] shrink-0 aspect-[1.28/1] overflow-hidden rounded-xl border bg-background/80 p-1 transition cursor-pointer",
                   active
                     ? "border-porto-btn shadow-[0_0_0_2px_rgba(210,166,108,0.2)]"
                     : "border-porto-border/60 opacity-65 hover:opacity-100",
