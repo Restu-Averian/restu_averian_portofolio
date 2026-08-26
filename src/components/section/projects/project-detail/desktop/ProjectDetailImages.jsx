@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Box } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "@/i18n";
-import { MobileCarousel } from "@/components/ui/mobile-carousel";
 
 export const ProjectDetailImages = ({ images = [], title }) => {
   const [activeImage, setActiveImage] = useState(images[0]);
@@ -30,42 +29,40 @@ export const ProjectDetailImages = ({ images = [], title }) => {
           />
         </div>
 
-        <MobileCarousel
-          viewportClassName="overflow-x-auto porto-scrollbar pb-2"
-          trackClassName="flex shrink-0 gap-4"
-          showArrows
-        >
-          {images?.map((image, index) => {
-            const active = activeImage === image;
+        <div className="overflow-x-auto porto-scrollbar pb-2">
+          <div className="flex shrink-0 justify-center gap-4">
+            {images?.map((image, index) => {
+              const active = activeImage === image;
 
-            return (
-              <button
-                key={`${image}-${index}`}
-                type="button"
-                onClick={() => setActiveImage(image)}
-                className={cn(
-                  "w-[14vh] max-w-[calc((100%-3rem)/4)] shrink-0 aspect-[1.28/1] overflow-hidden rounded-xl border bg-background/80 p-1 transition cursor-pointer",
-                  active
-                    ? "border-porto-btn shadow-[0_0_0_2px_rgba(210,166,108,0.2)]"
-                    : "border-porto-border/60 opacity-65 hover:opacity-100",
-                )}
-              >
-                <img
-                  src={image}
-                  alt={t(
-                    "ProjectPreviewAltNumber",
-                    "{{title}} preview {{number}}",
-                    {
-                      title: title || t("Project", "Project"),
-                      number: index + 1,
-                    },
+              return (
+                <button
+                  key={`${image}-${index}`}
+                  type="button"
+                  onClick={() => setActiveImage(image)}
+                  className={cn(
+                    "w-[14vh] max-w-[calc((100%-3rem)/4)] shrink-0 aspect-[1.28/1] overflow-hidden rounded-xl border bg-background/80 p-1 transition cursor-pointer",
+                    active
+                      ? "border-porto-btn shadow-[0_0_0_2px_rgba(210,166,108,0.2)]"
+                      : "border-porto-border/60 opacity-65 hover:opacity-100",
                   )}
-                  className="h-full w-full rounded-lg object-cover"
-                />
-              </button>
-            );
-          })}
-        </MobileCarousel>
+                >
+                  <img
+                    src={image}
+                    alt={t(
+                      "ProjectPreviewAltNumber",
+                      "{{title}} preview {{number}}",
+                      {
+                        title: title || t("Project", "Project"),
+                        number: index + 1,
+                      },
+                    )}
+                    className="h-full w-full rounded-lg object-cover"
+                  />
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </aside>
   );
