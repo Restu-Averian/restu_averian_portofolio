@@ -6,7 +6,7 @@ export const ProjectDetailTabs = ({
   setActiveTab,
 }) => {
   return (
-    <div className="grid grid-cols-5 overflow-hidden rounded-[1.25rem] border border-porto-border/75 bg-porto-surface/40">
+    <div className="grid grid-cols-5 overflow-hidden bg-porto-surface/40">
       {availableTabs.map(({ value, label, icon: IconCmp }) => {
         const active = activeTab === value;
 

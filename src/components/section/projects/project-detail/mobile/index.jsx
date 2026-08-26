@@ -64,26 +64,28 @@ const MobileDrawer_ = () => {
             <ProjectDetailMeta />
           </header>
 
-          <ProjectDetailTabs
-            availableTabs={availableTabs}
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
+          <section className="overflow-hidden rounded-[1.25rem] border border-porto-border/75 bg-background/25">
+            <ProjectDetailTabs
+              availableTabs={availableTabs}
+              activeTab={activeTab}
+              setActiveTab={setActiveTab}
+            />
 
-          <section className="rounded-[1.25rem] border border-porto-border/75 bg-background/25 px-5 py-5">
-            <div className="mb-4 flex items-center gap-3 text-porto-text">
-              <ActiveIcon className="h-5.5 w-5.5 shrink-0" />
+            <div className="border-t border-porto-border/70 px-5 py-5">
+              <div className="mb-4 flex items-center gap-3 text-porto-text">
+                <ActiveIcon className="h-5.5 w-5.5 shrink-0" />
 
-              <h3 className="text-[21px] font-semibold leading-none">
-                {activeTabConfig?.label || "Overview"}
-              </h3>
-            </div>
+                <h3 className="text-[21px] font-semibold leading-none">
+                  {activeTabConfig?.label || "Overview"}
+                </h3>
+              </div>
 
-            <div className="space-y-4 text-[15px] leading-relaxed text-porto-muted">
-              <ProjectDetailCasePanel
-                activeTab={activeTab}
-                project={currentProject}
-              />
+              <div className="space-y-4 text-[15px] leading-relaxed text-porto-muted">
+                <ProjectDetailCasePanel
+                  activeTab={activeTab}
+                  project={currentProject}
+                />
+              </div>
             </div>
           </section>
         </div>

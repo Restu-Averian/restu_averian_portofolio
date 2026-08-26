@@ -25,7 +25,7 @@ export const ProjectDetailHeader = ({ onClose }) => {
 
       <header className="grid grid-cols-[1fr_auto] gap-8">
         <div className="flex min-w-0 items-start gap-7">
-          <div className="flex h-17 w-17 shrink-0 items-center justify-center rounded-[1rem] border border-porto-btn/50 bg-porto-btn text-[42px] font-bold leading-none text-porto-btn-text shadow-[0_14px_34px_rgba(0,0,0,0.2)]">
+          <div className="flex h-17 w-17 shrink-0 items-center justify-center rounded-2xl border border-porto-btn/50 bg-porto-btn text-[42px] font-bold leading-none text-porto-btn-text shadow-[0_14px_34px_rgba(0,0,0,0.2)]">
             {currentProject?.title?.[0] || "P"}
           </div>
           <div className="min-w-0">
@@ -33,9 +33,6 @@ export const ProjectDetailHeader = ({ onClose }) => {
               <h2 className="truncate text-[52px] font-bold leading-[0.95] text-porto-text">
                 {currentProject?.title}
               </h2>
-              <span className="rounded-full border border-porto-border/60 bg-porto-surface px-5 py-2 text-[15px] font-medium text-porto-text">
-                Case Study
-              </span>
             </div>
             <p className="mt-4 max-w-220 text-[15px] leading-relaxed text-porto-text">
               {currentProject?.descKey

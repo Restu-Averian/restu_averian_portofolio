@@ -12,7 +12,7 @@ export const ProjectDetailMeta = () => {
 
   return (
     <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-5 pt-1">
-      <div className="flex items-start gap-3 text-porto-text">
+      <div className="flex items-center justify-center gap-3 text-porto-text">
         <CalendarDays className="mt-0.5 h-5 w-5 text-porto-btn" />
 
         <div className="space-y-0.5 text-[14px]">
@@ -23,7 +23,8 @@ export const ProjectDetailMeta = () => {
       </div>
 
       <div className="h-11 w-px bg-porto-border/70" />
-      <div className="flex items-start gap-3 text-porto-text">
+
+      <div className="flex items-center justify-center gap-3 text-porto-text">
         <Layers className="mt-0.5 h-5 w-5 text-porto-btn" />
 
         <div className="space-y-0.5 text-[14px]">
