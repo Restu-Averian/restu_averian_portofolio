@@ -3,6 +3,7 @@ import ProjectCard from "./project-card";
 import ProjectsTitle from "./ProjectsTitle";
 import ProjectDetail from "./project-detail";
 import ScrollAffordance from "@/components/ui/scroll-affordance";
+import { MobileCarousel } from "@/components/ui/mobile-carousel/index";
 import { useProjectsContext } from "@/context/ProjectsCtxProvider";
 
 const ProjectsContent_ = () => {
@@ -14,14 +15,20 @@ const ProjectsContent_ = () => {
         <ProjectsTitle />
       </div>
 
-      <div
-        className="porto-scrollbar grid gap-3 lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1"
+      <MobileCarousel
+        viewportClassName="porto-scrollbar lg:min-h-0 lg:flex-1 lg:overflow-y-auto lg:overscroll-contain lg:pr-1 lg:pb-1"
+        trackClassName="max-lg:gap-3 lg:grid lg:gap-3"
         ref={scrollRef}
+        showArrows
       >
         {orderedProjects.map((project, i) => (
-          <ProjectCard key={project.id ?? i} project={project} />
+          <ProjectCard
+            key={project.id ?? i}
+            project={project}
+            className="max-lg:min-w-0 max-lg:shrink-0 max-lg:grow-0 max-lg:basis-[90%]"
+          />
         ))}
-      </div>
+      </MobileCarousel>
 
       <ScrollAffordance containerRef={scrollRef} />
 

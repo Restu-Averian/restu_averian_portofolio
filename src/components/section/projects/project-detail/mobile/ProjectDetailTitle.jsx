@@ -6,7 +6,7 @@ export const ProjectDetailTitle = ({ project }) => {
   return (
     <>
       <div className="flex flex-wrap items-center gap-3">
-        <div className="flex h-14 w-14 shrink-0 overflow-hidden items-center justify-center rounded-xl border border-[#46382d] bg-[#241c18] text-[32px] font-bold leading-none text-[#f5dec2] shadow-sm">
+        <div className="flex h-14 w-14 shrink-0 overflow-hidden items-center justify-center rounded-xl border border-porto-btn/50 bg-porto-btn text-[32px] font-bold leading-none text-porto-btn-text shadow-sm">
           {project?.logo ? (
             <img
               src={project.logo}

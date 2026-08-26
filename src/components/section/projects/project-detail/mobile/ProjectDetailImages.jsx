@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { MobileCarousel } from "@/components/ui/mobile-carousel";
 
 export const ProjectDetailImages = ({ images = [], title }) => {
   const [activeImage, setActiveImage] = useState(images[0]);
@@ -18,7 +19,11 @@ export const ProjectDetailImages = ({ images = [], title }) => {
         />
       </div>
 
-      <div className="mt-3 flex gap-2.5 overflow-x-auto porto-scrollbar pb-2">
+      <MobileCarousel
+        viewportClassName="mt-3 overflow-x-auto porto-scrollbar pb-2"
+        trackClassName="flex gap-2.5"
+        showArrows
+      >
         {images?.map((image, index) => {
           const active = activeImage === image;
 
@@ -42,7 +47,7 @@ export const ProjectDetailImages = ({ images = [], title }) => {
             </button>
           );
         })}
-      </div>
+      </MobileCarousel>
     </section>
   );
 };

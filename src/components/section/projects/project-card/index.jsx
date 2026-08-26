@@ -5,7 +5,7 @@ import {
 } from "@/context/ProjectsCtxProvider";
 import ProjectCardTagFeatured from "./components/ProjectCardTagFeatured";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, className = "" }) {
   const { t } = useTranslation();
   const { handleSelectProject } = useProjectsContext();
 
@@ -13,7 +13,7 @@ export default function ProjectCard({ project }) {
 
   return (
     <article
-      className={`flex flex-col gap-3 rounded-2xl border bg-background/55 p-2.5 shadow-sm transition-all hover:border-porto-btn hover:shadow-md sm:flex-row cursor-pointer ${
+      className={`${className} flex flex-col gap-3 rounded-2xl border bg-background/55 p-2.5 shadow-sm transition-all hover:border-porto-btn hover:shadow-md sm:flex-row cursor-pointer ${
         isFeatured
           ? "border-porto-btn bg-background/75"
           : "border-porto-border/80"

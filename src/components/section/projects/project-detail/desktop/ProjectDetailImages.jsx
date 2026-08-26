@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Box } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "@/i18n";
+import { MobileCarousel } from "@/components/ui/mobile-carousel";
 
 export const ProjectDetailImages = ({ images = [], title }) => {
   const [activeImage, setActiveImage] = useState(images[0]);
@@ -29,7 +30,12 @@ export const ProjectDetailImages = ({ images = [], title }) => {
           />
         </div>
 
-        <div className="flex shrink-0 gap-4 overflow-x-auto porto-scrollbar pb-2">
+        <MobileCarousel
+          viewportClassName="overflow-x-auto porto-scrollbar pb-2"
+          trackClassName="flex shrink-0 gap-4"
+          showArrows
+          hai
+        >
           {images?.map((image, index) => {
             const active = activeImage === image;
 
@@ -60,7 +66,7 @@ export const ProjectDetailImages = ({ images = [], title }) => {
               </button>
             );
           })}
-        </div>
+        </MobileCarousel>
       </div>
     </aside>
   );
