@@ -6,6 +6,12 @@ export const id = {
   SwitchToEnglish: "Ganti bahasa ke Inggris",
   SwitchToIndonesian: "Ganti bahasa ke Indonesia",
   LanguageSelector: "Pemilih bahasa",
+  DocumentTitle:
+    "Restu Averian Putra — Frontend Engineer | React, TypeScript & Node.js",
+  DocumentDescription:
+    "Portofolio Restu Averian Putra, Frontend Engineer dengan 3+ tahun pengalaman React, kini memperluas kemampuan full-stack JavaScript dan TypeScript dengan Node.js, Express, PostgreSQL, dan REST API.",
+  DocumentOgDescription:
+    "Frontend Engineer dengan 3+ tahun pengalaman React, kini memperluas kemampuan ke engineering full-stack JavaScript dan TypeScript.",
 
   // Themes
   ThemeLight: "Terang",
@@ -13,7 +19,8 @@ export const id = {
   ThemeSystem: "Sistem",
 
   // Profile
-  AvailableForWork: "Terbuka untuk posisi Frontend, Full Stack & Software Engineer",
+  AvailableForWork:
+    "Terbuka untuk posisi Frontend, Full Stack & Software Engineer",
   ProfileRole: "Frontend Engineer | Full-Stack JavaScript/TypeScript",
   PortfolioTagline:
     "Frontend Engineer dengan 3+ tahun pengalaman membangun aplikasi React untuk production, kini memperluas kemampuan ke full-stack development menggunakan Node.js, Express, PostgreSQL, dan REST API.",
@@ -57,6 +64,8 @@ export const id = {
   NextProject: "Proyek Berikutnya",
   NpmPackage: "Package npm",
   ViewWorkExperience: "Lihat pengalaman kerja",
+  ThemeAriaLabel: "Tema: {{theme}}. Aktifkan untuk mengganti tema.",
+  ThemeTitle: "Tema: {{theme}}. Klik untuk mengganti.",
 
   // Work roles
   FrontendEngineerRole: "Frontend Engineer",
@@ -99,6 +108,9 @@ export const id = {
     "Memanfaatkan eksplorasi desain berbantuan AI untuk kebutuhan UI/UX yang lebih kecil ketika proses desain penuh tidak diperlukan, menciptakan referensi antarmuka dan menyempurnakan kegunaan, sambil tetap menjaga agar hasilnya selaras dengan kebutuhan produk dan sistem desain yang ada.",
   ConfidentialityNote:
     "Nama produk tertentu, informasi klien, tangkapan layar, kode sumber, aturan bisnis, dan alur kerja internal sengaja dihilangkan karena kewajiban kerahasiaan.",
+  WorkExperienceDetailTitle: "Detail {{role}}",
+  WorkExperienceSrDescription:
+    "Ringkasan pengalaman kerja, cakupan, dan kontribusi utama.",
   ScopeFrontendDevelopment: "Pengembangan Frontend",
   ScopeAntDesign: "Ant Design",
   ScopeLegacyReactRefactoring: "Refactor Legacy React",
@@ -275,15 +287,34 @@ export const id = {
     "Memperluas proyek dari pekerjaan UI aplikasi menjadi pengalaman dalam desain API library publik, distribusi package, dependency boundaries, dan reusable developer tooling.",
 
   // Case study section labels
+  CaseContributions: "Kontribusi",
+  CaseChallenges: "Tantangan",
   CaseProblem: "Masalah",
   CaseOwnership: "Kepemilikan",
   EngineeringDecisions: "Keputusan Teknis",
   ChallengesSolutions: "Tantangan & Solusi",
   CaseOutcome: "Hasil",
+  ChallengeNumber: "Tantangan {{number}}",
   ChallengeLabel: "Tantangan",
   SolutionLabel: "Solusi",
   CaseDecisionCloudflareTitle: "Infrastruktur berbasis Cloudflare",
   CaseDecisionDownloadsTitle: "Unduhan via Worker",
+  Project: "Proyek",
+  ProjectLaunched: "Diluncurkan",
+  ProjectPlatform: "Platform",
+  ProjectDetailFallbackTitle: "Detail Proyek",
+  ProjectDetailSrDescription:
+    "Screenshot proyek, deskripsi, teknologi, dan tautan.",
+  ProductPreview: "Pratinjau Produk",
+  ProjectPreviewAlt: "Pratinjau {{title}}",
+  ProjectPreviewAltNumber: "Pratinjau {{title}} {{number}}",
+  ProjectMetaCompleted: "Selesai",
+  ProjectMetaPackage: "Package",
+  ProjectMetaWeb: "Web",
+  ProjectMetaNpmPackage: "Package npm",
+  NisoraLaunched: "1 Jul 2026",
+  TextEditorLaunched: "Jul 2026",
+  ResaeniLaunched: "19 Agu 2026",
 
   // Resaeni
   ResaeniDesc:

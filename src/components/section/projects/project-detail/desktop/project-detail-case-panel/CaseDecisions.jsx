@@ -9,7 +9,11 @@ export const CaseDecisions = ({ project }) => {
   if (!caseStudy?.decisions?.length) return null;
 
   return (
-    <ProjectDetailCaseSection id="decisions" icon={GitBranch} title="Decisions">
+    <ProjectDetailCaseSection
+      id="decisions"
+      icon={GitBranch}
+      title={t("EngineeringDecisions", "Decisions")}
+    >
       {caseStudy.decisions.map((item, index) => (
         <div key={item.descKey ?? index} className="space-y-2">
           <h4 className="font-semibold text-porto-text">

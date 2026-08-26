@@ -1,8 +1,10 @@
+import { useTranslation } from "@/i18n";
 import { ProjectDetailCaseSection } from "../ProjectDetailCaseSection";
 import { CaseContributions as MobileCaseContributions } from "../../mobile/project-detail-case-panel/CaseContributions";
 import { ListChecks } from "lucide-react";
 
 export const CaseContributions = ({ project }) => {
+  const { t } = useTranslation();
   const caseStudy = project?.caseStudy;
   if (!caseStudy?.contributions?.length) return null;
 
@@ -10,7 +12,7 @@ export const CaseContributions = ({ project }) => {
     <ProjectDetailCaseSection
       id="contributions"
       icon={ListChecks}
-      title="Contributions"
+      title={t("CaseContributions", "Contributions")}
     >
       <MobileCaseContributions project={project} />
     </ProjectDetailCaseSection>

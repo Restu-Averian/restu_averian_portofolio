@@ -1,13 +1,16 @@
 import { cn } from "@/lib/utils";
+import { useTranslation } from "@/i18n";
 
 export const ProjectDetailTabs = ({
   availableTabs,
   activeTab,
   setActiveTab,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="grid grid-cols-5 overflow-hidden bg-porto-surface/40">
-      {availableTabs.map(({ value, label, icon: IconCmp }) => {
+      {availableTabs.map(({ value, label, labelKey, icon: IconCmp }) => {
         const active = activeTab === value;
 
         return (
@@ -22,7 +25,7 @@ export const ProjectDetailTabs = ({
             )}
           >
             <IconCmp className="h-5 w-5" />
-            <span>{label}</span>
+            <span>{labelKey ? t(labelKey, label) : label}</span>
           </button>
         );
       })}

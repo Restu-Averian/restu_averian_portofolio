@@ -65,6 +65,11 @@ const TopBar_ = () => {
     return hour24 % 12 || 12;
   }, [now]);
 
+  const currentThemeLabel = useMemo(() => {
+    const currentTheme = THEMES.find((item) => item.value === theme);
+    return t(currentTheme?.labelKey, currentTheme?.defaultLabel ?? theme);
+  }, [t, theme]);
+
   useEffect(() => {
     const msUntilNextMinute = () => {
       const n = new Date();
@@ -81,17 +86,6 @@ const TopBar_ = () => {
 
     return () => clearTimeout(timeout);
   }, []);
-
-  const handlePointerDownOutside = (e) => {
-    const target = e.detail.originalEvent.target;
-    const trigger =
-      target instanceof Element
-        ? target.closest("button[data-topbar-select]")
-        : null;
-    if (trigger) {
-      setTimeout(() => setOpenSelect(trigger.dataset.topbarSelect), 0);
-    }
-  };
 
   return (
     <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm flex items-center justify-between px-4 py-3.5 md:px-10 flex-wrap gap-y-2">
@@ -126,9 +120,12 @@ const TopBar_ = () => {
         <SelectField
           value={locale}
           open={openSelect === "language"}
-          onOpenChange={(open) => setOpenSelect(open ? "language" : null)}
+          onOpenChange={(open) =>
+            setOpenSelect((current) =>
+              open ? "language" : current === "language" ? null : current,
+            )
+          }
           onValueChange={setLocale}
-          onPointerDownOutside={handlePointerDownOutside}
           triggerProps={{
             "data-topbar-select": "language",
             "aria-label":
@@ -149,13 +146,22 @@ const TopBar_ = () => {
         <SelectField
           value={theme}
           open={openSelect === "theme"}
-          onOpenChange={(open) => setOpenSelect(open ? "theme" : null)}
+          onOpenChange={(open) =>
+            setOpenSelect((current) =>
+              open ? "theme" : current === "theme" ? null : current,
+            )
+          }
           onValueChange={setTheme}
-          onPointerDownOutside={handlePointerDownOutside}
           triggerProps={{
             "data-topbar-select": "theme",
-            "aria-label": `Theme: ${theme}. Activate to switch theme.`,
-            title: `Theme: ${theme}. Click to switch.`,
+            "aria-label": t(
+              "ThemeAriaLabel",
+              "Theme: {{theme}}. Activate to switch theme.",
+              { theme: currentThemeLabel },
+            ),
+            title: t("ThemeTitle", "Theme: {{theme}}. Click to switch.", {
+              theme: currentThemeLabel,
+            }),
           }}
           items={THEMES}
           renderItem={({ icon, labelKey, defaultLabel }) => (

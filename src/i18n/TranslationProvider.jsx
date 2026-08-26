@@ -4,6 +4,11 @@ import { translate } from "./translate";
 export const TranslationContext = createContext(undefined);
 
 const LOCALE_STORAGE_KEY = "portfolio-locale";
+const DOCUMENT_META = [
+  ['meta[name="description"]', "DocumentDescription"],
+  ['meta[property="og:title"]', "DocumentTitle"],
+  ['meta[property="og:description"]', "DocumentOgDescription"],
+];
 
 function getInitialLocale() {
   if (typeof window === "undefined") return "en";
@@ -32,6 +37,15 @@ export function TranslationProvider({ children }) {
     // Update HTML lang attribute on change
     if (typeof document !== "undefined") {
       document.documentElement.lang = locale;
+
+      document.title = translate(locale, "DocumentTitle");
+
+      DOCUMENT_META.forEach(([selector, key]) => {
+        const meta = document.querySelector(selector);
+        if (meta) {
+          meta.setAttribute("content", translate(locale, key));
+        }
+      });
     }
 
     // Persist to localStorage

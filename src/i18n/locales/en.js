@@ -6,6 +6,12 @@ export const en = {
   SwitchToEnglish: "Switch language to English",
   SwitchToIndonesian: "Switch language to Indonesian",
   LanguageSelector: "Language selector",
+  DocumentTitle:
+    "Restu Averian Putra — Frontend Engineer | React, TypeScript & Node.js",
+  DocumentDescription:
+    "Portfolio of Restu Averian Putra, a Frontend Engineer with 3+ years of React experience, expanding into full-stack JavaScript and TypeScript with Node.js, Express, PostgreSQL, and REST APIs.",
+  DocumentOgDescription:
+    "Frontend Engineer with 3+ years of React experience, expanding into full-stack JavaScript and TypeScript engineering.",
 
   // Themes
   ThemeLight: "Light",
@@ -57,6 +63,8 @@ export const en = {
   NextProject: "Next Project",
   NpmPackage: "npm Package",
   ViewWorkExperience: "View work experience",
+  ThemeAriaLabel: "Theme: {{theme}}. Activate to switch theme.",
+  ThemeTitle: "Theme: {{theme}}. Click to switch.",
 
   // Work roles
   FrontendEngineerRole: "Frontend Engineer",
@@ -99,6 +107,9 @@ export const en = {
     "Used AI-assisted design exploration for smaller UI/UX requirements when a full design handoff was unnecessary, creating interface references and refining usability while keeping the result aligned with existing product requirements and design systems.",
   ConfidentialityNote:
     "Specific product names, client information, screenshots, source code, business rules, and internal workflows are intentionally omitted due to confidentiality obligations.",
+  WorkExperienceDetailTitle: "{{role}} Detail",
+  WorkExperienceSrDescription:
+    "Work experience overview, scope, and key contributions.",
   ScopeFrontendDevelopment: "Frontend Development",
   ScopeAntDesign: "Ant Design",
   ScopeLegacyReactRefactoring: "Legacy React Refactoring",
@@ -274,15 +285,34 @@ export const en = {
     "Expanded the project beyond application UI work into public library API design, package distribution, dependency boundaries, and reusable developer tooling.",
 
   // Case study section labels
+  CaseContributions: "Contributions",
+  CaseChallenges: "Challenges",
   CaseProblem: "Problem",
   CaseOwnership: "Ownership",
   EngineeringDecisions: "Engineering Decisions",
   ChallengesSolutions: "Challenges & Solutions",
   CaseOutcome: "Outcome",
+  ChallengeNumber: "Challenge {{number}}",
   ChallengeLabel: "Challenge",
   SolutionLabel: "Solution",
   CaseDecisionCloudflareTitle: "Cloudflare-oriented infrastructure",
   CaseDecisionDownloadsTitle: "Worker-proxied downloads",
+  Project: "Project",
+  ProjectLaunched: "Launched",
+  ProjectPlatform: "Platform",
+  ProjectDetailFallbackTitle: "Project Detail",
+  ProjectDetailSrDescription:
+    "Project screenshots, description, technologies, and links.",
+  ProductPreview: "Product Preview",
+  ProjectPreviewAlt: "{{title}} preview",
+  ProjectPreviewAltNumber: "{{title}} preview {{number}}",
+  ProjectMetaCompleted: "Completed",
+  ProjectMetaPackage: "Package",
+  ProjectMetaWeb: "Web",
+  ProjectMetaNpmPackage: "npm Package",
+  NisoraLaunched: "1 Jul 2026",
+  TextEditorLaunched: "Jul 2026",
+  ResaeniLaunched: "19 Aug 2026",
 
   // Resaeni
   ResaeniDesc:
@@ -337,7 +367,6 @@ export const en = {
     "Operational end-to-end content workflow supported by admin tooling that reduces repetitive metadata entry.",
   ResaeniOutcome3:
     "Infrastructure consolidated for lower operational complexity, maintained as an evolving production project with regular checks and a monthly dependency-review cycle.",
-
 
   // Footer
   ThanksForStoppingBy:

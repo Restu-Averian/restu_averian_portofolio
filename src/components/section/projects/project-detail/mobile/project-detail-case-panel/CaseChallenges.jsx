@@ -11,14 +11,20 @@ export const CaseChallenges = ({ project }) => {
       {caseStudy.challenges.map((item, index) => (
         <div key={item.challengeKey ?? index} className="space-y-1">
           <h4 className="font-semibold text-porto-text">
-            Challenge {index + 1}
+            {t("ChallengeNumber", "Challenge {{number}}", {
+              number: index + 1,
+            })}
           </h4>
           <p>
-            <span className="font-semibold text-porto-text">Challenge:</span>{" "}
+            <span className="font-semibold text-porto-text">
+              {t("ChallengeLabel", "Challenge")}:
+            </span>{" "}
             {t(item.challengeKey, item.defaultChallenge)}
           </p>
           <p>
-            <span className="font-semibold text-porto-text">Solution:</span>{" "}
+            <span className="font-semibold text-porto-text">
+              {t("SolutionLabel", "Solution")}:
+            </span>{" "}
             {t(item.solutionKey, item.defaultSolution)}
           </p>
         </div>

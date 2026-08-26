@@ -17,10 +17,14 @@ export const ProjectDetailHeader = ({ onClose }) => {
   return (
     <>
       <DialogTitle className="sr-only">
-        {currentProject?.title || "Detail Project"}
+        {currentProject?.title ||
+          t("ProjectDetailFallbackTitle", "Project Detail")}
       </DialogTitle>
       <DialogDescription className="sr-only">
-        Project screenshots, description, technologies, and links.
+        {t(
+          "ProjectDetailSrDescription",
+          "Project screenshots, description, technologies, and links.",
+        )}
       </DialogDescription>
 
       <header className="grid grid-cols-[1fr_auto] gap-8">
@@ -46,16 +50,20 @@ export const ProjectDetailHeader = ({ onClose }) => {
           <div className="flex items-start gap-4">
             <CalendarDays className="mt-1 h-5 w-5 text-porto-btn" />
             <div className="space-y-1 text-[15px] text-porto-text">
-              <p>Launched</p>
-              <p className="font-medium">{projectMeta.launched}</p>
+              <p>{t("ProjectLaunched", "Launched")}</p>
+              <p className="font-medium">
+                {t(projectMeta.launchedKey, projectMeta.launched)}
+              </p>
             </div>
           </div>
           <div className="h-16 w-px bg-porto-border/60" />
           <div className="flex items-start gap-4">
             <Layers className="mt-1 h-5 w-5 text-porto-btn" />
             <div className="space-y-1 text-[15px] text-porto-text">
-              <p>Platform</p>
-              <p className="font-medium">{projectMeta.platform}</p>
+              <p>{t("ProjectPlatform", "Platform")}</p>
+              <p className="font-medium">
+                {t(projectMeta.platformKey, projectMeta.platform)}
+              </p>
             </div>
           </div>
         </div>
@@ -66,7 +74,7 @@ export const ProjectDetailHeader = ({ onClose }) => {
           className="absolute top-7 right-7 flex h-14 w-14 cursor-pointer items-center justify-center rounded-xl border border-porto-border/80 text-porto-text transition hover:bg-porto-surface"
         >
           <X className="h-6 w-6" />
-          <span className="sr-only">Close</span>
+          <span className="sr-only">{t("Close", "Close")}</span>
         </button>
       </header>
     </>

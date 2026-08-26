@@ -19,14 +19,39 @@ import {
 } from "lucide-react";
 
 export const CASE_TABS = [
-  { value: "overview", label: "Overview", icon: Home },
-  { value: "problem", label: "Problem", icon: CircleAlert },
-  { value: "ownership", label: "Ownership", icon: UserCheck },
-  { value: "contributions", label: "Contributions", icon: ListChecks },
-  { value: "decisions", label: "Engineering Decisions", icon: GitBranch },
-  { value: "challenges", label: "Challenges & Solutions", icon: Wrench },
-  { value: "outcome", label: "Outcome", icon: Target },
-  { value: "tech", label: "Tech Stack", icon: Route },
+  { value: "overview", label: "Overview", labelKey: "Overview", icon: Home },
+  {
+    value: "problem",
+    label: "Problem",
+    labelKey: "CaseProblem",
+    icon: CircleAlert,
+  },
+  {
+    value: "ownership",
+    label: "Ownership",
+    labelKey: "CaseOwnership",
+    icon: UserCheck,
+  },
+  {
+    value: "contributions",
+    label: "Contributions",
+    labelKey: "CaseContributions",
+    icon: ListChecks,
+  },
+  {
+    value: "decisions",
+    label: "Engineering Decisions",
+    labelKey: "EngineeringDecisions",
+    icon: GitBranch,
+  },
+  {
+    value: "challenges",
+    label: "Challenges & Solutions",
+    labelKey: "ChallengesSolutions",
+    icon: Wrench,
+  },
+  { value: "outcome", label: "Outcome", labelKey: "CaseOutcome", icon: Target },
+  { value: "tech", label: "Tech Stack", labelKey: "TechStack", icon: Route },
 ];
 
 export const PROJECTS = [
@@ -52,7 +77,9 @@ export const PROJECTS = [
     isFinished: true,
     meta: {
       launched: "19 Aug 2026",
+      launchedKey: "ResaeniLaunched",
       platform: "Web",
+      platformKey: "ProjectMetaWeb",
     },
     caseStudy: {
       overview: [{ key: "ResaeniOverview1" }, { key: "ResaeniOverview2" }],
@@ -128,7 +155,9 @@ export const PROJECTS = [
     isFinished: true,
     meta: {
       launched: "1 Jul 2026",
+      launchedKey: "NisoraLaunched",
       platform: "Web",
+      platformKey: "ProjectMetaWeb",
     },
     caseStudy: {
       overview: [{ key: "NisoraOverview1" }, { key: "NisoraOverview2" }],
@@ -203,7 +232,9 @@ export const PROJECTS = [
     isFinished: true,
     meta: {
       launched: "Jul 2026",
+      launchedKey: "TextEditorLaunched",
       platform: "npm Package",
+      platformKey: "ProjectMetaNpmPackage",
     },
     caseStudy: {
       overview: [
@@ -263,5 +294,9 @@ export const PROJECTS = [
 
 export const getProjectMeta = (project) => ({
   launched: project?.meta?.launched ?? "Completed",
+  launchedKey: project?.meta?.launchedKey ?? "ProjectMetaCompleted",
   platform: project?.meta?.platform ?? (project?.demoUrl ? "Web" : "Package"),
+  platformKey:
+    project?.meta?.platformKey ??
+    (project?.demoUrl ? "ProjectMetaWeb" : "ProjectMetaPackage"),
 });

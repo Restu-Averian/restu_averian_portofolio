@@ -46,9 +46,11 @@ export const ProjectDetailFooter = ({
       >
         <ArrowLeft className="h-6 w-6 shrink-0" />
         <span className="min-w-0">
-          <span className="block text-sm text-porto-btn">Previous Project</span>
+          <span className="block text-sm text-porto-btn">
+            {t("PreviousProject", "Previous Project")}
+          </span>
           <span className="block truncate text-[15px]">
-            {prevProject?.title || "Previous Project"}
+            {prevProject?.title || t("PreviousProject", "Previous Project")}
           </span>
         </span>
       </button>
@@ -56,12 +58,12 @@ export const ProjectDetailFooter = ({
       <div className="flex items-center gap-6">
         <ProjectLink href={currentProject?.demoUrl}>
           <Globe2 className="h-5 w-5" />
-          Live Demo
+          {t("LiveDemo", "Live Demo")}
           <ExternalLink className="h-4 w-4" />
         </ProjectLink>
         <ProjectLink href={currentProject?.githubUrl} variant="solid">
           <Icon icon="mdi:github" className="h-5 w-5" />
-          View on GitHub
+          {t("ViewOnGithub", "View on Github")}
         </ProjectLink>
         {currentProject?.packageUrl ? (
           <ProjectLink href={currentProject.packageUrl}>
@@ -78,9 +80,11 @@ export const ProjectDetailFooter = ({
         className="flex min-w-0 cursor-pointer items-center justify-end gap-4 text-right text-porto-text"
       >
         <span className="min-w-0">
-          <span className="block text-sm text-porto-btn">Next Project</span>
+          <span className="block text-sm text-porto-btn">
+            {t("NextProject", "Next Project")}
+          </span>
           <span className="block truncate text-[15px]">
-            {nextProject?.title || "Next Project"}
+            {nextProject?.title || t("NextProject", "Next Project")}
           </span>
         </span>
         <ArrowRight className="h-6 w-6 shrink-0" />
