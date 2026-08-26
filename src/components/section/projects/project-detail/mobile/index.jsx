@@ -1,4 +1,5 @@
 import { DrawerWrapper } from "@/components/ui/drawer/drawer-wrapper";
+import { useTranslation } from "@/i18n";
 import { Home } from "lucide-react";
 import { memo, useEffect, useMemo, useState } from "react";
 import { useProjectsContext } from "@/context/ProjectsCtxProvider";
@@ -12,6 +13,7 @@ import { ProjectDetailNavBtn } from "./ProjectDetailNavBtn";
 import { ProjectDetailAction } from "./ProjectDetailAction";
 
 const MobileDrawer_ = () => {
+  const { t } = useTranslation();
   const {
     showModalDetail: open,
     handleCloseModal: onClose,
@@ -49,7 +51,10 @@ const MobileDrawer_ = () => {
     <DrawerWrapper
       open={open}
       onOpenChange={(val) => !val && onClose?.()}
-      title={currentProject?.title || "Detail Project"}
+      title={
+        currentProject?.title ||
+        t("ProjectDetailFallbackTitle", "Project Detail")
+      }
     >
       <div className="flex-1 overflow-y-auto porto-scrollbar px-5 pt-8 pb-5">
         <div className="space-y-5">
@@ -76,7 +81,9 @@ const MobileDrawer_ = () => {
                 <ActiveIcon className="h-5.5 w-5.5 shrink-0" />
 
                 <h3 className="text-[21px] font-semibold leading-none">
-                  {activeTabConfig?.label || "Overview"}
+                  {activeTabConfig?.labelKey
+                    ? t(activeTabConfig.labelKey, activeTabConfig.label)
+                    : t("Overview", "Overview")}
                 </h3>
               </div>
 
