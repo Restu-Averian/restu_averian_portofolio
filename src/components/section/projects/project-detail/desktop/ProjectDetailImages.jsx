@@ -25,7 +25,7 @@ export const ProjectDetailImages = ({ images = [], title }) => {
           />
         </div>
 
-        <div className="grid shrink-0 grid-cols-4 gap-4">
+        <div className="grid shrink-0 grid-cols-3 gap-4">
           {images.slice(0, 3).map((image, index) => {
             const active = activeImage === image;
 
@@ -49,13 +49,6 @@ export const ProjectDetailImages = ({ images = [], title }) => {
               </button>
             );
           })}
-
-          <div className="flex aspect-[1.28/1] items-center justify-center rounded-xl border border-dashed border-porto-btn/50 bg-background/35 text-center text-sm text-porto-muted">
-            <span>
-              +<br />
-              more
-            </span>
-          </div>
         </div>
       </div>
     </aside>

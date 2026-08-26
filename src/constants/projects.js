@@ -4,8 +4,9 @@ import ResuAveTextEditor3 from "@/assets/projects/texteditor/pic3.webp";
 import NisoraThumb1 from "@/assets/projects/nisora/pic1.webp";
 import NisoraThumb2 from "@/assets/projects/nisora/pic2.webp";
 import NisoraThumb3 from "@/assets/projects/nisora/pic3.webp";
-// TODO: Replace temporary image with Resaeni portfolio screenshots.
-import ResaeniPlaceholderThumb from "@/assets/projects/nisora/pic4.webp";
+import ResaeniThumb1 from "@/assets/projects/resaeni/pic1.webp";
+import ResaeniThumb2 from "@/assets/projects/resaeni/pic2.webp";
+import ResaeniThumb3 from "@/assets/projects/resaeni/pic3.webp";
 import {
   CircleAlert,
   GitBranch,
@@ -46,8 +47,8 @@ export const PROJECTS = [
     ],
     demoUrl: "https://resaeni.cc",
     githubUrl: "https://github.com/Restu-Averian/resaeni",
-    thumb: ResaeniPlaceholderThumb,
-    images: [ResaeniPlaceholderThumb],
+    thumb: ResaeniThumb1,
+    images: [ResaeniThumb1, ResaeniThumb2, ResaeniThumb3],
     isFinished: true,
     meta: {
       launched: "19 Aug 2026",
@@ -205,7 +206,10 @@ export const PROJECTS = [
       platform: "npm Package",
     },
     caseStudy: {
-      overview: [{ key: "TextEditorOverview1" }, { key: "TextEditorOverview2" }],
+      overview: [
+        { key: "TextEditorOverview1" },
+        { key: "TextEditorOverview2" },
+      ],
       problem: [{ key: "TextEditorProblem1" }, { key: "TextEditorProblem2" }],
       ownership: { key: "TextEditorOwnership" },
       contributions: [

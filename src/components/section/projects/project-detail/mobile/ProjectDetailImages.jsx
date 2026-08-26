@@ -18,7 +18,7 @@ export const ProjectDetailImages = ({ images = [], title }) => {
         />
       </div>
 
-      <div className="mt-3 grid grid-cols-4 gap-2.5">
+      <div className="mt-3 grid grid-cols-3 gap-2.5">
         {images.slice(0, 3).map((image, index) => {
           const active = activeImage === image;
 
@@ -42,13 +42,6 @@ export const ProjectDetailImages = ({ images = [], title }) => {
             </button>
           );
         })}
-
-        <div className="flex aspect-[1.25/0.82] items-center justify-center rounded-xl border border-dashed border-porto-btn/45 bg-background/30 text-center text-[13px] font-medium text-porto-text">
-          <span>
-            +<br />
-            More
-          </span>
-        </div>
       </div>
     </section>
   );
